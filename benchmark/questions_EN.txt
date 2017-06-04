@@ -1,0 +1,52 @@
+Show me all won games of Carlsen against Anand.
+Which player with an ELO above 2700 has won the most in 2016?
+Have Kramnik played the opening King’s Indian?
+Give me 10 blitz games of Nakamura.
+Show me positions that are similar to FEN "8/4bk2/8/2R5/1K6/8/8/8 w - -"?
+Show me endgames with rook against rook and pawn.
+In which tournaments did Naiditsch and Carlsen play against each other?
+All losing games of Giri from Wijk aan Zee.
+Give me 5 games with an underpromotion.
+Show me all games of the world championship 1886.
+What is the longest game?
+10 games with a fivefold exchange?
+What is the first game of Kasparov?
+Show me 10 games of white in the Queen’s Indian.
+Which opening has Fischer played most frequently?
+In which game did Caruana have his highest rating?
+Show me all the games of the tournament with the highest average rating.
+Give me the games in which Topalov lost against a much weaker player.
+What openings were played at the Grenke Chess Classic 2017?
+How many times has Giri played draw?
+Which game was played exactly 10 years ago?
+What does Anand play against the Sicilian Defense?
+Who was the 8th world champion?
+What was the last game of Euwe?
+Show me any games with 2 or more En Passants?
+How often is King’s Indian played?
+Which games have a similar pawn structure as Ivanchuk against Shirov on move 13 in 1996 in Hoogovens?
+Show me all games with a stalemate.
+All games with a move number exceeding 100.
+Show me any games with three pawns on the 7th rank?
+Show me mate positions with knight and bishop.
+Show me all games with the Epaulette Mate.
+Has Carlsen ever played a fianchetto?
+Are there games with f4 d5 g3?
+In which game was Karjakin’s position the worst?
+10 examples of half open games.
+What was the first game with a Ruy Lopez?
+What is the Lucena position?
+All games of GMs against computers.
+What was Fischer’s longest winning streak?
+Two games with doubling rooks on the 7th rank from June 2015.
+Examples of games with bishop against knight.
+Show me 10 games with a long castling.
+In which game was the latest castling?
+All games of Carlsen between 2014 and 2016.
+What is the Immortal game?
+In which game did the latest exchange take place?
+All games in which a FM has defeated a GM.
+What is played against Giuoco Piano?
+In which variation in the Sicilian Defense does black win the most?
+What is the main variation in the Ruy Lopez?
+Wins of white in B33 and an average ELO of over 2700.
