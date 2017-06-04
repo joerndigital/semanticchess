@@ -1,0 +1,870 @@
+{
+   "chessOpenings":{
+      "A":{
+         "mainClass":"Flank Openings",
+         "00":{
+            "subClass":"Irregular Openings",
+            "opening":[
+               {
+                  "mainName":[
+                     "Anderssen's Opening"
+                  ],
+                  "mainMove":"1.a3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Polish Gambit"
+                        ],
+                        "moves":"1.a3 a5 2.b4",
+                        "variations":[
+                           {
+                              "subName":[
+                                 "Bugayev Attack"
+                              ],
+                              "subMoves":"1.a3 a5 2.e5"
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Creepy Crawly Formation"
+                        ],
+                        "moves":"1.a3 e5 2.h3 d5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Andersspike"
+                        ],
+                        "moves":"1.a3 g6 2.g4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Ware Opening",
+                     "Meadow Hay",
+                     "Crab"
+                  ],
+                  "mainMove":"1.a4",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Wing Gambit"
+                        ],
+                        "moves":"1.a4 b5 2.axb5 Bb7",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Cologne Gambit"
+                        ],
+                        "moves":"1.a4 b6 2.d4 d5 2.Nc3 Nd7",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Ware Gambit"
+                        ],
+                        "moves":"1.a4 e5 2.a5 d5 3.e3 f5 4.a6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Crab Variation"
+                        ],
+                        "moves":"1.a4 e5 2.h4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Sokolsky Opening",
+                     "Polish",
+                     "Orangutan",
+                     "Hunt"
+                  ],
+                  "mainMove":"1.b4",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Birmingham Gambit"
+                        ],
+                        "moves":"1.b4 c5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Outflank Variation"
+                        ],
+                        "moves":"1.b4 c6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Schuhler Gambit"
+                        ],
+                        "moves":"1.b4 c6 2.Bb2 a5 3.b5 cxb5 4.e4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Myers Variation"
+                        ],
+                        "moves":"1.b4 d5 2.Bb2 c6 3.a4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Bugayev Attack"
+                        ],
+                        "moves":"1.b4 e5 2.a3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Wolferts Gambit"
+                        ],
+                        "moves":"1.b4 e5 2.Bb2 c5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Schiffler-Sokolsky",
+                           "Tartakower Gambit"
+                        ],
+                        "moves":"1.b4 e5 2.Bb2 f6 3.e4 Bxb4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Brinckmann Variation"
+                        ],
+                        "moves":"1.b4 e5 2.Bb2 f6 3.e4 Bxb4 4.Bc4 Nc6 5.f4 Qe7 6.f5 g6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Bucker Defense"
+                        ],
+                        "moves":"1.b4 Na6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Grigorian Variation"
+                        ],
+                        "moves":"1.b4 Nc6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Polish Spike"
+                        ],
+                        "moves":"1.b4 Nf6 2.Bb2 g6 3.g4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Karniewski",
+                           "Tubingen Variation"
+                        ],
+                        "moves":"1.b4 Nh6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Saragossa",
+                     "Hempel's Opening"
+                  ],
+                  "mainMove":"1.c3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Hanham",
+                           "Hayward"
+                        ],
+                        "moves":"1.c3 e5 2.Qc2",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Mieses Opening",
+                     "Valencia",
+                     "Venezuelan Opening"
+                  ],
+                  "mainMove":"1.d3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Venezolana"
+                        ],
+                        "moves":"1.d3 c5 2.Nc3 Nc6 3.g3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Reversed Rat"
+                        ],
+                        "moves":"1.d3 e5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Spike Deferred",
+                           "Myers Spike Attack"
+                        ],
+                        "moves":"1.d3 g6 2.g4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Van't Kruijs Opening"
+                  ],
+                  "mainMove":"1.e3 e5",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Bouncing Bishop Variation"
+                        ],
+                        "moves":"1.e3 e5 2.Bc4 b5 3.Bb3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Amsterdam Attack"
+                        ],
+                        "moves":"1.e3 e5 2.c4 d6 3.Nc3 Nc6 4.b3 Nf6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Ekolu Variation"
+                        ],
+                        "moves":"1.e3 e5 2.Nc3 d5 3.f4 exf4 4.Nf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Alua Variation"
+                        ],
+                        "moves":"1.e3 e5 2.Nc3 Nc6 3.f4 exf4 4.Nf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Alua Variation"
+                        ],
+                        "moves":"1.e3 e5 2.Nc3 Nc6 3.f4 exf4 4.Nf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Akahi Variation"
+                        ],
+                        "moves":"1.e3 e5 2.Nc3 Nf6 3.f4 exf4 4.Nf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Keoni-Hiva Gambit"
+                  ],
+                  "mainMove":"1.e3 d5 2.Nc3 Nf6 3.a3 e5 4.f4 exf4 5.Nf3",
+                  "mainVariations":[
+                     {
+
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Barnes Opening",
+                     "Gedult-Gunderam",
+                     "Walkerling"
+                  ],
+                  "mainMove":"1.f3",
+                  "mainVariations":[
+                     {
+
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "King's Head Opening"
+                  ],
+                  "mainMove":"1.f3 e5 2.e4",
+                  "mainVariations":[
+                     {
+
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Hammerschlag",
+                     "Pork Chop Opening"
+                  ],
+                  "mainMove":"1.f3 e5 2.Kf2",
+                  "mainVariations":[
+                     {
+
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Benko's Opening",
+                     "Barczay",
+                     "Bilek",
+                     "Hungarian"
+                  ],
+                  "mainMove":"1.g3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Gambit 59"
+                        ],
+                        "moves":"1.g3 d5 2.Bg2 e5 3.b4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Regan Variation"
+                        ],
+                        "moves":"1.g3 d5 2.Bg2 e5 3.d4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Reversed Alekhine"
+                        ],
+                        "moves":"1.g3 e5 2.Nf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Lasker Simul Special"
+                        ],
+                        "moves":"1.g3 h5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Grob's Attack",
+                     "Ahlhausen",
+                     "Colibri",
+                     "Fric",
+                     "Genoa",
+                     "Spike"
+                  ],
+                  "mainMove":"1.g4",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Grob Gambit"
+                        ],
+                        "moves":"1.g4 d5 2.Bg2 Bxg4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Romford Counter-Gambit"
+                        ],
+                        "moves":"1.g4 d5 2.Bg2 Bxg4 3.c4 d4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Spike"
+                        ],
+                        "moves":"1.g4 d5 2.Bg2 c6 3.g5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Short Spike"
+                        ],
+                        "moves":"1.g4 d5 2.Bg2 c6 3.h3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Zilbermints Gambit"
+                        ],
+                        "moves":"1.g4 d5 2.e4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Keene Defense"
+                        ],
+                        "moves":"1.g4 d5 2.h3 e5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Hurst Attack"
+                        ],
+                        "moves":"1.g4 e5 2.Bg2 d5 3.c4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Alessi Gambit"
+                        ],
+                        "moves":"1.g4 f5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Double Grob"
+                        ],
+                        "moves":"1.g4 g5",
+                        "variations":[
+                           {
+                              "subName":[
+                                 "Coca-Cola Gambit"
+                              ],
+                              "subMoves":"1.g4 g5 2.f4"
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Spike Deferred"
+                        ],
+                        "moves":"1.g4 g6 2.d3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Bucker Defense"
+                        ],
+                        "moves":"1.g4 Nh6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Clemenz Opening"
+                  ],
+                  "mainMove":"1.h3",
+                  "mainVariations":[
+                     {
+
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Desprez Opening",
+                     "Despres Opening",
+                     "Kadas Opening"
+                  ],
+                  "mainMove":"1.h4",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Koola-Koola"
+                        ],
+                        "moves":"1.h4 a5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Wulumulu"
+                        ],
+                        "moves":"1.h4 e5 2.d4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Durkin's Opening",
+                     "Sodium Attack"
+                  ],
+                  "mainMove":"1.Na3",
+                  "mainVariations":[
+                     {
+
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Dunst",
+                     "Heinrichsen",
+                     "Will Bull",
+                     "Kotrc"
+                  ],
+                  "mainMove":"1.Nc3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "St. George Defense"
+                        ],
+                        "moves":"1.Nc3 a6",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Novosibirsk Variation"
+                        ],
+                        "moves":"1.Nc3 c5 2.d4 cxd4 3.Qxd4 Nc6 4.Qh4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Twyble Attack"
+                        ],
+                        "moves":"1.Nc3 c5 2.Rb1",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Dunst Gambit"
+                        ],
+                        "moves":"1.Nc3 d5 2.e4 dxe4 3.d3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Pseudo-Diemer Gambit"
+                        ],
+                        "moves":"1.Nc3 d5 2.e4 dxe4 3.f3 exf3 4.Qxf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Amazon"
+                        ],
+                        "moves":"1.Nc3 d5 2.e4 dxe4 3.Nxe4 Qd5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Reversed Nimzovich"
+                        ],
+                        "moves":"1.Nc3 e5",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Battambang"
+                        ],
+                        "moves":"1.Nc3 e5 2.a3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Irish Attack",
+                           "Polish Attack"
+                        ],
+                        "moves":"1.Nc3 e5 2.f4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Napoleon Attack"
+                        ],
+                        "moves":"1.Nc3 e5 2.Nf3",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Glasscoe Gambit"
+                        ],
+                        "moves":"1.Nc3 f5 2.g4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Anti-Pirc Variation"
+                        ],
+                        "moves":"1.Nc3 g6 2.h4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Tubingen Gambit"
+                        ],
+                        "moves":"1.Nc3 Nf6 2.g4",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "mainName":[
+                     "Amar Opening",
+                     "Paris Opening",
+                     "Drunken Night Opening"
+                  ],
+                  "mainMove":"1.Nh3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Krazy Kat"
+                        ],
+                        "moves":"1.Nh3 e5 2.f3 d5 3.Nf2",
+                        "variations":[
+                           {
+
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "01":{
+            "subClass":"Nimzovich",
+            "opening":[
+
+            ]
+         }
+      }
+   }
+}
