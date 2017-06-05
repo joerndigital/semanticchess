@@ -9,7 +9,7 @@
                   "mainName":[
                      "Anderssen's Opening"
                   ],
-                  "mainMove":"1.a3",
+                  "mainMoves":"1.a3",
                   "mainVariations":[
                      {
                         "name":[
@@ -31,9 +31,7 @@
                         ],
                         "moves":"1.a3 e5 2.h3 d5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -42,9 +40,7 @@
                         ],
                         "moves":"1.a3 g6 2.g4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -55,7 +51,7 @@
                      "Meadow Hay",
                      "Crab"
                   ],
-                  "mainMove":"1.a4",
+                  "mainMoves":"1.a4",
                   "mainVariations":[
                      {
                         "name":[
@@ -63,9 +59,7 @@
                         ],
                         "moves":"1.a4 b5 2.axb5 Bb7",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -74,9 +68,7 @@
                         ],
                         "moves":"1.a4 b6 2.d4 d5 2.Nc3 Nd7",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -85,9 +77,7 @@
                         ],
                         "moves":"1.a4 e5 2.a5 d5 3.e3 f5 4.a6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -96,9 +86,7 @@
                         ],
                         "moves":"1.a4 e5 2.h4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -110,7 +98,7 @@
                      "Orangutan",
                      "Hunt"
                   ],
-                  "mainMove":"1.b4",
+                  "mainMoves":"1.b4",
                   "mainVariations":[
                      {
                         "name":[
@@ -129,9 +117,7 @@
                         ],
                         "moves":"1.b4 c6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -140,9 +126,7 @@
                         ],
                         "moves":"1.b4 c6 2.Bb2 a5 3.b5 cxb5 4.e4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -151,9 +135,7 @@
                         ],
                         "moves":"1.b4 d5 2.Bb2 c6 3.a4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -162,9 +144,7 @@
                         ],
                         "moves":"1.b4 e5 2.a3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -173,9 +153,7 @@
                         ],
                         "moves":"1.b4 e5 2.Bb2 c5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -185,9 +163,7 @@
                         ],
                         "moves":"1.b4 e5 2.Bb2 f6 3.e4 Bxb4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -196,9 +172,7 @@
                         ],
                         "moves":"1.b4 e5 2.Bb2 f6 3.e4 Bxb4 4.Bc4 Nc6 5.f4 Qe7 6.f5 g6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -207,9 +181,7 @@
                         ],
                         "moves":"1.b4 Na6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -218,9 +190,7 @@
                         ],
                         "moves":"1.b4 Nc6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -229,9 +199,7 @@
                         ],
                         "moves":"1.b4 Nf6 2.Bb2 g6 3.g4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -241,9 +209,7 @@
                         ],
                         "moves":"1.b4 Nh6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -253,7 +219,7 @@
                      "Saragossa",
                      "Hempel's Opening"
                   ],
-                  "mainMove":"1.c3",
+                  "mainMoves":"1.c3",
                   "mainVariations":[
                      {
                         "name":[
@@ -262,9 +228,7 @@
                         ],
                         "moves":"1.c3 e5 2.Qc2",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -275,7 +239,7 @@
                      "Valencia",
                      "Venezuelan Opening"
                   ],
-                  "mainMove":"1.d3",
+                  "mainMoves":"1.d3",
                   "mainVariations":[
                      {
                         "name":[
@@ -283,9 +247,7 @@
                         ],
                         "moves":"1.d3 c5 2.Nc3 Nc6 3.g3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -294,9 +256,7 @@
                         ],
                         "moves":"1.d3 e5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -306,9 +266,7 @@
                         ],
                         "moves":"1.d3 g6 2.g4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -317,7 +275,7 @@
                   "mainName":[
                      "Van't Kruijs Opening"
                   ],
-                  "mainMove":"1.e3 e5",
+                  "mainMoves":"1.e3 e5",
                   "mainVariations":[
                      {
                         "name":[
@@ -325,9 +283,7 @@
                         ],
                         "moves":"1.e3 e5 2.Bc4 b5 3.Bb3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -336,9 +292,7 @@
                         ],
                         "moves":"1.e3 e5 2.c4 d6 3.Nc3 Nc6 4.b3 Nf6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -347,9 +301,7 @@
                         ],
                         "moves":"1.e3 e5 2.Nc3 d5 3.f4 exf4 4.Nf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -358,9 +310,7 @@
                         ],
                         "moves":"1.e3 e5 2.Nc3 Nc6 3.f4 exf4 4.Nf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -369,9 +319,7 @@
                         ],
                         "moves":"1.e3 e5 2.Nc3 Nc6 3.f4 exf4 4.Nf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -380,9 +328,7 @@
                         ],
                         "moves":"1.e3 e5 2.Nc3 Nf6 3.f4 exf4 4.Nf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -391,11 +337,9 @@
                   "mainName":[
                      "Keoni-Hiva Gambit"
                   ],
-                  "mainMove":"1.e3 d5 2.Nc3 Nf6 3.a3 e5 4.f4 exf4 5.Nf3",
+                  "mainMoves":"1.e3 d5 2.Nc3 Nf6 3.a3 e5 4.f4 exf4 5.Nf3",
                   "mainVariations":[
-                     {
 
-                     }
                   ]
                },
                {
@@ -404,22 +348,18 @@
                      "Gedult-Gunderam",
                      "Walkerling"
                   ],
-                  "mainMove":"1.f3",
+                  "mainMoves":"1.f3",
                   "mainVariations":[
-                     {
 
-                     }
                   ]
                },
                {
                   "mainName":[
                      "King's Head Opening"
                   ],
-                  "mainMove":"1.f3 e5 2.e4",
+                  "mainMoves":"1.f3 e5 2.e4",
                   "mainVariations":[
-                     {
 
-                     }
                   ]
                },
                {
@@ -427,11 +367,9 @@
                      "Hammerschlag",
                      "Pork Chop Opening"
                   ],
-                  "mainMove":"1.f3 e5 2.Kf2",
+                  "mainMoves":"1.f3 e5 2.Kf2",
                   "mainVariations":[
-                     {
 
-                     }
                   ]
                },
                {
@@ -441,7 +379,7 @@
                      "Bilek",
                      "Hungarian"
                   ],
-                  "mainMove":"1.g3",
+                  "mainMoves":"1.g3",
                   "mainVariations":[
                      {
                         "name":[
@@ -449,9 +387,7 @@
                         ],
                         "moves":"1.g3 d5 2.Bg2 e5 3.b4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -460,9 +396,7 @@
                         ],
                         "moves":"1.g3 d5 2.Bg2 e5 3.d4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -471,9 +405,7 @@
                         ],
                         "moves":"1.g3 e5 2.Nf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -482,9 +414,7 @@
                         ],
                         "moves":"1.g3 h5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -498,7 +428,7 @@
                      "Genoa",
                      "Spike"
                   ],
-                  "mainMove":"1.g4",
+                  "mainMoves":"1.g4",
                   "mainVariations":[
                      {
                         "name":[
@@ -506,9 +436,7 @@
                         ],
                         "moves":"1.g4 d5 2.Bg2 Bxg4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -517,9 +445,7 @@
                         ],
                         "moves":"1.g4 d5 2.Bg2 Bxg4 3.c4 d4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -528,9 +454,7 @@
                         ],
                         "moves":"1.g4 d5 2.Bg2 c6 3.g5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -539,9 +463,7 @@
                         ],
                         "moves":"1.g4 d5 2.Bg2 c6 3.h3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -550,9 +472,7 @@
                         ],
                         "moves":"1.g4 d5 2.e4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -561,9 +481,7 @@
                         ],
                         "moves":"1.g4 d5 2.h3 e5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -572,9 +490,7 @@
                         ],
                         "moves":"1.g4 e5 2.Bg2 d5 3.c4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -583,9 +499,7 @@
                         ],
                         "moves":"1.g4 f5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -608,9 +522,7 @@
                         ],
                         "moves":"1.g4 g6 2.d3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -619,9 +531,7 @@
                         ],
                         "moves":"1.g4 Nh6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -630,11 +540,9 @@
                   "mainName":[
                      "Clemenz Opening"
                   ],
-                  "mainMove":"1.h3",
+                  "mainMoves":"1.h3",
                   "mainVariations":[
-                     {
 
-                     }
                   ]
                },
                {
@@ -643,7 +551,7 @@
                      "Despres Opening",
                      "Kadas Opening"
                   ],
-                  "mainMove":"1.h4",
+                  "mainMoves":"1.h4",
                   "mainVariations":[
                      {
                         "name":[
@@ -651,9 +559,7 @@
                         ],
                         "moves":"1.h4 a5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -662,9 +568,7 @@
                         ],
                         "moves":"1.h4 e5 2.d4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -674,11 +578,9 @@
                      "Durkin's Opening",
                      "Sodium Attack"
                   ],
-                  "mainMove":"1.Na3",
+                  "mainMoves":"1.Na3",
                   "mainVariations":[
-                     {
 
-                     }
                   ]
                },
                {
@@ -688,7 +590,7 @@
                      "Will Bull",
                      "Kotrc"
                   ],
-                  "mainMove":"1.Nc3",
+                  "mainMoves":"1.Nc3",
                   "mainVariations":[
                      {
                         "name":[
@@ -696,9 +598,7 @@
                         ],
                         "moves":"1.Nc3 a6",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -707,9 +607,7 @@
                         ],
                         "moves":"1.Nc3 c5 2.d4 cxd4 3.Qxd4 Nc6 4.Qh4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -718,9 +616,7 @@
                         ],
                         "moves":"1.Nc3 c5 2.Rb1",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -729,9 +625,7 @@
                         ],
                         "moves":"1.Nc3 d5 2.e4 dxe4 3.d3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -740,9 +634,7 @@
                         ],
                         "moves":"1.Nc3 d5 2.e4 dxe4 3.f3 exf3 4.Qxf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -751,9 +643,7 @@
                         ],
                         "moves":"1.Nc3 d5 2.e4 dxe4 3.Nxe4 Qd5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -762,9 +652,7 @@
                         ],
                         "moves":"1.Nc3 e5",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -773,9 +661,7 @@
                         ],
                         "moves":"1.Nc3 e5 2.a3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -785,9 +671,7 @@
                         ],
                         "moves":"1.Nc3 e5 2.f4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -796,9 +680,7 @@
                         ],
                         "moves":"1.Nc3 e5 2.Nf3",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -807,9 +689,7 @@
                         ],
                         "moves":"1.Nc3 f5 2.g4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -818,9 +698,7 @@
                         ],
                         "moves":"1.Nc3 g6 2.h4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      },
                      {
@@ -829,9 +707,7 @@
                         ],
                         "moves":"1.Nc3 Nf6 2.g4",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -842,7 +718,7 @@
                      "Paris Opening",
                      "Drunken Night Opening"
                   ],
-                  "mainMove":"1.Nh3",
+                  "mainMoves":"1.Nh3",
                   "mainVariations":[
                      {
                         "name":[
@@ -850,9 +726,7 @@
                         ],
                         "moves":"1.Nh3 e5 2.f3 d5 3.Nf2",
                         "variations":[
-                           {
 
-                           }
                         ]
                      }
                   ]
@@ -862,7 +736,484 @@
          "01":{
             "subClass":"Nimzovich",
             "opening":[
+               {
+                  "mainName":[
+                     "Larsen's Opening",
+                     "Queen's Fianchetto",
+                     "Nimzo-Larsen Attack"
+                  ],
+                  "mainMovess":"1.b3",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Symmetrical Variation"
+                        ],
+                        "moves":"1.b3 b6",
+                        "variations":[
 
+                        ]
+                     },
+                     {
+                        "name":[
+                           "English Variation"
+                        ],
+                        "moves":"1.b3 c5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Classical Variation"
+                        ],
+                        "moves":"1.b3 d5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Modern Variation"
+                        ],
+                        "moves":"1.b3 e5",
+                        "variations":[
+                           {
+                              "subName":[
+                                 "Ringelbach Gambit"
+                              ],
+                              "subMoves":"1.b3 e5 2.Bb2 f5 3.e4"
+                           },
+                           {
+                              "subName":[
+                                 "Paschmann Gambit"
+                              ],
+                              "subMoves":"1.b3 e5 2.Bb2 Nc6 3.f4"
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Dutch Variation"
+                        ],
+                        "moves":"1.b3 f5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Indian"
+                        ],
+                        "moves":"1.b3 Nf6",
+                        "variations":[
+                           {
+                              "subName":[
+                                 "Spike"
+                              ],
+                              "subMoves":"1.b3 Nf6 2.Bb2 g6 3.g4"
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "02":{
+            "subClass":"Bird",
+            "without":[
+               "1...d5",
+               "1...g6 2.e4",
+               "1...Nf6 2.d4",
+               "1...e5 2.e4",
+               "1...c5 2.e4",
+               "1...d6 2.e4"
+            ],
+            "opening":[
+               {
+                  "mainName":[
+                     "Birds's Opening",
+                     "Dutch Attack"
+                  ],
+                  "mainMoves":"1.f4",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "From's Gambit"
+                        ],
+                        "moves":"1.f4 e5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Symmetrical variation"
+                        ],
+                        "moves":"1.f4 f5",
+                        "variations":[
+                           {
+                              "subName":[
+                                 "Canard Formation",
+                                 "Double Duck",
+                                 "Pawn Thrust Attack"
+                              ],
+                              "subMoves":"1.f4 f5 2.d4 d5"
+                           }
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Swiss Gambit"
+                        ],
+                        "moves":"1.f4 f5 2.e4 fxe4 3.Nc3 Nf6 4.g4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Hobbs Gambit"
+                        ],
+                        "moves":"1.f4 g5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Batavo Polish Attack"
+                        ],
+                        "moves":"1.f4 Nf6 2.Nf3 g6 3.b4",
+                        "variations":[
+
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "03":{
+            "subClass":"Bird",
+            "without":[
+               "2.d4"
+            ],
+            "opening":[
+               {
+                  "mainName":[
+                     "Bird's Opening"
+                  ],
+                  "mainMoves":"1.f4 d5",
+                  "mainVariations":[
+                     {
+                        "name":[
+                           "Mujannah-Sturm Gambit"
+                        ],
+                        "moves":"1.f4 d5 2.c4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Lasker variation"
+                        ],
+                        "moves":"1.f4 d5 2.e3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Williams Gambit"
+                        ],
+                        "moves":"1.f4 d5 e4 dxe4 3.Nc3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Prokofiev Gambit"
+                        ],
+                        "moves":"1.f4 d5 2.e4 dxe4 3.d3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":[
+                           "Horsefly Defense"
+                        ],
+                        "moves":"1.f4 Nh6",
+                        "variations":[
+
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "04":{
+            "subClass":"Réti",
+            "without":[
+               "1...Nf6",
+               "1...d5",
+               "1...c6 2.c4",
+               "1...c6 2.d4",
+               "1...c6 2.e4",
+               "1...c6 2.g3 d5",
+               "1...f5 2.c4",
+               "1...f5 2.d4",
+               "1...f5 2.e4 e5",
+               "1...g6 2.c4",
+               "1...g6 2.d4",
+               "1...c5 2.c4",
+               "1...c5 2.e4",
+               "1...Nc6 2.e4",
+               "1...e6 2.c4",
+               "1...e6 2.d4",
+               "1...e6 2.e4",
+               "1...d6 2.c4",
+               "1...d6 2.d4",
+               "1...d6 2.e4",
+               "1...b6 2.c4",
+               "1...e5 2.e4",
+               "1...a6 2.e4 e5"
+            ],
+            "opening":[
+               {
+                  "mainName":"Réti, Zukertort",
+                  "mainMoves":"1.Nf3",
+                  "mainVariations":[
+                     {
+                        "name":"Wade Defence",
+                        "moves":"1.Nf3 d6 2.e4 Bg4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Ware Defence",
+                        "moves":"1.Nf3 a5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"All knight openings",
+                        "moves":"1.Nf3 Nf6 2.Nc3 Nc6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Arctic Defence",
+                        "moves":"1.Nf3 f6",
+                        "variations":[
+                           {
+                              "subName":"Drunken Knight Variation",
+                              "subMoves":"1.Nf3 f6 2.e4 Nh6 3.d4 Nf7"
+                           }
+                        ]
+                     },
+                     {
+                        "name":"Basman Defence",
+                        "moves":"1.Nf3 h6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Black Mustang Defence",
+                        "moves":"1.Nf3 Nc6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Drunken Cavalry Variation",
+                        "moves":"1.Nf3 Na6 2.e4 Nh6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Dutch Variation",
+                        "moves":"1.Nf3 f5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Herrstrom Gambit",
+                        "moves":"1.Nf3 g5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Kingside Fianchetto",
+                        "moves":"1.Nf3 g6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Kingside Variation",
+                        "moves":"1.Nf3 Nh6 2.d4 g6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Lemberg Gambit",
+                        "moves":"1.Nf3 Nf6 2.e4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Lisitsyn Gambit",
+                        "moves":"1.Nf3 f5 2.e4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Lisitsyn Gambit Deferred",
+                        "moves":"1.Nf3 f5 2.d3 Nf6 3.e4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Myers Polish Attack",
+                        "moves":"1.Nf3 Nf6 2.a4 g6 3.b4",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Paschmann Gambit",
+                        "moves":"1.Nf3 d5 2.b3 c5 3.c4 dxc4 4.e3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Pirc Invitation",
+                        "moves":"1.Nf3 d6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Polish Defence",
+                        "moves":"1.Nf3 b5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Queen's Gambit Invitation",
+                        "moves":"1.Nf3 e6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Queenside Fianchetto Variation",
+                        "moves":"1.Nf3 b6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Quiet system",
+                        "moves":"1.Nf3 Nf6 2.e3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Regina-Nu Gambit",
+                        "moves":"1.Nf3 d5 2.b3 c5 3.c4 dxc4 4.Nc3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Ross Gambit",
+                        "moves":"1.Nf3 e5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Shabulov Gambit",
+                        "moves":"1.Nf3 e6 2.c4 a6 3.Nc3 c5 4.g3 b5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Sicilian Invitation",
+                        "moves":"1.Nf3 c5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Sicilian Knight Variation",
+                        "moves":"1.Nf3 Na6 2.e4 c5",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Slav Invitation",
+                        "moves":"1.Nf3 c6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Speelsmet Gambit",
+                        "moves":"1.Nf3 c5 2.d4 cxd4 3.e3",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"St. George Defence",
+                        "moves":"1.Nf3 a6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Symmetrical Variation",
+                        "moves":"1.Nf3 Nf6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"The Walrus",
+                        "moves":"1.Nf3 e5 2.Nxe5 Nc6 3.Nxc6 dxc6",
+                        "variations":[
+
+                        ]
+                     },
+                     {
+                        "name":"Vos Gambit",
+                        "moves":"1.Nf3 d6 2.d4 e5",
+                        "variations":[
+
+                        ]
+                     }
+                  ]
+               }
             ]
          }
       }
