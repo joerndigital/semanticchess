@@ -1,735 +1,630 @@
 {
-"dataset": {
-"id": "semantic-chess-qald"
-},
-"questions": [
-{
-"id": "1",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me all won games of Carlsen against Anand.",
-"keywords": "games, Carlsen, Anand"
-}
-]
-},
-{
-"id": "2",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Which player with an ELO above 2700 has won the most in 2016?",
-"keywords": "player, ELO above 2700, 2016, won the most"
-}
-]
-},
-{
-"id": "3",
-"answertype": "boolean",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Have Kramnik played the opening King's Indian?",
-"keywords": "Kramnik, King's Indian"
-}
-]
-},
-{
-"id": "4",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Give me 10 blitz games of Nakamura.",
-"keywords": "Nakamura, 10, blitz games"
-}
-]
-},
-{
-"id": "5",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me positions that are similar to FEN "8/4bk2/8/2R5/1K6/8/8/8 w - -"?",
-"keywords": "positions, similiar, FEN, '8/4bk2/8/2R5/1K6/8/8/8 w - -'"
-}
-]
-},
-{
-"id": "6",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me endgames with rook against rook and pawn.",
-"keywords": "endgames, rook, rook and pawn"
-}
-]
-},
-{
-"id": "7",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "In which tournaments did Naiditsch and Carlsen play against each other?",
-"keywords": "tournaments, Carlsen, Naiditsch"
-}
-]
-},
-{
-"id": "8",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "All losing games of Giri from Wijk aan Zee.",
-"keywords": "Giri, Wijk aan Zee, losing games"
-}
-]
-},
-{
-"id": "9",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Give me 5 games with an underpromotion.",
-"keywords": "underpromotion, 5 games"
-}
-]
-},
-{
-"id": "10",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me all games of the world championship 1886.",
-"keywords": "world championship 1886, games"
-}
-]
-},
-{
-"id": "11",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What is the longest game?",
-"keywords": "longest game"
-}
-]
-},
-{
-"id": "12",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "10 games with a fivefold exchange?",
-"keywords": "fivefold exchange, 10 games"
-}
-]
-},
-{
-"id": "13",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What is the first game of Kasparov?",
-"keywords": "Kasparov, first game"
-}
-]
-},
-{
-"id": "14",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me 10 games of white in the Queen’s Indian.",
-"keywords": "Queen's Indian, 10 games"
-}
-]
-},
-{
-"id": "15",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Which opening has Fischer played most frequently?",
-"keywords": "Fischer, opening, most frequently"
-}
-]
-},
-{
-"id": "16",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "In which game did Caruana have his highest rating?",
-"keywords": "Caruana, game, highest rating"
-}
-]
-},
-{
-"id": "17",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me all the games of the tournament with the highest average rating.",
-"keywords": "tournament, games, highest average rating"
-}
-]
-},
-{
-"id": "18",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Give me the games in which Topalov lost against a much weaker player.",
-"keywords": "Topalov, lost, weaker player"
-}
-]
-},
-{
-"id": "19",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What openings were played at the Grenke Chess Classic 2017?",
-"keywords": "openings, Grenke Chess Classic 2017"
-}
-]
-},
-{
-"id": "20",
-"answertype": "number",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "How many times has Giri played draw?",
-"keywords": "Giri, draw"
-}
-]
-},
-{
-"id": "21",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Which game was played exactly 10 years ago?",
-"keywords": "game, 10 years ago"
-}
-]
-},
-{
-"id": "22",
-"answertype": "string",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What does Anand play against the Sicilian Defense?",
-"keywords": "Anand, against, Sicilian Defense"
-}
-]
-},
-{
-"id": "23",
-"answertype": "string",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Who was the 8th world champion?",
-"keywords": "8th world champion"
-}
-]
-},
-{
-"id": "24",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What was the last game of Euwe?",
-"keywords": "Euwe, last game"
-}
-]
-},
-{
-"id": "25",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me any games with 2 or more En Passants?",
-"keywords": "games, 2 or more, En Passants"
-}
-]
-},
-{
-"id": "26",
-"answertype": "number",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "How often is King’s Indian played?",
-"keywords": "King's Indian, how often"
-}
-]
-},
-{
-"id": "27",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Which games have a similar pawn structure as Ivanchuk against Shirov on move 13 in 1996 in Hoogovens?",
-"keywords": "Ivanchuk, Shirov, move 13, 1996, Hoogovens, similar pawn structure"
-}
-]
-},
-{
-"id": "28",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me all games with a stalemate.",
-"keywords": "games, stalemate"
-}
-]
-},
-{
-"id": "29",
-"answertype": "date",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "All games with a move number exceeding 100.",
-"keywords": "games, mover number exceeding 100"
-}
-]
-},
-{
-"id": "30",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me any games with three pawn on the 7th rank?",
-"keywords": "games, three pawns, 7th rank"
-}
-]
-},
-{
-"id": "31",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me mate positions with knight and bishop.",
-"keywords": "mate positions, knight and bishop"
-}
-]
-},
-{
-"id": "32",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me all games with the Epaulette Mate.",
-"keywords": "games, Epaulette Mate"
-}
-]
-},
-{
-"id": "33",
-"answertype": "boolean",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Has Carlsen ever played a fianchetto?",
-"keywords": "Carlsen, fianchetto"
-}
-]
-},
-{
-"id": "34",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Are there games with f4 d5 g3?",
-"keywords": "games, f4 d5 g3"
-}
-]
-},
-{
-"id": "35",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "In which game was Karjakin’s position the worst?",
-"keywords": "Karjakin, game, position, the worst"
-}
-]
-},
-{
-"id": "36",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "10 examples of half open games.",
-"keywords": "10 examples, half open games"
-}
-]
-},
-{
-"id": "37",
-"answertype": "boolean",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What was the first game with a Ruy Lopez?",
-"keywords": "first game, Ruy Lopez"
-}
-]
-},
-{
-"id": "38",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What is the Lucena position?",
-"keywords": "Lucena Position"
-}
-]
-},
-{
-"id": "39",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "All games of GMs against computers.",
-"keywords": "games, GMs, computers"
-}
-]
-},
-{
-"id": "40",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What was Fischer’s longest winning streak?",
-"keywords": "Fischer, longest winning streak"
-}
-]
-},
-{
-"id": "41",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Two games with doubling rooks on the 7th rank from June 2015.",
-"keywords": "doubling rooks, 7th rank, June 2015"
-}
-]
-},
-{
-"id": "42",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Examples of games with bishop against knight.",
-"keywords": "games, bishop against knight"
-}
-]
-},
-{
-"id": "43",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Show me 10 games with a long castling.",
-"keywords": "10 games, long casteling"
-}
-]
-},
-{
-"id": "44",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "In which game was the latest castling?",
-"keywords": "game, latest casteling"
-}
-]
-},
-{
-"id": "45",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "All games of Carlsen between 2014 and 2016.",
-"keywords": "Carlsen, games, between 2014 and 2016"
-}
-]
-},
-{
-"id": "46",
-"answertype": "string",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What is the Immortal game?",
-"keywords": "Immortal game"
-}
-]
-},
-{
-"id": "47",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "In which game did the latest exchange take place?",
-"keywords": "game, latest exchange"
-}
-]
-},
-{
-"id": "48",
-"answertype": "resource",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "All games in which a FM has defeated a GM.",
-"keywords": "games, FM, defeated, GM"
-}
-]
-},
-{
-"id": "49",
-"answertype": "string",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What is played against Giuoco Piano?",
-"keywords": "played against, Giuoco Piano"
-}
-]
-},
-{
-"id": "50",
-"answertype": "string",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "In which variation in the Sicilian Defense does black win the most?",
-"keywords": "variation, Sicilian Defense, black win, the most"
-}
-]
-},
-{
-"id": "51",
-"answertype": "string",
-"aggregation": false,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "What is the main variation in the Ruy Lopez?",
-"keywords": "main variation, Ruy Lopez"
-}
-]
-},
-{
-"id": "52",
-"answertype": "resource",
-"aggregation": true,
-"onlydbo": false,
-"hybrid": false,
-"question": [
-{
-"language": "en",
-"string": "Wins of white in B33 and an average ELO of over 2700.",
-"keywords": "wins of white, B33, average ELO of over 2700"
-}
-]
-}
-]
+	"dataset": {
+		"id": "semantic-chess-qald"
+	},
+	"questions": [{
+			"id": "1",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me all won games of Carlsen against Anand.",
+				"keywords": "games, Carlsen, Anand"
+			}]
+		},
+		{
+			"id": "2",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Which player with an ELO above 2700 has won the most in 2016?",
+				"keywords": "player, ELO above 2700, 2016, won the most"
+			}]
+		},
+		{
+			"id": "3",
+			"answertype": "boolean",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Have Kramnik played the opening King's Indian?",
+				"keywords": "Kramnik, King's Indian"
+			}]
+		},
+		{
+			"id": "4",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Give me 10 blitz games of Nakamura.",
+				"keywords": "Nakamura, 10, blitz games"
+			}]
+		},
+		{
+			"id": "5",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me positions that are similar to FEN'8 / 4 bk2 / 8 / 2 R5 / 1 K6 / 8 / 8 / 8 w - -'?",
+				"keywords": "positions, similiar, FEN, '8/4bk2/8/2R5/1K6/8/8/8 w - -'"
+			}]
+		},
+		{
+			"id": "6",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me endgames with rook against rook and pawn.",
+				"keywords": "endgames, rook, rook and pawn"
+			}]
+		},
+		{
+			"id": "7",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "In which tournaments did Naiditsch and Carlsen play against each other?",
+				"keywords": "tournaments, Carlsen, Naiditsch"
+			}]
+		},
+		{
+			"id": "8",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "All losing games of Giri from Wijk aan Zee.",
+				"keywords": "Giri, Wijk aan Zee, losing games"
+			}]
+		},
+		{
+			"id": "9",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Give me 5 games with an underpromotion.",
+				"keywords": "underpromotion, 5 games"
+			}]
+		},
+		{
+			"id": "10",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me all games of the world championship 1886.",
+				"keywords": "world championship 1886, games"
+			}]
+		},
+		{
+			"id": "11",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What is the longest game?",
+				"keywords": "longest game"
+			}]
+		},
+		{
+			"id": "12",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "10 games with a fivefold exchange?",
+				"keywords": "fivefold exchange, 10 games"
+			}]
+		},
+		{
+			"id": "13",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What is the first game of Kasparov?",
+				"keywords": "Kasparov, first game"
+			}]
+		},
+		{
+			"id": "14",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me 10 games of white in the Queen’s Indian.",
+				"keywords": "Queen's Indian, 10 games"
+			}]
+		},
+		{
+			"id": "15",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Which opening has Fischer played most frequently?",
+				"keywords": "Fischer, opening, most frequently"
+			}]
+		},
+		{
+			"id": "16",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "In which game did Caruana have his highest rating?",
+				"keywords": "Caruana, game, highest rating"
+			}]
+		},
+		{
+			"id": "17",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me all the games of the tournament with the highest average rating.",
+				"keywords": "tournament, games, highest average rating"
+			}]
+		},
+		{
+			"id": "18",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Give me the games in which Topalov lost against a much weaker player.",
+				"keywords": "Topalov, lost, weaker player"
+			}]
+		},
+		{
+			"id": "19",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What openings were played at the Grenke Chess Classic 2017?",
+				"keywords": "openings, Grenke Chess Classic 2017"
+			}]
+		},
+		{
+			"id": "20",
+			"answertype": "number",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "How many times has Giri played draw?",
+				"keywords": "Giri, draw"
+			}]
+		},
+		{
+			"id": "21",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Which game was played exactly 10 years ago?",
+				"keywords": "game, 10 years ago"
+			}]
+		},
+		{
+			"id": "22",
+			"answertype": "string",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What does Anand play against the Sicilian Defense?",
+				"keywords": "Anand, against, Sicilian Defense"
+			}]
+		},
+		{
+			"id": "23",
+			"answertype": "string",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Who was the 8th world champion?",
+				"keywords": "8th world champion"
+			}]
+		},
+		{
+			"id": "24",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What was the last game of Euwe?",
+				"keywords": "Euwe, last game"
+			}]
+		},
+		{
+			"id": "25",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me any games with 2 or more En Passants?",
+				"keywords": "games, 2 or more, En Passants"
+			}]
+		},
+		{
+			"id": "26",
+			"answertype": "number",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "How often is King’s Indian played?",
+				"keywords": "King's Indian, how often"
+			}]
+		},
+		{
+			"id": "27",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Which games have a similar pawn structure as Ivanchuk against Shirov on move 13 in 1996 in Hoogovens?",
+				"keywords": "Ivanchuk, Shirov, move 13, 1996, Hoogovens, similar pawn structure"
+			}]
+		},
+		{
+			"id": "28",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me all games with a stalemate.",
+				"keywords": "games, stalemate"
+			}]
+		},
+		{
+			"id": "29",
+			"answertype": "date",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "All games with a move number exceeding 100.",
+				"keywords": "games, mover number exceeding 100"
+			}]
+		},
+		{
+			"id": "30",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me any games with three pawn on the 7th rank?",
+				"keywords": "games, three pawns, 7th rank"
+			}]
+		},
+		{
+			"id": "31",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me mate positions with knight and bishop.",
+				"keywords": "mate positions, knight and bishop"
+			}]
+		},
+		{
+			"id": "32",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me all games with the Epaulette Mate.",
+				"keywords": "games, Epaulette Mate"
+			}]
+		},
+		{
+			"id": "33",
+			"answertype": "boolean",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Has Carlsen ever played a fianchetto?",
+				"keywords": "Carlsen, fianchetto"
+			}]
+		},
+		{
+			"id": "34",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Are there games with f4 d5 g3?",
+				"keywords": "games, f4 d5 g3"
+			}]
+		},
+		{
+			"id": "35",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "In which game was Karjakin’s position the worst?",
+				"keywords": "Karjakin, game, position, the worst"
+			}]
+		},
+		{
+			"id": "36",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "10 examples of half open games.",
+				"keywords": "10 examples, half open games"
+			}]
+		},
+		{
+			"id": "37",
+			"answertype": "boolean",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What was the first game with a Ruy Lopez?",
+				"keywords": "first game, Ruy Lopez"
+			}]
+		},
+		{
+			"id": "38",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What is the Lucena position?",
+				"keywords": "Lucena Position"
+			}]
+		},
+		{
+			"id": "39",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "All games of GMs against computers.",
+				"keywords": "games, GMs, computers"
+			}]
+		},
+		{
+			"id": "40",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What was Fischer’s longest winning streak?",
+				"keywords": "Fischer, longest winning streak"
+			}]
+		},
+		{
+			"id": "41",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Two games with doubling rooks on the 7th rank from June 2015.",
+				"keywords": "doubling rooks, 7th rank, June 2015"
+			}]
+		},
+		{
+			"id": "42",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Examples of games with bishop against knight.",
+				"keywords": "games, bishop against knight"
+			}]
+		},
+		{
+			"id": "43",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Show me 10 games with a long castling.",
+				"keywords": "10 games, long casteling"
+			}]
+		},
+		{
+			"id": "44",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "In which game was the latest castling?",
+				"keywords": "game, latest casteling"
+			}]
+		},
+		{
+			"id": "45",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "All games of Carlsen between 2014 and 2016.",
+				"keywords": "Carlsen, games, between 2014 and 2016"
+			}]
+		},
+		{
+			"id": "46",
+			"answertype": "string",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What is the Immortal game?",
+				"keywords": "Immortal game"
+			}]
+		},
+		{
+			"id": "47",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "In which game did the latest exchange take place?",
+				"keywords": "game, latest exchange"
+			}]
+		},
+		{
+			"id": "48",
+			"answertype": "resource",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "All games in which a FM has defeated a GM.",
+				"keywords": "games, FM, defeated, GM"
+			}]
+		},
+		{
+			"id": "49",
+			"answertype": "string",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What is played against Giuoco Piano?",
+				"keywords": "played against, Giuoco Piano"
+			}]
+		},
+		{
+			"id": "50",
+			"answertype": "string",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "In which variation in the Sicilian Defense does black win the most?",
+				"keywords": "variation, Sicilian Defense, black win, the most"
+			}]
+		},
+		{
+			"id": "51",
+			"answertype": "string",
+			"aggregation": false,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "What is the main variation in the Ruy Lopez?",
+				"keywords": "main variation, Ruy Lopez"
+			}]
+		},
+		{
+			"id": "52",
+			"answertype": "resource",
+			"aggregation": true,
+			"onlydbo": false,
+			"hybrid": false,
+			"question": [{
+				"language": "en",
+				"string": "Wins of white in B33 and an average ELO of over 2700.",
+				"keywords": "wins of white, B33, average ELO of over 2700"
+			}]
+		}
+	]
 }
