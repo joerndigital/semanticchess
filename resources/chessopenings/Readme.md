@@ -10,4 +10,4 @@
 <h2>Info: Copyright</h2>
 <p>ECO is a trademark. The copyright owner is Chess Informant.</p>
 <p>On Twitter Chess Informant explained, that the use of ECO is free as long as the product is free</p>
-<a href="https://twitter.com/chessinformant/status/769927079009914880">Tweet from Chess Informant</a>
+<a href="https://twitter.com/chessinformant/status/769927079009914880">Tweet from Chess Informant.</a>
