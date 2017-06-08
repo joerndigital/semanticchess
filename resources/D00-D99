@@ -1,0 +1,4122 @@
+{"openings":[
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 d1d3",
+    "name": "Amazon Attack",
+    "id": 2744,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 d1d3",
+    "name": "Amazon Attack: Siberian Attack",
+    "id": 2745,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2NQ4/PPP1PPPP/R1B1KBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4",
+    "name": "Blackmar-Diemer Gambit",
+    "id": 197,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3PP3/8/PPP2PPP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4",
+    "name": "Blackmar-Diemer Gambit",
+    "id": 3324,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 d5e4 f2f3 c7c5",
+    "name": "Blackmar-Diemer Gambit Declined, Brombacher Countergambit",
+    "id": 185,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e7e5",
+    "name": "Blackmar-Diemer Gambit Declined, Elbert Countergambit",
+    "id": 186,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/5n2/4p3/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 c8d7",
+    "name": "Blackmar-Diemer Gambit Declined, Grosshans Defense",
+    "id": 187,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/pppbpppp/8/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 b8c6",
+    "name": "Blackmar-Diemer Gambit Declined, Lamb Defense",
+    "id": 188,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/ppp1pppp/2n2n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 d5e4 f2f3 e4e3",
+    "name": "Blackmar-Diemer Gambit Declined, Langeheinecke Defense",
+    "id": 189,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N1pP2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 f2f3 d7d5 e2e4 d5e4 b1c3 c7c6",
+    "name": "Blackmar-Diemer Gambit Declined, O'Kelly Defense",
+    "id": 190,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 f2f3 e7e6 e2e4 d5e4",
+    "name": "Blackmar-Diemer Gambit Declined, Weinsbach Declination",
+    "id": 191,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 g7g6 f1c4 f8g7 h2h4",
+    "name": "Blackmar-Diemer Gambit: Bogoljubov Defense, Mad Dog Attack",
+    "id": 180,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/8/2BP3P/2N2N2/PPP3P1/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 d5e4 f2f3 e4f3 g1f3 g7g6",
+    "name": "Blackmar-Diemer Gambit: Bogoljubov Variation",
+    "id": 181,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 g7g6 f1c4 f8g7 e1g1 e8g8 g1h1",
+    "name": "Blackmar-Diemer Gambit: Bogoljubov Variation, Kloss Attack",
+    "id": 182,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/8/2BP4/2N2N2/PPP3PP/R1BQ1R1K b -"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 g7g6 f1c4 f8g7 f3e5",
+    "name": "Blackmar-Diemer Gambit: Bogoljubov Variation, Nimzowitsch Attack",
+    "id": 183,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/4N3/2BP4/2N5/PPP3PP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 d5e4 f2f3 e4f3 g1f3 g7g6 f1c4 f8g7 e1g1 e8g8 d1e1",
+    "name": "Blackmar-Diemer Gambit: Bogoljubov Variation, Studier Attack",
+    "id": 184,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/8/2BP4/2N2N2/PPP3PP/R1B1QRK1 b -"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 c1e3",
+    "name": "Blackmar-Diemer Gambit: Diemer-Rosenberg Attack",
+    "id": 192,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/3Pp3/4B3/PPP2PPP/RN1QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 d5e4 f2f3 e4f3 g1f3 e7e6",
+    "name": "Blackmar-Diemer Gambit: Euwe Defense",
+    "id": 193,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 e7e6 c1g5 f8e7 f1d3 b8c6 e1g1 c6d4 g1h1",
+    "name": "Blackmar-Diemer Gambit: Euwe Defense, Zilbermints Gambit",
+    "id": 194,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/ppp1bppp/4pn2/6B1/3n4/2NB1N2/PPP3PP/R2Q1R1K b kq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 f1c4",
+    "name": "Blackmar-Diemer Gambit: Fritz Attack",
+    "id": 195,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2BPp3/8/PPP2PPP/RNBQK1NR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 f2f3",
+    "name": "Blackmar-Diemer Gambit: Gedult Gambit",
+    "id": 196,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/3Pp3/5P2/PPP3PP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 c7c5",
+    "name": "Blackmar-Diemer Gambit: Kaulich Defense",
+    "id": 198,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 e7e5 c1e3",
+    "name": "Blackmar-Diemer Gambit: Lemberger Countergambit, Diemer Attack",
+    "id": 199,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/3Pp3/2N1B3/PPP2PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 e7e5 d4e5",
+    "name": "Blackmar-Diemer Gambit: Lemberger Countergambit, Endgame Variation",
+    "id": 200,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4P3/4p3/2N5/PPP2PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 e7e5 g1e2",
+    "name": "Blackmar-Diemer Gambit: Lemberger Countergambit, Rassmussen Attack",
+    "id": 201,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/3Pp3/2N5/PPP1NPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 e7e5 c3e4",
+    "name": "Blackmar-Diemer Gambit: Lemberger Countergambit, Simple Variation",
+    "id": 202,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/3PN3/8/PPP2PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "e2e4 d7d5 d2d4 d5e4 b1c3 e7e5 d1h5",
+    "name": "Blackmar-Diemer Gambit: Lemberger Countergambit, Sneider Attack",
+    "id": 203,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p2Q/3Pp3/2N5/PPP2PPP/R1B1KBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 f7f5 b1c3 d7d5 e2e4 d5e4",
+    "name": "Blackmar-Diemer Gambit: Netherlands Variation",
+    "id": 204,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1p1pp/8/5p2/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 b8c6",
+    "name": "Blackmar-Diemer Gambit: Pietrowsky Defense",
+    "id": 205,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/ppp1pppp/2n2n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 c1e3",
+    "name": "Blackmar-Diemer Gambit: Rasa-Studier Gambit",
+    "id": 210,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3Pp3/2N1B3/PPP2PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 b7b6",
+    "name": "Blackmar-Diemer Gambit: Ritter Defense",
+    "id": 206,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p1p1pppp/1p3n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 h7h5",
+    "name": "Blackmar-Diemer Gambit: Rook Pawn Defense",
+    "id": 207,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1ppp1/5n2/7p/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 d1f3",
+    "name": "Blackmar-Diemer Gambit: Ryder Gambit",
+    "id": 208,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2Q2/PPP3PP/R1B1KBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 b8d7",
+    "name": "Blackmar-Diemer Gambit: Schlutter Defense",
+    "id": 209,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppnpppp/5n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "e2e4 d7d5 d2d4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 c8f5",
+    "name": "Blackmar-Diemer Gambit: Tartakower Variation",
+    "id": 211,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/5b2/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "e2e4 d7d5 d2d4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 c8g4",
+    "name": "Blackmar-Diemer Gambit: Teichmann Variation",
+    "id": 212,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/8/3P2b1/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 d5e4 f2f3 c8f5",
+    "name": "Blackmar-Diemer Gambit: Vienna Variation",
+    "id": 213,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/5b2/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 c8f5",
+    "name": "Blackmar-Diemer Gambit: Zeller Defense",
+    "id": 216,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/5b2/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 c8f5 f2f3 g8f6 f1c4",
+    "name": "Blackmar-Diemer Gambit: Zeller Defense, Soller Attack",
+    "id": 217,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/5b2/2BPp3/2N2P2/PPP3PP/R1BQK1NR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 f2f3 e4f3 g1f3 c7c6",
+    "name": "Blackmar-Diemer Gambit: Ziegler Defense",
+    "id": 218,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 c1g5",
+    "name": "Blackmar-Diemer Gambit: von Popiel Gambit",
+    "id": 214,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/6B1/3Pp3/2N5/PPP2PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e4 d5e4 b1c3 g8f6 c1g5 c8f5 g5f6 e7f6 g2g4 f5g6 d1e2 f8b4 e2b5",
+    "name": "Blackmar-Diemer Gambit: von Popiel Gambit, Zilbermints Variation",
+    "id": 215,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qk2r/ppp2ppp/5pb1/1Q6/1b1Pp1P1/2N5/PPP2P1P/R3KBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3 g8f6 e2e4 e7e5",
+    "name": "Blackmar-Diemer, Lemberger Countergambit",
+    "id": 3325,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/5n2/3pp3/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5",
+    "name": "Queen's Pawn Game",
+    "id": 1583,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e3",
+    "name": "Queen's Pawn Game",
+    "id": 3488,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/4P3/PPP2PPP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e3 g8f6",
+    "name": "Queen's Pawn Game",
+    "id": 3489,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4P3/PPP2PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3",
+    "name": "Queen's Pawn Game: Chigorin Variation",
+    "id": 1615,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 e2e4 f6e4",
+    "name": "Queen's Pawn Game: Huebsch Gambit",
+    "id": 1584,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/8/3p4/3Pn3/2N5/PPP2PPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 c1g5",
+    "name": "Queen's Pawn Game: Levitsky Attack",
+    "id": 1587,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p2B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 g1f3 c7c6 c1g5 h7h6 g5h4 d8b6",
+    "name": "Queen's Pawn Game: Levitsky Attack, Euwe Variation, Modern Line",
+    "id": 1588,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kbnr/pp2ppp1/1qp4p/3p4/3P3B/5N2/PPP1PPPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 c1g5 c8g4",
+    "name": "Queen's Pawn Game: Levitsky Attack, Welling Variation",
+    "id": 1589,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p2B1/3P2b1/8/PPP1PPPP/RN1QKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 c1f4",
+    "name": "Queen's Pawn Game: Mason Attack",
+    "id": 1591,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 c1f4 c7c5 e2e4",
+    "name": "Queen's Pawn Game: Morris Countergambit",
+    "id": 1592,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/3PPB2/8/PPP2PPP/RN1QKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 c1f4 c7c5",
+    "name": "Queen's Pawn Game: Steinitz Countergambit",
+    "id": 1597,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/3P1B2/8/PPP1PPPP/RN1QKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 e2e3 g8f6 f1d3",
+    "name": "Queen's Pawn Game: Stonewall Attack",
+    "id": 1598,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/3BP3/PPP2PPP/RNBQK1NR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3 c8f5",
+    "name": "Queen's Pawn Game: Veresov Attack, Alburt Defense",
+    "id": 1606,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3 c8g4",
+    "name": "Queen's Pawn Game: Veresov Attack, Anti-Veresov",
+    "id": 1616,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p4/3P2b1/2N5/PPP1PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g7g6 g1f3 f8g7 b1c3 d7d5",
+    "name": "Queen's Pawn Game: Veresov Attack, Fianchetto Defense",
+    "id": 1610,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/ppp1ppbp/6p1/3p4/3P4/2N2N2/PPP1PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3 e7e5",
+    "name": "Queen's Pawn Game: Veresov Attack, Shaviliuk Gambit",
+    "id": 1612,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3 h7h5",
+    "name": "Queen's Pawn Game: Veresov Attack, Shropshire Defense",
+    "id": 1613,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1ppp1/8/3p3p/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 g2g4",
+    "name": "Queen's Pawn Game: Zurich Gambit",
+    "id": 1622,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P2P1/8/PPP1PP1P/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 d7d5 b1c3 c7c5",
+    "name": "Queen's Pawn Opening: Veresov Attack, Irish Gambit",
+    "id": 1624,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 f2f3 d7d5 b1c3",
+    "name": "Queen's Pawn Opening: Veresov, Richter Attack",
+    "id": 2874,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2N2P2/PPP1P1PP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D00",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 c7c5 g5f6 g7f6 e2e4 d5e4 d4d5",
+    "name": "Veresov Opening: Malich Gambit",
+    "id": 2625,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pp1p/5p2/2pP4/4p3/2N5/PPP2PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5",
+    "name": "Queen's Pawn Game: Chigorin Variation",
+    "id": 3490,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 f6e4",
+    "name": "Queen's Pawn Game: Veresov Attack, Boyce Defense",
+    "id": 1607,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/8/3p2B1/3Pn3/2N5/PPP1PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 g1f3 e7e6 b1c3 d7d5 c1g5",
+    "name": "Queen's Pawn Game: Veresov Attack, Classical Defense",
+    "id": 1608,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/3P4/2N2N2/PPP1PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 c8f5 f2f3",
+    "name": "Queen's Pawn Game: Veresov Attack, Richter Variation",
+    "id": 1611,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/3p1bB1/3P4/2N2P2/PPP1P1PP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 b8d7 g1f3",
+    "name": "Queen's Pawn Game: Veresov Attack, Two Knights System",
+    "id": 1617,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppnpppp/5n2/3p2B1/3P4/2N2N2/PPP1PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 b8d7 g1f3 g7g6",
+    "name": "Queen's Pawn Game: Veresov Attack, Two Knights System, Gruenfeld Defense",
+    "id": 1618,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppnpp1p/5np1/3p2B1/3P4/2N2N2/PPP1PPPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 c8f5 g5f6",
+    "name": "Queen's Pawn Game: Veresov Attack, Veresov Variation",
+    "id": 1614,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5B2/3p1b2/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5",
+    "name": "Richter-Veresov Attack",
+    "id": 3326,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D01",
+    "moves": "d2d4 g8f6 b1c3 d7d5 c1g5 c8f5",
+    "name": "Richter-Veresov Attack",
+    "id": 3491,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/3p1bB1/3P4/2N5/PPP1PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 g8f6 g1f3 d7d5 c1f4 c7c5 e2e3 d8b6 b1c3",
+    "name": "London System: Poisoned Pawn Variation",
+    "id": 1273,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kb1r/pp2pppp/1q3n2/2pp4/3P1B2/2N1PN2/PPP2PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 c2c4 c8f5",
+    "name": "Queen's Gambit Refused: Baltic Defense",
+    "id": 1778,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 c2c4 c8f5 b1c3 e7e6 g1f3 b8c6",
+    "name": "Queen's Gambit Refused: Baltic Defense, Pseudo-Chigorin",
+    "id": 1780,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/ppp2ppp/2n1p3/3p1b2/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 c8f5 c2c4 e7e6 b1c3 c7c6",
+    "name": "Queen's Gambit Refused: Baltic Defense, Pseudo-Slav",
+    "id": 1781,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/pp3ppp/2p1p3/3p1b2/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 c2c4 c8f5 d1b3",
+    "name": "Queen's Gambit Refused: Baltic Defense, Queen Attack",
+    "id": 1782,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/1Q6/PP2PPPP/RNB1KBNR b KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 c2c4 c8f5 b1c3 e7e6 d1b3",
+    "name": "Queen's Gambit Refused: Baltic Defense, Queen Attack Deferred",
+    "id": 1783,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp2ppp/4p3/3p1b2/2PP4/1QN5/PP2PPPP/R1B1KBNR b KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "g1f3 d7d5 d2d4 c8g4",
+    "name": "Queen's Pawn Game: Anti-Torre",
+    "id": 1572,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p4/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 g8f6 g1f3 g7g6 b1c3 d7d5 c1f4 f8g7 e2e3 e8g8 f1e2",
+    "name": "Queen's Pawn Game: Barry Attack, Gruenfeld Variation",
+    "id": 1573,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/3P1B2/2N1PN2/PPP1BPPP/R2QK2R b KQ"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 c7c5 g2g3 c5d4 f1g2",
+    "name": "Queen's Pawn Game: Chandler Gambit",
+    "id": 1574,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/3p4/3p4/5NP1/PPP1PPBP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 b8c6",
+    "name": "Queen's Pawn Game: Chigorin Variation",
+    "id": 1575,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 c7c5",
+    "name": "Queen's Pawn Game: Krause Variation",
+    "id": 1586,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c1f4",
+    "name": "Queen's Pawn Game: London System",
+    "id": 1590,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 g7g6 g1f3 f8g7 c1f4 c7c5 c2c3 c5d4 c3d4 d8a5",
+    "name": "Queen's Pawn Game: London System, Pterodactyl Variation",
+    "id": 1093,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q7/3P1B2/5N2/PP2PPPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 g8f6",
+    "name": "Queen's Pawn Game: Symmetrical Variation",
+    "id": 1599,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 g8f6 g2g3",
+    "name": "Queen's Pawn Game: Symmetrical Variation, Pseudo-Catalan",
+    "id": 1600,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c2c4 b7b5",
+    "name": "Queen's Pawn Game: Zilbermints Countergambit",
+    "id": 1619,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p1p1pppp/5n2/1p1p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D02",
+    "moves": "d2d4 d7d5 g1f3",
+    "name": "Queen's Pawn Game: Zukertort Variation",
+    "id": 1620,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D03",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c1g5",
+    "name": "Queen's Pawn Game: Torre Attack",
+    "id": 1601,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p2B1/3P4/5N2/PPP1PPPP/RN1QKB1R b KQkq"
+  },
+  {
+    "eco": "D03",
+    "moves": "d2d4 g8f6 g1f3 e7e6 c1g5 d7d5 e2e3 c7c5 c2c3 d8b6",
+    "name": "Queen's Pawn Game: Torre Attack, Breyer Variation",
+    "id": 1602,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kb1r/pp3ppp/1q2pn2/2pp2B1/3P4/2P1PN2/PP3PPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D03",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c1g5 f6e4",
+    "name": "Queen's Pawn Game: Torre Attack, Gossip Variation",
+    "id": 1603,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/8/3p2B1/3Pn3/5N2/PPP1PPPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D03",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c1g5 g7g6",
+    "name": "Queen's Pawn Game: Torre Attack, Gruenfeld Variation",
+    "id": 1604,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p2B1/3P4/5N2/PPP1PPPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D03",
+    "moves": "d2d4 g8f6 g1f3 g7g6 c1g5 f8g7 b1d2 d7d5 e2e3 e8g8",
+    "name": "Queen's Pawn Game: Torre Attack, Gruenfeld Variation, Main Line",
+    "id": 1605,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p2B1/3P4/4PN2/PPPN1PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D04",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3",
+    "name": "Queen's Pawn Game: Colle System",
+    "id": 1576,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D04",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3 c8f5",
+    "name": "Queen's Pawn Game: Colle System, Anti-Colle",
+    "id": 1578,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/3p1b2/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3 e7e6",
+    "name": "Colle System",
+    "id": 1579,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3 e7e6 f1d3",
+    "name": "Colle System",
+    "id": 1621,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P4/3BPN2/PPP2PPP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 g7g6 g1f3 f8g7 e2e3 c7c5 f1d3 d8a5",
+    "name": "Colle System: Pterodactyl Variation",
+    "id": 1057,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/3P4/3BPN2/PPP2PPP/RNBQK2R w KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "g1f3 c7c5 e2e3 g7g6 d2d4 f8g7 d4c5 d8a5",
+    "name": "Colle System: Rhamphorhynchus Variation",
+    "id": 977,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1P5/8/4PN2/PPP2PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 g7g6 g1f3 f8g7 e2e3 c7c5 f1d3 c5d4 f3d4 d8a5",
+    "name": "Colle System: Siroccopteryx Variation",
+    "id": 1088,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q7/3N4/3BP3/PPP2PPP/RNBQK2R w KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 g8f6 g1f3 e7e6 e2e3 c7c5 f1d3 d7d5 c2c3",
+    "name": "Colle System: Traditional Colle",
+    "id": 1577,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/2PBPN2/PP3PPP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 d7d5 g1f3 c7c5 e2e3 g8f6 b1d2 e7e6 b2b3",
+    "name": "Queen's Pawn Game, Zukertort Variation",
+    "id": 3327,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P2PN2/P1PN1PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 g8f6 g1f3 e7e6 e2e3 c7c5 f1d3 d7d5 b2b3",
+    "name": "Rubinstein Opening",
+    "id": 1595,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P1BPN2/P1P2PPP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 g8f6 g1f3 e7e6 e2e3 c7c5 f1d3 d7d5 b2b3 b8c6 e1g1 f8d6 c1b2 e8g8",
+    "name": "Rubinstein Opening: Bogoljubov Defense",
+    "id": 2908,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/1P1BPN2/PBP2PPP/RN1Q1RK1 w -"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 g8f6 g1f3 e7e6 e2e3 c7c5 f1d3 d7d5 b2b3 b8c6 e1g1 f8e7 c1b2 e8g8",
+    "name": "Rubinstein Opening: Classical Defense",
+    "id": 2909,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/1P1BPN2/PBP2PPP/RN1Q1RK1 w -"
+  },
+  {
+    "eco": "D05",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3 e7e6 f1d3 f8d6 e1g1 e8g8 b2b3 b8d7 c1b2",
+    "name": "Rubinstein Opening: Semi-Slav Defense",
+    "id": 2910,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppn1ppp/3bpn2/3p4/3P4/1P1BPN2/PBP2PPP/RN1Q1RK1 b -"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4",
+    "name": "Queen's Gambit",
+    "id": 1625,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 c7c5 d4c5 d5d4",
+    "name": "Queen's Gambit Refused: Austrian Attack, Salvio Countergambit",
+    "id": 1774,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2P5/2Pp4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 c7c5",
+    "name": "Queen's Gambit Refused: Austrian Defense",
+    "id": 1775,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 c7c5 c4d5 g8f6",
+    "name": "Queen's Gambit Refused: Austrian Defense, Gusev Countergambit",
+    "id": 1776,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2pP4/3P4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 c7c5 c4d5 g8f6 e2e4 f6e4 d4c5 d8a5",
+    "name": "Queen's Gambit Refused: Austrian Defense, Haberditz Variation",
+    "id": 1777,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kb1r/pp2pppp/8/q1PP4/4n3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 b8c6 g1f3 e7e5",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Lazard Gambit",
+    "id": 1790,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/3pp3/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 b8c6 b1c3 d5c4 g1f3 g8f6",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Modern Gambit",
+    "id": 1793,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/ppp1pppp/2n2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 b8c6 b1c3 e7e5",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Tartakower Gambit",
+    "id": 1794,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/3pp3/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 g8f6",
+    "name": "Queen's Gambit Refused: Marshall Defense",
+    "id": 1795,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 g8f6 c4d5 c7c6",
+    "name": "Queen's Gambit Refused: Marshall Defense, Tan Gambit",
+    "id": 1796,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3P4/3P4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D06",
+    "moves": "d2d4 d7d5 c2c4 b7b5",
+    "name": "Queen's Gambit Refused: Zilbermints Gambit",
+    "id": 1797,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/p1p1pppp/8/1p1p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6",
+    "name": "Queen's Gambit Refused: Chigorin Defense",
+    "id": 1786,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 b1c3",
+    "name": "Queen's Gambit Refused: Chigorin Defense",
+    "id": 3492,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 b1c3 d5c4",
+    "name": "Queen's Gambit Refused: Chigorin Defense",
+    "id": 3493,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/8/2pP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 c4d5 d8d5",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Exchange Variation",
+    "id": 1787,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kbnr/ppp1pppp/2n5/3q4/3P4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 c4d5 d8d5 e2e3 e7e5 b1c3 f8b4 c1d2 b4c3 d2c3 e5d4 g1e2",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Exchange Variation, Costa's Line",
+    "id": 1788,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1k1nr/ppp2ppp/2n5/3q4/3p4/2B1P3/PP2NPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 b1c3 d5c4 g1f3",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Janowski Variation",
+    "id": 1789,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 g1f3 c8g4",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Main Line",
+    "id": 1791,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/ppp1pppp/2n5/3p4/2PP2b1/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D07",
+    "moves": "d2d4 d7d5 c2c4 b8c6 g1f3 c8g4 d1a4",
+    "name": "Queen's Gambit Refused: Chigorin Defense, Main Line, Alekhine Variation",
+    "id": 1792,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/ppp1pppp/2n5/3p4/Q1PP2b1/5N2/PP2PPPP/RNB1KB1R b KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 b1d2 d8e7",
+    "name": "Queen's Gambit Declined: Albin Countergambit, Balogh Variation",
+    "id": 3330,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kbnr/ppp1qppp/2n5/4P3/2Pp4/5N2/PP1NPPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 b1d2 f7f6",
+    "name": "Queen's Gambit Declined: Albin Countergambit, Janowski Variation",
+    "id": 3329,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp3pp/2n2p2/4P3/2Pp4/5N2/PP1NPPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 b1d2 c8g4 h2h3 g4f3 d2f3 f8b4 c1d2 d8e7",
+    "name": "Queen's Gambit Declined: Albin Countergambit, Krenosz Variation",
+    "id": 3328,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r3k1nr/ppp1qppp/2n5/4P3/1bPp4/5N1P/PP1BPPP1/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5",
+    "name": "Queen's Gambit Refused: Albin Countergambit",
+    "id": 1765,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 e2e3 f8b4 c1d2 d4e3",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Lasker Trap",
+    "id": 1771,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/ppp2ppp/8/4P3/1bP5/4p3/PP1B1PPP/RN1QKBNR w KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Normal Line",
+    "id": 1772,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4P3/2Pp4/5N2/PP2PPPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D08",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 c7c5",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Tartakower Defense",
+    "id": 1773,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/8/2p1P3/2Pp4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D09",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 g2g3",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Fianchetto Variation",
+    "id": 1767,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/4P3/2Pp4/5NP1/PP2PP1P/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D09",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 g2g3 c8e6",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Fianchetto Variation, Be6 Line",
+    "id": 1768,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/ppp2ppp/2n1b3/4P3/2Pp4/5NP1/PP2PP1P/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D09",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 g2g3 c8f5",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Fianchetto Variation, Bf5 Line",
+    "id": 1769,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/ppp2ppp/2n5/4Pb2/2Pp4/5NP1/PP2PP1P/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D09",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 g2g3 c8g4",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Fianchetto Variation, Bg4 Line",
+    "id": 1770,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/ppp2ppp/2n5/4P3/2Pp2b1/5NP1/PP2PP1P/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D09",
+    "moves": "d2d4 d7d5 c2c4 e7e5 d4e5 d5d4 g1f3 b8c6 b1d2",
+    "name": "Queen's Gambit Refused: Albin Countergambit, Modern Line",
+    "id": 2917,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/4P3/2Pp4/5N2/PP1NPPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6",
+    "name": "Slav Defense",
+    "id": 2330,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3",
+    "name": "Slav Defense",
+    "id": 3494,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 d5c4",
+    "name": "Slav Defense",
+    "id": 3495,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/2pP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6 c4d5",
+    "name": "Slav Defense: Exchange Variation",
+    "id": 2323,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 d5c4 e2e4",
+    "name": "Slav Defense: Slav Gambit, Alekhine Attack",
+    "id": 2336,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/2pPP3/2N5/PP3PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 e7e5",
+    "name": "Slav Defense: Winawer Countergambit",
+    "id": 2343,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p5/3pp3/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D10",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 e7e5 e2e4",
+    "name": "Slav Defense: Winawer Countergambit, Anti-Winawer Gambit",
+    "id": 2344,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p5/3pp3/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D11",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 c1g5",
+    "name": "Slav Defense: Bonet Gambit",
+    "id": 2308,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p2B1/2PP4/5N2/PP2PPPP/RN1QKB1R b KQkq"
+  },
+  {
+    "eco": "D11",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1d2",
+    "name": "Slav Defense: Breyer Variation",
+    "id": 2309,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP1NPPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D11",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6",
+    "name": "Slav Defense: Modern",
+    "id": 3496,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D11",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3",
+    "name": "Slav Defense: Modern Line",
+    "id": 2331,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D11",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3",
+    "name": "Slav Defense: Quiet Variation",
+    "id": 2332,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D12",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3 c8f5 c2c4 c7c6 c4d5 c6d5 b1c3 e7e6 f3e5 f6d7",
+    "name": "Queen's Gambit Declined: Slav, Amsterdam Variation",
+    "id": 3332,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp1n1ppp/4p3/3pNb2/3P4/2N1P3/PP3PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D12",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 c8f5 c4d5 c6d5 d1b3 d8c8 c1d2 e7e6 b1a3",
+    "name": "Queen's Gambit Declined: Slav, Landau Variation",
+    "id": 3331,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnq1kb1r/pp3ppp/4pn2/3p1b2/3P4/NQ2PN2/PP1B1PPP/R3KB1R b KQkq"
+  },
+  {
+    "eco": "D12",
+    "moves": "d2d4 d7d5 g1f3 g8f6 e2e3 c8f5 c2c4 c7c6 c4d5 c6d5 b1c3",
+    "name": "Slav Defense: Exchange Variation, Schallopp Variation",
+    "id": 2325,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/5n2/3p1b2/3P4/2N1PN2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D12",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 c8g4",
+    "name": "Slav Defense: Quiet Variation, Pin Defense",
+    "id": 2333,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/3p4/2PP2b1/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D12",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 c8f5",
+    "name": "Slav Defense: Quiet Variation, Schallopp Defense",
+    "id": 2334,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/3p1b2/2PP4/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D13",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 c4d5 c6d5",
+    "name": "Slav Defense: Exchange Variation",
+    "id": 2324,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/5n2/3p4/3P4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D14",
+    "moves": "d2d4 d7d5 c2c4 c7c6 c4d5 c6d5 b1c3 g8f6 g1f3 b8c6 c1f4 c8f5",
+    "name": "Slav Defense: Exchange Variation, Symmetrical Line",
+    "id": 2326,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pp2pppp/2n2n2/3p1b2/3P1B2/2N2N2/PP2PPPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D14",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 c4d5 c6d5 b1c3 b8c6 c1f4 c8f5 e2e3 e7e6 d1b3 f8b4",
+    "name": "Slav Defense: Exchange Variation, Trifunovic Variation",
+    "id": 2327,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qk2r/pp3ppp/2n1pn2/3p1b2/1b1P1B2/1QN1PN2/PP3PPP/R3KB1R w KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 e2e3",
+    "name": "Slav Defense: Alekhine Variation",
+    "id": 2307,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 a7a6",
+    "name": "Slav Defense: Chameleon Variation",
+    "id": 2310,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p2pppp/p1p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 a7a6 c4c5",
+    "name": "Slav Defense: Chameleon Variation, Advance System",
+    "id": 2311,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p2pppp/p1p2n2/2Pp4/3P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 e2e4 b7b5 e4e5",
+    "name": "Slav Defense: Geller Gambit",
+    "id": 2328,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p3pppp/2p2n2/1p2P3/2pP4/2N2N2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 e2e4",
+    "name": "Slav Defense: Geller Gambit",
+    "id": 2329,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 g7g6",
+    "name": "Slav Defense: Schlechter Variation",
+    "id": 2335,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pp1p/2p2np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d8b6",
+    "name": "Slav Defense: Suechting Variation",
+    "id": 2340,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kb1r/pp2pppp/1qp2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3",
+    "name": "Slav Defense: Three Knights Variation",
+    "id": 2341,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D15",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4",
+    "name": "Slav Defense: Two Knights Attack",
+    "id": 2342,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D16",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 b8a6 e2e4 c8g4",
+    "name": "Queen's Gambit Declined: Slav, Smyslov Variation",
+    "id": 3333,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pp2pppp/n1p2n2/8/P1pPP1b1/2N2N2/1P3PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D16",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4",
+    "name": "Slav Defense: Alapin Variation",
+    "id": 2305,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D16",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 b8a6",
+    "name": "Slav Defense: Smyslov Variation",
+    "id": 2337,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp2pppp/n1p2n2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D16",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 e7e6",
+    "name": "Slav Defense: Soultanbeieff Variation",
+    "id": 2338,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D16",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8g4",
+    "name": "Slav Defense: Steiner Variation",
+    "id": 2339,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/8/P1pP2b1/2N2N2/1P2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5",
+    "name": "Slav Defense: Czech Variation",
+    "id": 2312,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3h4",
+    "name": "Slav Defense: Czech Variation, Bled Attack",
+    "id": 2313,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP3N/2N5/1P2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3e5 b8d7 e5c4 d8c7 g2g3 e7e5",
+    "name": "Slav Defense: Czech Variation, Carlsbad Variation",
+    "id": 2314,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r3kb1r/ppqn1ppp/2p2n2/4pb2/P1NP4/2N3P1/1P2PP1P/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3e5 b8d7 e5c4 d8c7 g2g3 e7e5 d4e5 d7e5 c1f4 f6d7 f1g2 g7g5",
+    "name": "Slav Defense: Czech Variation, Carlsbad Variation, Morozevich Variation",
+    "id": 2931,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r3kb1r/ppqn1p1p/2p5/4nbp1/P1N2B2/2N3P1/1P2PPBP/R2QK2R w KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3e5",
+    "name": "Slav Defense: Czech Variation, Krause Attack",
+    "id": 2317,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/4Nb2/P1pP4/2N5/1P2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3e5 b8a6 e2e4",
+    "name": "Slav Defense: Czech Variation, Krause Attack, Fazekas Gambit",
+    "id": 2318,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pp2pppp/n1p2n2/4Nb2/P1pPP3/2N5/1P3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3e5 e7e6",
+    "name": "Slav Defense: Czech Variation, Wiesbaden Variation",
+    "id": 2320,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp3ppp/2p1pn2/4Nb2/P1pP4/2N5/1P2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D17",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 f3e5 e7e6 f2f3 f8b4 e2e4",
+    "name": "Slav Defense: Czech Variation, Wiesbaden Variation, Sharp Line",
+    "id": 2321,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qk2r/pp3ppp/2p1pn2/4Nb2/PbpPP3/2N2P2/1P4PP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D18",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 e2e3",
+    "name": "Slav Defense: Czech Variation, Classical System",
+    "id": 2315,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N1PN2/1P3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D18",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 e2e3 b8a6",
+    "name": "Slav Defense: Czech Variation, Lasker Variation",
+    "id": 2319,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pp2pppp/n1p2n2/5b2/P1pP4/2N1PN2/1P3PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D19",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 e2e3 e7e6 f1c4 f8b4 e1g1",
+    "name": "Queen's Gambit Declined: Slav, Dutch Variation",
+    "id": 3334,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qk2r/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 b kq"
+  },
+  {
+    "eco": "D19",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 e2e3 e7e6 f1c4 f8b4 e1g1 e8g8 d1e2 f6e4 g2g4",
+    "name": "Queen's Gambit Declined: Slav, Dutch, Saemisch Variation",
+    "id": 3335,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pp3ppp/2p1p3/5b2/PbBPn1P1/2N1PN2/1P2QP1P/R1B2RK1 b -"
+  },
+  {
+    "eco": "D19",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 e2e3 e7e6 f1c4 f8b4 e1g1 e8g8 d1e2",
+    "name": "Slav Defense: Czech Variation, Classical System, Main Line",
+    "id": 2316,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P2QPPP/R1B2RK1 b -"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4",
+    "name": "Queen's Gambit Accepted",
+    "id": 1651,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 d1a4",
+    "name": "Queen's Gambit Accepted: Accelerated Mannheim Variation",
+    "id": 1626,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/Q1pP4/8/PP2PPPP/RNB1KBNR b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 g8f6",
+    "name": "Queen's Gambit Accepted: Central Variation, Alekhine System",
+    "id": 1631,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pPP3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 b7b5",
+    "name": "Queen's Gambit Accepted: Central Variation, Greco Variation",
+    "id": 1632,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/p1p1pppp/8/1p6/2pPP3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 e7e5",
+    "name": "Queen's Gambit Accepted: Central Variation, McDonnell Defense",
+    "id": 1634,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/2pPP3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 e7e5 f1c4",
+    "name": "Queen's Gambit Accepted: Central Variation, McDonnell Defense, Somov Gambit",
+    "id": 1633,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/2BPP3/8/PP3PPP/RNBQK1NR b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 b8c6",
+    "name": "Queen's Gambit Accepted: Central Variation, Modern Defense",
+    "id": 1635,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/8/2pPP3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 c7c5",
+    "name": "Queen's Gambit Accepted: Central Variation, Rubinstein Defense",
+    "id": 1636,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/2pPP3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 c7c5 d4d5 b7b5",
+    "name": "Queen's Gambit Accepted: Central Variation, Rubinstein Defense, Yefimov Gambit",
+    "id": 1637,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/p3pppp/8/1ppP4/2p1P3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 c7c5 d4d5 g8f6 b1c3 b7b5",
+    "name": "Queen's Gambit Accepted: Linares Variation",
+    "id": 1658,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p3pppp/5n2/1ppP4/2p1P3/2N5/PP3PPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e3",
+    "name": "Queen's Gambit Accepted: Old Variation",
+    "id": 1663,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/4P3/PP3PPP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e3 e7e5 f1c4 e5d4 d1b3 d8e7 a2a3",
+    "name": "Queen's Gambit Accepted: Old Variation, Billinger Gambit",
+    "id": 1664,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kbnr/ppp1qppp/8/8/2Bp4/PQ2P3/1P3PPP/RNB1K1NR b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e3 e7e5 f1c4 e5d4 d1b3 d8e7 g1f3",
+    "name": "Queen's Gambit Accepted: Old Variation, Christensen Gambit",
+    "id": 1665,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kbnr/ppp1qppp/8/8/2Bp4/1Q2PN2/PP3PPP/RNB1K2R b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e3 e7e5 f1c4 e5d4 d1b3 d8e7 e1f1",
+    "name": "Queen's Gambit Accepted: Old Variation, Korchnoi Gambit",
+    "id": 1666,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kbnr/ppp1qppp/8/8/2Bp4/1Q2P3/PP3PPP/RNB2KNR b kq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e3 e7e5 f1c4 e5d4 d1b3 d8e7 b1d2",
+    "name": "Queen's Gambit Accepted: Old Variation, Novikov Gambit",
+    "id": 1667,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kbnr/ppp1qppp/8/8/2Bp4/1Q2P3/PP1N1PPP/R1B1K1NR b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4",
+    "name": "Queen's Gambit Accepted: Saduleto Variation",
+    "id": 1669,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pPP3/8/PP3PPP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D20",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e4 f7f5",
+    "name": "Queen's Gambit Accepted: Schwartz Defense",
+    "id": 3336,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1p1pp/8/5p2/2pPP3/8/PP3PPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D21",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 a7a6 e2e4",
+    "name": "Queen's Gambit Accepted: Alekhine Defense, Borisenko-Furman Variation",
+    "id": 1628,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/1pp1pppp/p7/8/2pPP3/5N2/PP3PPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D21",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 b8d7",
+    "name": "Queen's Gambit Accepted: Godes Variation",
+    "id": 1653,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/pppnpppp/8/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D21",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 c7c5",
+    "name": "Queen's Gambit Accepted: Gunsberg Defense",
+    "id": 1654,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D21",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3",
+    "name": "Queen's Gambit Accepted: Normal Variation",
+    "id": 1660,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/5N2/PP2PPPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D21",
+    "moves": "d2d4 d7d5 g1f3 e7e6 c2c4 d5c4",
+    "name": "Queen's Gambit Accepted: Rosenthal Variation",
+    "id": 1668,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D21",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 b7b5",
+    "name": "Queen's Gambit Accepted: Slav Gambit",
+    "id": 1671,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/p1p1pppp/8/1p6/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D22",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 a7a6",
+    "name": "Queen's Gambit Accepted: Alekhine Defense",
+    "id": 1627,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/1pp1pppp/p7/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D22",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 a7a6 e2e3 b7b5",
+    "name": "Queen's Gambit Accepted: Alekhine Defense, Haberditz Variation",
+    "id": 1629,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/2p1pppp/p7/1p6/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D22",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 a7a6 e2e3 c8g4 f1c4 e7e6 d4d5",
+    "name": "Queen's Gambit Accepted: Alekhine Defense: Alatortsev Variation",
+    "id": 3337,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkbnr/1pp2ppp/p3p3/3P4/2B3b1/4PN2/PP3PPP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D23",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6",
+    "name": "Queen's Gambit Accepted",
+    "id": 1652,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D23",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 d1a4",
+    "name": "Queen's Gambit Accepted: Mannheim Variation",
+    "id": 1659,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/Q1pP4/5N2/PP2PPPP/RNB1KB1R b KQkq"
+  },
+  {
+    "eco": "D24",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 b1c3 a7a6 e2e4",
+    "name": "Queen's Gambit Accepted: Bogoljubov Defense",
+    "id": 1630,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1pp1pppp/p4n2/8/2pPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D24",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 b1c3 c7c5 d4d5 e7e6 e2e4 e6d5 e4e5",
+    "name": "Queen's Gambit Accepted: Gunsberg Defense, Prianishenmo Gambit",
+    "id": 1655,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/5n2/2ppP3/2p5/2N2N2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D24",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 b1c3",
+    "name": "Queen's Gambit Accepted: Showalter Variation",
+    "id": 1670,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D25",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 c8g4",
+    "name": "Queen's Gambit Accepted: Janowski-Larsen Variation",
+    "id": 1657,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/8/2pP2b1/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D25",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3",
+    "name": "Queen's Gambit Accepted: Normal Variation",
+    "id": 1661,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/4PN2/PP3PPP/RNBQKB1R b KQkq"
+  },
+  {
+    "eco": "D25",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 g7g6",
+    "name": "Queen's Gambit Accepted: Smyslov Variation",
+    "id": 1672,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D25",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 c8e6",
+    "name": "Queen's Gambit Accepted: Winawer Defense",
+    "id": 1673,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/ppp1pppp/4bn2/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D26",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5",
+    "name": "Queen's Gambit Accepted: Classical Defense",
+    "id": 1638,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQK2R w KQkq"
+  },
+  {
+    "eco": "D26",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1",
+    "name": "Queen's Gambit Accepted: Classical Defense, Normal Line",
+    "id": 1644,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 b kq"
+  },
+  {
+    "eco": "D26",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 b8c6",
+    "name": "Queen's Gambit Accepted: Classical Defense, Steinitz Variation, Development Variation",
+    "id": 1647,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp3ppp/2n1pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 w kq"
+  },
+  {
+    "eco": "D26",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 c5d4",
+    "name": "Queen's Gambit Accepted: Classical Defense, Steinitz Variation, Exchange Variation",
+    "id": 1648,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/8/2Bp4/4PN2/PP3PPP/RNBQ1RK1 w kq"
+  },
+  {
+    "eco": "D26",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 d1e2 a7a6 d4c5 f8c5 e1g1 b8c6 e3e4 b7b5 e4e5",
+    "name": "Queen's Gambit Accepted: Classical, Furman Variation",
+    "id": 3338,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/5ppp/p1n1pn2/1pb1P3/2B5/5N2/PP2QPPP/RNB2RK1 b kq"
+  },
+  {
+    "eco": "D26",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6",
+    "name": "Queen's Gambit Accepted: Normal Variation, Traditional System",
+    "id": 1662,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D27",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6",
+    "name": "Queen's Gambit Accepted: Classical Defense, Main Line",
+    "id": 1643,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 w kq"
+  },
+  {
+    "eco": "D27",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 a2a4",
+    "name": "Queen's Gambit Accepted: Classical Defense, Rubinstein Variation",
+    "id": 1645,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/P1BP4/4PN2/1P3PPP/RNBQ1RK1 b kq"
+  },
+  {
+    "eco": "D27",
+    "moves": "d2d4 d7d5 c2c4 d5c4 e2e3 g8f6 f1c4 e7e6 g1f3 c7c5 e1g1 a7a6 e3e4",
+    "name": "Queen's Gambit Accepted: Classical Defense, Russian Gambit",
+    "id": 1646,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BPP3/5N2/PP3PPP/RNBQ1RK1 b kq"
+  },
+  {
+    "eco": "D27",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 d4c5 f8c5",
+    "name": "Queen's Gambit Accepted: Furman Variation",
+    "id": 1650,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/1p3ppp/p3pn2/2b5/2B5/4PN2/PP3PPP/RNBQ1RK1 w kq"
+  },
+  {
+    "eco": "D28",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 d1e2",
+    "name": "Queen's Gambit Accepted: Classical Defense, Alekhine System",
+    "id": 1639,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BP4/4PN2/PP2QPPP/RNB2RK1 b kq"
+  },
+  {
+    "eco": "D28",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 d1e2 b7b5",
+    "name": "Queen's Gambit Accepted: Classical Defense, Alekhine System (Except Main Line)",
+    "id": 1640,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/5ppp/p3pn2/1pp5/2BP4/4PN2/PP2QPPP/RNB2RK1 w kq"
+  },
+  {
+    "eco": "D28",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 d1e2 b7b5 c4b3 b8c6 f1d1 c5c4 b3c2 c6b4 b1c3 b4c2 e2c2 c8b7 d4d5 d8c7",
+    "name": "Queen's Gambit Accepted: Classical, Flohr Variation",
+    "id": 3339,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r3kb1r/1bq2ppp/p3pn2/1p1P4/2p5/2N1PN2/PPQ2PPP/R1BR2K1 w kq"
+  },
+  {
+    "eco": "D29",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 d1e2 b7b5 c4b3 c8b7",
+    "name": "Queen's Gambit Accepted: Classical Defense, Alekhine System, Main Line",
+    "id": 1641,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1qkb1r/1b3ppp/p3pn2/1pp5/3P4/1B2PN2/PP2QPPP/RNB2RK1 w kq"
+  },
+  {
+    "eco": "D29",
+    "moves": "d2d4 d7d5 c2c4 d5c4 g1f3 g8f6 e2e3 e7e6 f1c4 c7c5 e1g1 a7a6 d1e2 b7b5 c4b3 c8b7 f1d1 b8d7 b1c3 f8d6",
+    "name": "Queen's Gambit Accepted: Classical Defense, Alekhine System, Smyslov Variation",
+    "id": 1642,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qk2r/1b1n1ppp/p2bpn2/1pp5/3P4/1BN1PN2/PP2QPPP/R1BR2K1 w kq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 e7e6",
+    "name": "Queen's Gambit Declined",
+    "id": 1688,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 c1g5 h7h6",
+    "name": "Queen's Gambit Declined: Capablanca",
+    "id": 1680,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2pp1/4pn1p/3p2B1/2PP4/5N2/PP2PPPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 g8f6 g1f3 e7e6 c2c4 d7d5 c1g5 c7c6 b1d2 b8d7 e2e3",
+    "name": "Queen's Gambit Declined: Capablanca Variation",
+    "id": 1681,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PP4/4PN2/PP1N1PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 h7h6 g5f6 d8f6 d1b3",
+    "name": "Queen's Gambit Declined: Hastings Variation",
+    "id": 1698,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kb1r/pp3pp1/2p1pq1p/3p4/2PP4/1QN2N2/PP2PPPP/R3KB1R b KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 e7e6 b1d2 b8d7 f1d3 c6c5",
+    "name": "Queen's Gambit Declined: Semmering Variation",
+    "id": 1753,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/4pn2/2pp4/2PP4/3BPN2/PP1N1PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 e7e6 g1f3 g8f6 e2e3 c7c6 b1d2 g7g6",
+    "name": "Queen's Gambit Declined: Spielmann Variation",
+    "id": 3341,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3p1p/2p1pnp1/3p4/2PP4/4PN2/PP1N1PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 e7e6 b1d2 f6e4 f1d3 f7f5",
+    "name": "Queen's Gambit Declined: Stonewall Variation",
+    "id": 3340,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp4pp/2p1p3/3p1p2/2PPn3/3BPN2/PP1N1PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 e7e6 g1f3 c7c5",
+    "name": "Queen's Gambit Declined: Tarrasch Defense, Pseudo-Tarrasch",
+    "id": 1754,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 e7e6 g1f3 c7c5 c4d5 e6d5 c1g5",
+    "name": "Queen's Gambit Declined: Tarrasch Defense, Pseudo-Tarrasch Bishop Attack",
+    "id": 1755,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/8/2pp2B1/3P4/5N2/PP2PPPP/RN1QKB1R b KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 c1g5",
+    "name": "Queen's Gambit Declined: Traditional Variation",
+    "id": 1759,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/5N2/PP2PPPP/RN1QKB1R b KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1g5 h7h6 g5h4 e8g8 a1c1 d5c4",
+    "name": "Queen's Gambit Declined: Uhlmann Variation",
+    "id": 1760,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bpp1/4pn1p/8/2pP3B/2N2N2/PP2PPPP/2RQKB1R w K"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 c1g5 f8b4",
+    "name": "Queen's Gambit Declined: Vienna Variation",
+    "id": 1762,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p2B1/1bPP4/5N2/PP2PPPP/RN1QKB1R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 e7e6 b1d2 b8d7",
+    "name": "Semi-Slav Defense: Quiet Variation",
+    "id": 2000,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/4PN2/PP1N1PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D30",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 e2e3 e7e6 b1d2",
+    "name": "Semi-Slav Defense: Quiet Variation",
+    "id": 2001,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/4PN2/PP1N1PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 e7e6 c2c4 b7b6 b1c3 d7d5",
+    "name": "Queen's Gambit Declined: Alapin Variation",
+    "id": 1674,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/p1p2ppp/1p2p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7",
+    "name": "Queen's Gambit Declined: Charousek (Petrosian) Variation",
+    "id": 1682,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/ppp1bppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 e2e4 d5e4 f2f3",
+    "name": "Queen's Gambit Declined: Charousek (Petrosian) Variation, Miladinovic Gambit",
+    "id": 2740,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/ppp1bppp/4p3/8/2PPp3/2N2P2/PP4PP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 a7a6",
+    "name": "Queen's Gambit Declined: Janowski Variation",
+    "id": 1699,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/1pp2ppp/p3p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3",
+    "name": "Queen's Gambit Declined: Queen's Knight Variation",
+    "id": 1743,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4 a2a4 f8b4 e2e3 b7b5 c1d2 a7a5",
+    "name": "Queen's Gambit Declined: Semi-Slav, Abrahams Variation",
+    "id": 3344,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/5ppp/2p1p3/pp6/PbpP4/2N1PN2/1P1B1PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 g1f3 c7c6 b1c3 d5c4 a2a4 f8b4 e2e3 b7b5 c1d2 d8b6",
+    "name": "Queen's Gambit Declined: Semi-Slav, Junge Variation",
+    "id": 3343,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/p4ppp/1qp1p3/1p6/PbpP4/2N1PN2/1P1B1PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4 e2e3 b7b5 a2a4 f8b4 c1d2 d8e7",
+    "name": "Queen's Gambit Declined: Semi-Slav, Koomen Variation",
+    "id": 3342,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/p3qppp/2p1p3/1p6/PbpP4/2N1PN2/1P1B1PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 c8f5 c4d5 f5b1 d1a4 c7c6 d5c6 b8c6",
+    "name": "Queen's Gambit Refused: Baltic Defense, Argentinian Gambit",
+    "id": 1779,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/pp2pppp/2n5/8/Q2P4/8/PP2PPPP/RbB1KBNR w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6",
+    "name": "Semi-Slav Defense: Accelerated Move Order",
+    "id": 1959,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e3 f7f5 g2g4",
+    "name": "Semi-Slav Defense: Anti-Noteboom, Stonewall Variation, Portisch Gambit",
+    "id": 1961,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp4pp/2p1p3/3p1p2/2PP2P1/2N1P3/PP3P1P/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e4 d5e4 f2f3",
+    "name": "Semi-Slav Defense: Gunderam Gambit",
+    "id": 1971,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/8/2PPp3/2N2P2/PP4PP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e4",
+    "name": "Semi-Slav Defense: Marshall Gambit",
+    "id": 1974,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/3p4/2PPP3/2N5/PP3PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e4 d5e4 c3e4 f8b4 e4c3",
+    "name": "Semi-Slav Defense: Marshall Gambit, Forgotten Variation",
+    "id": 1975,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/pp3ppp/2p1p3/8/1bPP4/2N5/PP3PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e4 d5e4 c3e4 f8b4 c1d2",
+    "name": "Semi-Slav Defense: Marshall Gambit, Main Line",
+    "id": 1976,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/pp3ppp/2p1p3/8/1bPPN3/8/PP1B1PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e4 d5e4 c3e4 f8b4 c1d2 d8d4 d2b4 d4e4 f1e2 c6c5 b4c5 e4g2",
+    "name": "Semi-Slav Defense: Marshall Gambit, Tolush Variation",
+    "id": 1977,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k1nr/pp3ppp/4p3/2B5/2P5/8/PP2BPqP/R2QK1NR w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4",
+    "name": "Semi-Slav Defense: Noteboom Variation",
+    "id": 1994,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4 a2a4 f8b4 e2e3 b4c3 b2c3 b7b5 a4b5 c6b5",
+    "name": "Semi-Slav Defense: Noteboom Variation, Abrahams Variation",
+    "id": 1995,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk1nr/p4ppp/4p3/1p6/2pP4/2P1PN2/5PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4 g2g3",
+    "name": "Semi-Slav Defense: Noteboom Variation, Anti-Noteboom Gambit",
+    "id": 1996,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/8/2pP4/2N2NP1/PP2PP1P/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4 c1g5",
+    "name": "Semi-Slav Defense: Noteboom Variation, Anti-Noteboom Variation",
+    "id": 1998,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/6B1/2pP4/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D31",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 d5c4 c1g5 f7f6",
+    "name": "Semi-Slav Defense: Noteboom Variation, Anti-Noteboom Variation, Belyavsky Line",
+    "id": 1999,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp4pp/2p1pp2/6B1/2pP4/2N2N2/PP2PPPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5",
+    "name": "Queen's Gambit Declined: Tarrasch Defense: 4. cxd5 exd5",
+    "id": 3345,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/8/2pp4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5",
+    "name": "Tarrasch Defense",
+    "id": 2552,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 d4c5 d5d4 c3a4 b7b5",
+    "name": "Tarrasch Defense: Gruenfeld Gambit",
+    "id": 2553,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/p4ppp/2n5/1pP5/N2p4/5N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 e2e4",
+    "name": "Tarrasch Defense: Marshall Gambit",
+    "id": 2554,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/8/2pp4/3PP3/2N5/PP3PPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 c5d4",
+    "name": "Tarrasch Defense: Schara Gambit",
+    "id": 2558,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/4p3/3P4/3p4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 c7c5 e2e3 d7d5 b1c3 b8c6",
+    "name": "Tarrasch Defense: Symmetrical Variation",
+    "id": 2560,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp3ppp/2n1pn2/2pp4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 d4c5 d5d4 c3a4 b7b5",
+    "name": "Tarrasch Defense: Tarrasch Gambit",
+    "id": 2561,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/p4ppp/8/1pP5/N2p4/8/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3",
+    "name": "Tarrasch Defense: Two Knights Variation",
+    "id": 2562,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkbnr/pp3ppp/8/2pp4/3P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D32",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 c5d4 d1d4 b8c6 d4d1 e6d5 d1d5 c8e6",
+    "name": "Tarrasch Defense: von Hennig Gambit",
+    "id": 2563,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkbnr/pp3ppp/2n1b3/3Q4/8/2N5/PP2PPPP/R1B1KBNR w KQkq"
+  },
+  {
+    "eco": "D33",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6",
+    "name": "Tarrasch Defense: Prague Variation",
+    "id": 2555,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp3ppp/2n2n2/2pp4/3P4/2N2NP1/PP2PP1P/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D33",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3",
+    "name": "Tarrasch Defense: Rubinstein System",
+    "id": 2557,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/pp3ppp/2n5/2pp4/3P4/2N2NP1/PP2PP1P/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D33",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 c5c4",
+    "name": "Tarrasch Defense: Swedish Variation",
+    "id": 2559,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/pp3ppp/2n5/3p4/2pP4/2N2NP1/PP2PP1P/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D33",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 c5c4 e2e4",
+    "name": "Tarrasch Defense: Swedish Variation, Central Break",
+    "id": 2830,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkbnr/pp3ppp/2n5/3p4/2pPP3/2N2NP1/PP3P1P/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D33",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 c8g4",
+    "name": "Tarrasch Defense: Wagner Variation",
+    "id": 2564,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pp3ppp/2n2n2/2pp4/3P2b1/2N2NP1/PP2PPBP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 g1f3 c7c5 c4d5 e6d5 g2g3 b8c6 f1g2 g8f6 e1g1 f8e7 b1c3 e8g8 c1g5 c8e6 a1c1 b7b6",
+    "name": "Queen's Gambit Declined: Tarrasch, Stoltz Variation",
+    "id": 3346,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/p3bppp/1pn1bn2/2pp2B1/3P4/2N2NP1/PP2PPBP/2RQ1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8",
+    "name": "Tarrasch Defense: Classical Variation",
+    "id": 2541,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2bppp/2n2n2/2pp4/3P4/2N2NP1/PP2PPBP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5 c5c4",
+    "name": "Tarrasch Defense: Classical Variation, Advance Variation",
+    "id": 2542,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2bppp/2n2n2/3p2B1/2pP4/2N2NP1/PP2PPBP/R2Q1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 c7c5 g1f3 d7d5 c4d5 e6d5 g2g3 b8c6 f1g2 f8e7 e1g1 e8g8 c1g5 c8e6 a1c1 c5c4",
+    "name": "Tarrasch Defense: Classical Variation, Bogoljubov Variation",
+    "id": 2543,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/pp2bppp/2n1bn2/3p2B1/2pP4/2N2NP1/PP2PPBP/2RQ1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5",
+    "name": "Tarrasch Defense: Classical Variation, Carlsbad Variation",
+    "id": 2544,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2bppp/2n2n2/2pp2B1/3P4/2N2NP1/PP2PPBP/R2Q1RK1 b -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5 c5d4 f3d4 h7h6 g5e3 f8e8 a1c1 c8e6",
+    "name": "Tarrasch Defense: Classical Variation, Chandler Variation",
+    "id": 2545,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qr1k1/pp2bpp1/2n1bn1p/3p4/3N4/2N1B1P1/PP2PPBP/2RQ1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 d4c5 d5d4",
+    "name": "Tarrasch Defense: Classical Variation, Classical Tarrasch Gambit",
+    "id": 2546,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2bppp/2n2n2/2P5/3p4/2N2NP1/PP2PPBP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5 c8e6",
+    "name": "Tarrasch Defense: Classical Variation, Endgame Variation",
+    "id": 2547,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/pp2bppp/2n1bn2/2pp2B1/3P4/2N2NP1/PP2PPBP/R2Q1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5 c5d4 f3d4 h7h6 g5e3 f8e8",
+    "name": "Tarrasch Defense: Classical Variation, Main Line",
+    "id": 2548,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqr1k1/pp2bpp1/2n2n1p/3p4/3N4/2N1B1P1/PP2PPBP/R2Q1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5 c5d4 f3d4 f8e8",
+    "name": "Tarrasch Defense: Classical Variation, Petursson Variation",
+    "id": 2549,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqr1k1/pp2bppp/2n2n2/3p2B1/3N4/2N3P1/PP2PPBP/R2Q1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 d4c5 e7c5 c3a4",
+    "name": "Tarrasch Defense: Classical Variation, Reti Variation",
+    "id": 2550,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp3ppp/2n2n2/2bp4/N7/5NP1/PP2PPBP/R1BQ1RK1 b -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7 e1g1 e8g8 c1g5 c5d4 f3d4 h7h6 g5e3 c8g4",
+    "name": "Tarrasch Defense: Classical Variation, Spassky Variation",
+    "id": 2551,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/pp2bpp1/2n2n1p/3p4/3N2b1/2N1B1P1/PP2PPBP/R2Q1RK1 w -"
+  },
+  {
+    "eco": "D34",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 f8e7",
+    "name": "Tarrasch Defense: Prague Variation, Main Line",
+    "id": 2556,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp2bppp/2n2n2/2pp4/3P4/2N2NP1/PP2PPBP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c4d5",
+    "name": "Queen's Gambit Declined: Exchange Variation",
+    "id": 1683,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/2N5/PP2PPPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c4d5 e6d5 c1g5 c7c6",
+    "name": "Queen's Gambit Declined: Exchange Variation, Positional Variation",
+    "id": 1684,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p2n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c4d5 e6d5 c1g5",
+    "name": "Queen's Gambit Declined: Exchange Variation, Positional Variation",
+    "id": 1685,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 b8d7 c4d5 e6d5 c1f4",
+    "name": "Queen's Gambit Declined: Exchange Variation, Saemisch Variation",
+    "id": 1687,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppn1ppp/5n2/3p4/3P1B2/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c4d5 e6d5 c1g5 f8e7 e2e3 e8g8 f1d3 b8d7 d1c2 f8e8 g1e2 d7f8 e1c1",
+    "name": "Queen's Gambit Declined: Exchange, Chameleon Variation",
+    "id": 3347,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqrnk1/ppp1bppp/5n2/3p2B1/3P4/2NBP3/PPQ1NPPP/2KR3R b -"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1f4",
+    "name": "Queen's Gambit Declined: Harrwitz Attack",
+    "id": 1690,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP1B2/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D35",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6",
+    "name": "Queen's Gambit Declined: Normal Defense",
+    "id": 1716,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D36",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c4d5 e6d5 c1g5 c7c6 d1c2",
+    "name": "Queen's Gambit Declined: Exchange Variation, Reshevsky Variation",
+    "id": 1686,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p2n2/3p2B1/3P4/2N5/PPQ1PPPP/R3KBNR b KQkq"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 b8d7",
+    "name": "Queen's Gambit Declined: Barmen Variation",
+    "id": 2823,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppn1ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1f4",
+    "name": "Queen's Gambit Declined: Harrwitz Attack",
+    "id": 1689,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1bppp/4pn2/3p4/2PP1B2/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1f4 e8g8 e2e3 c7c5 d4c5 e7c5 d1c2 b8c6 a2a3 d8a5 e1c1",
+    "name": "Queen's Gambit Declined: Harrwitz Attack",
+    "id": 1693,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp3ppp/2n1pn2/q1bp4/2P2B2/P1N1PN2/1PQ2PPP/2KR1B1R b -"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1f4 e8g8 e2e3 c7c5 d4c5 e7c5 d1c2 b8c6 a1d1 d8a5 a2a3",
+    "name": "Queen's Gambit Declined: Harrwitz Attack",
+    "id": 1694,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp3ppp/2n1pn2/q1bp4/2P2B2/P1N1PN2/1PQ2PPP/3RKB1R b K"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1f4 e8g8 e2e3 b7b6",
+    "name": "Queen's Gambit Declined: Harrwitz Attack, Fianchetto Defense",
+    "id": 1691,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/p1p1bppp/1p2pn2/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1f4 e8g8 e2e3 c7c5 d4c5 e7c5",
+    "name": "Queen's Gambit Declined: Harrwitz Attack, Main Line",
+    "id": 1692,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp3ppp/4pn2/2bp4/2P2B2/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 g1f3 f8e7 c1f4 e8g8 e2e3 c7c6",
+    "name": "Queen's Gambit Declined: Harrwitz Attack, Orthodox Defense",
+    "id": 1695,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2bppp/2p1pn2/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1f4 e8g8 e2e3 b8d7",
+    "name": "Queen's Gambit Declined: Harrwitz Attack, Two Knights Defense",
+    "id": 1696,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 g1f3 f8e7 c1f4 e8g8 e2e3 b8d7 c4c5",
+    "name": "Queen's Gambit Declined: Harrwitz Attack, Two Knights Defense, Blockade Line",
+    "id": 1697,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/2Pp4/3P1B2/2N1PN2/PP3PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D37",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3",
+    "name": "Queen's Gambit Declined: Three Knights Variation",
+    "id": 1758,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D38",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8b4",
+    "name": "Queen's Gambit Declined: Ragozin Defense",
+    "id": 1744,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D38",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8b4 d1a4",
+    "name": "Queen's Gambit Declined: Ragozin Defense, Alekhine Variation",
+    "id": 1745,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/QbPP4/2N2N2/PP2PPPP/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D39",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8b4 c1g5 d5c4",
+    "name": "Queen's Gambit Declined: Ragozin Defense, Vienna Variation",
+    "id": 1746,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp2ppp/4pn2/6B1/1bpP4/2N2N2/PP2PPPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D40",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c5",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense",
+    "id": 1747,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D40",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 g1f3 c7c5 c1g5",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense, Pillsbury Variation",
+    "id": 1750,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp2B1/2PP4/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D40",
+    "moves": "c2c4 g8f6 b1c3 e7e6 g1f3 d7d5 e2e3 c7c5 d2d4 b8c6 f1d3 f8d6 e1g1 e8g8",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense, Symmetrical Variation",
+    "id": 1752,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp3ppp/2nbpn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D40",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 g1f3 c7c5 e2e3 b8c6 f1d3 f8d6 e1g1 e8g8 d1e2 d8e7 d4c5 d6c5 e3e4",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch, Levenfish Variation",
+    "id": 3348,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp2qppp/2n1pn2/2bp4/2P1P3/2NB1N2/PP2QPPP/R1B2RK1 b -"
+  },
+  {
+    "eco": "D41",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c5 c4d5 f6d5 e2e4",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense, Exchange Variation",
+    "id": 1748,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4p3/2pn4/3PP3/2N2N2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D41",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c5 c4d5 f6d5 e2e3",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense, Pillsbury Variation",
+    "id": 1751,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4p3/2pn4/3P4/2N1PN2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D41",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c5 c4d5",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch, 5. cxd5",
+    "id": 3349,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pP4/3P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D41",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 g1f3 c7c5 c4d5 f6d5 e2e4 d5c3 b2c3 c5d4 c3d4 f8b4 c1d2 b4d2 d1d2 e8g8 f1b5",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch, Kmoch Variation",
+    "id": 3350,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp3ppp/4p3/1B6/3PP3/5N2/P2Q1PPP/R3K2R b KQ"
+  },
+  {
+    "eco": "D41",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c4d5 f6d5 e2e4 d5c3 b2c3 c7c5 g1f3 c5d4 c3d4 f8b4 c1d2 d8a5",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch, San Sebastian Variation",
+    "id": 3351,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1k2r/pp3ppp/4p3/q7/1b1PP3/5N2/P2B1PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D42",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c5 c4d5 f6d5 e2e3 b8c6 f1d3",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch Defense, Main Line",
+    "id": 1749,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp3ppp/2n1p3/2pn4/3P4/2NBPN2/PP3PPP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D43",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6",
+    "name": "Semi-Slav Defense",
+    "id": 1970,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 d5c4",
+    "name": "Queen's Gambit Declined: Vienna Variation",
+    "id": 1761,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 d5c4 e2e3",
+    "name": "Queen's Gambit Declined: Vienna Variation, Quiet Variation",
+    "id": 1763,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2pP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 d5c4",
+    "name": "Semi-Slav Defense Accepted",
+    "id": 1958,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/6B1/2pP4/2N2N2/PP2PPPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 h7h6 g5h4",
+    "name": "Semi-Slav Defense: Anti-Moscow Gambit",
+    "id": 1960,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3pp1/2p1pn1p/3p4/2PP3B/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 d5c4 e2e4 b7b5 e4e5 h7h6 g5h4 g7g5 f3g5",
+    "name": "Semi-Slav Defense: Botvinnik System",
+    "id": 1963,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p4p2/2p1pn1p/1p2P1N1/2pP3B/2N5/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c6 c1g5 d5c4 e2e4 b7b5 e4e5 h7h6 g5h4 g7g5 f3g5 f6d5",
+    "name": "Semi-Slav Defense: Botvinnik System, Alatortsev System",
+    "id": 1964,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p4p2/2p1p2p/1p1nP1N1/2pP3B/2N5/PP3PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 d5c4 e2e4 b7b5 e4e5 h7h6 g5h4 g7g5 e5f6 g5h4 f3e5",
+    "name": "Semi-Slav Defense: Botvinnik System, Ekstrom Variation",
+    "id": 1965,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/p4p2/2p1pP1p/1p2N3/2pP3p/2N5/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 d5c4 e2e4 b7b5 e4e5 h7h6 g5h4 g7g5 f3g5 h6g5 h4g5 b8d7 g2g3",
+    "name": "Semi-Slav Defense: Botvinnik System, Lilienthal Variation",
+    "id": 1966,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/p2n1p2/2p1pn2/1p2P1B1/2pP4/2N3P1/PP3P1P/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 c7c6 c1g5 d5c4 e2e4 b7b5 e4e5 h7h6 g5h4 g7g5 f3g5 h6g5 h4g5 b8d7 d1f3",
+    "name": "Semi-Slav Defense: Botvinnik System, Szabo Variation",
+    "id": 1967,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/p2n1p2/2p1pn2/1p2P1B1/2pP4/2N2Q2/PP3PPP/R3KB1R b KQkq"
+  },
+  {
+    "eco": "D44",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 d5c4 e2e4",
+    "name": "Semi-Slav Defense: Botvinnik Variation",
+    "id": 1968,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/6B1/2pPP3/2N2N2/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 a7a6",
+    "name": "Semi-Slav Defense: Accelerated Meran Variation",
+    "id": 1957,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p3ppp/p1p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3",
+    "name": "Semi-Slav Defense: Main Line",
+    "id": 1973,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7",
+    "name": "Semi-Slav Defense: Normal Variation",
+    "id": 1993,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 g1f3 g8f6 e2e3 b8d7 f3e5",
+    "name": "Semi-Slav Defense: Rubinstein (Anti-Meran) System",
+    "id": 2003,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3pN3/2PP4/2N1P3/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 d1c2",
+    "name": "Semi-Slav Defense: Stoltz Variation",
+    "id": 2005,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2N1PN2/PPQ2PPP/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 e2e3 b8d7 d1c2 f8d6 e3e4",
+    "name": "Semi-Slav Defense: Stoltz Variation, Center Variation",
+    "id": 2006,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1n1ppp/2pbpn2/3p4/2PPP3/2N2N2/PPQ2PPP/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 e2e3 b8d7 d1c2 f8d6 e3e4 d5e4 c3e4 f6e4 c2e4 e6e5 d4e5",
+    "name": "Semi-Slav Defense: Stoltz Variation, Center Variation, Mikhalchishin Line",
+    "id": 2007,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1n1ppp/2pb4/4P3/2P1Q3/5N2/PP3PPP/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 e2e3 b8d7 d1c2 f8d6 g2g4",
+    "name": "Semi-Slav Defense: Stoltz Variation, Shabalov Attack",
+    "id": 2008,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1n1ppp/2pbpn2/3p4/2PP2P1/2N1PN2/PPQ2P1P/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D45",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c2c4 c7c6 b1c3 e7e6 e2e3 f6e4 f1d3 f7f5",
+    "name": "Semi-Slav Defense: Stonewall Defense",
+    "id": 2009,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp4pp/2p1p3/3p1p2/2PPn3/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D46",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 f8e7",
+    "name": "Semi-Slav Defense: Bogoljubov Variation",
+    "id": 1962,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1nbppp/2p1pn2/3p4/2PP4/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D46",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 f8d6",
+    "name": "Semi-Slav Defense: Chigorin Defense",
+    "id": 1969,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1n1ppp/2pbpn2/3p4/2PP4/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D46",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3",
+    "name": "Semi-Slav Defense: Main Line",
+    "id": 1972,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2NBPN2/PP3PPP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D46",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 f8b4",
+    "name": "Semi-Slav Defense: Romih Variation",
+    "id": 2002,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1n1ppp/2p1pn2/3p4/1bPP4/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D47",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5",
+    "name": "Semi-Slav Defense: Meran Variation",
+    "id": 1978,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/p2n1ppp/2p1pn2/1p6/2BP4/2N1PN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D47",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 e2e3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 b5b4",
+    "name": "Semi-Slav Defense: Meran Variation, Lundin Variation",
+    "id": 1981,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/p2n1ppp/2p1pn2/8/1p1P4/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D47",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 c8b7",
+    "name": "Semi-Slav Defense: Meran Variation, Wade Variation",
+    "id": 1990,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pb1n1ppp/2p1pn2/1p6/3P4/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D47",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 c8b7 e3e4 b5b4 c3a4 c6c5 e4e5 f6d5 e1g1 c5d4 f3d4",
+    "name": "Semi-Slav Defense: Meran Variation, Wade Variation, Kaidanov Gambit",
+    "id": 1991,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pb1n1ppp/4p3/3nP3/Np1N4/3B4/PP3PPP/R1BQ1RK1 b kq"
+  },
+  {
+    "eco": "D47",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 c8b7 e3e4 b5b4 c3a4 c6c5 e4e5 f6d5",
+    "name": "Semi-Slav Defense: Meran Variation, Wade Variation, Larsen Variation",
+    "id": 1992,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2qkb1r/pb1n1ppp/4p3/2pnP3/Np1P4/3B1N2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D47",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4",
+    "name": "Semi-Slav Defense: Semi-Meran Variation",
+    "id": 2004,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/8/2BP4/2N1PN2/PP3PPP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D48",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5",
+    "name": "Queen's Gambit Declined: Semi-Slav, Meran",
+    "id": 3352,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p3pn2/1pp5/3PP3/2NB1N2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D48",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6",
+    "name": "Semi-Slav Defense: Meran Variation",
+    "id": 1979,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p1p1pn2/1p6/3P4/2NBPN2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D48",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5",
+    "name": "Semi-Slav Defense: Meran Variation, Old Variation",
+    "id": 1982,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p3pn2/1pp1P3/3P4/2NB1N2/PP3PPP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D48",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 c7c6 e2e3 g8f6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 b5b4",
+    "name": "Semi-Slav Defense: Meran Variation, Pirc Variation",
+    "id": 1983,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p1p1pn2/8/1p1PP3/2NB1N2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D48",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 e2e3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 d4d5",
+    "name": "Semi-Slav Defense: Meran Variation, Reynolds' Variation",
+    "id": 1986,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p3pn2/1ppP4/4P3/2NB1N2/PP3PPP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D49",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5 c5d4 c3b5",
+    "name": "Semi-Slav Defense: Meran Variation, Blumenfeld Variation",
+    "id": 1980,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p3pn2/1N2P3/3p4/3B1N2/PP3PPP/R1BQK2R b KQkq"
+  },
+  {
+    "eco": "D49",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5 c5d4 c3b5 f6g4",
+    "name": "Semi-Slav Defense: Meran Variation, Rabinovich Variation",
+    "id": 1984,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/3n1ppp/p3p3/1N2P3/3p2n1/3B1N2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D49",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 g1f3 e7e6 e2e3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5 c5d4 c3b5 d7e5 f3e5 a6b5 e1g1 d8d5 d1e2 c8a6 c1g5",
+    "name": "Semi-Slav Defense: Meran Variation, Rellstab Attack",
+    "id": 1985,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r3kb1r/5ppp/b3pn2/1p1qN1B1/3p4/3B4/PP2QPPP/R4RK1 b kq"
+  },
+  {
+    "eco": "D49",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c2c4 c7c6 b1c3 e7e6 e2e3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5 c5d4 c3b5 d7e5 f3e5 a6b5 e1g1",
+    "name": "Semi-Slav Defense: Meran Variation, Sozin Variation",
+    "id": 1987,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/5ppp/4pn2/1p2N3/3p4/3B4/PP3PPP/R1BQ1RK1 b kq"
+  },
+  {
+    "eco": "D49",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 e2e3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5 c5d4 c3b5 d7e5",
+    "name": "Semi-Slav Defense: Meran Variation, Sozin Variation",
+    "id": 1988,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/5ppp/p3pn2/1N2n3/3p4/3B1N2/PP3PPP/R1BQK2R w KQkq"
+  },
+  {
+    "eco": "D49",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 e7e6 g1f3 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 e4e5 c5d4 c3b5 d7e5 f3e5 a6b5 d1f3",
+    "name": "Semi-Slav Defense: Meran Variation, Stahlberg Variation",
+    "id": 1989,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/5ppp/4pn2/1p2N3/3p4/3B1Q2/PP3PPP/R1B1K2R b KQkq"
+  },
+  {
+    "eco": "D50",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 c7c5",
+    "name": "Queen's Gambit Declined: Been-Koomen Variation",
+    "id": 1678,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D50",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5",
+    "name": "Queen's Gambit Declined: Modern Variation",
+    "id": 1710,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D50",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 c7c5 c4d5",
+    "name": "Queen's Gambit Declined: Pseudo-Tarrasch Variation",
+    "id": 1740,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pP2B1/3P4/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D50",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 c7c5 c4d5 d8b6",
+    "name": "Queen's Gambit Declined: Pseudo-Tarrasch Variation, Canal Variation",
+    "id": 1741,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb1kb1r/pp3ppp/1q2pn2/2pP2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D50",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 c7c5 g1f3 c5d4 d1d4",
+    "name": "Queen's Gambit Declined: Pseudo-Tarrasch Variation, Primitive Pillsbury Variation",
+    "id": 1742,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/3p2B1/2PQ4/2N2N2/PP2PPPP/R3KB1R b KQkq"
+  },
+  {
+    "eco": "D50",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 c7c5 g1f3 c5d4 f3d4 e6e5 d4b5 a7a6 d1a4",
+    "name": "Queen's Gambit Declined: Semi-Tarrasch, Krause Variation",
+    "id": 3353,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/1p3ppp/p4n2/1N1pp1B1/Q1P5/2N5/PP2PPPP/R3KB1R b KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "c2c4 e7e6 b1c3 d7d5 d2d4 g8f6 c1g5 b8d7 g1f3 c7c6 e2e4",
+    "name": "Queen's Gambit Declined: Alekhine Variation",
+    "id": 1675,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PPP3/2N2N2/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 e2e3 c7c6 a2a3",
+    "name": "Queen's Gambit Declined: Capablanca, Anti-Cambridge Springs Variation",
+    "id": 3355,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PP4/P1N1P3/1P3PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 b8d7 c1g5 h7h6 g5h4 d5c4",
+    "name": "Queen's Gambit Declined: Knight Defense, Alekhine Gambit",
+    "id": 1700,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppn1pp1/4pn1p/8/2pP3B/2N2N2/PP2PPPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 e2e3 f8b4",
+    "name": "Queen's Gambit Declined: Manhattan Variation",
+    "id": 1706,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pppn1ppp/4pn2/3p2B1/1bPP4/2N1P3/PP3PPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 e2e3 c7c6",
+    "name": "Queen's Gambit Declined: Modern, Knight Defense",
+    "id": 1707,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7",
+    "name": "Queen's Gambit Declined: Modern, Knight Defense",
+    "id": 1708,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppn1ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 e2e3",
+    "name": "Queen's Gambit Declined: Modern, Knight Defense",
+    "id": 1709,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pppn1ppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 g1f3 c7c6 a1c1 d8a5 g5d2",
+    "name": "Queen's Gambit Declined: Rochlin Variation",
+    "id": 3354,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2p4/2PP4/2N2N2/PP1BPPPP/2RQKB1R b Kkq"
+  },
+  {
+    "eco": "D51",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8b4 c1g5 b8d7 e2e3 c7c5",
+    "name": "Queen's Gambit Declined: Westphalian Variation",
+    "id": 1764,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqk2r/pp1n1ppp/4pn2/2pp2B1/1bPP4/2N1PN2/PP3PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 b8d7 e2e3",
+    "name": "Queen's Gambit Declined",
+    "id": 3356,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 b8d7 e2e3 d8a5 c4d5",
+    "name": "Queen's Gambit Declined: Cambridge Springs Defense: 7. cxd5",
+    "id": 3361,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2P2B1/3P4/2N1PN2/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 e2e3 c7c6 g1f3 d8a5 f3d2 f8b4 d1c2 e8g8 g5h4",
+    "name": "Queen's Gambit Declined: Cambridge Springs Defense: Argentine Variation",
+    "id": 3358,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1n1ppp/2p1pn2/q2p4/1bPP3B/2N1P3/PPQN1PPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 b8d7 e2e3 d8a5 f3d2 f8b4 d1c2",
+    "name": "Queen's Gambit Declined: Cambridge Springs Defense: Bogoljubov Variation",
+    "id": 3357,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1k2r/pp1n1ppp/2p1pn2/q2p2B1/1bPP4/2N1P3/PPQN1PPP/R3KB1R b KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 b8d7 e2e3 c7c6 g1f3 d8a5 g5f6",
+    "name": "Queen's Gambit Declined: Cambridge Springs Defense: Capablanca Variation",
+    "id": 3360,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1pB2/q2p4/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 b8d7 e2e3 d8a5 f3d2 d5c4",
+    "name": "Queen's Gambit Declined: Cambridge Springs Defense: Rubinstein Variation",
+    "id": 3359,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q5B1/2pP4/2N1P3/PP1N1PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 b8d7 e2e3 d8a5 c4d5 f6d5",
+    "name": "Queen's Gambit Declined: Cambridge Springs Defense: Yugoslav Variation",
+    "id": 3362,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1p3/q2n2B1/3P4/2N1PN2/PP3PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D52",
+    "moves": "d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 e7e6 c1g5 b8d7 e2e3 d8a5",
+    "name": "Queen's Gambit Declined: Cambridge Springs Variation",
+    "id": 1679,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQkq"
+  },
+  {
+    "eco": "D53",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7",
+    "name": "Queen's Gambit Declined: 4. Bg5 Be7",
+    "id": 3363,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1bppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D53",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8",
+    "name": "Queen's Gambit Declined: 4. Bg5 Be7, 5. e3 O-O",
+    "id": 3364,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQ"
+  },
+  {
+    "eco": "D53",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c1g5 f8e7 e2e3 f6e4",
+    "name": "Queen's Gambit Declined: Lasker Defense",
+    "id": 1701,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1bppp/4p3/3p2B1/2PPn3/2N1P3/PP3PPP/R2QKBNR w KQkq"
+  },
+  {
+    "eco": "D53",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 d1c2",
+    "name": "Queen's Gambit Declined: Miles Variation",
+    "id": 2856,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N2N2/PPQ1PPPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D53",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 g5f6",
+    "name": "Queen's Gambit Declined: Modern Variation, Heral Variation",
+    "id": 1711,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1bppp/4pB2/3p4/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D54",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c1g5 f8e7 e2e3 e8g8 a1c1",
+    "name": "Queen's Gambit Declined: Neo-Orthodox Variation",
+    "id": 1713,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/2RQKBNR b K"
+  },
+  {
+    "eco": "D55",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 h7h6 g5f6",
+    "name": "Queen's Gambit Declined: Anti-Tartakower Variation",
+    "id": 1676,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bpp1/4pB1p/3p4/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D55",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 h7h6 g5f6 e7f6 e2e3 e8g8 a1c1 c7c6 f1d3 b8d7 e1g1 d5c4 d3c4",
+    "name": "Queen's Gambit Declined: Anti-Tartakower Variation, Petrosian Variation",
+    "id": 1677,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1n1pp1/2p1pb1p/8/2BP4/2N1PN2/PP3PPP/2RQ1RK1 b -"
+  },
+  {
+    "eco": "D55",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3",
+    "name": "Queen's Gambit Declined: Modern Variation, Normal Line",
+    "id": 1712,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D55",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 h7h6",
+    "name": "Queen's Gambit Declined: Neo-Orthodox Variation",
+    "id": 1714,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bpp1/4pn1p/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D55",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 h7h6 g5h4 e8g8 e2e3",
+    "name": "Queen's Gambit Declined: Neo-Orthodox Variation, Main Line",
+    "id": 1715,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bpp1/4pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D55",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 b7b6 b1c3 d7d5 c4d5 e6d5 c1g5 f8e7 e2e3 e8g8 f1d3 c8b7 f3e5",
+    "name": "Queen's Gambit Declined: Pillsbury Attack",
+    "id": 1739,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pbp1bppp/1p3n2/3pN1B1/3P4/2NBP3/PP3PPP/R2QK2R b KQ"
+  },
+  {
+    "eco": "D56",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1g5 h7h6 g5h4 e8g8 e2e3 f6e4",
+    "name": "Queen's Gambit Declined: Lasker Defense",
+    "id": 1702,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1bpp1/4p2p/3p4/2PPn2B/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D56",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 h7h6 g5h4 e8g8 e2e3 f6e4 h4e7 d8e7 d1c2",
+    "name": "Queen's Gambit Declined: Lasker Defense, Teichmann Variation",
+    "id": 1705,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/ppp1qpp1/4p2p/3p4/2PPn3/2N1PN2/PPQ2PPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D56",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 h7h6 g5h4 f6e4 h4e7 d8e7 d1c2 e4f6 f1d3 d5c4 d3c4 c7c5 e1g1 b8c6 f1d1 c8d7",
+    "name": "Queen's Gambit Declined: Lasker Defense: Russian Variation",
+    "id": 3365,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r4rk1/pp1bqpp1/2n1pn1p/2p5/2BP4/2N1PN2/PPQ2PPP/R2R2K1 w -"
+  },
+  {
+    "eco": "D57",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c1g5 f8e7 e2e3 h7h6 g5h4 e8g8 g1f3 f6e4 h4e7 d8e7 c4d5 e4c3 b2c3 e6d5 d1b3 e7d6",
+    "name": "Queen's Gambit Declined: Lasker Defense, Bernstein Variation",
+    "id": 1703,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/ppp2pp1/3q3p/3p4/3P4/1QP1PN2/P4PPP/R3KB1R w KQ"
+  },
+  {
+    "eco": "D57",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 h7h6 g5h4 f6e4 h4e7 d8e7 c4d5 e4c3 b2c3 e6d5 d1b3 f8d8 c3c4 c8e6",
+    "name": "Queen's Gambit Declined: Lasker Defense, Bernstein Variation, Mar del Plata Gambit",
+    "id": 1130,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1r2k1/ppp1qpp1/4b2p/3p4/2PP4/1Q2PN2/P4PPP/R3KB1R w KQ"
+  },
+  {
+    "eco": "D57",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1g5 h7h6 g5h4 e8g8 e2e3 f6e4 h4e7 d8e7 c4d5 e4c3 b2c3",
+    "name": "Queen's Gambit Declined: Lasker Defense, Main Line",
+    "id": 1704,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/ppp1qpp1/4p2p/3P4/3P4/2P1PN2/P4PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D57",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1g5 h7h6 g5h4 e8g8 e2e3 b7b6 c4d5 e6d5",
+    "name": "Queen's Gambit Declined: Tartakower Variation, Exchange Variation",
+    "id": 2831,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/p1p1bpp1/1p3n1p/3p4/3P3B/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D58",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 h7h6 g5h4 e8g8 e2e3 b7b6",
+    "name": "Queen's Gambit Declined: Tartakower Defense",
+    "id": 1756,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/p1p1bpp1/1p2pn1p/3p4/2PP3B/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D59",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1g5 h7h6 g5h4 e8g8 e2e3 b7b6 c4d5 f6d5",
+    "name": "Queen's Gambit Declined: Tartakower Defense, Makogonov Exchange Variation",
+    "id": 1757,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/p1p1bpp1/1p2p2p/3n4/3P3B/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D59",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 f8e7 g1f3 g8f6 c1g5 h7h6 g5h4 e8g8 e2e3 b7b6 c4d5 f6d5 h4e7 d8e7 c3d5 e6d5 a1c1 c8e6",
+    "name": "Queen's Gambit Declined: Tartakower Variation",
+    "id": 3366,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn3rk1/p1p1qpp1/1p2b2p/3p4/3P4/4PN2/PP3PPP/2RQKB1R w K"
+  },
+  {
+    "eco": "D60",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7",
+    "name": "Queen's Gambit Declined: Orthodox Defense",
+    "id": 1717,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/R2QKB1R w KQ"
+  },
+  {
+    "eco": "D60",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 f1d3",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Botvinnik Variation",
+    "id": 1719,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/3p2B1/2PP4/2NBPN2/PP3PPP/R2QK2R b KQ"
+  },
+  {
+    "eco": "D60",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c2c4 e7e6 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 d1b3",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rauzer Variation",
+    "id": 1733,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/3p2B1/2PP4/1QN1PN2/PP3PPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D61",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 d1c2",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rubinstein Variation",
+    "id": 1738,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/3p2B1/2PP4/2N1PN2/PPQ2PPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D62",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 d1c2 c7c5 c4d5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rubinstein Variation, Flohr Line",
+    "id": 2842,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/4pn2/2pP2B1/3P4/2N1PN2/PPQ2PPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D63",
+    "moves": "g1f3 d7d5 d2d4 g8f6 c2c4 e7e6 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 b7b6 c4d5 e6d5 f1b5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Capablanca Variation",
+    "id": 1721,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/p1pnbppp/1p3n2/1B1p2B1/3P4/2N1PN2/PP3PPP/2RQK2R b K"
+  },
+  {
+    "eco": "D63",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 a7a6",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Henneberger Variation",
+    "id": 1727,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/1ppnbppp/p3pn2/3p2B1/2PP4/2N1PN2/PP3PPP/2RQKB1R w K"
+  },
+  {
+    "eco": "D63",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Main Line",
+    "id": 1729,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p2B1/2PP4/2N1PN2/PP3PPP/2RQKB1R w K"
+  },
+  {
+    "eco": "D63",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Main Line",
+    "id": 1730,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnbppp/4pn2/3p2B1/2PP4/2N1PN2/PP3PPP/2RQKB1R b K"
+  },
+  {
+    "eco": "D63",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 b7b6 c4d5 e6d5 f1d3",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Pillsbury Variation",
+    "id": 1732,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/p1pnbppp/1p3n2/3p2B1/3P4/2NBPN2/PP3PPP/2RQK2R b K"
+  },
+  {
+    "eco": "D63",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 a7a6 c4d5",
+    "name": "Queen's Gambit Declined: Orthodox Defense: Swiss, Karlsbad Variation",
+    "id": 3367,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/1ppnbppp/p3pn2/3P2B1/3P4/2N1PN2/PP3PPP/2RQKB1R b K"
+  },
+  {
+    "eco": "D64",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 d1c2 a7a6",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rubinstein Attack",
+    "id": 1734,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/1p1nbppp/p1p1pn2/3p2B1/2PP4/2N1PN2/PPQ2PPP/2R1KB1R w K"
+  },
+  {
+    "eco": "D64",
+    "moves": "g1f3 d7d5 d2d4 g8f6 c2c4 e7e6 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 d1c2 f6e4",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rubinstein Attack",
+    "id": 1736,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p2B1/2PPn3/2N1PN2/PPQ2PPP/2R1KB1R w K"
+  },
+  {
+    "eco": "D64",
+    "moves": "d2d4 g8f6 c2c4 e7e6 b1c3 d7d5 g1f3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 a2a3 a7a6 d1c2",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rubinstein Attack",
+    "id": 1737,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/1p1nbppp/p1p1pn2/3p2B1/2PP4/P1N1PN2/1PQ2PPP/2R1KB1R b K"
+  },
+  {
+    "eco": "D64",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 d1c2",
+    "name": "Queen's Gambit Declined: Orthodox Defense: Rubinstein Attack, with Rc1",
+    "id": 3368,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p2B1/2PP4/2N1PN2/PPQ2PPP/2R1KB1R b K"
+  },
+  {
+    "eco": "D65",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c2c4 e7e6 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 d1c2 a7a6 c4d5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Rubinstein Attack",
+    "id": 1735,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/1p1nbppp/p1p1pn2/3P2B1/3P4/2N1PN2/PPQ2PPP/2R1KB1R b K"
+  },
+  {
+    "eco": "D66",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 c7c6 g1f3 f8e7 e2e3 b8d7 a1c1 e8g8 f1d3 d5c4 d3c4 b7b5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Fianchetto Variation",
+    "id": 1726,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/p2nbppp/2p1pn2/1p4B1/2BP4/2N1PN2/PP3PPP/2RQK2R w K"
+  },
+  {
+    "eco": "D66",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3",
+    "name": "Queen's Gambit Declined: Orthodox Defense: Bd3 Line",
+    "id": 3369,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p2B1/2PP4/2NBPN2/PP3PPP/2RQK2R b K"
+  },
+  {
+    "eco": "D67",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7 c3e4",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Alekhine Variation",
+    "id": 1718,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1nqppp/2p1p3/3n4/2BPN3/4PN2/PP3PPP/2RQK2R b K"
+  },
+  {
+    "eco": "D67",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Capablanca System",
+    "id": 1720,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/2p1p3/3n2B1/2BP4/2N1PN2/PP3PPP/2RQK2R w K"
+  },
+  {
+    "eco": "D67",
+    "moves": "d2d4 d7d5 g1f3 g8f6 c2c4 e7e6 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 h2h4",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Janowski Variation",
+    "id": 1728,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp1nbppp/2p1p3/3n2B1/2BP3P/2N1PN2/PP3PP1/2RQK2R b K"
+  },
+  {
+    "eco": "D67",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7 e1g1",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Main Line",
+    "id": 1731,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1nqppp/2p1p3/3n4/2BP4/2N1PN2/PP3PPP/2RQ1RK1 b -"
+  },
+  {
+    "eco": "D67",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7",
+    "name": "Queen's Gambit Declined: Orthodox Defense: Bd3 Line",
+    "id": 3370,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1nqppp/2p1p3/3n4/2BP4/2N1PN2/PP3PPP/2RQK2R w K"
+  },
+  {
+    "eco": "D68",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7 e1g1 d5c3 c1c3 e6e5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Classical Variation",
+    "id": 1722,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1nqppp/2p5/4p3/2BP4/2R1PN2/PP3PPP/3Q1RK1 w -"
+  },
+  {
+    "eco": "D68",
+    "moves": "d2d4 g8f6 c2c4 e7e6 g1f3 d7d5 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7 e1g1 d5c3 c1c3 e6e5 d1c2",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Classical Variation",
+    "id": 1723,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1nqppp/2p5/4p3/2BP4/2R1PN2/PPQ2PPP/5RK1 b -"
+  },
+  {
+    "eco": "D68",
+    "moves": "d2d4 d7d5 c2c4 e7e6 g1f3 g8f6 b1c3 f8e7 c1g5 e8g8 e2e3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7 e1g1 d5c3 c1c3 e6e5 d1b1",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Classical Variation",
+    "id": 1724,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp1nqppp/2p5/4p3/2BP4/2R1PN2/PP3PPP/1Q3RK1 b -"
+  },
+  {
+    "eco": "D69",
+    "moves": "d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7 e2e3 e8g8 g1f3 b8d7 a1c1 c7c6 f1d3 d5c4 d3c4 f6d5 g5e7 d8e7 e1g1 d5c3 c1c3 e6e5 d4e5 d7e5 f3e5 e7e5",
+    "name": "Queen's Gambit Declined: Orthodox Defense, Classical Variation",
+    "id": 1725,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1b2rk1/pp3ppp/2p5/4q3/2B5/2R1P3/PP3PPP/3Q1RK1 w -"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 f2f3",
+    "name": "Gruenfeld Defense: Lutikov Variation",
+    "id": 774,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N2P2/PP2P1PP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 f2f3 c7c5 c4d5 f6d5 c3a4",
+    "name": "Gruenfeld Defense: Lutikov Variation, Murrey Attack",
+    "id": 775,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pp1p/6p1/2pn4/N2P4/5P2/PP2P1PP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 c2c4 g7g6 f2f3",
+    "name": "Indian Game: Anti-Gruenfeld, Alekhine Variation",
+    "id": 816,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/5P2/PP2P1PP/RNBQKBNR b KQkq"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 c2c4 g7g6 f2f3 e7e5",
+    "name": "Indian Game: Anti-Gruenfeld, Alekhine Variation, Leko Gambit",
+    "id": 2714,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pppp1p1p/5np1/4p3/2PP4/5P2/PP2P1PP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g2g3 d7d5",
+    "name": "Neo-Gruenfeld Defense",
+    "id": 1335,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 c2c4 g7g6 f2f3 d7d5",
+    "name": "Neo-Gruenfeld Defense: Goglidze Attack",
+    "id": 1336,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/5P2/PP2P1PP/RNBQKBNR w KQkq"
+  },
+  {
+    "eco": "D70",
+    "moves": "d2d4 g8f6 g1f3 g7g6 c2c4 d7d5",
+    "name": "Neo-Gruenfeld Defense: Non- or Delayed Fianchetto",
+    "id": 1338,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq"
+  },
+  {
+    "eco": "D71",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g2g3 f8g7 f1g2 d7d5 c4d5 f6d5",
+    "name": "Neo-Gruenfeld Defense: Exchange Variation",
+    "id": 1333,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/6p1/3n4/3P4/6P1/PP2PPBP/RNBQK1NR w KQkq"
+  },
+  {
+    "eco": "D72",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g2g3 f8g7 f1g2 d7d5 c4d5 f6d5 e2e4 d5b6 g1e2",
+    "name": "Neo-Gruenfeld Defense: Exchange Variation, with 6. e4",
+    "id": 1334,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/1n4p1/8/3PP3/6P1/PP2NPBP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D73",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g2g3 f8g7 f1g2 d7d5 g1f3",
+    "name": "Neo-Gruenfeld Defense, with 5. Nf3",
+    "id": 1337,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP4/5NP1/PP2PPBP/RNBQK2R b KQkq"
+  },
+  {
+    "eco": "D74",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g1f3 f8g7 g2g3 e8g8 f1g2 d7d5 c4d5 f6d5 e1g1",
+    "name": "Neo-Gruenfeld Defense: Delayed Exchange Variation",
+    "id": 1330,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/6p1/3n4/3P4/5NP1/PP2PPBP/RNBQ1RK1 b -"
+  },
+  {
+    "eco": "D75",
+    "moves": "d2d4 g8f6 g1f3 g7g6 c2c4 f8g7 g2g3 e8g8 f1g2 d7d5 c4d5 f6d5 e1g1 c7c5 d4c5",
+    "name": "Neo-Gruenfeld Defense: Delayed Exchange Variation",
+    "id": 1331,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2ppbp/6p1/2Pn4/8/5NP1/PP2PPBP/RNBQ1RK1 b -"
+  },
+  {
+    "eco": "D75",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 f8g7 g1f3 e8g8 g2g3 d7d5 c4d5 f6d5 f1g2 c7c5 e1g1",
+    "name": "Neo-Gruenfeld Defense: Delayed Exchange Variation",
+    "id": 1332,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2ppbp/6p1/2pn4/3P4/2N2NP1/PP2PPBP/R1BQ1RK1 b -"
+  },
+  {
+    "eco": "D76",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g1f3 f8g7 g2g3 e8g8 f1g2 d7d5 c4d5 f6d5 e1g1 d5b6",
+    "name": "Neo-Gruenfeld Defense: Delayed Exchange Variation",
+    "id": 1329,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/1n4p1/8/3P4/5NP1/PP2PPBP/RNBQ1RK1 w -"
+  },
+  {
+    "eco": "D77",
+    "moves": "d2d4 g8f6 g1f3 g7g6 g2g3 f8g7 f1g2 e8g8 e1g1 d7d5 c2c4",
+    "name": "Neo-Gruenfeld Defense: Classical Variation",
+    "id": 1325,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/5NP1/PP2PPBP/RNBQ1RK1 b -"
+  },
+  {
+    "eco": "D78",
+    "moves": "d2d4 g8f6 g1f3 g7g6 g2g3 f8g7 f1g2 e8g8 e1g1 d7d5 c2c4 d5c4",
+    "name": "Neo-Gruenfeld Defense: Classical Variation, Modern Defense",
+    "id": 1326,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/8/2pP4/5NP1/PP2PPBP/RNBQ1RK1 w -"
+  },
+  {
+    "eco": "D78",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g1f3 f8g7 g2g3 e8g8 f1g2 c7c6 e1g1 d7d5",
+    "name": "Neo-Gruenfeld Defense: Classical Variation, Original Defense",
+    "id": 1327,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2ppbp/2p2np1/3p4/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w -"
+  },
+  {
+    "eco": "D78",
+    "moves": "d2d4 g8f6 g1f3 g7g6 g2g3 f8g7 f1g2 e8g8 e1g1 d7d5 c2c4 b8c6",
+    "name": "Neo-Gruenfeld Defense: Classical Variation, Polgar Variation",
+    "id": 1328,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/ppp1ppbp/2n2np1/3p4/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w -"
+  },
+  {
+    "eco": "D79",
+    "moves": "d2d4 g8f6 c2c4 g7g6 g1f3 f8g7 g2g3 e8g8 f1g2 c7c6 e1g1 d7d5 c4d5 c6d5",
+    "name": "Neo-Gruenfeld Defense: Ultra-delayed Exchange Variation",
+    "id": 1339,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2ppbp/5np1/3p4/3P4/5NP1/PP2PPBP/RNBQ1RK1 w -"
+  },
+  {
+    "eco": "D80",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5",
+    "name": "Gruenfeld Defense",
+    "id": 772,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D80",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g2g4",
+    "name": "Gruenfeld Defense: Gibbon Gambit",
+    "id": 773,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP2P1/2N5/PP2PP1P/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D80",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1g5 f6e4 c3e4 d5e4 d1d2 c7c5",
+    "name": "Gruenfeld Defense: Lundin Variation",
+    "id": 3372,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/pp2pp1p/6p1/2p3B1/2PPp3/8/PP1QPPPP/R3KBNR w KQkq"
+  },
+  {
+    "eco": "D80",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1g5",
+    "name": "Gruenfeld Defense: Stockholm Variation",
+    "id": 3371,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D80",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 h2h4",
+    "name": "Gruenfeld Defense: Zaitsev Gambit",
+    "id": 798,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP3P/2N5/PP2PPP1/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D81",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 d1b3",
+    "name": "Gruenfeld Defense: Russian Variation, Accelerated Variation",
+    "id": 779,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/1QN5/PP2PPPP/R1B1KBNR b KQkq"
+  },
+  {
+    "eco": "D82",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1f4",
+    "name": "Gruenfeld Defense: Brinckmann Attack",
+    "id": 751,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP1B2/2N5/PP2PPPP/R2QKBNR b KQkq"
+  },
+  {
+    "eco": "D83",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1f4 f8g7 e2e3 e8g8",
+    "name": "Gruenfeld Defense: Brinckmann Attack, Gruenfeld Gambit",
+    "id": 752,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP1B2/2N1P3/PP3PPP/R2QKBNR w KQ"
+  },
+  {
+    "eco": "D83",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1f4 f8g7 e2e3 e8g8 a1c1 c7c5 d4c5 c8e6",
+    "name": "Gruenfeld Defense: Brinckmann Attack, Gruenfeld Gambit, Botvinnik Variation",
+    "id": 754,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pp2ppbp/4bnp1/2Pp4/2P2B2/2N1P3/PP3PPP/2RQKBNR w K"
+  },
+  {
+    "eco": "D83",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1f4 f8g7 e2e3 e8g8 a1c1",
+    "name": "Gruenfeld Defense: Brinckmann Attack, Gruenfeld Gambit, Capablanca Variation",
+    "id": 755,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP1B2/2N1P3/PP3PPP/2RQKBNR b K"
+  },
+  {
+    "eco": "D83",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1f4 f8g7 a1c1 e8g8 e2e3 c7c5 d4c5 d8a5",
+    "name": "Gruenfeld Defense: Brinckmann Attack, Reshevsky Gambit",
+    "id": 756,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/pp2ppbp/5np1/q1Pp4/2P2B2/2N1P3/PP3PPP/2RQKBNR w K"
+  },
+  {
+    "eco": "D84",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c1f4 f8g7 e2e3 e8g8 c4d5 f6d5 c3d5 d8d5 f4c7",
+    "name": "Gruenfeld Defense: Brinckmann Attack, Gruenfeld Gambit Accepted",
+    "id": 753,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/ppB1ppbp/6p1/3q4/3P4/4P3/PP3PPP/R2QKBNR b KQ"
+  },
+  {
+    "eco": "D85",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5",
+    "name": "Gruenfeld Defense: Exchange Variation",
+    "id": 758,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/6p1/3n4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq"
+  },
+  {
+    "eco": "D85",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 g1f3",
+    "name": "Gruenfeld Defense: Exchange Variation, Modern Exchange Variation",
+    "id": 761,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/6p1/8/3PP3/2P2N2/P4PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D85",
+    "moves": "d2d4 g8f6 g1f3 g7g6 c2c4 f8g7 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 c7c5 h2h3",
+    "name": "Gruenfeld Defense: Exchange Variation, Modern Exchange Variation, Kramnik's Line",
+    "id": 762,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/pp2ppbp/6p1/2p5/3PP3/2P2N1P/P4PP1/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D85",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 g1f3 c7c5 a1b1 e8g8 f1e2 b8c6 d4d5 g7c3",
+    "name": "Gruenfeld Defense: Exchange Variation, Modern Exchange Variation, Pawn Grab Line",
+    "id": 2935,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2pp1p/2n3p1/2pP4/4P3/2b2N2/P3BPPP/1RBQK2R w K"
+  },
+  {
+    "eco": "D85",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 c3a4",
+    "name": "Gruenfeld Defense: Exchange Variation, Nadanian Attack",
+    "id": 763,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/6p1/3n4/N2P4/8/PP2PPPP/R1BQKBNR b KQkq"
+  },
+  {
+    "eco": "D86",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4",
+    "name": "Gruenfeld Defense: Exchange Variation, Classical Variation",
+    "id": 759,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/6p1/8/2BPP3/2P5/P4PPP/R1BQK1NR b KQkq"
+  },
+  {
+    "eco": "D86",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 e8g8 g1e2 d8d7",
+    "name": "Gruenfeld Defense: Exchange Variation, Larsen Variation",
+    "id": 760,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/pppqppbp/6p1/8/2BPP3/2P5/P3NPPP/R1BQK2R w KQ"
+  },
+  {
+    "eco": "D86",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 e8g8 g1e2 b8c6",
+    "name": "Gruenfeld Defense: Exchange Variation, Simagin's Improved Variation",
+    "id": 765,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/ppp1ppbp/2n3p1/8/2BPP3/2P5/P3NPPP/R1BQK2R w KQ"
+  },
+  {
+    "eco": "D86",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 e8g8 g1e2 d8d7 e1g1 b7b6",
+    "name": "Gruenfeld Defense: Exchange, Larsen Variation",
+    "id": 3373,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnb2rk1/p1pqppbp/1p4p1/8/2BPP3/2P5/P3NPPP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D86",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 e8g8 g1e2 b7b6",
+    "name": "Gruenfeld Defense: Exchange, Simagin's Lesser Variation",
+    "id": 3374,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/p1p1ppbp/1p4p1/8/2BPP3/2P5/P3NPPP/R1BQK2R w KQ"
+  },
+  {
+    "eco": "D87",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 c7c5 g1e2 b8c6 c1e3 e8g8 e1g1 c8g4 f2f3 c6a5 c4f7",
+    "name": "Gruenfeld Defense: Exchange Variation, Seville Variation",
+    "id": 764,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/pp2pBbp/6p1/n1p5/3PP1b1/2P1BP2/P3N1PP/R2Q1RK1 b -"
+  },
+  {
+    "eco": "D87",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 c7c5 g1e2 e8g8",
+    "name": "Gruenfeld Defense: Exchange Variation, Spassky Variation",
+    "id": 768,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2ppbp/6p1/2p5/2BPP3/2P5/P3NPPP/R1BQK2R w KQ"
+  },
+  {
+    "eco": "D88",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 c7c5 g1e2 b8c6 c1e3 e8g8 e1g1 c5d4 c3d4",
+    "name": "Gruenfeld Defense: Exchange Variation, Spassky Variation",
+    "id": 767,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2ppbp/2n3p1/8/2BPP3/4B3/P3NPPP/R2Q1RK1 b -"
+  },
+  {
+    "eco": "D89",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 c7c5 g1e2 e8g8 e1g1 b8c6 c1e3 c8g4 f2f3 c6a5 c4d3 c5d4 c3d4 g4e6 d4d5",
+    "name": "Gruenfeld Defense: Exchange Variation, Sokolsky Variation",
+    "id": 766,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/pp2ppbp/4b1p1/n2P4/4P3/3BBP2/P3N1PP/R2Q1RK1 b -"
+  },
+  {
+    "eco": "D89",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 c4d5 f6d5 e2e4 d5c3 b2c3 f8g7 f1c4 c7c5 g1e2 b8c6 c1e3 e8g8 e1g1 c8g4 f2f3 c6a5 c4d3 c5d4 c3d4 g4e6",
+    "name": "Gruenfeld Defense: Exchange Variation, Spassky Variation",
+    "id": 769,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/pp2ppbp/4b1p1/n7/3PP3/3BBP2/P3N1PP/R2Q1RK1 w -"
+  },
+  {
+    "eco": "D90",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1a4",
+    "name": "Gruenfeld Defense: Flohr Variation",
+    "id": 771,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/Q1PP4/2N2N2/PP2PPPP/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D90",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7",
+    "name": "Gruenfeld Defense: Three Knights Variation",
+    "id": 790,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq"
+  },
+  {
+    "eco": "D90",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3",
+    "name": "Gruenfeld Defense: Three Knights Variation",
+    "id": 3375,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D91",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 c1g5",
+    "name": "Gruenfeld Defense: Three Knights Variation, Petrosian System",
+    "id": 796,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p2B1/2PP4/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D92",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 c1f4",
+    "name": "Gruenfeld Defense: Three Knights Variation, Hungarian Attack",
+    "id": 793,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP1B2/2N2N2/PP2PPPP/R2QKB1R b KQkq"
+  },
+  {
+    "eco": "D93",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 c1f4 e8g8 e2e3",
+    "name": "Gruenfeld Defense: Three Knights Variation, Hungarian Variation",
+    "id": 794,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 g7g6 g1f3 f8g7 f1d3 e8g8 e1g1 c8f5",
+    "name": "Gruenfeld Defense: Flohr Defense",
+    "id": 770,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pp2ppbp/2p2np1/3p1b2/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 e2e3 e8g8 b2b4",
+    "name": "Gruenfeld Defense: Makogonov Variation",
+    "id": 776,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/1PPP4/2N1PN2/P4PPP/R1BQKB1R b KQ"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 e2e3 e8g8 c1d2",
+    "name": "Gruenfeld Defense: Opocensky Variation",
+    "id": 777,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/2N1PN2/PP1B1PPP/R2QKB1R b KQ"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 d7d5 c2c4 c7c6 b1c3 g8f6 e2e3 g7g6 g1f3 f8g7 f1d3 e8g8 e1g1 c8g4",
+    "name": "Gruenfeld Defense: Smyslov Defense",
+    "id": 789,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pp2ppbp/2p2np1/3p4/2PP2b1/2NBPN2/PP3PPP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 e2e3",
+    "name": "Gruenfeld Defense: Three Knights Variation, Burille Variation",
+    "id": 791,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 g8f6 c2c4 c7c5 e2e3 g7g6 b1c3 f8g7 g1f3 e8g8 f1e2 c5d4 e3d4 d7d5 e1g1 b8c6",
+    "name": "Gruenfeld Defense: Three Knights Variation, Burille Variation, Reversed Tarrasch",
+    "id": 792,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pp2ppbp/2n2np1/3p4/2PP4/2N2N2/PP2BPPP/R1BQ1RK1 w -"
+  },
+  {
+    "eco": "D94",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 e2e3 e8g8 f1d3",
+    "name": "Gruenfeld Defense: Three Knights Variation, Paris Variation",
+    "id": 795,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/2NBPN2/PP3PPP/R1BQK2R b KQ"
+  },
+  {
+    "eco": "D95",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 e2e3 e8g8 d1b3 e7e6",
+    "name": "Gruenfeld Defense: Botvinnik Variation",
+    "id": 750,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp2pbp/4pnp1/3p4/2PP4/1QN1PN2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D95",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 e2e3 f8g7 d1b3 d5c4 f1c4 e8g8 g1f3 b8d7 f3g5",
+    "name": "Gruenfeld Defense: Pachman Variation",
+    "id": 3376,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/pppnppbp/5np1/6N1/2BP4/1QN1P3/PP3PPP/R1B1K2R b KQ"
+  },
+  {
+    "eco": "D95",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 e2e3 e8g8 d1b3",
+    "name": "Gruenfeld Defense: Three Knights Variation, Vienna Variation",
+    "id": 797,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/1QN1PN2/PP3PPP/R1B1KB1R b KQ"
+  },
+  {
+    "eco": "D96",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3",
+    "name": "Gruenfeld Defense: Russian Variation",
+    "id": 778,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP4/1QN2N2/PP2PPPP/R1B1KB1R b KQkq"
+  },
+  {
+    "eco": "D97",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 b8c6",
+    "name": "Gruenfeld Defense: Russian Variation, Byrne (Simagin) Variation",
+    "id": 780,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/ppp1ppbp/2n2np1/8/2QPP3/2N2N2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D97",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 a7a6",
+    "name": "Gruenfeld Defense: Russian Variation, Hungarian Variation",
+    "id": 781,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/1pp1ppbp/p4np1/8/2QPP3/2N2N2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D97",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 b7b6",
+    "name": "Gruenfeld Defense: Russian Variation, Levenfish Variation",
+    "id": 782,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/p1p1ppbp/1p3np1/8/2QPP3/2N2N2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D97",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 b8a6",
+    "name": "Gruenfeld Defense: Russian Variation, Prins Variation",
+    "id": 783,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r1bq1rk1/ppp1ppbp/n4np1/8/2QPP3/2N2N2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D97",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 c7c6",
+    "name": "Gruenfeld Defense: Russian Variation, Szabo (Boleslavsky)",
+    "id": 786,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/pp2ppbp/2p2np1/8/2QPP3/2N2N2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D97",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4",
+    "name": "Gruenfeld Defense: Russian Variation, with e4",
+    "id": 787,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/8/2QPP3/2N2N2/PP3PPP/R1B1KB1R b KQ"
+  },
+  {
+    "eco": "D98",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 c8g4",
+    "name": "Gruenfeld Defense: Russian Variation, Smyslov Variation",
+    "id": 784,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/ppp1ppbp/5np1/8/2QPP1b1/2N2N2/PP3PPP/R1B1KB1R w KQ"
+  },
+  {
+    "eco": "D98",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 c8g4 c1e3 f6d7 f1e2 d7b6 c4d3 b8c6 e1c1",
+    "name": "Gruenfeld Defense: Russian, Keres Variation",
+    "id": 3377,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "r2q1rk1/ppp1ppbp/1nn3p1/8/3PP1b1/2NQBN2/PP2BPPP/2KR3R b -"
+  },
+  {
+    "eco": "D99",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 c8g4 c1e3 f6d7 c4b3",
+    "name": "Gruenfeld Defense: Russian Variation, Smyslov Variation",
+    "id": 785,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pppnppbp/6p1/8/3PP1b1/1QN1BN2/PP3PPP/R3KB1R b KQ"
+  },
+  {
+    "eco": "D99",
+    "moves": "d2d4 g8f6 c2c4 g7g6 b1c3 d7d5 g1f3 f8g7 d1b3 d5c4 b3c4 e8g8 e2e4 c8g4 c1e3 f6d7 c4b3 c7c5",
+    "name": "Gruenfeld Defense: Russian Variation, Yugoslav Variation",
+    "id": 788,
+    "class": "Closed Games and Semi-Closed Games",
+    "fen": "rn1q1rk1/pp1nppbp/6p1/2p5/3PP1b1/1QN1BN2/PP3PPP/R3KB1R w KQ"
+  }
+]}
