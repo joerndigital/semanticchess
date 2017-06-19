@@ -1,51 +1,105 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.daug</groupId>
-  <artifactId>semanticchess</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>de.daug</groupId>
+	<artifactId>semanticchess</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>semanticchess</name>
-  <url>http://maven.apache.org</url>
+	<name>semanticchess</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
-	<dependency>
-	    <groupId>edu.stanford.nlp</groupId>
-	    <artifactId>stanford-corenlp</artifactId>
-	    <version>3.7.0</version>
-	</dependency>
-	<dependency>
-	    <groupId>edu.stanford.nlp</groupId>
-	    <artifactId>stanford-corenlp</artifactId>
-	    <version>3.7.0</version>
-	    <classifier>models-english</classifier>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-   <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-api</artifactId>
-       <version>1.7.5</version>
-   </dependency>
-   <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-log4j12</artifactId>
-       <version>1.7.5</version>
-   </dependency>
+	<developers>
+		<developer>
+			<id>jh.daug</id>
+			<name>Joern-Henning Daug</name>
+			<email>jhdaug@googlemail.com</email>
+		</developer>
+	</developers>
 	
-	
-  </dependencies>
-  <description>A questions answering system for chess games.</description>
+	<!-- Repositories -->
+	<repositories>
+		<!-- AKSW internal -->
+		<repository>
+			<id>maven.aksw.internal</id>
+			<name>University Leipzig, AKSW Maven2 Repository</name>
+			<url>http://maven.aksw.org/archiva/repository/internal</url>
+		</repository>
+		<!-- AKSW Snapshots -->
+		<repository>
+			<id>maven.aksw.snapshots</id>
+			<name>University Leipzig, AKSW Maven2 Repository</name>
+			<url>http://maven.aksw.org/archiva/repository/snapshots</url>
+		</repository>
+		<!-- Maven Central -->
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<!-- Dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.8.0</version>
+			<classifier>models-english</classifier>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aksw.qa</groupId>
+			<artifactId>datasets</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aksw.qa</groupId>
+			<artifactId>annotation</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aksw.qa</groupId>
+			<artifactId>commons</artifactId>
+			<version>0.3.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aksw.qa</groupId>
+			<artifactId>hawk</artifactId>
+			<version>0.3.2</version>
+		</dependency>
+	</dependencies>
+
+
+
+
+
+	<description>A questions answering system for chess games.</description>
 </project>

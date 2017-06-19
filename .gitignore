@@ -10,6 +10,9 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+tools/semanticchess/*.out
+tools/semanticchess/*.log
+tools/semanticchess/resources
 
 # External tool builders
 .externalToolBuilders/
