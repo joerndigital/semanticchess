@@ -19,6 +19,12 @@ import java.util.Scanner;
 
 import org.aksw.hawk.datastructures.HAWKQuestion;
 
+/**
+ * @desc Analyzes the input question of the user and finds entities, classes and
+ *       properties
+ * @author jorn-henningdaug
+ *
+ */
 public class Annotations {
 
 	// attributes
@@ -27,12 +33,23 @@ public class Annotations {
 	private HashMap<String, List<String>> queryClasses = null;
 	private HashMap<String, List<String>> queryProperties = null;
 
+	/**
+	 * constructor
+	 * 
+	 * @param query:
+	 *            input question
+	 * @param language:
+	 *            choosen query language
+	 */
 	public Annotations(String query, String language) {
 		this.query = query;
 		this.language = language;
 		// init();
 	}
 
+	/**
+	 * gets entities fox.aksw.org
+	 */
 	public void initFox() {
 		HAWKQuestion q = new HAWKQuestion();
 		q.getLanguageToQuestion().put(this.language, this.query);
@@ -54,6 +71,9 @@ public class Annotations {
 		}
 	}
 
+	/**
+	 * gets classes like 'art' and 'dog'
+	 */
 	private void initIndexDBO_classes() {
 
 		queryClasses = new HashMap<String, List<String>>();
@@ -65,18 +85,21 @@ public class Annotations {
 			queryClasses.put(word, wordClasses);
 		}
 
-		/*
-		 * Iterator it = queryClasses.entrySet().iterator();
-		 * 
-		 * while (it.hasNext()) { HashMap.Entry pair = (HashMap.Entry)
-		 * it.next(); System.out.println(pair.getKey() + " = " +
-		 * pair.getValue()); it.remove(); // avoids a
-		 * ConcurrentModificationException }
-		 */
+		// Iterator it = queryClasses.entrySet().iterator();
+		//
+		// while (it.hasNext()) { HashMap.Entry pair = (HashMap.Entry)
+		// it.next(); System.out.println(pair.getKey() + " = " +
+		// pair.getValue()); it.remove(); // avoids a
+		// ConcurrentModificationException
+		// }
+
 		// https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
 
 	}
 
+	/**
+	 * gets properties like 'win', 'come' and 'can'
+	 */
 	private void initIndexDBO_properties() {
 		queryProperties = new HashMap<String, List<String>>();
 		IndexDBO_properties properties = new IndexDBO_properties();
@@ -98,27 +121,47 @@ public class Annotations {
 		// https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
 	}
 
+	/**
+	 * @return user query
+	 */
 	public String getQuery() {
 		return query;
 	}
 
+	/**
+	 * @return choosen language for analysis
+	 */
 	public String getLanguage() {
 		return language;
 	}
 
+	/**
+	 * @param query:
+	 *            sets a new query
+	 */
 	public void setQuery(String query) {
 		this.query = query;
 	}
 
+	/**
+	 * @param language:
+	 *            seta a new language
+	 */
 	public void setLanguage(String language) {
 		this.language = language;
 	}
 
+	/**
+	 * main method for testing
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
-		Annotations annotate = new Annotations("win can come", "en");
-		//annotate.initIndexDBO_classes();
-		annotate.initIndexDBO_properties();
+		Annotations annotate = new Annotations("Which buildings in art dog style did Shreve, Lamb and Harmon design?",
+				"en");
+		annotate.initIndexDBO_classes();
+		// annotate.initIndexDBO_properties();
 
 	}
 }
