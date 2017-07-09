@@ -12,6 +12,7 @@ import org.aksw.qa.annotation.util.NifEverything;
 import org.aksw.qa.commons.datastructure.Entity;
 import org.apache.jena.rdf.model.Resource;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -32,6 +33,7 @@ public class Annotations {
 	private String language = "";
 	private HashMap<String, List<String>> queryClasses = null;
 	private HashMap<String, List<String>> queryProperties = null;
+	private	List<FoxEntity> foxEntity = new ArrayList<FoxEntity>();
 
 	/**
 	 * constructor
@@ -48,25 +50,39 @@ public class Annotations {
 	}
 
 	/**
-	 * gets entities fox.aksw.org
+	 * gets entities with the help of fox.aksw.org like 'Magnus Carlsen' and ' Viswanathan Anand'
 	 */
 	public void initFox() {
 		HAWKQuestion q = new HAWKQuestion();
+		
 		q.getLanguageToQuestion().put(this.language, this.query);
 		ASpotter fox = new Fox();
 		q.setLanguageToNamedEntites(fox.getEntities(q.getLanguageToQuestion().get(this.language)));
+		
+		
 		for (String key : q.getLanguageToNamedEntites().keySet()) {
-			System.out.println(key);
+			
 			for (Entity entity : q.getLanguageToNamedEntites().get(key)) {
-				System.out.println(
-						"\t" + entity.getLabel() + " ->" + entity.getType() + entity.getPosTypesAndCategories());
+				String label = "";
+				String type = "";
+				List<String> posTypesAndCategories = new ArrayList<String>();
+				List<String> uris = new ArrayList<String>();
+				
+				label = entity.getLabel();
+				type = entity.getType();
+				
+				//System.out.println("\t" + entity.getLabel() + " ->" + entity.getType() + entity.getPosTypesAndCategories());
 				for (Resource r : entity.getPosTypesAndCategories()) {
-
-					System.out.println("\t\tpos: " + r.getLocalName());
+					posTypesAndCategories.add(r.getURI());
+					//System.out.println("===");
+					//System.out.println("\t\tpos: " + r.getLocalName());
 				}
 				for (Resource r : entity.getUris()) {
-					System.out.println("\t\turi: " + r);
+					uris.add(r.getURI());
+					//System.out.println("\t\turi: " + r);
 				}
+				
+				foxEntity.add(new FoxEntity(label,type,posTypesAndCategories,uris));
 			}
 		}
 	}
@@ -160,8 +176,94 @@ public class Annotations {
 
 		Annotations annotate = new Annotations("Which buildings in art dog style did Shreve, Lamb and Harmon design?",
 				"en");
-		annotate.initIndexDBO_classes();
+		//annotate.initIndexDBO_classes();
 		// annotate.initIndexDBO_properties();
+		annotate.initFox();
+		
+		for(FoxEntity fe : annotate.foxEntity){
+			System.out.println(fe.toString());
+			System.out.println("==============");
+		}
+		
 
 	}
+	
+	//=========================================================================================
+	/**
+	 * class for an entity
+	 */
+	private class FoxEntity{
+		private String label = "";
+		private String type = "";
+		private List<String> posTypesAndCategories = new ArrayList<String>();
+		private List<String> uris = new ArrayList<String>();
+		
+		/**
+		 * constructor
+		 * @param label: name of the entity
+		 * @param type
+		 * @param posTypesAndCategories 
+		 * @param uris: links to entity
+		 */
+		public FoxEntity(String label, String type, List<String> posTypesAndCategories, List<String> uris){
+			this.label = label;
+			this.type = type;
+			this.posTypesAndCategories = posTypesAndCategories;
+			this.uris = uris;
+		}
+		
+		/**
+		 * gets name of the entity
+		 * @return label
+		 */
+		public String getLabel(){
+			return this.label;
+		}
+		
+		/**
+		 * gets type of the entity
+		 * @return type
+		 */
+		public String getType(){
+			return this.type;
+		}
+		
+		/**
+		 * gets Pos types and categories of the entity
+		 * @return posTypesAndCategories
+		 */
+		public List<String> getPosTypesAndCategories(){
+			return this.posTypesAndCategories;
+		}
+		
+		/**
+		 * gets uris of the entity
+		 * @return uris
+		 */
+		public List<String> getUris(){
+			return this.uris;
+		}
+		
+		/**
+		 * converts Entity to String
+		 */
+		public String toString(){		
+			StringBuilder posAndCat = new StringBuilder();
+			for (String s : this.posTypesAndCategories){
+				posAndCat.append("\n\t");
+				posAndCat.append(s);
+			}
+			
+			StringBuilder uris = new StringBuilder();
+			for (String s : this.uris){
+				uris.append("\n\t");
+				uris.append(s);
+			}
+			
+			return "Name: " + label + "\nType: " + type + "\nPosTypesAndCategories: " + posAndCat + "\nUris: " + uris;
+		}
+		
+	}
+	
+
 }
