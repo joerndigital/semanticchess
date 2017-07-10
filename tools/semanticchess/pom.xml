@@ -95,6 +95,13 @@
 			<artifactId>hawk</artifactId>
 			<version>0.3.2</version>
 		</dependency>
+		<dependency>
+			<groupId>de.uni_leipzig.informatik</groupId>
+			<artifactId>swp13_sc</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/resources/swp13_sc-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
 	</dependencies>
 
 
