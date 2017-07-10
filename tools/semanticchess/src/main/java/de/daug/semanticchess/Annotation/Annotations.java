@@ -1,4 +1,4 @@
-package de.daug.semanticchess;
+package de.daug.semanticchess.Annotation;
 
 //TODO comment code
 //TODO fox entities to object
@@ -179,7 +179,7 @@ public class Annotations {
 		//annotate.initIndexDBO_classes();
 		// annotate.initIndexDBO_properties();
 		annotate.initFox();
-		
+		System.out.println("Hello");
 		for(FoxEntity fe : annotate.foxEntity){
 			System.out.println(fe.toString());
 			System.out.println("==============");

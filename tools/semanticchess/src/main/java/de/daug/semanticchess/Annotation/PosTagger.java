@@ -1,4 +1,4 @@
-package de.daug.semanticchess;
+package de.daug.semanticchess.Annotation;
 
 import java.util.ArrayList;
 import java.util.List;

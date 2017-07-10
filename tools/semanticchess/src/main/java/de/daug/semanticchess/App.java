@@ -1,5 +1,7 @@
 package de.daug.semanticchess;
 
+import de.daug.semanticchess.Annotation.PosTagger;
+
 /**
  * work in progress
  *
