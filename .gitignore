@@ -13,6 +13,7 @@ local.properties
 tools/semanticchess/*.out
 tools/semanticchess/*.log
 tools/semanticchess/resources
+tools/semanticchess/src/test
 
 # External tool builders
 .externalToolBuilders/

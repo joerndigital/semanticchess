@@ -7,16 +7,16 @@ import org.aksw.qa.annotation.index.IndexDBO_classes;
 import org.aksw.qa.annotation.index.IndexDBO_properties;
 import org.aksw.qa.annotation.spotter.ASpotter;
 import org.aksw.qa.annotation.spotter.Fox;
-import org.aksw.qa.annotation.spotter.Spotlight;
-import org.aksw.qa.annotation.util.NifEverything;
+//import org.aksw.qa.annotation.spotter.Spotlight;
+//import org.aksw.qa.annotation.util.NifEverything;
 import org.aksw.qa.commons.datastructure.Entity;
 import org.apache.jena.rdf.model.Resource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
+//import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
+
 
 import org.aksw.hawk.datastructures.HAWKQuestion;
 
