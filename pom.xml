@@ -10,7 +10,14 @@
 	<name>semanticchess</name>
 	<url>http://maven.apache.org</url>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
+
 	<properties>
+		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -35,6 +42,11 @@
 			<id>maven.aksw.snapshots</id>
 			<name>University Leipzig, AKSW Maven2 Repository</name>
 			<url>http://maven.aksw.org/archiva/repository/snapshots</url>
+		</repository>
+		<!-- Jitpack -->
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 		<!-- Maven Central -->
 		<repository>
@@ -72,16 +84,18 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.5</version>
+			<version>1.7.25</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.hp.hpl.jena/jena -->
-		<!-- aeltere version, da swp-sc-13 damit arbeitet -->
+		<!-- https://mvnrepository.com/artifact/org.apache.jena/jena-arq -->
 		<dependency>
-			<groupId>com.hp.hpl.jena</groupId>
-			<artifactId>jena</artifactId>
-			<version>2.6.4</version>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-arq</artifactId>
+			<version>3.4.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.aksw.qa</groupId>
 			<artifactId>datasets</artifactId>
@@ -101,6 +115,25 @@
 			<groupId>org.aksw.qa</groupId>
 			<artifactId>hawk</artifactId>
 			<version>0.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.renespeck</groupId>
+			<artifactId>fox-java</artifactId>
+			<version>904cabeee3</version>
+		</dependency>
+		<dependency>
+			<groupId>virtuoso</groupId>
+			<artifactId>virtjdbc4</artifactId>
+			<version>4.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/virtjdbc4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>virtuoso</groupId>
+			<artifactId>virt_jena3</artifactId>
+			<version>3.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/virt_jena3.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>de.uni_leipzig.informatik</groupId>
@@ -126,7 +159,14 @@
 	</dependencies>
 
 
-
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 
 	<description>A questions answering system for chess games.</description>

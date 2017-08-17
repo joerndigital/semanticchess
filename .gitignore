@@ -10,10 +10,14 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-tools/semanticchess/*.out
-tools/semanticchess/*.log
-tools/semanticchess/resources
-tools/semanticchess/src/test
+*.out
+*.log
+
+src/main/database/virtuoso/*
+src/test
+resources/ontologyClasses
+resources/ontologyProperties
+
 
 # External tool builders
 .externalToolBuilders/
@@ -52,3 +56,6 @@ tools/semanticchess/src/test
 .cache-main
 .scala_dependencies
 .worksheet
+/target/
+
+

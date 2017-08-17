@@ -44,19 +44,20 @@ public class PosTagger{
 	 * constructor
 	 * @param query: Input questions by the user
 	 */
-	public PosTagger(String query){
-		this.query = query;
+	public PosTagger(){
+		/*this.query = query;
 		this.pipeline = setStanfordTagger();
 		this.document = setAnnotator(pipeline, query);
 		this.graph = document.get(CorefChainAnnotation.class);
-		initAnnotations();
+		initAnnotations();*/
+		this.pipeline = setStanfordTagger();
 	}
 	
 	/**
 	 * initialize the Stanford Core NLP
 	 * @return pipeline: object to set up the annotation
 	 */
-	private StanfordCoreNLP setStanfordTagger(){
+	private static StanfordCoreNLP setStanfordTagger(){
 		//configure output for the Staford POS tagger
 		BasicConfigurator.configure();
 		
@@ -78,7 +79,7 @@ public class PosTagger{
 	 * @param query: User input question
 	 * @return document: equals user input
 	 */
-	private Annotation setAnnotator(StanfordCoreNLP pipeline, String query){
+	public Annotation setAnnotator(StanfordCoreNLP pipeline, String query){
 		
 		//===================================
 		//This code is part of the introduction of https://stanfordnlp.github.io/CoreNLP/api.html
@@ -149,7 +150,6 @@ public class PosTagger{
      * @return link graph
      */
     public Map<Integer,CorefChain> getGraph(){ 
-
     	return graph;
     }
     
@@ -170,6 +170,14 @@ public class PosTagger{
 	}
 	
 	/**
+	 * get current pipeline
+	 * @return pipeline: annotators for query
+	 */
+	public StanfordCoreNLP getPipeline(){
+		return this.pipeline;		
+	}
+	
+	/**
 	 * get current tagged query
 	 * @return tagged query: tagged question with the help of 
 	 * Stanford POS tagger
@@ -186,6 +194,10 @@ public class PosTagger{
 		this.query = query;
 	}
 	
+	public void setDocument(Annotation document){
+		this.document = document;
+	}
+	
 	/**
 	 * set tagged query
 	 * @param taggedQuery: tagged question for further processing
@@ -195,11 +207,45 @@ public class PosTagger{
 	}
 	
 	/**
+	 * set tokens
+	 * @param tokens: List of tagged words
+	 */
+	public void setTokens(List<Token> tokens){
+		this.tokens = tokens;
+	}
+	
+	/**
 	 * main method for testing
 	 * @param args
 	 */
 	public static void main (String[] args){
-		PosTagger tagger = new PosTagger("What does Anand play against the Sicilian Defense?");
+		//Beispiel
+		//========
+		//Konstruktor
+		PosTagger tagger = new PosTagger();
+		//initialize pipeline to use it more often, does not have to load again for a new query
+		StanfordCoreNLP pipeline = tagger.getPipeline();
+		
+		//1. Question
+		tagger.setQuery("What does Anand play against the Sicilian Defense?");
+		tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
+		tagger.initAnnotations();
+		
+		//results
+		System.out.println("================================================================");
+		System.out.println(tagger.getQuery());
+		System.out.println(tagger.getTaggedQuery());
+		
+		//delete results
+		tagger.setTokens(null);
+		tagger.setTaggedQuery("");
+		
+		//2. Question
+		tagger.setQuery("Where did the last World Championship take place?");
+		tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
+		tagger.initAnnotations();
+		
+		//results
 		System.out.println("================================================================");
 		System.out.println(tagger.getQuery());
 		System.out.println(tagger.getTaggedQuery());

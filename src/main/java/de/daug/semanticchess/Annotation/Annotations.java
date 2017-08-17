@@ -1,6 +1,6 @@
 package de.daug.semanticchess.Annotation;
 
-//TODO comment code
+
 //TODO fox entities to object
 
 import org.aksw.qa.annotation.index.IndexDBO_classes;
@@ -10,10 +10,13 @@ import org.aksw.qa.annotation.spotter.Fox;
 //import org.aksw.qa.annotation.spotter.Spotlight;
 //import org.aksw.qa.annotation.util.NifEverything;
 import org.aksw.qa.commons.datastructure.Entity;
-import org.apache.jena.rdf.model.Resource;
+
+import org.apache.jena.rdf.model.*;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 //import java.util.Iterator;
 import java.util.List;
 
@@ -31,9 +34,13 @@ public class Annotations {
 	// attributes
 	private String query = "";
 	private String language = "";
-	private HashMap<String, List<String>> queryClasses = null;
-	private HashMap<String, List<String>> queryProperties = null;
+	public HashMap<String, List<String>> queryClasses = null;
+	public HashMap<String, List<String>> queryProperties = null;
 	private	List<FoxEntity> foxEntity = new ArrayList<FoxEntity>();
+	private HAWKQuestion hawkQuestion = null;
+	private ASpotter fox = null;
+	private IndexDBO_classes classes = null; 
+	private IndexDBO_properties properties = null;
 
 	/**
 	 * constructor
@@ -46,17 +53,18 @@ public class Annotations {
 	public Annotations(String query, String language) {
 		this.query = query;
 		this.language = language;
+		this.hawkQuestion = new HAWKQuestion();
+		this.fox = new Fox();
+		this.classes = new IndexDBO_classes();
+		this.properties = new IndexDBO_properties();
 		// init();
 	}
 
 	/**
 	 * gets entities with the help of fox.aksw.org like 'Magnus Carlsen' and ' Viswanathan Anand'
 	 */
-	public void initFox() {
-		HAWKQuestion q = new HAWKQuestion();
-		
-		q.getLanguageToQuestion().put(this.language, this.query);
-		ASpotter fox = new Fox();
+	public void initFox(HAWKQuestion q, ASpotter fox) {	
+		q.getLanguageToQuestion().put(this.language, this.query);		
 		q.setLanguageToNamedEntites(fox.getEntities(q.getLanguageToQuestion().get(this.language)));
 		
 		
@@ -90,10 +98,14 @@ public class Annotations {
 	/**
 	 * gets classes like 'art' and 'dog'
 	 */
-	private void initIndexDBO_classes() {
-
+	public void initIndexDBO_classes(IndexDBO_classes classes, String query) {
+		try{
+			queryClasses.clear();
+		}catch(NullPointerException e){
+			
+		}
 		queryClasses = new HashMap<String, List<String>>();
-		IndexDBO_classes classes = new IndexDBO_classes();
+		
 		String[] words = query.split("\\W+");
 
 		for (String word : words) {
@@ -101,13 +113,12 @@ public class Annotations {
 			queryClasses.put(word, wordClasses);
 		}
 
-		// Iterator it = queryClasses.entrySet().iterator();
-		//
-		// while (it.hasNext()) { HashMap.Entry pair = (HashMap.Entry)
-		// it.next(); System.out.println(pair.getKey() + " = " +
-		// pair.getValue()); it.remove(); // avoids a
-		// ConcurrentModificationException
-		// }
+		Iterator it = queryClasses.entrySet().iterator();
+		
+		while (it.hasNext()) { HashMap.Entry pair = (HashMap.Entry)
+		it.next(); System.out.println(pair.getKey() + " = " +
+		pair.getValue()); it.remove(); // ConcurrentModificationException
+		}
 
 		// https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
 
@@ -116,9 +127,14 @@ public class Annotations {
 	/**
 	 * gets properties like 'win', 'come' and 'can'
 	 */
-	private void initIndexDBO_properties() {
+	public void initIndexDBO_properties(IndexDBO_properties properties, String query) {
+		try{
+			queryProperties.clear();
+		}catch(NullPointerException e){
+			
+		}
 		queryProperties = new HashMap<String, List<String>>();
-		IndexDBO_properties properties = new IndexDBO_properties();
+		
 		String[] words = query.split("\\W+");
 
 		for (String word : words) {
@@ -126,14 +142,14 @@ public class Annotations {
 			queryProperties.put(word, wordProperties);
 		}
 
-		/*
-		 * Iterator it = queryProperties.entrySet().iterator();
-		 * 
-		 * while (it.hasNext()) { HashMap.Entry pair = (HashMap.Entry)
-		 * it.next(); System.out.println(pair.getKey() + " = " +
-		 * pair.getValue()); it.remove(); // avoids a
-		 * ConcurrentModificationException }
-		 */
+		
+		 Iterator it = queryProperties.entrySet().iterator();
+		 
+		 while (it.hasNext()) { HashMap.Entry pair = (HashMap.Entry)
+		 it.next(); System.out.println(pair.getKey() + " = " +
+		 pair.getValue()); it.remove(); // avoids a
+		 }
+		 
 		// https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
 	}
 
@@ -149,6 +165,25 @@ public class Annotations {
 	 */
 	public String getLanguage() {
 		return language;
+	}
+	
+	/**
+	 * @return hawkQuestion from constructor
+	 */
+	public HAWKQuestion getHAWKquestion(){
+		return this.hawkQuestion;
+	}
+	
+	public ASpotter getFox(){
+		return this.fox;
+	}
+	
+	public IndexDBO_classes getClasses(){
+		return this.classes;
+	}
+	
+	public IndexDBO_properties getProperties(){
+		return this.properties;
 	}
 
 	/**
@@ -173,18 +208,44 @@ public class Annotations {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		
+		//1. Question
 		Annotations annotate = new Annotations("Which buildings in art dog style did Shreve, Lamb and Harmon design?",
 				"en");
-		//annotate.initIndexDBO_classes();
-		// annotate.initIndexDBO_properties();
-		annotate.initFox();
-		System.out.println("Hello");
+		//Entities
+		annotate.initFox(annotate.getHAWKquestion(), annotate.getFox());
 		for(FoxEntity fe : annotate.foxEntity){
 			System.out.println(fe.toString());
 			System.out.println("==============");
 		}
+		//classes
+		System.out.println("Classes: \n");
 		
+		annotate.initIndexDBO_classes(annotate.getClasses(), "Which buildings in art dog style did Shreve, Lamb and Harmon design?");
+		//properties
+		System.out.println("\n");
+		System.out.println("Properties: ");
+		annotate.initIndexDBO_properties(annotate.getProperties(), "Which buildings in art dog style did Shreve, Lamb and Harmon design?");
+		
+		System.out.println("\n\n");
+		
+		//2. Question
+		annotate = new Annotations("What is the capital of Germany? ",
+				"en");
+		//annotate.initIndexDBO_classes();
+		// annotate.initIndexDBO_properties();
+		annotate.initFox(annotate.getHAWKquestion(), annotate.getFox());
+		for(FoxEntity fe : annotate.foxEntity){
+			System.out.println(fe.toString());
+			System.out.println("==============");
+		}
+		//classes
+		System.out.println("Classes: \n");
+		annotate.initIndexDBO_classes(annotate.getClasses(), "Which buildings in art dog style did Shreve, Lamb and Harmon design?");
+		//properties
+		System.out.println("\n");
+		System.out.println("Properties: ");
+		annotate.initIndexDBO_properties(annotate.getProperties(),"can win come get");
 
 	}
 	

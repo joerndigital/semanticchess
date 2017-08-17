@@ -1,0 +1,10 @@
+db:
+  image: tenforce/virtuoso:1.2.0-virtuoso7.2.4
+  environment:
+    SPARQL_UPDATE: "true"
+    DEFAULT_GRAPH: "http://www.example.com/"
+  volumes:
+    - ./virtuoso:/data
+  ports:
+    - "8890:8890"
+    - "1111:1111"

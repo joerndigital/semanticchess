@@ -1,0 +1,575 @@
+POSSIBLE: 
+EVENTUALLY: ||||||
+MISSING INFORMATION: |||||
+INACCURATE: |
+NOT POSSIBLE: |
+
+PREFIX ex: <http://http:example.com/>
+PREFIX res: <http:www.example.com/res/>
+PREFIX prop: <http:www.example.com/prop/>
+
+========================================================
+1	Show me all won games of Carlsen against Anand.
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:black 'Viswanathan Anand' .
+	 ?game prop:white 'Magnus Carlsen' .
+	 ?game prop:result '1-0' .
+	}
+	UNION
+	{?game prop:white 'Viswanathan Anand' .
+	 ?game prop:black 'Magnus Carlsen' .
+	 ?game prop:result '0-1' .
+	}
+}
+
+========================================================
+2	Which player with an ELO above 2700 has won the most in 2016?
+SELECT ?player (COUNT(?game) AS ?nr)
+WHERE {
+	{?game prop:white ?player .
+	 ?game prop:result '1-0' .
+	 ?game prop:date ?date .
+	 FILTER regex(?date, '2016')
+	}
+	UNION
+	{?game prop:black ?player .
+	 ?game prop:result '0-1' .
+	 ?game prop:date ?date .
+	 FILTER regex(?date, '2016')
+	}
+} 
+GROUP BY ?player
+ORDER BY DESC(?nr)
+LIMIT 3 OFFSET 0
+
+========================================================
+3	Have Kramnik played the opening King’s Indian?
+ASK {
+	?game prop:black|prop:white 'Vladimir Kramnik' .
+	?game prop:eco ?eco .
+	FILTER regex(?eco, '^E[6-9]{2}.*'
+}
+
+========================================================
+4	Give me 10 blitz games of Nakamura.
+SELECT ?game
+WHERE {
+	?game prop:black|prop:white 'Hikaru Nakamura' .
+	?game prop:event ?event .
+	FILTER regex(?event, 'blitz', 'i')
+}
+
+========================================================
+5	Show me positions that are similar to FEN "8/4bk2/8/2R5/1K6/8/8/8 w - -"?
+==> not sure if possible with FEN 
+==> see https://stackoverflow.com/questions/24557020/to-use-isparql-to-compare-values-using-similarity-measures
+==> see http://doras.dcu.ie/20378/1/ganguly-sigir2014.pdf
+
+========================================================
+6	Show me endgames with rook against rook and pawn.
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:moves ?moves .
+	 ?moves prop:fen ?fen .
+	 FILTER regex(?fen, '^[^BbNnQqP]* w|b  ')
+	 FILTER regex(?fen, '^[^p]+p{1}[^p]+ ')
+	 FILTER regex(?fen, '^[^r]*r{1}[^r]* ')
+	 FILTER regex(?fen, '^[^R]*r{R}[^r]* ')
+	}
+	UNION
+	{?game prop:moves ?moves .
+	 ?moves prop:fen ?fen .
+	 FILTER regex(?fen, '^[^BbNnQqp]* w|b  ')
+	 FILTER regex(?fen, '^[^P]+P{1}[^P]+ ')
+	 FILTER regex(?fen, '^[^r]*r{1}[^r]* ')
+	 FILTER regex(?fen, '^[^R]*r{R}[^r]* ')
+	}	
+}
+GROUP BY ?game
+
+========================================================
+7	In which tournaments did Naiditsch and Carlsen play against each other?
+SELECT DISTINCT ?event
+WHERE {
+	?game prop:black|prop:white 'Arkadij Naiditisch' .
+	?game prop:black|prop:white 'Magnus Carlsen' .
+	?game prop:event ?event .
+}
+
+========================================================
+8	All losing games of Giri from Wijk aan Zee.
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:black 'Anisch Giri' .
+	 ?game prop:result '1-0' .
+	 ?game prop:event ?event .
+	 FILTER regex(?event, 'Wijk aan Zee', 'i')
+	 }
+	 UNION
+	{?game prop:white 'Anisch Giri' .
+	 ?game prop:result '0-1' .
+	 ?game prop:event ?event .
+	 FILTER regex(?event, 'Wijk aan Zee', 'i')
+	 }	 
+}
+
+========================================================
+9	Give me 5 games with an underpromotion.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?moves prop:moves ?move .
+	FILTER regex(?move, '[a-h]8[BNRbnr]')
+}
+LIMIT 5 OFFSET 0
+
+========================================================
+10	Show me all games of the world championship 1886.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:event ?event .
+	?game prop:date ?date .
+	FILTER (regex(?event, 'World Championship', 'i')
+	FILTER regex(?date, '1886', 'i')
+}
+
+========================================================
+11	What is the longest game?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?moves prop:moveNr ?nr .
+}
+ORDER BY DESC(?nr) LIMIT 1 OFFSET 0
+
+========================================================
+12	10 games with a fivefold exchange?
+==> eventually, but not yet figured out
+
+========================================================
+13	What is the first game of Kasparov?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:black|prop:white 'Garri Kasparov' .
+	?game prop:date ?date .
+}
+ORDER BY ASC(?date) LIMIT 1 OFFSET 0
+
+========================================================
+14	Show me 10 games of white in the Queen’s Indian.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:eco ?eco .
+	FILTER regex(?eco, 'E1[2-9].*'
+}
+LIMIT 10
+
+========================================================
+15	Which opening has Fischer played most frequently?
+SELECT DISTINCT ?eco (COUNT(?eco) AS ?nr)
+WHERE {
+	?game prop:white|prop:black 'Bobby Fischer' .
+	?game prop:eco ?eco .
+}
+GROUP BY ?eco
+ORDER BY DESC(?nr)
+LIMIT 3 OFFSET 0
+
+========================================================
+16	In which game did Caruana have his highest rating?
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:black 'Fabiano Caruana' .
+	 ?game prop:blackelo ?elo .
+	}
+	UNION
+	{?game prop:white 'Fabiano Caruana' .
+	 ?game prop:whiteelo ?elo .
+	}
+}
+ORDER BY DESC(?elo) 
+LIMIT 1
+
+========================================================
+17	Show me all the games of the tournament with the highest average rating.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:event ?event .
+	{SELECT DISTINCT ?event
+	 WHERE {
+		?game prop:event ?event . 
+		?game prop:whiteelo|prop:blackelo ?elo .
+	 }
+	 GROUP BY ?event
+	 ORDER BY DESC(AVG(?elo))
+	 LIMIT 1
+	 }
+}
+
+========================================================
+18	Give me the games in which Topalov lost against a much weaker player.
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:black 'Veselin Topalov' .
+	 ?game prop:result '1-0' .
+	 ?game prop:whiteelo ?elo .
+	}
+	UNION
+	{?game prop:white 'Veselin Topalov' .
+	 ?game prop:result '0-1' .
+	 ?game prop:blackelo ?elo .
+	}
+}
+ORDER BY ASC(?elo)
+LIMIT 10 OFFSET 0
+
+========================================================
+19	What openings were played at the Grenke Chess Classic 2017?
+SELECT DISTINCT ?eco
+WHERE {
+	?game prop:event ?event .
+	?game prop:date ?date .
+	?game prop:eco ?eco .
+	FILTER regex(?event, 'Grenke' ,'i')
+	FILTER regex(?date, '2017', 'i')
+}
+ORDER BY ASC(?eco)
+
+========================================================
+20	How many times has Giri played draw?
+SELECT DISTINCT (COUNT(?game) AS ?draw)
+WHERE {
+	?game prop:black|prop:white 'Anish Giri' .
+	?game prop:result '1/2-1/2' .
+}
+
+========================================================
+21	Which game was played exactly 10 years ago?
+==> inaccurate, month and day have to be considered
+
+SELECT DISTINCT ?game ?year
+WHERE {
+	?game <http://example.com/prop/date> ?date .
+	BIND( substr( ?date, 1, 4 ) as ?year )
+	FILTER (xsd:integer(?year) + 10 = 2017)
+}
+
+========================================================
+22	What does Anand play against the Sicilian Defense?
+SELECT DISTINCT ?game ?move
+WHERE {
+	?game prop:black|prop:white 'Viswanathan Anand' .
+	?game prop:eco ?eco .
+	?game prop:moves ?moves .
+	?moves prop:move ?move .
+	?moves prop:moveNr ?nr .
+	FILTER regex(?eco, 'B[2-9][0-9].*')
+}
+ORDER BY ?game ASC(?nr)
+
+========================================================
+23	Who was the 8th world champion?
+SELECT DISTINCT ?player ((COUNT(?result) + ((COUNT(?draw))/2) AS ?points)
+WHERE {
+	{?game prop:black ?player .
+	 ?game prop:event '8. World Championship' .
+	 ?game prop:result '0-1' .
+	 ?game prop:result ?result .
+	}
+	UNION
+	{?game prop:white ?player .
+	 ?game prop:event '8. World Championship' .
+	 ?game prop:result '1-0' .
+	 ?game prop:result ?result .
+	}
+	UNION
+	{?game prop:black|prop:white ?player .
+	 ?game prop:event '8. World Championship' .
+	 ?game prop:result '1/2-1/2' .
+	 ?game prop:result ?result .
+	}
+}
+GROUP BY ?player
+ORDER BY DESC(?points)
+LIMIT 1 OFFSET 0
+
+========================================================
+24	What was the last game of Euwe?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:black|prop:white 'Max Euwe' .
+	?game prop:date ?date .
+}
+ORDER BY DES(?date) LIMIT 1 OFFSET 0
+
+========================================================
+25 Show me any games with 2 or more En Passants?
+==> eventually, but not figured out yet
+
+========================================================
+26	How often is King’s Indian played?
+SELECT DISTINCT (xsd:double(?played)/xsd:double(COUNT(?ecoAll)))*100 AS ?percent
+WHERE {
+	?gamesAll prop:eco ?ecoAll .
+	{
+		SELECT DISTINCT (COUNT(?eco) AS ?played)
+		WHERE {
+			?game prop:eco ?eco .
+        FILTER regex(?eco, '^E[6-9]{2}.*')
+		}
+	}
+}
+
+========================================================
+27	Which games have a similar pawn structure as Ivanchuk against Shirov on move 13 in 1996 in Hoogovens?
+==> eventually, but not figured out yet
+
+========================================================
+28	Show me all games with a stalemate.
+==> missing information
+
+========================================================
+29	All games with a move number exceeding 100.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?moves prop:moveNr ?nr .
+	FILTER (?nr > '99'^^xsd:nonNegativeInteger)
+}
+
+========================================================
+30	Show me any games with three pawns on the 7th rank?
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:moves ?moves	.
+	 ?moves prop:fen ?fen .
+	 FILTER regex(?fen, '^.*/.*P{1}.*P{1}.*P{1}.*/.*/.*/.*/.*/.*/.* ')
+	}
+	UNION
+	{?game prop:moves ?moves	.
+	 ?moves prop:fen ?fen .
+	 FILTER regex(?fen, '^.*/.*/.*/.*/.*/.*/.*p{1}.*p{1}.*p{1}.*/.* ')
+	}
+}
+
+========================================================
+31	Show me mate positions with knight and bishop.
+==> mate sign is missing
+
+========================================================
+32	Show me all games with the Epaulette Mate.
+==> mate sign is missing
+
+========================================================
+33	Has Carlsen ever played a fianchetto?
+ASK {
+	{?game prop:moves ?moves .
+	?moves prop:fen ?fen .
+	FILTER regex(?fen, '^.*/.*/.*/.*/.*/.*P{1}.{1}/.*PBP/.* ')
+	}
+	UNION
+	{?game prop:moves ?moves .
+	?moves prop:fen ?fen .
+	FILTER regex(?fen, '^.*/.*PBP/.*P{1}.{1}/.*/.*/.*/.*/.* ')
+	}
+	UNION
+	{?game prop:moves ?moves .
+	?moves prop:fen ?fen .
+	FILTER regex(?fen, '^.*/.*/.*/.*/.*/.{1}P{1}.*/PBP.*/.* ')
+	}
+	UNION
+	{?game prop:moves ?moves .
+	?moves prop:fen ?fen .
+	FILTER regex(?fen, '^.*/PBP.*/.{1}P{1}.*/.*/.*/.*/.*/.* ')
+	}
+}
+
+========================================================
+34	Are there games with f4 d5 g3?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?move1 .
+	?game prop:moves ?move2 .
+	?game prop:moves ?move3 .
+	
+	?move1 prop:moveNr '1'^^xsd:nonNegativeInteger .
+	?move2 prop:moveNr '2'^^xsd:nonNegativeInteger .
+	?move3 prop:moveNr '3'^^xsd:nonNegativeInteger .
+	
+	?move1 prop:move 'f2-f4'.
+	?move2 prop:move 'd7-d5'.
+	?move3 prop:move 'g2-g3'.
+}
+
+========================================================
+35	In which game was Karjakin’s position the worst?
+==> not possible (or: missing information)
+
+========================================================
+36	 10 examples of half open games.
+==> missing information
+
+========================================================
+37	What was the first game with a Ruy Lopez?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:eco ?eco .
+	?game prop:date ?date .
+	FILTER regex(?eco, '^C[6-9][0-9].*')
+}
+ORDER BY ASC(?date)
+LIMIT 1 OFFSET 0
+
+========================================================
+38	What is the Lucena position?
+=> eventually, but not figured out yet
+
+========================================================
+39	All games of GMs against computers.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:black|prop:white ?comp .
+	?game prop:black|prop:white ?player .
+	?game prop:blacktitle|prop:whitetitle 'GM' .
+	FILTER regex(?comp, 'Comp', 'i') 
+}
+
+========================================================
+40	What was Fischer’s longest winning streak?
+==> eventually, but not figured out yet
+
+========================================================
+41	Two games with doubling rooks on the 7th rank from June 2015.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?game prop:date ?date .
+	?moves prop:fen ?fen .
+	FILTER regex(?fen , ^.*/.*R{1}.*R{1}.*/.*/.*/.*/.*/.*/.* ')
+	FILTER regex(?date, '06.2015$')
+}
+
+========================================================
+42	Examples of games with bishop against knight.
+SELECT DISTINCT ?game 
+WHERE {
+	{?game prop:moves ?moves .	
+	?moves prop:fen ?fen .
+	FILTER regex(?fen, '^.*B{1}.* ')
+	FILTER regex(?fen, '^.*n{1}.* ')
+	FILTER regex(?fen, '^[^N]* ')
+	FILTER regex(?fen, '^[^b]* ')
+	}
+	UNION
+	{?game prop:moves ?moves .	
+	?moves prop:fen ?fen .
+	FILTER regex(?fen, '^.*b{1}.* ')
+	FILTER regex(?fen, '^.*N{1}.* ')
+	FILTER regex(?fen, '^[^n]* ')
+	FILTER regex(?fen, '^[^B]* ')
+	}
+}
+
+========================================================
+43	Show me 10 games with a long castling.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?moves prop:move 'O-O-O' .
+}
+LIMIT 10 OFFSET 0
+
+========================================================
+44	In which game was the latest castling?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?moves prop:move 'O-O-O' .
+	?moves prop:moveNr ?nr .
+}
+ORDER BY DESC(?nr)
+LIMIT 1 OFFSET 0
+
+========================================================
+45	All games of Carlsen between 2014 and 2016.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:black|prop:white 'Magnus Carlsen' .
+	?game prop:date ?date .
+	FILTER ((?date>'2014')&&(?date>'2016'))
+}
+ORDER BY ASC(?date)
+
+========================================================
+46 What is the Immortal game?
+==> missing information
+
+========================================================
+47	In which game did the latest exchange take place?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:moves ?moves .
+	?moves prop:move ?move .
+	?moves prop:moveNr ?nr .
+	FILTER regex(?move, 'x', 'i')
+}
+ORDER BY DESC(?nr)
+LIMIT 1 OFFSET 0
+
+========================================================
+48	All games in which a FM has defeated a GM.
+SELECT DISTINCT ?game
+WHERE {
+	{?game prop:whiteTitle 'FM' .
+	?game prop:blackTitle 'GM' .
+	?game prop:result '1-0' .
+	}
+	UNION
+	{?game prop:whiteTitle 'GM' .
+	?game prop:blackTitle 'FM' .
+	?game prop:result '0-1' .
+	}
+}
+
+========================================================
+49	What is played against Giuoco Piano?
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:eco ?eco .
+	FILTER regex(?eco, 'C5[034].*')
+}
+
+========================================================	
+50	In which variation in the Sicilian Defense does black win the most?
+SELECT DISTINCT ?eco (count(?eco) AS ?wins)
+WHERE {
+	?game prop:eco ?eco .
+	?game prop:result '0-1' .
+	FILTER regex(?eco, 'B[2-9][0-9].*')
+}
+GROUP BY ?eco
+ORDER BY DESC(?wins)
+LIMIT 3 OFFSET 0
+
+========================================================
+51	What is the main variation in the Ruy Lopez?
+SELECT DISTINCT ?eco (count(?eco) AS ?played)
+WHERE {
+	?game prop:eco ?eco .
+	FILTER regex(?eco, '^C[6-9][0-9].*')
+}
+GROUP BY ?eco
+ORDER BY DESC(?played)
+LIMIT 3 OFFSET 0
+
+========================================================
+52	Wins of white in B33 and an average ELO of over 2700.
+SELECT DISTINCT ?game
+WHERE {
+	?game prop:blackelo|prop:whiteelo ?elo .
+	?game prop:eco 'B33' .
+}
+GROUP BY ?game
+HAVING (AVG(?elo)>'2700'^^xsd:int)
+
