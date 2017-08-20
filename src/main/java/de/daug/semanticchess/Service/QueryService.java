@@ -1,5 +1,7 @@
 package de.daug.semanticchess.Service;
 
+import java.util.List;
+
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -22,6 +24,10 @@ public class QueryService{
 	
 	public String getResults(){	
 		return virtuosoQuery.getResults();
+	}
+	
+	public String getCustomResult(String strQuery){
+		return virtuosoQuery.getCustomResult(strQuery);
 	}
 	
 }

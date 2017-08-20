@@ -1,5 +1,13 @@
 package de.daug.semanticchess.Database;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
+
+import org.apache.jena.rdf.model.impl.ModelCom;
+import org.apache.jena.util.CollectionFactory;
+
 import de.daug.semanticchess.Configurations;
 import virtuoso.jena.driver.VirtModel;
 
@@ -16,9 +24,12 @@ public class ConnectVirtuoso {
 	
 	public VirtModel connect(){
 		VirtModel vModel = VirtModel.openDatabaseModel(graph, url, user, pwd);
-		
+				
 		return vModel;
 	}
+	
+
+
 	
 
 	public static void main(String[] args) {

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html ng-app="appChess">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+	crossorigin="anonymous">
+
+
+
+</head>
+
+<body style="margin: 0; padding: 0; text-align: center;">
+
+	<div ng-controller="appCtrl"
+		style="margin: 0 auto; margin-top: 150px; text-align: center; width: 100%;">
+		
+		<div>
+			<img style="display: inline-block; width: 125px; height: 109px;"
+				src="../static/images/logo.png">
+			<div style="display: inline-block;">
+				<h2
+					style="font-size: 50px; position: relative; top: 20px; text-align: left;">Semantic
+					Chess</h2>
+			</div>
+
+		</div>
+		<div style="margin-top: 30px;">
+			<input ng-model="query" type="text"
+				style="width: 600px; height: 35px;">
+		</div>
+
+
+		<div style="margin-top: 30px;">
+			<button class="btn btn-default" style="display: inline-block;">Frage</button>
+			<button ng-click="getSparqlResults();" 
+				class="btn btn-default" style="display: inline-block;">SPARQL</button>
+		</div>
+		<div style=" width: 50%; margin: 0 auto; margin-top: 30px;">
+			<div style="text-align:left; margin-top: 20px; padding: 10px; background-color:#ecf0f1;" ng-repeat="(property, value) in result.data.games">
+				<a href="{{value.game}}">{{property + 1}}.&nbsp;game:&nbsp;{{value.game}}</a>
+				<div>White:&nbsp;{{value.white}}</div>
+				<div>Black:&nbsp;{{value.black}}</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+	<script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

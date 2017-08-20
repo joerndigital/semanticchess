@@ -1,43 +1,54 @@
 package de.daug.semanticchess.Entity;
 
+import java.net.URI;
 import java.util.Date;
+
+import org.apache.jena.rdf.model.RDFNode;
 
 public class ChessGame{
 	
 	private String event;
 	private String site;
-	private Date date;
-	private int round;
+	private String date;
+	private String round;
 	private String white;
 	private String black;
 	private String opening;
 	private String eco;
 	private String result;
 	
-	private String url;
+	private String game;
 	
-	public ChessGame(String event, String site, 
-			Date date, int round, String white, 
-			String black, String opening,
-			String eco, String result) {
-		this.event = event;
-		this.site = site;
-		this.date = date;
-		this.round = round;
-		this.white = white;
-		this.black = black;
-		this.opening = opening;
-		this.eco = eco;
-		this.result = result;
-	}
-	
-	public ChessGame(String url){
-		this.url = url;
-	}
+//	public ChessGame(String event, String site, 
+//			Date date, int round, String white, 
+//			String black, String opening,
+//			String eco, String result) {
+//		this.event = event;
+//		this.site = site;
+//		this.date = date;
+//		this.round = round;
+//		this.white = white;
+//		this.black = black;
+//		this.opening = opening;
+//		this.eco = eco;
+//		this.result = result;
+//	}
+//	
+//	public ChessGame(String url){
+//		this.url = url;
+//	}
 	
 	public ChessGame() {
 	}
-
+	
+	public String getNode(){
+		return game;
+	}
+	
+	public void setNode(String url){
+		this.game = url;
+	}
+	
 	public String getEvent() {
 		return event;
 	}
@@ -58,22 +69,22 @@ public class ChessGame{
 	}
 
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
 
-	public int getRound() {
+	public String getRound() {
 		return round;
 	}
 
 
-	public void setRound(int round) {
+	public void setRound(String round) {
 		this.round = round;
 	}
 
