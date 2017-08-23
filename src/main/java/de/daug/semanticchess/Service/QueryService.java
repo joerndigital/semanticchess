@@ -1,5 +1,6 @@
 package de.daug.semanticchess.Service;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 import org.apache.jena.query.Query;

@@ -4,10 +4,13 @@ var appChess = angular.module('appChess',[]);
 appChess.controller('appCtrl', function($scope, $http){
 	
 	
-	$scope.query = "select distinct ?game where {?game prop:black 'Wilhelm Steinitz'.} LIMIT 100";
+	$scope.query = '';
 	$scope.result = '';
+	$scope.resultCounter = 0;
+	$scope.errorFound = false;
+	$scope.error = '';
 	
-
+	
 	$scope.getSparqlResults = function(){
 	    $http({
 	        'url' : '/query/',
@@ -15,12 +18,46 @@ appChess.controller('appCtrl', function($scope, $http){
 	        'headers': {'Content-Type' : 'application/json'},
 	        'data' : $scope.query
 	    }).then(function(data){
-	        $scope.result = data;
+	    	
+	    	if(!(typeof data == undefined)){
+		    	$scope.errorFound = false;
+		    	$scope.result = data;
+		        $scope.error = '';
+		        $scope.resultCounter = $scope.result.data.results.bindings.length;	
+	    	}else {
+	    		$scope.error = data; 
+	    	}
+
+
 	        
 	        
-	    })
+	    }).catch(function (err) {
+
+		    	$scope.resultCounter = 0;
+		    	$scope.result = "";
+		    	$scope.errorFound = true;    	
+	    	
+	    });
+	 
+	    
 	};
 });
+
+
+// https://codepen.io/vsync/pen/czgrf
+var textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keydown', autosize);
+             
+function autosize(){
+  var el = this;
+  setTimeout(function(){
+    el.style.cssText = 'height:auto';
+    // for box-sizing other than "content-box" use:
+    // el.style.cssText = '-moz-box-sizing:content-box';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  },0);
+}
 
 
 

@@ -48,7 +48,7 @@ LIMIT 3 OFFSET 0
 ASK {
 	?game prop:black|prop:white 'Vladimir Kramnik' .
 	?game prop:eco ?eco .
-	FILTER regex(?eco, '^E[6-9]{2}.*'
+	FILTER regex(?eco, '^E[6-9]{2}.*')
 }
 
 ========================================================
@@ -72,18 +72,12 @@ SELECT DISTINCT ?game
 WHERE {
 	{?game prop:moves ?moves .
 	 ?moves prop:fen ?fen .
-	 FILTER regex(?fen, '^[^BbNnQqP]* w|b  ')
-	 FILTER regex(?fen, '^[^p]+p{1}[^p]+ ')
-	 FILTER regex(?fen, '^[^r]*r{1}[^r]* ')
-	 FILTER regex(?fen, '^[^R]*r{R}[^r]* ')
+	 FILTER (regex(?fen, '^[^BbNnQqP]* w|b  ') && regex(?fen, '^[^p]+p{1}[^p]+ ') && regex(?fen, '^[^r]*r{1}[^r]* ') && regex(?fen, '^[^R]*r{1}[^r]* '))
 	}
 	UNION
 	{?game prop:moves ?moves .
 	 ?moves prop:fen ?fen .
-	 FILTER regex(?fen, '^[^BbNnQqp]* w|b  ')
-	 FILTER regex(?fen, '^[^P]+P{1}[^P]+ ')
-	 FILTER regex(?fen, '^[^r]*r{1}[^r]* ')
-	 FILTER regex(?fen, '^[^R]*r{R}[^r]* ')
+	 FILTER (regex(?fen, '^[^BbNnQqp]* w|b  ') && regex(?fen, '^[^P]+P{1}[^P]+ ') && regex(?fen, '^[^r]*r{1}[^r]* ') && regex(?fen, '^[^R]*r{1}[^r]* '))
 	}	
 }
 GROUP BY ?game
@@ -119,7 +113,7 @@ WHERE {
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:moves ?moves .
-	?moves prop:moves ?move .
+	?moves prop:move ?move .
 	FILTER regex(?move, '[a-h]8[BNRbnr]')
 }
 LIMIT 5 OFFSET 0
@@ -130,8 +124,7 @@ SELECT DISTINCT ?game
 WHERE {
 	?game prop:event ?event .
 	?game prop:date ?date .
-	FILTER (regex(?event, 'World Championship', 'i')
-	FILTER regex(?date, '1886', 'i')
+	FILTER (regex(?event, 'World Championship', 'i') && regex(?date, '1886', 'i'))
 }
 
 ========================================================
@@ -161,7 +154,7 @@ ORDER BY ASC(?date) LIMIT 1 OFFSET 0
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:eco ?eco .
-	FILTER regex(?eco, 'E1[2-9].*'
+	FILTER regex(?eco, 'E1[2-9].*')
 }
 LIMIT 10
 
@@ -248,11 +241,12 @@ WHERE {
 21	Which game was played exactly 10 years ago?
 ==> inaccurate, month and day have to be considered
 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT DISTINCT ?game ?year
 WHERE {
-	?game <http://example.com/prop/date> ?date .
+	?game prop:date ?date .
 	BIND( substr( ?date, 1, 4 ) as ?year )
-	FILTER (xsd:integer(?year) + 10 = 2017)
+	FILTER (xsd:Integer(?year) + 150 = 2017)
 }
 
 ========================================================
@@ -270,29 +264,29 @@ ORDER BY ?game ASC(?nr)
 
 ========================================================
 23	Who was the 8th world champion?
-SELECT DISTINCT ?player ((COUNT(?result) + ((COUNT(?draw))/2) AS ?points)
+SELECT DISTINCT ?player (COUNT(?result) + ((COUNT(?draw))/2) AS ?points)
 WHERE {
 	{?game prop:black ?player .
-	 ?game prop:event '8. World Championship' .
+	 ?game prop:event '7. World Championship' .
 	 ?game prop:result '0-1' .
 	 ?game prop:result ?result .
 	}
 	UNION
 	{?game prop:white ?player .
-	 ?game prop:event '8. World Championship' .
+	 ?game prop:event '7. World Championship' .
 	 ?game prop:result '1-0' .
 	 ?game prop:result ?result .
 	}
 	UNION
 	{?game prop:black|prop:white ?player .
-	 ?game prop:event '8. World Championship' .
+	 ?game prop:event '7. World Championship' .
 	 ?game prop:result '1/2-1/2' .
 	 ?game prop:result ?result .
 	}
 }
 GROUP BY ?player
 ORDER BY DESC(?points)
-LIMIT 1 OFFSET 0
+LIMIT 5 OFFSET 0
 
 ========================================================
 24	What was the last game of Euwe?
@@ -301,7 +295,7 @@ WHERE {
 	?game prop:black|prop:white 'Max Euwe' .
 	?game prop:date ?date .
 }
-ORDER BY DES(?date) LIMIT 1 OFFSET 0
+ORDER BY DESC(?date) LIMIT 1 OFFSET 0
 
 ========================================================
 25 Show me any games with 2 or more En Passants?
@@ -309,7 +303,8 @@ ORDER BY DES(?date) LIMIT 1 OFFSET 0
 
 ========================================================
 26	How often is King’s Indian played?
-SELECT DISTINCT (xsd:double(?played)/xsd:double(COUNT(?ecoAll)))*100 AS ?percent
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT (?played/(xsd:double(COUNT(?ecoAll))*100)  AS ?percentage)
 WHERE {
 	?gamesAll prop:eco ?ecoAll .
 	{
@@ -319,7 +314,7 @@ WHERE {
         FILTER regex(?eco, '^E[6-9]{2}.*')
 		}
 	}
-}
+} GROUP BY ?played
 
 ========================================================
 27	Which games have a similar pawn structure as Ivanchuk against Shirov on move 13 in 1996 in Hoogovens?
@@ -335,8 +330,8 @@ SELECT DISTINCT ?game
 WHERE {
 	?game prop:moves ?moves .
 	?moves prop:moveNr ?nr .
-	FILTER (?nr > '99'^^xsd:nonNegativeInteger)
-}
+	FILTER ((?nr/2) > 99)
+} GROUP BY ?game
 
 ========================================================
 30	Show me any games with three pawns on the 7th rank?
@@ -363,7 +358,7 @@ WHERE {
 
 ========================================================
 33	Has Carlsen ever played a fianchetto?
-ASK {
+ASK {?game prop:black|prop:white 'Magnus Carlsen'.
 	{?game prop:moves ?moves .
 	?moves prop:fen ?fen .
 	FILTER regex(?fen, '^.*/.*/.*/.*/.*/.*P{1}.{1}/.*PBP/.* ')
@@ -387,6 +382,7 @@ ASK {
 
 ========================================================
 34	Are there games with f4 d5 g3?
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:moves ?move1 .
@@ -427,6 +423,7 @@ LIMIT 1 OFFSET 0
 
 ========================================================
 39	All games of GMs against computers.
+?????????????????
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:black|prop:white ?comp .
@@ -441,13 +438,13 @@ WHERE {
 
 ========================================================
 41	Two games with doubling rooks on the 7th rank from June 2015.
+
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:moves ?moves .
 	?game prop:date ?date .
 	?moves prop:fen ?fen .
-	FILTER regex(?fen , ^.*/.*R{1}.*R{1}.*/.*/.*/.*/.*/.*/.* ')
-	FILTER regex(?date, '06.2015$')
+	FILTER (regex(?fen , '^.*/.*R{1}.*R{1}.*/.*/.*/.*/.*/.*/.* ') && regex(?date, '06.2015$'))
 }
 
 ========================================================
@@ -456,18 +453,12 @@ SELECT DISTINCT ?game
 WHERE {
 	{?game prop:moves ?moves .	
 	?moves prop:fen ?fen .
-	FILTER regex(?fen, '^.*B{1}.* ')
-	FILTER regex(?fen, '^.*n{1}.* ')
-	FILTER regex(?fen, '^[^N]* ')
-	FILTER regex(?fen, '^[^b]* ')
+	FILTER (regex(?fen, '^.*B{1}.* ') && regex(?fen, '^.*n{1}.* ') && regex(?fen, '^[^N]* ') && regex(?fen, '^[^b]* '))
 	}
 	UNION
 	{?game prop:moves ?moves .	
 	?moves prop:fen ?fen .
-	FILTER regex(?fen, '^.*b{1}.* ')
-	FILTER regex(?fen, '^.*N{1}.* ')
-	FILTER regex(?fen, '^[^n]* ')
-	FILTER regex(?fen, '^[^B]* ')
+	FILTER (regex(?fen, '^.*b{1}.* ') && regex(?fen, '^.*N{1}.* ') && regex(?fen, '^[^n]* ') && regex(?fen, '^[^B]* '))
 	}
 }
 
@@ -493,13 +484,16 @@ LIMIT 1 OFFSET 0
 
 ========================================================
 45	All games of Carlsen between 2014 and 2016.
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:black|prop:white 'Magnus Carlsen' .
 	?game prop:date ?date .
-	FILTER ((?date>'2014')&&(?date>'2016'))
+BIND( substr( ?date, 1, 4 ) as ?year )
+	FILTER ((xsd:Integer(?year)>2014)&&(xsd:Integer(?year)<2016))
 }
 ORDER BY ASC(?date)
+
 
 ========================================================
 46 What is the Immortal game?
@@ -519,6 +513,8 @@ LIMIT 1 OFFSET 0
 
 ========================================================
 48	All games in which a FM has defeated a GM.
+?????????????????????
+
 SELECT DISTINCT ?game
 WHERE {
 	{?game prop:whiteTitle 'FM' .
@@ -565,10 +561,12 @@ LIMIT 3 OFFSET 0
 
 ========================================================
 52	Wins of white in B33 and an average ELO of over 2700.
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT DISTINCT ?game
 WHERE {
 	?game prop:blackelo|prop:whiteelo ?elo .
 	?game prop:eco 'B33' .
+	?game prop:result '1-0'.
 }
 GROUP BY ?game
 HAVING (AVG(?elo)>'2700'^^xsd:int)

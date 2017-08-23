@@ -1,6 +1,7 @@
 package de.daug.semanticchess.Controller;
 
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 import org.apache.jena.query.ResultSet;
