@@ -64,6 +64,7 @@ public class Annotations {
 	 * gets entities with the help of fox.aksw.org like 'Magnus Carlsen' and ' Viswanathan Anand'
 	 */
 	public void initFox(HAWKQuestion q, ASpotter fox) {	
+		
 		q.getLanguageToQuestion().put(this.language, this.query);		
 		q.setLanguageToNamedEntites(fox.getEntities(q.getLanguageToQuestion().get(this.language)));
 		
@@ -89,7 +90,7 @@ public class Annotations {
 					uris.add(r.getURI());
 					//System.out.println("\t\turi: " + r);
 				}
-				
+			
 				foxEntity.add(new FoxEntity(label,type,posTypesAndCategories,uris));
 			}
 		}
@@ -210,7 +211,7 @@ public class Annotations {
 	public static void main(String[] args) {
 		
 		//1. Question
-		Annotations annotate = new Annotations("Which buildings in art dog style did Shreve, Lamb and Harmon design?",
+		Annotations annotate = new Annotations("Show me tournaments with Carlsen.",
 				"en");
 		//Entities
 		annotate.initFox(annotate.getHAWKquestion(), annotate.getFox());
@@ -221,11 +222,11 @@ public class Annotations {
 		//classes
 		System.out.println("Classes: \n");
 		
-		annotate.initIndexDBO_classes(annotate.getClasses(), "Which buildings in art dog style did Shreve, Lamb and Harmon design?");
+		annotate.initIndexDBO_classes(annotate.getClasses(), "Show me tournaments with Carlsen.");
 		//properties
 		System.out.println("\n");
 		System.out.println("Properties: ");
-		annotate.initIndexDBO_properties(annotate.getProperties(), "Which buildings in art dog style did Shreve, Lamb and Harmon design?");
+		annotate.initIndexDBO_properties(annotate.getProperties(), "Show me tournaments with Carlsen.");
 		
 		System.out.println("\n\n");
 		
@@ -328,3 +329,5 @@ public class Annotations {
 	
 
 }
+
+

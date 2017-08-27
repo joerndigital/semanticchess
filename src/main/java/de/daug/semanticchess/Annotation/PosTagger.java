@@ -7,12 +7,15 @@ import java.util.Properties;
 
 import edu.stanford.nlp.coref.CorefCoreAnnotations.CorefChainAnnotation;
 import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreAnnotations.AnswerAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
 import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.trees.Tree;
@@ -100,7 +103,7 @@ public class PosTagger{
 	 * builds a tree with words and POS-tags
 	 * sets the tagged query
 	 */
-    private void initAnnotations(){
+    public void initAnnotations(){
     	//===================================
     	//This code is mainly part of the introduction of https://stanfordnlp.github.io/CoreNLP/api.html
     	
@@ -117,7 +120,6 @@ public class PosTagger{
   		    String pos = token.get(PartOfSpeechAnnotation.class);
   		    // this is the NER label of the token
   		    String ne = token.get(NamedEntityTagAnnotation.class);
-  		    
   		    //push token to the list of tokens 
   		    Token tok = new Token(word,pos,ne);
   		    tokens.add(tok);
@@ -227,7 +229,8 @@ public class PosTagger{
 		StanfordCoreNLP pipeline = tagger.getPipeline();
 		
 		//1. Question
-		tagger.setQuery("What does Anand play against the Sicilian Defense?");
+		
+		tagger.setQuery("Show me tournaments with Wesley So, Carlsen and Naiditsch from March 2016");
 		tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
 		tagger.initAnnotations();
 		
@@ -235,7 +238,17 @@ public class PosTagger{
 		System.out.println("================================================================");
 		System.out.println(tagger.getQuery());
 		System.out.println(tagger.getTaggedQuery());
-		
+		System.out.println(tagger.getTree());
+		for (Tree child: tagger.getTree()){
+			   if (child.value().equals("NP")){// set your rule of defining Phrase here
+				   System.out.println(child.firstChild());
+				   
+//			          List<Tree> leaves = child.getLeaves(); //leaves correspond to the tokens
+//			          
+//			          System.out.println(leaves.toString());
+			          
+			   }
+			}
 		//delete results
 		tagger.setTokens(null);
 		tagger.setTaggedQuery("");
@@ -255,7 +268,7 @@ public class PosTagger{
 	/**
 	 * class for a token (word, POS, NER)
 	 */
-	private class Token{
+	public class Token{
 		private String word = "";
 		private String pos = "";
 		private String ne = "";

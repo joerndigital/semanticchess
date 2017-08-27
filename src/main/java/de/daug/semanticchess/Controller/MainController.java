@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.daug.semanticchess.Service.QueryService;
+import de.daug.semanticchess.Service.SparqlService;
 
 @Controller
 public class MainController {

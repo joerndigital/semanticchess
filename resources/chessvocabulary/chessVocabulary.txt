@@ -1,0 +1,237 @@
+0-0
+0-0-0
+0-1
+1-0
+1/2
+1/2-1/2
+50 move rule
+50 moves rule
+adjournament
+adjudication
+adjust piece
+air
+amateur
+annotation
+armageddon
+attack
+attack king
+attack the king
+b
+back-rank mate
+back rank
+backward pawn
+bad bishop
+basic endings
+battery
+bind
+bishop
+bishop pair
+bishops
+blind
+blindfold chess
+blindfolded
+blitz
+blitz chess
+blockade
+blunder
+book
+bughouse
+bye
+capture
+castle
+castling
+champions master
+chaturanga
+cheating
+check
+checkmate
+check mate
+chess 960
+chess960
+chess clocks
+clocks
+cm
+column
+columns
+combination
+commentary
+comments
+correspondence chess
+counter-attack
+counter attack
+dark squares
+dead draw
+decision
+decisive
+desperado
+development
+diagonals
+discovered check
+discovery
+double attack
+doubled isolated pawns
+doubled pawn
+doubled pawns
+doubled rooks
+draw
+drawn
+draws
+elo
+elo rating
+endgame
+endgames
+en passant
+enpassant
+enprice
+en prise
+equality
+exchange
+expert
+fast
+fen
+fianchetto
+fide
+fide master
+fifty-move rule
+fifty move rule
+file
+fischerandom
+fischerrandom
+fischer random chess
+five minute
+flag
+fm
+forfeit
+fork
+gain advantage
+game
+games
+garde
+gm
+grading
+grand master
+hanging
+hold
+horizontal lines
+im
+initiative
+international chess federation
+international master
+isolated pawns
+j'adoube
+jadoube
+k
+king
+kings
+knight
+knights
+liqht squares
+long castling
+loose
+looses
+loss
+lost
+luft
+mail chess
+major piece
+major pieces
+match
+mate
+middlegame
+minor piece
+minor pieces
+n
+national master
+nm
+no advantage
+obstruction
+open file
+opening
+overloaded
+overworked
+p
+patzer
+pause
+paused
+pawn
+pawn on 8th rank
+pawn on the 8th rank
+pawns
+pawn storm
+pawn storms
+perpetual
+perpetual chess
+piece
+pieces
+pin
+play
+ply
+positional play
+promote
+promotion
+prophylaxis
+q
+queen
+queens
+r
+randomized chess
+rank
+rapid
+rapid game
+rapidplay
+rapid play
+rating
+ratings
+remis
+repition
+resign
+resigned
+resigns
+restraint
+rook
+rooks
+round robin
+row
+rows
+royal fork
+sacrifice
+sacrifice the exchange
+sealed move
+section
+short chastling
+simul
+simultan
+simultaneous
+skewer
+skittles
+space
+squeeze
+stalemate
+study
+sudden death
+tactics
+tempo
+threat
+time
+time control
+time delay
+touch and move
+transposition
+trebuchet
+two bishops
+unrated
+vertical columns
+vertical line
+victory
+wfm
+wgm
+wim
+win
+winning
+wins
+woman fide master
+woman grand master
+woman international master
+won
+zugzwang
+zwischenzug

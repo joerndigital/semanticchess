@@ -13,6 +13,37 @@ appChess.controller('appCtrl', function($scope, $http){
 	
 	$scope.getSparqlResults = function(){
 	    $http({
+	        'url' : '/sparql/',
+	        'method' : 'POST',
+	        'headers': {'Content-Type' : 'application/json'},
+	        'data' : $scope.query
+	    }).then(function(data){
+	    	
+	    	if(!(typeof data == undefined)){
+		    	$scope.errorFound = false;
+		    	$scope.result = data;
+		        $scope.error = '';
+		        $scope.resultCounter = $scope.result.data.results.bindings.length;	
+	    	}else {
+	    		$scope.error = data; 
+	    	}
+
+
+	        
+	        
+	    }).catch(function (err) {
+
+		    	$scope.resultCounter = 0;
+		    	$scope.result = "";
+		    	$scope.errorFound = true;    	
+	    	
+	    });
+	 
+	    
+	};
+	
+	$scope.getQueryResults = function(){
+	    $http({
 	        'url' : '/query/',
 	        'method' : 'POST',
 	        'headers': {'Content-Type' : 'application/json'},

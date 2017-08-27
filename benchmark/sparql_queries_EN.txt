@@ -4,9 +4,9 @@ MISSING INFORMATION: |||||
 INACCURATE: |
 NOT POSSIBLE: |
 
-PREFIX ex: <http://http:example.com/>
-PREFIX res: <http:www.example.com/res/>
-PREFIX prop: <http:www.example.com/prop/>
+PREFIX ex: <http://example.com/>
+PREFIX res: <http://example.com/res/>
+PREFIX prop: <http://example.com/prop/>
 
 ========================================================
 1	Show me all won games of Carlsen against Anand.

@@ -92,9 +92,26 @@
 			<artifactId>jena-arq</artifactId>
 			<version>3.4.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.dice-group</groupId>
+			<artifactId>FOX</artifactId>
+			<version>v2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.renespeck</groupId>
+			<artifactId>fox-java</artifactId>
+			<version>904cabeee3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aksw.qa</groupId>
@@ -115,11 +132,6 @@
 			<groupId>org.aksw.qa</groupId>
 			<artifactId>hawk</artifactId>
 			<version>0.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.renespeck</groupId>
-			<artifactId>fox-java</artifactId>
-			<version>904cabeee3</version>
 		</dependency>
 		<dependency>
 			<groupId>virtuoso</groupId>
@@ -160,13 +172,13 @@
 
 
 	<build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 
 	<description>A questions answering system for chess games.</description>
