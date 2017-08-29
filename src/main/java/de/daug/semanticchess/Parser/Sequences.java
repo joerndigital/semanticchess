@@ -7,17 +7,20 @@ public class Sequences {
 
 	static String E = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:white|prop:black 'E_1'. " + "}";
 
-	static String PM = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:P_1 ?result. "
+	static String MP = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:P_1 ?result. "
 			+ " FILTER regex(?result, 'M_1', 'i')" + "}";
 	
 	static String PZ = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:P_1 ?result. "
 			+ " FILTER regex(?result, 'Z_1', 'i')" + "}";
 	
-	static String PL = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:P_1 ?result. "
+	static String LP = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:P_1 ?result. "
 			+ " FILTER regex(?result, 'L_1', 'i')" + "}";
 
 	static String EE = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:white|prop:black 'E_1'. "
 			+ " ?game prop:white|prop:black 'E_2'. " + "}";
+	
+	static String EPR = "SELECT DISTINCT ?game " + "WHERE { " + " ?game prop:white|prop:black 'E_1'. "
+			+ " ?game prop:P_1 'R_1'. " + "}";
 
 	// Show me all won games of Carlsen against Anand
 	// private String gamePersonResultPerson = "SELECT DISTINCT ?game " +

@@ -211,7 +211,7 @@ public class Annotations {
 	public static void main(String[] args) {
 		
 		//1. Question
-		Annotations annotate = new Annotations("Show me tournaments with Carlsen.",
+		Annotations annotate = new Annotations("Show me wins by Carlsen.",
 				"en");
 		//Entities
 		annotate.initFox(annotate.getHAWKquestion(), annotate.getFox());
@@ -222,11 +222,11 @@ public class Annotations {
 		//classes
 		System.out.println("Classes: \n");
 		
-		annotate.initIndexDBO_classes(annotate.getClasses(), "Show me tournaments with Carlsen.");
+		annotate.initIndexDBO_classes(annotate.getClasses(), "Show me wins Carlsen.");
 		//properties
 		System.out.println("\n");
 		System.out.println("Properties: ");
-		annotate.initIndexDBO_properties(annotate.getProperties(), "Show me tournaments with Carlsen.");
+		annotate.initIndexDBO_properties(annotate.getProperties(), "Show me wins by Carlsen.");
 		
 		System.out.println("\n\n");
 		

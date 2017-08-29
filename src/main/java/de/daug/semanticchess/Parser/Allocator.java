@@ -42,15 +42,17 @@ public class Allocator {
 				sparqlQuery = replaceCodes(Sequences.EE);
 				break;
 			case "PM":
-				sparqlQuery = replaceCodes(Sequences.PM);
+				sparqlQuery = replaceCodes(Sequences.MP);
 				break;
 			case "PZ":
 				sparqlQuery = replaceCodes(Sequences.PZ);
 				break;
 			case "PL":
-				sparqlQuery = replaceCodes(Sequences.PL);
+				sparqlQuery = replaceCodes(Sequences.LP);
 				break;
-			
+			case "EPR":
+				sparqlQuery = replaceCodes(Sequences.EPR);
+				break;
 		}
 		this.sparqlQuery = sparqlQuery;
 	}
