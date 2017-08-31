@@ -15,10 +15,13 @@ public class NewParser {
 	private List<Token> tokens;
 	private ChessVocabulary vocabs = new ChessVocabulary();
 	private int sequence = 0;
+	private int optionSequence = 0;
 	private int index = 0;
 
 	private String propertyLabel = "P_";
 	private String entityLabel = "E_";
+	private String optionsLabel = "O_";
+	private String optionsNameLabel = "N_";
 
 	private int counter = 0;
 	private int optionCounter = 0;
@@ -31,68 +34,182 @@ public class NewParser {
 	private List<Flag> flags = new ArrayList<Flag>();
 
 	public NewParser(String query) {
+		query = toOrdinal(query);
 		this.tokens = initTokens(query);
 		getSequences(this.tokens);
 
-		System.out.println(entities.toString());
-		System.out.println(properties.toString());
-		System.out.println(flags.toString());
-		System.out.println("Take Sequence: " + getSequence());
+		System.out.println("=========================");
+		System.out.println("Entities: " + entities.toString());
+		System.out.println("Properties: " + properties.toString());
+		System.out.println("Options: " + options.toString());
+		System.out.println("Optionnames: " + optionNames.toString());
+		System.out.println("Flags: " + flags.toString());
+		System.out.println("Sequence: " + getSequence());
+		System.out.println("=========================");
 	}
 
 	public static void main(String[] args) {
-		NewParser np = new NewParser("Show me games by Magnus Carlsen from Berlin.");
+		NewParser np = new NewParser(
+				"Show me games between Magnus Carlsen and Viswanathan Anand with the white pieces.");
 	}
 
 	private void getSequences(List<Token> tokens) {
+		String colorFlag = "";
 
 		for (int i = 0; i < tokens.size(); i++) {
 			String ner = tokens.get(i).getNe();
+
 			String word = tokens.get(i).getWord();
-
 			while (ner.equals("O")) {
-
 				if (this.vocabs.INVERSED_PROPERTIES.get(word.toLowerCase()) != null) {
 					ner = this.vocabs.INVERSED_PROPERTIES.get(word.toLowerCase());
 				} else {
 					if ((i + 1) < tokens.size()) {
 						i += 1;
 						ner = tokens.get(i).getNe();
+						word = tokens.get(i).getWord();
 					} else {
 						break;
 					}
-
 				}
 			}
 
-			counter += 1;
 			switch (ner) {
 			case "PERSON":
-				flags.add(new Flag(i, ner));
+				counter += 1;
 
-				putPair(i,"PERSON", "prop:white|prop:black");
+				putPair(i, "PERSON", "prop:white|prop:black");
 				i = index;
-				
 				break;
 			case "MISC":
-				flags.add(new Flag(i, ner));
+				counter += 1;
 
-				putPair(i,"MISC", "");
+				putPair(i, "MISC", "");
 				i = index;
-				
 				break;
 			case "LOCATION":
-				flags.add(new Flag(i, ner));
+				counter += 1;
 
-				putPair(i,"LOCATION", "prop:site");
+				putPair(i, "LOCATION", "prop:site");
 				i = index;
-				
+				break;
+			case "ORGANIZATION":
+				counter += 1;
+
+				putPair(i, "ORGANIZATION", "prop:event");
+				i = index;
+				break;
+			case "DATE":
+				counter += 1;
+
+				putPair(i, "DATE", "prop:date");
+				i = index;
+				break;
+			case "ORDINAL":
+				optionCounter += 1;
+
+				putOptions(i, "ORDINAL", "OFFSET");
+				i = index;
+				break;
+			case "black":
+				flags.add(new Flag(i, ner, counter));
+				colorFlag = "prop:black";
+				break;
+			case "white":
+				flags.add(new Flag(i, ner, counter));
+				colorFlag = "prop:white";
+				break;
+			default:
+
 				break;
 			}
+
 		}
+
+		if (!colorFlag.equals("")) {
+			String reverseColorFlag = "";
+			if (colorFlag.equals("prop:white")) {
+				reverseColorFlag = "prop:black";
+			} else {
+				reverseColorFlag = "prop:white";
+			}
+
+			List<Integer> personPositions = new ArrayList<Integer>();
+			int colorPosition = 0;
+			for (Flag flag : flags) {
+				if (flag.getNerLabel().equals("PERSON")) {
+					personPositions.add(flag.getPosition());
+				}
+				if (flag.getNerLabel().equals("black") || flag.getNerLabel().equals("white")) {
+					colorPosition = flag.getPosition();
+				}
+			}
+
+			int temp = Math.abs(personPositions.get(0) - colorPosition);
+			int bestPosition = personPositions.get(0);
+
+			for (int pos : personPositions) {
+
+				if (Math.abs(pos - colorPosition) < temp) {
+					temp = Math.abs(pos - colorPosition);
+					bestPosition = pos;
+				}
+
+			}
+
+			int i = 0;
+			for (Flag flag : flags) {
+				if (flag.getPosition() == bestPosition) {
+					i = flag.getCounter() - 1;
+					break;
+				}
+			}
+
+			properties.get(i).setValue(properties.get(i).getValue().replace("prop:white|prop:black", colorFlag));
+
+			for (Pair property : properties) {
+
+				if (property.getValue().equals("prop:white|prop:black")) {
+					property.setValue(reverseColorFlag);
+				}
+			}
+		}
+
+	}
+
+	private String toOrdinal(String query) {
+		if (query.matches(".*[0-9]\\..*")) {
+			int pos = query.indexOf(".");
+			String subStr = query.substring(pos - 2, pos).trim();
+
+			if (subStr.endsWith("1") && !subStr.equals("11")) {
+				query = query.substring(0, pos) + "st" + query.substring(pos + 1);
+			} else if (subStr.endsWith("2") && !subStr.equals("12")) {
+				query = query.substring(0, pos) + "nd" + query.substring(pos + 1);
+			} else if (subStr.endsWith("3") && !subStr.equals("13")) {
+				query = query.substring(0, pos) + "rd" + query.substring(pos + 1);
+			} else {
+				query = query.substring(0, pos) + "th" + query.substring(pos + 1);
+			}
+
+		}
+
+		query = query.replace("first", "1st");
+		query = query.replace("second", "2nd");
+		query = query.replace("third", "3rd");
+		query = query.replace("fourth", "4th");
+		query = query.replace("fifth", "5th");
+		query = query.replace("sixth", "6th");
+		query = query.replace("seventh", "7th");
+		query = query.replace("eighth", "8th");
+		query = query.replace("ninth", "9th");
+
+		return query;
 	}
 
 	public void putPair(int i, String ner, String propValue) {
+		flags.add(new Flag(i, ner, counter));
+
 		String entLabel = entityLabel + counter;
 		String entValue = tokens.get(i).getWord();
 		while (tokens.get(i + 1).getNe().equals(ner)) {
@@ -105,7 +222,6 @@ public class NewParser {
 		String[] propertyCheck = entValue.split(" ");
 
 		String propLabel = propertyLabel + counter;
-		
 
 		if (ner.equals("MISC")) {
 			for (String checks : propertyCheck) {
@@ -119,8 +235,35 @@ public class NewParser {
 		properties.add(pair);
 
 		this.sequence += 1;
-		
+
 		index = i;
+	}
+
+	public void putOptions(int i, String ner, String optionLabelName) {
+		try {
+			flags.add(new Flag(i, ner, 0));
+			String optLabel = optionsLabel + optionCounter;
+			String optValue = tokens.get(i).getWord();
+			optValue = optValue.substring(0, optValue.length() - 2);
+
+			Pair pair = new Pair(optLabel, optValue);
+			options.add(pair);
+
+			String optNameLabel = optionsNameLabel + optionCounter;
+			String optNameValue = optionLabelName;
+
+			pair = new Pair(optNameLabel, optNameValue);
+			optionNames.add(pair);
+
+			this.optionSequence += 1;
+
+			index = i;
+
+		} catch (Exception e) {
+			index = i;
+			optionCounter -= 1;
+		}
+
 	}
 
 	/**
@@ -286,10 +429,12 @@ public class NewParser {
 	class Flag {
 		private int position;
 		private String nerLabel;
+		private int counter;
 
-		public Flag(int position, String nerLabel) {
+		public Flag(int position, String nerLabel, int counter) {
 			this.position = position;
 			this.nerLabel = nerLabel;
+			this.counter = counter;
 		}
 
 		public int getPosition() {
@@ -308,9 +453,17 @@ public class NewParser {
 			this.nerLabel = nerLabel;
 		}
 
+		int getCounter() {
+			return counter;
+		}
+
+		void setCounter(int counter) {
+			this.counter = counter;
+		}
+
 		@Override
 		public String toString() {
-			return "Flag [position=" + position + ", nerLabel=" + nerLabel + "]";
+			return "Flag [position=" + position + ", nerLabel=" + nerLabel + ", counter=" + counter + "]";
 		}
 
 	}
