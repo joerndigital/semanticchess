@@ -13,12 +13,14 @@ import de.daug.semanticchess.Parser.NewParser.Pair;
  */
 public class Allocator {
 	
-	private int sequenceCode;
+	private String sequenceCode;
 	private String sparqlQuery;
 	private List<Pair> entities;
 	private List<Pair> properties;
 	private List<Pair> options;
 	private List<Pair> optionNames;
+	private List<Pair> classes;
+	private List<Pair> classProperties;
 	
 	/**
 	 * constructor
@@ -27,11 +29,13 @@ public class Allocator {
 	 */
 	public Allocator(String query){
 		NewParser parser = new NewParser(query);
-		this.sequenceCode = parser.getSequence();
+		this.sequenceCode = "_" + parser.getClassSequence() + parser.getSequence() + parser.getUnionSequence();
 		this.entities = parser.getEntities();
 		this.properties = parser.getProperties();
 		this.options = parser.getOptions();
 		this.optionNames = parser.getOptionNames();
+		this.classes = parser.getClasses();
+		this.classProperties = parser.getClassProperties();
 
 		allocateSequence();
 	}
@@ -50,7 +54,10 @@ public class Allocator {
 			sparql = sparql.replaceAll(options.get(i).getLabel(), options.get(i).getValue());
 			sparql = sparql.replaceAll(optionNames.get(i).getLabel(), optionNames.get(i).getValue());
 		}
-		
+		for(int i = 0; i < classes.size(); i++){
+			sparql = sparql.replaceAll(classes.get(i).getLabel(), classes.get(i).getValue());
+			sparql = sparql.replaceAll(classProperties.get(i).getLabel(), classProperties.get(i).getValue());
+		}
 		return sparql;
 	}
 	
@@ -59,16 +66,28 @@ public class Allocator {
 	 */
 	private void allocateSequence(){
 		String sparqlQuery = "";
-		//System.out.println(this.sequenceCode);
+		System.out.println(this.sequenceCode);
 		switch(this.sequenceCode){
-			case 1:
-				sparqlQuery = replaceCodes(Sequences._1);
+			case "_010":
+				sparqlQuery = replaceCodes(Sequences._010);
 				break;
-			case 2: 
-				sparqlQuery = replaceCodes(Sequences._2);
+			case "_020": 
+				sparqlQuery = replaceCodes(Sequences._020);
 				break;
-			case 3: 
-				sparqlQuery = replaceCodes(Sequences._3);
+			case "_030": 
+				sparqlQuery = replaceCodes(Sequences._030);
+				break;
+			case "_011":
+				sparqlQuery = replaceCodes(Sequences._011);
+				break;
+			case "_021": 
+				sparqlQuery = replaceCodes(Sequences._021);
+				break;
+			case "_031": 
+				sparqlQuery = replaceCodes(Sequences._031);
+				break;
+			case "_100": 
+				sparqlQuery = replaceCodes(Sequences._100);
 				break;
 			default:
 				break;
@@ -97,7 +116,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args){
-		Allocator alloc = new Allocator("Show me games by Magnus Carlsen from the DSB Kongress against Vladimir Kramnik with black.");
+		Allocator alloc = new Allocator("Show me all tournaments in the database");
 		System.out.println(alloc.getSparqlQuery());
 	}
 	

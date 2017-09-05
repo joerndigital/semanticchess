@@ -44,7 +44,10 @@ public class ChessVocabulary{
 //		//==============================
 //		PROPERTIES.put("game", gameProperty);
 		
-		
+		ArrayList<String>personProperty = new ArrayList<String>();
+		personProperty.add("player");
+		personProperty.add("opponent");
+		PROPERTIES.put("PERSON", personProperty);
 		
 		ArrayList<String> eventProperty = new ArrayList<String>();
 		//TODO: sparql abfrage alle event Namen holen und hier eintragen.
@@ -85,6 +88,7 @@ public class ChessVocabulary{
 		openingProperty.add("defence");
 		openingProperty.add("defense");
 		openingProperty.add("variation");
+		openingProperty.add("wall");
 		openingProperty.add("gambit");
 		openingProperty.add("attack");
 		openingProperty.add("opening");
