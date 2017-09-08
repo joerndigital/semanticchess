@@ -71,6 +71,19 @@ public class Options{
 	void setOrderStr(String orderStr) {
 		this.orderStr = orderStr;
 	}
+
+	@Override
+	public String toString() {
+		if(limitStr != null && offsetStr != null && orderStr == null){
+			return limitStr + " " + offsetStr;
+		}else if (limitStr != null && offsetStr != null && orderStr != null){
+			return limitStr + " " + offsetStr + " " + orderStr;
+		}
+		
+		
+		return limitStr + " " + offsetStr;
+	}	
+	
 	
 	
 	

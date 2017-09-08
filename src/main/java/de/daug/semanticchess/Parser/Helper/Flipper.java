@@ -2,23 +2,19 @@ package de.daug.semanticchess.Parser.Helper;
 
 public class Flipper {
 
-	private String flipped;
 
-	public Flipper(String s) {
-
-		this.flipped = toFlip(s);
-
+	public Flipper() {
 	}
 
-	private String toFlip(String s) {
+	public String toFlip(String s) {
 
 		String result = "";
 
 		switch (s) {
-		case "1-0":
-			return "0-1";
-		case "0-1":
-			return "1-0";
+		case "'1-0'":
+			return "'0-1'";
+		case "'0-1'":
+			return "'1-0'";
 		case "prop:white":
 			return "prop:black";
 		case "prop:black":
@@ -28,15 +24,12 @@ public class Flipper {
 		case "prop:blackelo":
 			return "prop:whiteelo";
 		default:
-			result = "";
+			result = s;
 			break;
 		}
 
 		return result;
 	}
 
-	String getFlipped() {
-		return flipped;
-	}
 
 }

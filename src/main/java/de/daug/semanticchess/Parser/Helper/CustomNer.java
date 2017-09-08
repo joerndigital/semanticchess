@@ -9,11 +9,11 @@ import edu.stanford.nlp.ling.WordTag;
 import edu.stanford.nlp.process.Morphology;
 
 public class CustomNer {
-	private List <Token> tokens = new ArrayList<Token>();
+	
 	private ChessVocabulary  vocabulary = new ChessVocabulary();
 	
-	public CustomNer (List<Token> tokens){
-		this.tokens = tokens;
+	public CustomNer (){
+		
 	}
 	
 	/**
@@ -82,13 +82,6 @@ public class CustomNer {
 	
 	//TODO misc checker
 
-	List<Token> getTokens() {
-		return tokens;
-	}
 
-	void setTokens(List<Token> tokens) {
-		this.tokens = tokens;
-	}
-	
 	
 }

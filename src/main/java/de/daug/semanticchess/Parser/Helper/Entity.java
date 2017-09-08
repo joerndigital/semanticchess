@@ -11,45 +11,75 @@ public class Entity {
 
 	private String entityName;
 	private String propertyName;
+	
+	private int startPosition;
+	private int endPosition;
 
-	public Entity(int counter, String entityName, String propertyName) {
+	public Entity(int counter, String entityName, String propertyName, int startPosition, int endPosition) {
 		this.entityId = entityLabel + counter;
 		this.propertyId = propertyLabel + counter;
 
 		this.entityName = entityName;
-		this.propertyName = propertyName;
+		this.propertyName = property + propertyName;
+		
+		this.startPosition = startPosition;
+		this.endPosition = endPosition;
 	}
 
-	String getEntityId() {
+	public String getEntityId() {
 		return entityId;
 	}
 
-	void setEntityId(String entityId) {
+	public void setEntityId(String entityId) {
 		this.entityId = entityId;
 	}
 
-	String getPropertyId() {
+	public String getPropertyId() {
 		return propertyId;
 	}
 
-	void setPropertyId(String propertyId) {
+	public void setPropertyId(String propertyId) {
 		this.propertyId = propertyId;
 	}
 
-	String getEntityName() {
+	public String getEntityName() {
 		return entityName;
 	}
 
-	void setEntityName(String entityName) {
+	public void setEntityName(String entityName) {
 		this.entityName = entityName;
 	}
 
-	String getPropertyName() {
+	public String getPropertyName() {
 		return propertyName;
 	}
 
-	void setPropertyName(String propertyName) {
+	public void setPropertyName(String propertyName) {
 		this.propertyName = propertyName;
 	}
 
+	public int getStartPosition() {
+		return startPosition;
+	}
+
+	public void setStartPosition(int startPosition) {
+		this.startPosition = startPosition;
+	}
+
+	public int getEndPosition() {
+		return endPosition;
+	}
+
+	public void setEndPosition(int endPosition) {
+		this.endPosition = endPosition;
+	}
+
+	@Override
+	public String toString() {
+		return "Entity [entityId=" + entityId + ", propertyId=" + propertyId + ", entityName=" + entityName
+				+ ", propertyName=" + propertyName + ", startPosition=" + startPosition + ", endPosition=" + endPosition
+				+ "]";
+	}
+
+	
 }

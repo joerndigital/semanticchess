@@ -11,45 +11,65 @@ public class Classes {
 
 	private String classesName;
 	private String propertyName;
+	
+	private int position;
 
-	public Classes(int counter, String classesName, String propertyName) {
+	public Classes(int counter, String classesName, String propertyName, int position) {
 		this.classesId = classesLabel + counter;
 		this.propertyId = propertyLabel + counter;
 
 		this.classesName = classesName;
-		this.propertyName = propertyName;
+		this.propertyName = property + propertyName;
+		
+		this.position = position;
 	}
 
-	String getClassesId() {
+	public String getClassesId() {
 		return classesId;
 	}
 
-	void setClassesId(String classesId) {
+	public void setClassesId(String classesId) {
 		this.classesId = classesId;
 	}
 
-	String getPropertyId() {
+	public String getPropertyId() {
 		return propertyId;
 	}
 
-	void setPropertyId(String propertyId) {
+	public void setPropertyId(String propertyId) {
 		this.propertyId = propertyId;
 	}
 
-	String getClassesName() {
+	public String getClassesName() {
 		return classesName;
 	}
 
-	void setClassesName(String classesName) {
+	public void setClassesName(String classesName) {
 		this.classesName = classesName;
 	}
 
-	String getPropertyName() {
+	public String getPropertyName() {
 		return propertyName;
 	}
 
-	void setPropertyName(String propertyName) {
+	public void setPropertyName(String propertyName) {
 		this.propertyName = propertyName;
 	}
+
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
+	@Override
+	public String toString() {
+		return "Classes [classesId=" + classesId + ", propertyId=" + propertyId + ", classesName=" + classesName
+				+ ", propertyName=" + propertyName + ", position=" + position + "]";
+	}
+	
+	
 
 }
