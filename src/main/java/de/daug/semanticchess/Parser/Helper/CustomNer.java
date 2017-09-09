@@ -42,6 +42,10 @@ public class CustomNer {
 					token.setNe(vocabulary.INVERSED_PROPERTIES.get(word));
 				} else if (word.matches("[a-e][0-9]{2}")) {
 					token.setNe("eco");
+				} else if (word.matches("[kqrbn]*[a-h][1-8]{1}")){
+					token.setNe("move");
+				} else if (word.matches("[kqrbn]*[a-h][1-8]{1}[\\-x][a-h][1-8]{1}")){
+					token.setNe("move");
 				}
 			}
 		}

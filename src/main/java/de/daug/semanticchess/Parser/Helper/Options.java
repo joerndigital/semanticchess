@@ -9,11 +9,11 @@ public class Options{
 	private static final String GROUPBY = "GROUP BY ";
 	private static final String HAVING = "HAVING ";
 	
-	private int limitProperty;
-	private int offsetProperty;
-	private String orderProperty;
-	private String groupProperty;
-	private String havingProperty;
+//	private int limitProperty = 10000;
+//	private int offsetProperty = 0;
+//	private String orderProperty = "";
+//	private String groupProperty = "";
+//	private String havingProperty = "";
 	
 	private String limitStr;
 	private String offsetStr;
@@ -22,59 +22,58 @@ public class Options{
 	private String havingStr;
 	
 	public Options(){
-		this.limitProperty = 10000;
-		this.offsetProperty = 0;
-		
-		this.limitStr = LIMIT + limitProperty;
-		this.offsetStr = OFFSET + offsetProperty;
-		
+
 	}
 
-	public Options(int limitProperty, int offsetProperty) {
-		this.limitProperty = limitProperty;
-		this.offsetProperty = offsetProperty;
-		
-		this.limitStr = LIMIT + limitProperty;
-		this.offsetStr = OFFSET + offsetProperty;
-	}
+//	public Options(int limitProperty, int offsetProperty) {
+//		this.limitProperty = limitProperty;
+//		this.offsetProperty = offsetProperty;
+//		
+//		this.limitStr = LIMIT + limitProperty;
+//		this.offsetStr = OFFSET + offsetProperty;
+//	}
 
-	public Options(int limitProperty, int offsetProperty, String orderProperty) {
-		this.limitProperty = limitProperty;
-		this.offsetProperty = offsetProperty;
-		this.orderProperty = orderProperty;
-		
-		this.limitStr = LIMIT + limitProperty;
-		this.offsetStr = OFFSET + offsetProperty;
-		this.orderStr = ORDERBY + orderProperty;
-	}
+//	public Options(int limitProperty, int offsetProperty, String orderProperty) {
+//		this.limitProperty = limitProperty;
+//		this.offsetProperty = offsetProperty;
+//		this.orderProperty = orderProperty;
+//		
+//		this.limitStr = LIMIT + limitProperty;
+//		this.offsetStr = OFFSET + offsetProperty;
+//		this.orderStr = ORDERBY + orderProperty;
+//	}
 
-	String getLimitStr() {
+	public String getLimitStr() {
 		return limitStr;
 	}
 
-	void setLimitStr(String limitStr) {
-		this.limitStr = limitStr;
+	public void setLimitStr(int limit) {
+		this.limitStr = LIMIT + limit;
 	}
 
-	String getOffsetStr() {
+	public String getOffsetStr() {
 		return offsetStr;
 	}
 
-	void setOffsetStr(String offsetStr) {
-		this.offsetStr = offsetStr;
+	public void setOffsetStr(int offset) {
+		this.offsetStr = OFFSET + offset;
 	}
 
-	String getOrderStr() {
+	public String getOrderStr() {
 		return orderStr;
 	}
 
-	void setOrderStr(String orderStr) {
-		this.orderStr = orderStr;
+	public void setOrderStr(String orderDirection, String order) {
+		this.orderStr = ORDERBY + orderDirection + "(" + order + ")";
 	}
 
 	@Override
 	public String toString() {
-		if(limitStr != null && offsetStr != null && orderStr == null){
+		
+		if(limitStr == null && offsetStr == null && orderStr == null){
+			return ""; 
+		}
+		else if(limitStr != null && offsetStr != null && orderStr == null){
 			return limitStr + " " + offsetStr;
 		}else if (limitStr != null && offsetStr != null && orderStr != null){
 			return limitStr + " " + offsetStr + " " + orderStr;

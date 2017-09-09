@@ -12,7 +12,6 @@ import de.daug.semanticchess.Parser.Helper.CustomNer;
 import de.daug.semanticchess.Parser.Helper.Entity;
 import de.daug.semanticchess.Parser.Helper.Flipper;
 import de.daug.semanticchess.Parser.Helper.Options;
-import de.daug.semanticchess.Parser.Helper.OptionsAllocator;
 import de.daug.semanticchess.Parser.Helper.Resource;
 import edu.stanford.nlp.ling.WordTag;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
@@ -28,7 +27,7 @@ public class Parser {
 	private List<Entity> entities = new ArrayList<Entity>();
 	private List<Classes> classes = new ArrayList<Classes>();
 	private List<Resource> resources = new ArrayList<Resource>();
-	private String options = "";
+	private Options options = new Options();
 
 	private ChessVocabulary vocabulary = new ChessVocabulary();
 
@@ -38,9 +37,6 @@ public class Parser {
 	private boolean isWhite = false;
 	private boolean isDecisive = false;
 	private boolean isUnion = false;
-	private boolean isNumber = false;
-	private boolean isOrdinal = false;
-	private boolean isRound = false;
 
 	private String sequence;
 
@@ -73,39 +69,15 @@ public class Parser {
 		}
 
 		if (!isUnion) {
-			this.sequence = "_" + resources.size() + "" + classes.size() + "" + entities.size() + "0";
+			this.sequence = "_" + classes.size() + "" + entities.size() + "0";
 		} else {
-			this.sequence = "_" + resources.size() + "" + classes.size() + "" + entities.size() + "1";
-		}
-
-		OptionsAllocator optAlloc = new OptionsAllocator(tokens);
-		Options options = null;
-		int limitProperty = -1;
-		int offsetProperty = -1;
-		String orderByProperty = "";
-		if (isNumber) {
-			limitProperty = optAlloc.findLimit();
-			options = new Options(limitProperty, 0);
-			this.options = options.toString();
-
-		} else if (isOrdinal && !isRound) {
-			offsetProperty = optAlloc.findOffset();
-			orderByProperty = optAlloc.findOrderBy();
-
-			options = new Options(10000, offsetProperty, orderByProperty);
-			this.options = options.toString();
-
-			classes.add(new Classes(classes.size() + 1, "?date", "date", 99));
-
-		} else {
-			options = new Options();
-			this.options = options.toString();
+			this.sequence = "_" + classes.size() + "" + entities.size() + "1";
 		}
 
 	}
 
 	public static void main(String[] args) {
-		String query = "1st game by Magnus Carlsen";
+		String query = "1st Encounter in the database by Magnus Carlsen and Viswanathan Anand from the World Championship in 2014.";
 
 		Parser p = new Parser(query);
 
@@ -119,48 +91,92 @@ public class Parser {
 		for (index = 0; index < tokens.size(); index++) {
 			String word = tokens.get(index).getWord();
 			String ne = tokens.get(index).getNe();
+			String preNe = "O";
+			String preWord = "";
+			try {
+				preNe = tokens.get(index - 1).getNe();
+				preWord = tokens.get(index - 1).getWord();
+			} catch (Exception e) {
+				preNe = "O";
+			}
+			String nextNe = "O";
+			String nextWord = "";
+			try {
+				nextNe = tokens.get(index + 1).getNe();
+				nextWord = tokens.get(index + 1).getWord();
+			} catch (Exception e) {
+				nextNe = "O";
+			}
+
 			String pos = tokens.get(index).getPos();
 
 			switch (ne) {
 			case "PERSON":
-				addEntityOrClass(word, ne, "white|prop:black");
+				addEntityOrClass(word, ne, "white|prop:black", "?game");
 				break;
 			case "MISC":
-				addEntityOrClass(word, ne, "");
+				addEntityOrClass(word, ne, "", "?game");
 				break;
 			case "LOCATION":
-				addEntityOrClass(word, ne, "site");
+				addEntityOrClass(word, ne, "site", "?game");
 				break;
 			case "ORGANIZATION":
-				addEntityOrClass(word, ne, "event");
+				addEntityOrClass(word, ne, "event", "?game");
 				break;
 			case "DATE":
-				addEntityOrClass(word, ne, "date");
+				addEntityOrClass(word, ne, "date", "?game");
 				break;
 			case "ORDINAL":
-				if ((index + 1) < tokens.size() && tokens.get(index + 1).getNe().equals("round")) {
-					isRound = true;
+				if (nextNe.equals("round")) {
+
 					index += 1;
-					addEntityOrClass(word.replaceAll("\\D+", ""), ne, "round");
+					if (word.equals("last")) {
+						addEntityOrClass("round", ne, "round", "?game");
+						options.setLimitStr(1);
+						options.setOffsetStr(0);
+						options.setOrderStr("DESC", "?round");
+					} else {
+						addEntityOrClass(word.replaceAll("\\D+", ""), ne, "round", "?game");
+					}
+
 				} else {
-					isOrdinal = true;
+					if (word.equals("last")) {
+						options.setLimitStr(1);
+						options.setOffsetStr(0);
+						options.setOrderStr("DESC", "?date");
+					} else {
+						options.setLimitStr(1);
+						options.setOffsetStr((Integer.valueOf(word.replaceAll("\\D+", "")))-1);
+						options.setOrderStr("ASC", "?date");
+					}
+					
+					classes.add(new Classes(classes.size() + 1, "?date", "date", 999, "?game"));
+
 				}
 
 				// TODO count events, etc
 				break;
 			case "NUMBER":
-				isNumber = true;
+				if (preNe.equals("round")) {
+
+					index += 1;
+					addEntityOrClass(word.replaceAll("\\D+", ""), ne, "round", "?game");
+				} else {
+					options.setLimitStr(Integer.valueOf(word));
+					options.setOffsetStr(0);
+
+				}
 				break;
 			case "game":
 				// TODO als Spezialfall, konkurrierend mit anderen res
 				// TODO bei eco, opening, event,... flag für game ressource
-				resources.add(new Resource((resources.size() + 1), "?game", "ChessGame", index));
+				//resources.add(new Resource((resources.size() + 1), "?game", "ChessGame", index));
 				break;
 			case "eco":
-				addEntityOrClass(word, ne, "eco");
+				addEntityOrClass(word, ne, "eco", "?game");
 				break;
 			case "elo":
-				addEntityOrClass(word, ne, "whiteelo|prop:blackelo");
+				addEntityOrClass(word, ne, "whiteelo|prop:blackelo", "?game");
 				break;
 			case "black":
 				isBlack = true;
@@ -170,25 +186,25 @@ public class Parser {
 				break;
 			case "1-0":
 				isDecisive = true;
-				addEntityOrClass(ne, ne, "result");
+				addEntityOrClass(ne, ne, "result", "?game");
 				break;
 			case "0-1":
-				// TODO siehe 1-0
 				isDecisive = true;
-				addEntityOrClass(ne, ne, "result");
+				addEntityOrClass(ne, ne, "result", "?game");
 				break;
 			case "1/2-1/2":
-				// TODO siehe 1-0
-				addEntityOrClass(ne, ne, "result");
+				addEntityOrClass(ne, ne, "result", "?game");
 				break;
 			case "event":
-				addEntityOrClass(word, ne, "event");
+				addEntityOrClass(word, ne, "event", "?game");
 				break;
 			case "opening":
-				addEntityOrClass(word, ne, "eco");
+				addEntityOrClass(word, ne, "eco", "?game");
 				break;
 			case "moves":
-				// TODO moves?
+				addEntityOrClass(word, ne, "moves", "?game");
+			case "move":
+				addEntityOrClass(word, ne, "move", "?moves");
 			default:
 				break;
 
@@ -282,7 +298,7 @@ public class Parser {
 					}
 				}
 			}
-			System.out.println("R: " + result);
+			
 
 			if (isFlipped) {
 				for (Entity e : entities) {
@@ -310,23 +326,33 @@ public class Parser {
 				}
 			}
 		}
-
 	}
 
-	public void addEntityOrClass(String word, String ne, String property) {
+	public void addEntityOrClass(String word, String ne, String property, String resource) {
 		int startPosition = index;
 		while ((index + 1) < tokens.size() && tokens.get(index + 1).getNe().equals(ne)) {
 			word += " " + tokens.get(index + 1).getWord();
 			index += 1;
 		}
+		
+		if(ne.equals("MISC")){
+			String[] words = word.split(" ");
+			
+			for(String w : words){
+				if(vocabulary.INVERSED_PROPERTIES.get(w.toLowerCase()) != null){
+					property = vocabulary.INVERSED_PROPERTIES.get(w.toLowerCase());
+				}
+			}			
+		}
+		
 		int endPosition = index;
 
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
 
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
-			classes.add(new Classes(classes.size() + 1, "?" + word, property, endPosition));
+			classes.add(new Classes(classes.size() + 1, "?" + word, property, endPosition, resource));
 		} else {
-			entities.add(new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition));
+			entities.add(new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
 		}
 	}
 
@@ -346,12 +372,12 @@ public class Parser {
 			newEntityName = flipper.toFlip(e.getEntityName());
 
 			tempEntities.add(new Entity(tempEntities.size() + 1, newEntityName, newPropertyName.replace("prop:", ""),
-					e.getStartPosition(), e.getEndPosition()));
+					e.getStartPosition(), e.getEndPosition(), e.getResourceName()));
 		}
 
 		for (Entity t : tempEntities) {
 			entities.add(new Entity(entities.size() + 1, t.getEntityName(), t.getPropertyName().replace("prop:", ""),
-					t.getStartPosition(), t.getEndPosition()));
+					t.getStartPosition(), t.getEndPosition(), t.getResourceName()));
 		}
 
 		// TODO auch für classes
@@ -413,12 +439,9 @@ public class Parser {
 		this.sequence = sequence;
 	}
 
-	String getOptions() {
-		return options;
-	}
+	 Options getOptions() {
+	 return options;
+	 }
 
-	void setOptions(String options) {
-		this.options = options;
-	}
 
 }

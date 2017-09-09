@@ -22,7 +22,6 @@ public class Allocator {
 
 	private List<Entity> entities = new ArrayList<Entity>();
 	private List<Classes> classes = new ArrayList<Classes>();
-	private List<Resource> resources = new ArrayList<Resource>();
 	private String options;
 	
 	
@@ -37,8 +36,7 @@ public class Allocator {
 		this.sequenceCode = parser.getSequence();
 		this.entities = parser.getEntities();
 		this.classes = parser.getClasses();
-		this.resources = parser.getResources();
-		this.options = parser.getOptions();
+		this.options = parser.getOptions().toString();
 		
 		allocateSequence();
 	}
@@ -52,13 +50,12 @@ public class Allocator {
 		for(Entity e : entities){
 			sparql = sparql.replaceAll(e.getEntityId(), e.getEntityName());
 			sparql = sparql.replaceAll(e.getPropertyId(), e.getPropertyName());
+			sparql = sparql.replaceAll(e.getResourceId(), e.getResourceName());
 		}
 		for(Classes c : classes){
 			sparql = sparql.replaceAll(c.getClassesId(), c.getClassesName());
 			sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
-		}
-		for(Resource r : resources){
-			sparql = sparql.replaceAll(r.getResourceId(), r.getResourceName());
+			sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
 		}
 		
 		return sparql;
@@ -71,128 +68,68 @@ public class Allocator {
 		String sparqlQuery = "";
 		System.out.println(this.sequenceCode);
 		switch(this.sequenceCode){
-			case "_0010":
-				sparqlQuery = replaceCodes(Sequences._0010);
+			case "_010":
+				sparqlQuery = replaceCodes(Sequences._010);
 				break;
-			case "_0020":
-				sparqlQuery = replaceCodes(Sequences._0020);
+			case "_020":
+				sparqlQuery = replaceCodes(Sequences._020);
 				break;
-			case "_0030":
-				sparqlQuery = replaceCodes(Sequences._0030);
+			case "_030":
+				sparqlQuery = replaceCodes(Sequences._030);
 				break;
-			case "_0040":
-				sparqlQuery = replaceCodes(Sequences._0040);
+			case "_040":
+				sparqlQuery = replaceCodes(Sequences._040);
 				break;
-			case "_0100":
-				sparqlQuery = replaceCodes(Sequences._0100);
+			case "_100":
+				sparqlQuery = replaceCodes(Sequences._100);
 				break;
-			case "_0110":
-				sparqlQuery = replaceCodes(Sequences._0110);
+			case "_110":
+				sparqlQuery = replaceCodes(Sequences._110);
 				break;
-			case "_0120":
-				sparqlQuery = replaceCodes(Sequences._0120);
+			case "_120":
+				sparqlQuery = replaceCodes(Sequences._120);
 				break;
-			case "_0130":
-				sparqlQuery = replaceCodes(Sequences._0130);
+			case "_130":
+				sparqlQuery = replaceCodes(Sequences._130);
 				break;
-			case "_0140":
-				sparqlQuery = replaceCodes(Sequences._0140);
+			case "_140":
+				sparqlQuery = replaceCodes(Sequences._140);
 				break;
-			case "_0200":
-				sparqlQuery = replaceCodes(Sequences._0200);
+			case "_200":
+				sparqlQuery = replaceCodes(Sequences._200);
 				break;
-			case "_0210":
-				sparqlQuery = replaceCodes(Sequences._0210);
+			case "_210":
+				sparqlQuery = replaceCodes(Sequences._210);
 				break;
-			case "_0220":
-				sparqlQuery = replaceCodes(Sequences._0220);
+			case "_220":
+				sparqlQuery = replaceCodes(Sequences._220);
 				break;
-			case "_0230":
-				sparqlQuery = replaceCodes(Sequences._0230);
+			case "_230":
+				sparqlQuery = replaceCodes(Sequences._230);
 				break;
-			case "_0240":
-				sparqlQuery = replaceCodes(Sequences._0240);
+			case "_240":
+				sparqlQuery = replaceCodes(Sequences._240);
+				break;				
+			case "_021":
+				sparqlQuery = replaceCodes(Sequences._021);
 				break;
-			case "_1010":
-				sparqlQuery = replaceCodes(Sequences._1010);
+			case "_041":
+				sparqlQuery = replaceCodes(Sequences._041);
 				break;
-			case "_1020":
-				sparqlQuery = replaceCodes(Sequences._0020);
+			case "_061":
+				sparqlQuery = replaceCodes(Sequences._061);
 				break;
-			case "_1030":
-				sparqlQuery = replaceCodes(Sequences._0030);
+			case "_201":
+				sparqlQuery = replaceCodes(Sequences._201);
 				break;
-			case "_1040":
-				sparqlQuery = replaceCodes(Sequences._1040);
+			case "_221":
+				sparqlQuery = replaceCodes(Sequences._221);
 				break;
-			case "_1100":
-				sparqlQuery = replaceCodes(Sequences._1100);
+			case "_241":
+				sparqlQuery = replaceCodes(Sequences._241);
 				break;
-			case "_1110":
-				sparqlQuery = replaceCodes(Sequences._1110);
-				break;
-			case "_1120":
-				sparqlQuery = replaceCodes(Sequences._1120);
-				break;
-			case "_1130":
-				sparqlQuery = replaceCodes(Sequences._1130);
-				break;
-			case "_1140":
-				sparqlQuery = replaceCodes(Sequences._1140);
-				break;
-			case "_1200":
-				sparqlQuery = replaceCodes(Sequences._1200);
-				break;
-			case "_1210":
-				sparqlQuery = replaceCodes(Sequences._1210);
-				break;
-			case "_1220":
-				sparqlQuery = replaceCodes(Sequences._1220);
-				break;
-			case "_1230":
-				sparqlQuery = replaceCodes(Sequences._1230);
-				break;
-			case "_1240":
-				sparqlQuery = replaceCodes(Sequences._1240);
-				break;
-			case "_0021":
-				sparqlQuery = replaceCodes(Sequences._0021);
-				break;
-			case "_0041":
-				sparqlQuery = replaceCodes(Sequences._0041);
-				break;
-			case "_0061":
-				sparqlQuery = replaceCodes(Sequences._0061);
-				break;
-			case "_0221":
-				sparqlQuery = replaceCodes(Sequences._0221);
-				break;
-			case "_0241":
-				sparqlQuery = replaceCodes(Sequences._0241);
-				break;
-			case "_0261":
-				sparqlQuery = replaceCodes(Sequences._0261);
-				break;
-			case "_1021":
-				sparqlQuery = replaceCodes(Sequences._1021);
-				break;
-			case "_1041":
-				sparqlQuery = replaceCodes(Sequences._1041);
-				break;
-			case "_1061":
-				sparqlQuery = replaceCodes(Sequences._1061);
-				break;
-			case "_1201":
-				sparqlQuery = replaceCodes(Sequences._1201);
-				break;
-			case "_1221":
-				sparqlQuery = replaceCodes(Sequences._1221);
-				break;
-			case "_1241":
-				sparqlQuery = replaceCodes(Sequences._1241);
-				break;
-			case "_1261":
-				sparqlQuery = replaceCodes(Sequences._1261);
+			case "_261":
+				sparqlQuery = replaceCodes(Sequences._261);
 				break;
 			default:
 				break;
@@ -221,7 +158,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args){
-		Allocator alloc = new Allocator("1st game by Magnus Carlsen");
+		Allocator alloc = new Allocator("Give me the moves between Magnus Carlsen and Levon Aronian.");
 		System.out.println(alloc.getSparqlQuery());
 		
 	}
