@@ -10,6 +10,8 @@ import de.daug.semanticchess.Parser.Helper.Classes;
 import de.daug.semanticchess.Parser.Helper.ColorAllocator;
 import de.daug.semanticchess.Parser.Helper.CustomNer;
 import de.daug.semanticchess.Parser.Helper.Entity;
+import de.daug.semanticchess.Parser.Helper.FenRegex;
+import de.daug.semanticchess.Parser.Helper.Filters;
 import de.daug.semanticchess.Parser.Helper.Flipper;
 import de.daug.semanticchess.Parser.Helper.Options;
 import de.daug.semanticchess.Parser.Helper.Resource;
@@ -28,6 +30,8 @@ public class Parser {
 	private List<Classes> classes = new ArrayList<Classes>();
 	private List<Resource> resources = new ArrayList<Resource>();
 	private Options options = new Options();
+	private FenRegex fenReg = new FenRegex();
+	private Filters filters = new Filters();
 
 	private ChessVocabulary vocabulary = new ChessVocabulary();
 
@@ -37,6 +41,8 @@ public class Parser {
 	private boolean isWhite = false;
 	private boolean isDecisive = false;
 	private boolean isUnion = false;
+	private boolean isFen = false;
+	private boolean isFilter = false;
 
 	private String sequence;
 
@@ -74,10 +80,17 @@ public class Parser {
 			this.sequence = "_" + classes.size() + "" + entities.size() + "1";
 		}
 
+		if (isFilter) {
+			if (isFen) {
+				fenReg.createFen();
+				filters.addRegex("?fen", fenReg.getFen(), false);
+			}
+		}
+
 	}
 
 	public static void main(String[] args) {
-		String query = "1st Encounter in the database by Magnus Carlsen and Viswanathan Anand from the World Championship in 2014.";
+		String query = "Give me the games with rook and pawn against rook.";
 
 		Parser p = new Parser(query);
 
@@ -88,6 +101,7 @@ public class Parser {
 	}
 
 	public void collectEntities(List<Token> tokens) {
+		boolean isBlackPieces = false;
 		for (index = 0; index < tokens.size(); index++) {
 			String word = tokens.get(index).getWord();
 			String ne = tokens.get(index).getNe();
@@ -146,10 +160,10 @@ public class Parser {
 						options.setOrderStr("DESC", "?date");
 					} else {
 						options.setLimitStr(1);
-						options.setOffsetStr((Integer.valueOf(word.replaceAll("\\D+", "")))-1);
+						options.setOffsetStr((Integer.valueOf(word.replaceAll("\\D+", ""))) - 1);
 						options.setOrderStr("ASC", "?date");
 					}
-					
+
 					classes.add(new Classes(classes.size() + 1, "?date", "date", 999, "?game"));
 
 				}
@@ -161,6 +175,9 @@ public class Parser {
 
 					index += 1;
 					addEntityOrClass(word.replaceAll("\\D+", ""), ne, "round", "?game");
+				} else if (nextNe.equals("piece")) {
+					// will be used in case piece
+					break;
 				} else {
 					options.setLimitStr(Integer.valueOf(word));
 					options.setOffsetStr(0);
@@ -170,7 +187,8 @@ public class Parser {
 			case "game":
 				// TODO als Spezialfall, konkurrierend mit anderen res
 				// TODO bei eco, opening, event,... flag für game ressource
-				//resources.add(new Resource((resources.size() + 1), "?game", "ChessGame", index));
+				// resources.add(new Resource((resources.size() + 1), "?game",
+				// "ChessGame", index));
 				break;
 			case "eco":
 				addEntityOrClass(word, ne, "eco", "?game");
@@ -205,7 +223,46 @@ public class Parser {
 				addEntityOrClass(word, ne, "moves", "?game");
 			case "move":
 				addEntityOrClass(word, ne, "move", "?moves");
+			case "piece":
+				isFen = true;
+				isFilter = true;
+				int number = 1;
+
+				if (nextWord.equals("pair")) {
+					number = 2;
+				}
+
+				if (!isBlackPieces) {
+					try {
+						number = Integer.valueOf(preWord);
+					} catch (Exception e) {
+
+					}
+
+					fenReg.addPieceWhite(number, word);
+				} else {
+					try {
+						number = Integer.valueOf(preWord);
+					} catch (Exception e) {
+
+					}
+					fenReg.addPieceBlack(number, word);
+
+				}
+
+				if (fenReg.getPiecesWhite().size() == 1 && fenReg.getPiecesBlack().size() == 0) {
+					classes.add(new Classes(classes.size() + 1, "?moves", "moves", 999, "?game"));
+					classes.add(new Classes(classes.size() + 1, "?fen", "fen", 999, "?moves"));
+				}
+
+				break;
 			default:
+				if (word.equals("versus") || word.equals("vs") || word.equals("against")) {
+					if (preNe.equals("piece")) {
+						isBlackPieces = true;
+					}
+				}
+
 				break;
 
 			}
@@ -298,7 +355,6 @@ public class Parser {
 					}
 				}
 			}
-			
 
 			if (isFlipped) {
 				for (Entity e : entities) {
@@ -334,17 +390,17 @@ public class Parser {
 			word += " " + tokens.get(index + 1).getWord();
 			index += 1;
 		}
-		
-		if(ne.equals("MISC")){
+
+		if (ne.equals("MISC")) {
 			String[] words = word.split(" ");
-			
-			for(String w : words){
-				if(vocabulary.INVERSED_PROPERTIES.get(w.toLowerCase()) != null){
+
+			for (String w : words) {
+				if (vocabulary.INVERSED_PROPERTIES.get(w.toLowerCase()) != null) {
 					property = vocabulary.INVERSED_PROPERTIES.get(w.toLowerCase());
 				}
-			}			
+			}
 		}
-		
+
 		int endPosition = index;
 
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
@@ -352,7 +408,8 @@ public class Parser {
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
 			classes.add(new Classes(classes.size() + 1, "?" + word, property, endPosition, resource));
 		} else {
-			entities.add(new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
+			entities.add(
+					new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
 		}
 	}
 
@@ -439,9 +496,16 @@ public class Parser {
 		this.sequence = sequence;
 	}
 
-	 Options getOptions() {
-	 return options;
-	 }
+	Options getOptions() {
+		return options;
+	}
 
+	public Filters getFilters() {
+		return filters;
+	}
+
+	public void setFilters(Filters filters) {
+		this.filters = filters;
+	}
 
 }

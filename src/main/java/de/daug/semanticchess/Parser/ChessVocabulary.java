@@ -113,17 +113,20 @@ public class ChessVocabulary {
 		ArrayList<String> fenProperty = new ArrayList<String>();
 		fenProperty.add("fen");
 		fenProperty.add("position");
-		fenProperty.add("pawn");
-		fenProperty.add("bishop");
-		fenProperty.add("knight");
-		fenProperty.add("rock");
-		fenProperty.add("queen");
-		fenProperty.add("king");
 		fenProperty.add("rank");
 		fenProperty.add("file");
 		// ==============================
 		PROPERTIES.put("fen", fenProperty);
-
+		
+		ArrayList<String> pieceProperty = new ArrayList<String>();
+		pieceProperty.add("pawn");
+		pieceProperty.add("bishop");
+		pieceProperty.add("knight");
+		pieceProperty.add("rook");
+		pieceProperty.add("queen");
+		pieceProperty.add("king");
+		PROPERTIES.put("piece", pieceProperty);
+		
 		ArrayList<String> drawProperty = new ArrayList<String>();
 		drawProperty.add("1/2");
 		drawProperty.add("1/2-1/2");

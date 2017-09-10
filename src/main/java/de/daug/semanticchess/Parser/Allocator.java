@@ -23,6 +23,7 @@ public class Allocator {
 	private List<Entity> entities = new ArrayList<Entity>();
 	private List<Classes> classes = new ArrayList<Classes>();
 	private String options;
+	private String filters;
 	
 	
 	/**
@@ -37,7 +38,7 @@ public class Allocator {
 		this.entities = parser.getEntities();
 		this.classes = parser.getClasses();
 		this.options = parser.getOptions().toString();
-		
+		this.filters = parser.getFilters().getFilterStr();
 		allocateSequence();
 	}
 	
@@ -57,6 +58,8 @@ public class Allocator {
 			sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
 			sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
 		}
+		
+		sparql = sparql.replace("FILTER", this.filters);
 		
 		return sparql;
 	}
@@ -158,7 +161,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args){
-		Allocator alloc = new Allocator("Give me the moves between Magnus Carlsen and Levon Aronian.");
+		Allocator alloc = new Allocator("Give me the games between Magnus Carlsen and Arthur Jussupow.");
 		System.out.println(alloc.getSparqlQuery());
 		
 	}
