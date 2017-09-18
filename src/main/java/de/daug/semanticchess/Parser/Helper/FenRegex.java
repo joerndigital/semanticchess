@@ -2,9 +2,10 @@ package de.daug.semanticchess.Parser.Helper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+/**
+ * creates a regex to find positions from fen
+ */
 public class FenRegex{
 	
 	List<Piece> piecesWhite = new ArrayList<Piece>();
@@ -16,27 +17,41 @@ public class FenRegex{
 	private static String MAX = "(?!(.*X){Z})";
 	private static String notOnBoard = "((?![QqRrBbNnPp]).)*$";
 	
+	/**
+	 * constructor
+	 */
 	public FenRegex(){
-
 	}
 	
+	/**
+	 * add white pieces to the list
+	 * @param counter: number of this piece
+	 * @param piece: name of the piece
+	 */
 	public void addPieceWhite(int counter, String piece){
 		Piece p = new Piece(counter, piece);
 		piecesWhite.add(p);
 	}
 	
+	/**
+	 * add black pieces to the list
+	 * @param counter: number of this piece
+	 * @param piece: name of the piece
+	 */
 	public void addPieceBlack(int counter, String piece){
 		Piece p = new Piece(counter, piece);
 		piecesBlack.add(p);
 	}
 	
+	/**
+	 * create fen from the list of white and black pieces
+	 */
 	public void createFen(){
 		boolean whitePawnIsCalled = false;
 		boolean blackPawnIsCalled = false;
 		
-		for(Piece piece : piecesWhite){
-			
-			
+		//white pieces
+		for(Piece piece : piecesWhite){	
 			switch(piece.getName()){
 				case "queen":
 					setFen("Q", piece.getCounter() , piece.getCounter()+1);
@@ -59,8 +74,8 @@ public class FenRegex{
 			}
 		}
 		
+		//black pieces
 		for(Piece piece : piecesBlack){
-			
 			switch(piece.getName()){
 				case "queen":
 					setFen("q", piece.getCounter() , piece.getCounter()+1);
@@ -83,18 +98,26 @@ public class FenRegex{
 			}
 		}
 		
+		// if there are specified numbers of pawns then remove pawns frome the list
+		// of pieces that are not on the board
 		if(!whitePawnIsCalled && !blackPawnIsCalled){
-			this.notOnBoard = this.notOnBoard.replace("P", "");
-			this.notOnBoard = this.notOnBoard.replace("p", "");	
+			FenRegex.notOnBoard = FenRegex.notOnBoard.replace("P", "");
+			FenRegex.notOnBoard = FenRegex.notOnBoard.replace("p", "");	
 		}
 		
 		if(piecesWhite.size() > 0){
-			fen += this.notOnBoard;
+			fen += FenRegex.notOnBoard;
 		}
 		
 		
 	}
 	
+	/**
+	 * sets up the regex for the fen
+	 * @param piece: name of the piece
+	 * @param min: minimal number of the piece
+	 * @param max: maximal number of the piece
+	 */
 	private void setFen(String piece, int min, int max){
 		if(piece.equals("b")){
 			String pieceTemp = "[^ ]b";
@@ -104,39 +127,61 @@ public class FenRegex{
 			this.fen += MIN.replace("X", piece).replace("Y", Integer.toString(min));
 			this.fen += MAX.replace("X", piece).replace("Z", Integer.toString(max));
 		}
-		
-
-		this.notOnBoard = this.notOnBoard.replace(piece, "");		
+		FenRegex.notOnBoard = FenRegex.notOnBoard.replace(piece, "");		
 	}
 	
-	
-	
+	/**
+	 * get fen
+	 * @return fen
+	 */
 	public String getFen() {
 		return fen;
 	}
 
+	/**
+	 * set fen
+	 * @param fen
+	 */
 	public void setFen(String fen) {
 		this.fen = fen;
 	}
 	
-	
-
+	/**
+	 * get list of white pieces
+	 * @return piecesWhite
+	 */
 	public List<Piece> getPiecesWhite() {
 		return piecesWhite;
 	}
 
+	/**
+	 * set list of white pieces
+	 * @param piecesWhite
+	 */
 	public void setPiecesWhite(List<Piece> piecesWhite) {
 		this.piecesWhite = piecesWhite;
 	}
-
+	
+	/**
+	 * get list of black pieces
+	 * @return piecesBlack
+	 */
 	public List<Piece> getPiecesBlack() {
 		return piecesBlack;
 	}
-
+	
+	/**
+	 * set list of white pieces
+	 * @param piecesBlack
+	 */
 	public void setPiecesBlack(List<Piece> piecesBlack) {
 		this.piecesBlack = piecesBlack;
 	}
-
+	
+	/**
+	 * main method for testing
+	 * @param args
+	 */
 	public static void main (String[] args){
 		
 		FenRegex reg = new FenRegex();
@@ -147,14 +192,13 @@ public class FenRegex{
 		reg.createFen();
 		
 		System.out.println(reg.getFen());
-		
-//		Pattern p = Pattern.compile("^(?!(.*r){3})(?!(.*p){2})(?=(.*r){2})(?=(.*p){1})((?![qnb]).)*$");
-//		p = Pattern.compile("^(?!(.*(B|b)){2})(?!(.*(N|n)){2})(?=(.*(B|b)){1})(?=(.*(N|n)){1})((?![qr]).)*$");
-//		Matcher m = p.matcher("rp");
-//
-//		System.out.println(m.find());
 	}
 	
+	/**
+	 * class for a piece
+	 * counter: number of the piece
+	 * name: name of the piece
+	 */
 	public class Piece{
 		
 		private int counter;
@@ -174,11 +218,7 @@ public class FenRegex{
 		}
 		public void setName(String name) {
 			this.name = name;
-		}
-		
-		
-		
-		
+		}		
 	}
 	
 }

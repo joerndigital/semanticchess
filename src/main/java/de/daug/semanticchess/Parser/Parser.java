@@ -1,13 +1,18 @@
 package de.daug.semanticchess.Parser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.Stack;
 
 import de.daug.semanticchess.Annotation.PosTagger;
 import de.daug.semanticchess.Annotation.Token;
 import de.daug.semanticchess.Parser.Helper.Classes;
-import de.daug.semanticchess.Parser.Helper.ColorAllocator;
+import de.daug.semanticchess.Parser.Helper.PropertyAllocator;
 import de.daug.semanticchess.Parser.Helper.CustomNer;
 import de.daug.semanticchess.Parser.Helper.Entity;
 import de.daug.semanticchess.Parser.Helper.FenRegex;
@@ -15,9 +20,7 @@ import de.daug.semanticchess.Parser.Helper.Filters;
 import de.daug.semanticchess.Parser.Helper.Flipper;
 import de.daug.semanticchess.Parser.Helper.Options;
 import de.daug.semanticchess.Parser.Helper.Resource;
-import edu.stanford.nlp.ling.WordTag;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.process.Morphology;
 
 /**
  * parses the user query to a sequence to find a suitable sparql query
@@ -41,6 +44,7 @@ public class Parser {
 	private boolean isWhite = false;
 	private boolean isDecisive = false;
 	private boolean isUnion = false;
+	private boolean isElo = false;
 	private boolean isFen = false;
 	private boolean isFilter = false;
 
@@ -57,16 +61,35 @@ public class Parser {
 
 		List<Token> tokens = tagger.getTokens();
 
+		
+		
 		CustomNer cNer = new CustomNer();
 		tokens = cNer.stemming(tokens);
 		tokens = cNer.checkChessVocabulary(tokens);
 		tokens = cNer.checkElo(tokens);
 
 		this.tokens = tokens;
-
+		
+		System.out.println(this.tokens.toString());
+		
 		collectEntities(tokens);
 		if (isBlack || isWhite) {
-			injectColor();
+			try {
+				injectColor();
+			} catch (Exception err) {
+
+			}
+
+		}
+
+		if (isElo) {
+			try {
+				injectElo();
+			} catch (Exception err) {
+
+			}
+
+			// List erweitern? get element by position?
 		}
 
 		resultChecker();
@@ -120,6 +143,22 @@ public class Parser {
 				nextWord = tokens.get(index + 1).getWord();
 			} catch (Exception e) {
 				nextNe = "O";
+			}
+
+			String nextFoundNe = "O";
+			String nextFoundWord = "";
+			int nextFoundIndex = 0;
+			try {
+				int i = index;
+				while (nextFoundNe.equals("O")) {
+					nextFoundNe = tokens.get(i + 1).getNe();
+					nextFoundWord = tokens.get(i + 1).getWord();
+					nextFoundIndex = i + 1;
+					i++;
+				}
+			} catch (Exception err) {
+				nextFoundNe = "O";
+				nextFoundWord = "";
 			}
 
 			String pos = tokens.get(index).getPos();
@@ -194,6 +233,7 @@ public class Parser {
 				addEntityOrClass(word, ne, "eco", "?game");
 				break;
 			case "elo":
+				isElo = true;
 				addEntityOrClass(word, ne, "whiteelo|prop:blackelo", "?game");
 				break;
 			case "black":
@@ -215,6 +255,10 @@ public class Parser {
 				break;
 			case "event":
 				addEntityOrClass(word, ne, "event", "?game");
+				if(!this.tokens.get(index).getWord().equals("tournament") && !this.tokens.get(index).getWord().equals("event")){
+					filters.addRegex("?" + ne, word, false);
+				}
+				
 				break;
 			case "opening":
 				addEntityOrClass(word, ne, "eco", "?game");
@@ -256,6 +300,16 @@ public class Parser {
 				}
 
 				break;
+			case "option":
+				if (word.equals("average")) {
+					options.setOrderStr("AVG", "?" + nextFoundNe);
+				}
+
+				break;
+			case "greater":
+				isFilter = true;
+				filters.addGreaterThan("?" + nextFoundNe, nextFoundWord);
+				index = nextFoundIndex + 1;
 			default:
 				if (word.equals("versus") || word.equals("vs") || word.equals("against")) {
 					if (preNe.equals("piece")) {
@@ -271,10 +325,8 @@ public class Parser {
 	}
 
 	public void injectColor() {
-		ColorAllocator ca = new ColorAllocator(tokens);
-		List<Integer> personPositions = ca.getPersonPositions();
+		PropertyAllocator ca = new PropertyAllocator(tokens);
 		int[] personHasColor = ca.allocateColor();
-		String newNe = tokens.get(personHasColor[0]).getNe();
 
 		if (isWhite) {
 			for (Entity e : entities) {
@@ -313,6 +365,125 @@ public class Parser {
 			}
 		}
 	}
+
+	public void injectElo() {
+		PropertyAllocator pa = new PropertyAllocator(tokens);
+		HashMap<Integer, Integer> propertyToPerson = pa.allocateProperty(pa.getEloPositions());
+		int tempPerson = 9999;
+
+		for (Entry<Integer, Integer> pair : propertyToPerson.entrySet()) {
+			if (pair.getValue() < tempPerson) {
+				tempPerson = pair.getValue();
+			}
+
+			try {
+				Entity e = getEntityByEndPosition(pair.getValue());
+
+				if (e.getPropertyName().equals("prop:white")) {
+					try {
+
+						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+					} catch (NullPointerException err) {
+						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+					}
+				} else if (e.getPropertyName().equals("prop:black")) {
+					try {
+
+						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:blackelo");
+					} catch (NullPointerException err) {
+						getClassByPosition(pair.getKey()).setPropertyName("prop:blackelo");
+					}
+
+				} else {
+					try {
+
+						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+						System.out.println("3. " + getEntityByEndPosition(pair.getValue()).getPropertyName());
+						try {
+							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
+						} catch (Exception err) {
+							getClassByPosition(pair.getValue()).setPropertyName("prop:white");
+						}
+
+						isWhite = true;
+
+					} catch (NullPointerException err) {
+						System.out.println(pair.getKey() + "-> " + pair.getValue());
+						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+						try {
+							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
+						} catch (Exception error) {
+							getClassByPosition(pair.getValue()).setPropertyName("prop:white");
+						}
+
+						isWhite = true;
+					}
+
+					isUnion = true;
+
+				}
+			} catch (NullPointerException err) {
+
+			}
+			try {
+				Classes c = getClassByPosition(pair.getValue());
+
+				if (c.getPropertyName().equals("prop:white")) {
+					try {
+
+						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+					} catch (NullPointerException err) {
+						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+					}
+				} else if (c.getPropertyName().equals("prop:black")) {
+					try {
+
+						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:blackelo");
+					} catch (NullPointerException err) {
+						getClassByPosition(pair.getKey()).setPropertyName("prop:blackelo");
+					}
+				} else {
+
+					try {
+
+						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+						try {
+							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
+						} catch (Exception err) {
+							getClassByPosition(pair.getValue()).setPropertyName("prop:white");
+
+						}
+
+						isBlack = true;
+
+					} catch (NullPointerException err) {
+						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+						try {
+							getClassByPosition(pair.getValue()).setPropertyName("prop:white");
+						} catch (Exception error) {
+							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
+						}
+
+						isWhite = true;
+					}
+					isUnion = true;
+				}
+			} catch (NullPointerException err) {
+
+			}
+
+		}
+		injectColor();
+	}
+
+	// public void injectElo(){
+
+	/*
+	 * 1. entity/class finden mit prop:black prop:white 2. nehme position und
+	 * gehe zu HashMap 3. aus Hashmap ermittle position von elo 4. ändere elo
+	 * property ab
+	 * 
+	 */
 
 	public void resultChecker() {
 		Stack<String> colors = new Stack<String>();
@@ -386,9 +557,12 @@ public class Parser {
 
 	public void addEntityOrClass(String word, String ne, String property, String resource) {
 		int startPosition = index;
-		while ((index + 1) < tokens.size() && tokens.get(index + 1).getNe().equals(ne)) {
-			word += " " + tokens.get(index + 1).getWord();
-			index += 1;
+
+		if (Character.isUpperCase(ne.charAt(0))) {
+			while ((index + 1) < tokens.size() && tokens.get(index + 1).getNe().equals(ne)) {
+				word += " " + tokens.get(index + 1).getWord();
+				index += 1;
+			}
 		}
 
 		if (ne.equals("MISC")) {
@@ -406,7 +580,7 @@ public class Parser {
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
 
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
-			classes.add(new Classes(classes.size() + 1, "?" + word, property, endPosition, resource));
+			classes.add(new Classes(classes.size() + 1, "?" + ne, property, endPosition, resource));
 		} else {
 			entities.add(
 					new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
@@ -418,13 +592,10 @@ public class Parser {
 		String newPropertyName = "";
 		String newEntityName = "";
 
-		String Label;
-		int counter = 0;
-
 		List<Entity> tempEntities = new ArrayList<Entity>();
 
 		for (Entity e : entities) {
-			counter += 1;
+
 			newPropertyName = flipper.toFlip(e.getPropertyName());
 			newEntityName = flipper.toFlip(e.getEntityName());
 
@@ -437,7 +608,22 @@ public class Parser {
 					t.getStartPosition(), t.getEndPosition(), t.getResourceName()));
 		}
 
-		// TODO auch für classes
+		// classes
+		List<Classes> tempClasses = new ArrayList<Classes>();
+
+		for (Classes c : classes) {
+
+			newPropertyName = flipper.toFlip(c.getPropertyName());
+			newEntityName = flipper.toFlip(c.getClassesName());
+
+			tempClasses.add(new Classes(tempClasses.size() + 1, newEntityName, newPropertyName.replace("prop:", ""),
+					c.getPosition(), c.getResourceName()));
+		}
+
+		for (Classes t : tempClasses) {
+			classes.add(new Classes(classes.size() + 1, t.getClassesName(), t.getPropertyName().replace("prop:", ""),
+					t.getPosition(), t.getResourceName()));
+		}
 	}
 
 	List<Token> getTokens() {
@@ -506,6 +692,33 @@ public class Parser {
 
 	public void setFilters(Filters filters) {
 		this.filters = filters;
+	}
+
+	public Entity getEntityByEndPosition(int position) {
+		for (Entity e : entities) {
+			if (e.getEndPosition() == position) {
+				return e;
+			}
+		}
+		return null;
+	}
+
+	public Entity getEntityByStartPosition(int position) {
+		for (Entity e : entities) {
+			if (e.getStartPosition() == position) {
+				return e;
+			}
+		}
+		return null;
+	}
+
+	public Classes getClassByPosition(int position) {
+		for (Classes c : classes) {
+			if (c.getPosition() == position) {
+				return c;
+			}
+		}
+		return null;
 	}
 
 }

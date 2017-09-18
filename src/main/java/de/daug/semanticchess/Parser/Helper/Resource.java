@@ -1,5 +1,6 @@
 package de.daug.semanticchess.Parser.Helper;
 
+@Deprecated
 public class Resource{
 	
 	private final static String resourceLabel = "R_";

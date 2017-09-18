@@ -1,6 +1,5 @@
 package de.daug.semanticchess.Parser.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.daug.semanticchess.Annotation.Token;
@@ -8,6 +7,10 @@ import de.daug.semanticchess.Parser.ChessVocabulary;
 import edu.stanford.nlp.ling.WordTag;
 import edu.stanford.nlp.process.Morphology;
 
+/**
+ * 
+ * 
+ */
 public class CustomNer {
 	
 	private ChessVocabulary  vocabulary = new ChessVocabulary();
@@ -83,9 +86,4 @@ public class CustomNer {
 		
 		return tokens;
 	}
-	
-	//TODO misc checker
-
-
-	
 }

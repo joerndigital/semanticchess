@@ -1,6 +1,8 @@
 package de.daug.semanticchess.Parser.Helper;
 
-
+/**
+ * options for the sparql query
+ */
 public class Options{
 	
 	private static final String LIMIT = "LIMIT ";
@@ -9,64 +11,74 @@ public class Options{
 	private static final String GROUPBY = "GROUP BY ";
 	private static final String HAVING = "HAVING ";
 	
-//	private int limitProperty = 10000;
-//	private int offsetProperty = 0;
-//	private String orderProperty = "";
-//	private String groupProperty = "";
-//	private String havingProperty = "";
-	
 	private String limitStr;
 	private String offsetStr;
-	private String orderStr;
+	private String orderStr = "";
 	private String groupStr;
 	private String havingStr;
 	
+	/**
+	 * constructor
+	 */
 	public Options(){
-
 	}
 
-//	public Options(int limitProperty, int offsetProperty) {
-//		this.limitProperty = limitProperty;
-//		this.offsetProperty = offsetProperty;
-//		
-//		this.limitStr = LIMIT + limitProperty;
-//		this.offsetStr = OFFSET + offsetProperty;
-//	}
-
-//	public Options(int limitProperty, int offsetProperty, String orderProperty) {
-//		this.limitProperty = limitProperty;
-//		this.offsetProperty = offsetProperty;
-//		this.orderProperty = orderProperty;
-//		
-//		this.limitStr = LIMIT + limitProperty;
-//		this.offsetStr = OFFSET + offsetProperty;
-//		this.orderStr = ORDERBY + orderProperty;
-//	}
-
+	/**
+	 * get limit
+	 * @return limitStr
+	 */
 	public String getLimitStr() {
 		return limitStr;
 	}
-
+	
+	/**
+	 * set limit string
+	 * @param limit: integer
+	 */
 	public void setLimitStr(int limit) {
 		this.limitStr = LIMIT + limit;
 	}
-
+	
+	/**
+	 * get offset
+	 * @return offsetStr
+	 */
 	public String getOffsetStr() {
 		return offsetStr;
 	}
 
+	/**
+	 * set offset string
+	 * @param offset: integer
+	 */
 	public void setOffsetStr(int offset) {
 		this.offsetStr = OFFSET + offset;
 	}
 
+	/**
+	 * get order string
+	 * @return
+	 */
 	public String getOrderStr() {
 		return orderStr;
 	}
-
+	
+	/**
+	 * set order String
+	 * @param orderDirection: ASC or DESC
+	 * @param order: class that should be ordered
+	 */
 	public void setOrderStr(String orderDirection, String order) {
-		this.orderStr = ORDERBY + orderDirection + "(" + order + ")";
+		if(orderStr.equals("")){
+			this.orderStr = ORDERBY + orderDirection + "(" + order + ") ";
+		} else {
+			this.orderStr += orderDirection +  "(" + order + ") "; 
+		}
 	}
-
+	
+	/**
+	 * toString method
+	 */
 	@Override
 	public String toString() {
 		
@@ -77,9 +89,10 @@ public class Options{
 			return limitStr + " " + offsetStr;
 		}else if (limitStr != null && offsetStr != null && orderStr != null){
 			return limitStr + " " + offsetStr + " " + orderStr;
+		} else if (limitStr == null && offsetStr == null && orderStr != null){
+			return orderStr;
 		}
-		
-		
+				
 		return limitStr + " " + offsetStr;
 	}	
 	

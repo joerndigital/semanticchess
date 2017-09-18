@@ -1,19 +1,13 @@
 package de.daug.semanticchess.Parser;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
-import de.daug.semanticchess.Parser.NewParser.Pair;
 import de.daug.semanticchess.Parser.Helper.Classes;
 import de.daug.semanticchess.Parser.Helper.Entity;
-import de.daug.semanticchess.Parser.Helper.Resource;
 
 /**
- * assign a sequence code to a sparql query
+ * assigns a sequence code to a sparql query
  */
 public class Allocator {
 	
@@ -134,6 +128,18 @@ public class Allocator {
 			case "_261":
 				sparqlQuery = replaceCodes(Sequences._261);
 				break;
+			case "_401":
+				sparqlQuery = replaceCodes(Sequences._401);
+				break;
+			case "_421":
+				sparqlQuery = replaceCodes(Sequences._421);
+				break;
+			case "_441":
+				sparqlQuery = replaceCodes(Sequences._441);
+				break;
+			case "_461":
+				sparqlQuery = replaceCodes(Sequences._461);
+				break;
 			default:
 				break;
 		}
@@ -161,7 +167,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args){
-		Allocator alloc = new Allocator("Give me the games between Magnus Carlsen and Arthur Jussupow.");
+		Allocator alloc = new Allocator("In which game did Caruana have his highest rating?");
 		System.out.println(alloc.getSparqlQuery());
 		
 	}

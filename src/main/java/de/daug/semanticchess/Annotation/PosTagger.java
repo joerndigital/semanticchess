@@ -5,17 +5,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import edu.stanford.nlp.coref.CorefCoreAnnotations.CorefChainAnnotation;
 import edu.stanford.nlp.coref.data.CorefChain;
-import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.ling.CoreAnnotations.AnswerAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.trees.Tree;
@@ -25,12 +21,10 @@ import edu.stanford.nlp.util.CoreMap;
 import org.apache.log4j.BasicConfigurator;
 
 
-
 /**
  * @desc User queries will tagged by this class with the help of 
  * the Stanford POS tagger (coreNLP)
  * @author Joern-Henning Daug
- *
  */
 public class PosTagger{
 	
@@ -44,15 +38,9 @@ public class PosTagger{
 	private Map<Integer, CorefChain> graph = null;
 	
 	/**
-	 * constructor
-	 * @param query: Input questions by the user
+	 * constructor: sets up a pipeline for the Stanford Tagger
 	 */
 	public PosTagger(){
-		/*this.query = query;
-		this.pipeline = setStanfordTagger();
-		this.document = setAnnotator(pipeline, query);
-		this.graph = document.get(CorefChainAnnotation.class);
-		initAnnotations();*/
 		this.pipeline = setStanfordTagger();
 	}
 	
@@ -101,7 +89,7 @@ public class PosTagger{
 	 * annotate query
 	 * builds a list with tokens (word, POS-tag and NER label)
 	 * builds a tree with words and POS-tags
-	 * sets the tagged query
+	 * sets up the tagged query
 	 */
     public void initAnnotations(){
     	//===================================
@@ -196,6 +184,10 @@ public class PosTagger{
 		this.query = query;
 	}
 	
+	/**
+	 * set document
+	 * @param document
+	 */
 	public void setDocument(Annotation document){
 		this.document = document;
 	}
@@ -221,9 +213,9 @@ public class PosTagger{
 	 * @param args
 	 */
 	public static void main (String[] args){
-		//Beispiel
+		//Example
 		//========
-		//Konstruktor
+		//Constructor
 		PosTagger tagger = new PosTagger();
 		//initialize pipeline to use it more often, does not have to load again for a new query
 		StanfordCoreNLP pipeline = tagger.getPipeline();
@@ -241,12 +233,7 @@ public class PosTagger{
 		System.out.println(tagger.getTree());
 		for (Tree child: tagger.getTree()){
 			   if (child.value().equals("NP")){// set your rule of defining Phrase here
-				   System.out.println(child.firstChild());
-				   
-//			          List<Tree> leaves = child.getLeaves(); //leaves correspond to the tokens
-//			          
-//			          System.out.println(leaves.toString());
-			          
+				   System.out.println(child.firstChild());        
 			   }
 			}
 		//delete results

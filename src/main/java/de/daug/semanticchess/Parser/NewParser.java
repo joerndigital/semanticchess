@@ -12,6 +12,7 @@ import edu.stanford.nlp.ling.WordTag;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.process.Morphology;
 
+@Deprecated
 public class NewParser {
 
 	private List<Token> tokens;

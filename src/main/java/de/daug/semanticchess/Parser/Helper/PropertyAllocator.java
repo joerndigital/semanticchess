@@ -1,28 +1,32 @@
 package de.daug.semanticchess.Parser.Helper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import de.daug.semanticchess.Annotation.Token;
 
-public class ColorAllocator {
+/**
+ * allocates
+ * @author Jörn-Henning
+ *
+ */
+public class PropertyAllocator {
 
 	private List<Token> tokens = new ArrayList<Token>();
 	private List<Integer> personPositions = new ArrayList<Integer>();
 	private int colorPosition;
+	private List<Integer> eloPosition = new ArrayList<Integer>();
 
-	public ColorAllocator(List<Token> tokens) {
+	public PropertyAllocator(List<Token> tokens) {
 		this.tokens = tokens;
 		this.personPositions = getPersonPositions();
-		this.colorPosition = getFirstColorPosition();
 	}
 
 	/**
 	 * finds all persons and save their positions in the query it is assumed
 	 * that for the color allocation only two person exists in the query
-	 * 
-	 * @param tokens:
-	 *            List of words, ner and pos
+	 * @param tokens: List of words, ner and pos
 	 * @return List<Integer>: list of person positions
 	 */
 	public List<Integer> getPersonPositions() {
@@ -41,9 +45,6 @@ public class ColorAllocator {
 
 	/**
 	 * saves the first position of one color
-	 * 
-	 * @param tokens:
-	 *            List of words, ner and pos
 	 * @return int: color position
 	 */
 	public int getFirstColorPosition() {
@@ -56,6 +57,22 @@ public class ColorAllocator {
 			}
 		}
 		return colorPosition;
+	}
+	
+	/**
+	 * saves the first position of an elo rating
+	 * @return int: elo position
+	 */
+	public List<Integer> getEloPositions(){
+		List<Integer> eloPosition = new ArrayList<Integer>();
+		
+		for(int i = 0; i < tokens.size(); i++){
+			if(tokens.get(i).getNe().equals("elo")){
+				eloPosition.add(i);
+				
+			}
+		}
+		return eloPosition;
 	}
 
 	/**
@@ -87,6 +104,29 @@ public class ColorAllocator {
 
 		}
 		return personHasColor;
+	}
+	
+	public HashMap<Integer,Integer> allocateProperty(List<Integer> properties) {
+		HashMap<Integer,Integer> propertyToPerson = new HashMap<Integer,Integer>();
+		
+		int distance = 9999;
+		int bestPerson = 9999;
+		for(int i = 0; i < properties.size(); i++){
+			int tempProperty = properties.get(i);
+			
+			for (int j = 0; j < personPositions.size(); j++){
+				int tempPerson = personPositions.get(j);
+				int tempDistance = Math.abs(tempPerson-tempProperty);
+				if(tempDistance < distance){
+					distance = tempDistance;
+					bestPerson = tempPerson;
+				}
+			}
+			propertyToPerson.put(tempProperty, bestPerson);
+			distance = 9999;
+		}
+
+		return propertyToPerson;
 	}
 
 }
