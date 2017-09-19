@@ -9,8 +9,11 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 
+import org.springframework.util.StringUtils;
+
 import de.daug.semanticchess.Annotation.PosTagger;
 import de.daug.semanticchess.Annotation.Token;
+import de.daug.semanticchess.Database.StringSimilarity;
 import de.daug.semanticchess.Parser.Helper.Classes;
 import de.daug.semanticchess.Parser.Helper.PropertyAllocator;
 import de.daug.semanticchess.Parser.Helper.CustomNer;
@@ -230,7 +233,7 @@ public class Parser {
 				// "ChessGame", index));
 				break;
 			case "eco":
-				addEntityOrClass(word, ne, "eco", "?game");
+				addEntityOrClass(word.substring(0,1).toUpperCase() + word.substring(1), ne, "eco", "?game");
 				break;
 			case "elo":
 				isElo = true;
@@ -582,6 +585,15 @@ public class Parser {
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
 			classes.add(new Classes(classes.size() + 1, "?" + ne, property, endPosition, resource));
 		} else {
+//			System.out.println(property + " " + word);
+//			try {
+//				StringSimilarity sim = new StringSimilarity(property,word);
+//				word = sim.subStringMatch();			
+//			} catch(Exception e){
+//				
+//			}
+			
+			
 			entities.add(
 					new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
 		}

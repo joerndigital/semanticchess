@@ -83,7 +83,7 @@ public class SparqlVirtuoso {
 	 * @param strQuery: sparql query
 	 * @return resultSet
 	 */
-	public ByteArrayOutputStream getResultSet(String strQuery){
+	public ResultSet getResultSet(String strQuery){
 		String query = PREFIX + " " + strQuery;
 
 		ConnectVirtuoso conn = new ConnectVirtuoso();
@@ -92,10 +92,10 @@ public class SparqlVirtuoso {
 		
 		QueryExecution qexec = QueryExecutionFactory.create(jquery, vModel);
 		ResultSet results = qexec.execSelect();
-		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-		ResultSetFormatter.out(outputStream, results);
+		//ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		//ResultSetFormatter.out(outputStream, results);
 		
-		return outputStream;
+		return results;
 	}
 
 	/**

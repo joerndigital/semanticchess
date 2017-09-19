@@ -88,7 +88,7 @@ public class Options{
 		else if(limitStr != null && offsetStr != null && orderStr == null){
 			return limitStr + " " + offsetStr;
 		}else if (limitStr != null && offsetStr != null && orderStr != null){
-			return limitStr + " " + offsetStr + " " + orderStr;
+			return orderStr + " " + limitStr + " " + offsetStr;
 		} else if (limitStr == null && offsetStr == null && orderStr != null){
 			return orderStr;
 		}
