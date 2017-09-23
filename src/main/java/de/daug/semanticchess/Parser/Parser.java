@@ -12,6 +12,7 @@ import java.util.Stack;
 import org.springframework.util.StringUtils;
 
 import de.daug.semanticchess.Annotation.PosTagger;
+import de.daug.semanticchess.Annotation.TimeTagger;
 import de.daug.semanticchess.Annotation.Token;
 import de.daug.semanticchess.Database.StringSimilarity;
 import de.daug.semanticchess.Parser.Helper.Classes;
@@ -116,7 +117,7 @@ public class Parser {
 	}
 
 	public static void main(String[] args) {
-		String query = "Give me the games with rook and pawn against rook.";
+		String query = "Give me the games with rook and pawn against rook from June 2016.";
 
 		Parser p = new Parser(query);
 
@@ -576,6 +577,9 @@ public class Parser {
 					property = vocabulary.INVERSED_PROPERTIES.get(w.toLowerCase());
 				}
 			}
+		} else if (ne.equals("DATE")) {
+			TimeTagger tt = new TimeTagger();
+			word = tt.getDate(word);
 		}
 
 		int endPosition = index;
@@ -583,17 +587,12 @@ public class Parser {
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
 
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
-			classes.add(new Classes(classes.size() + 1, "?" + ne, property, endPosition, resource));
-		} else {
-//			System.out.println(property + " " + word);
-//			try {
-//				StringSimilarity sim = new StringSimilarity(property,word);
-//				word = sim.subStringMatch();			
-//			} catch(Exception e){
-//				
-//			}
-			
-			
+			classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), property, endPosition, resource));
+		} else if(ne.equals("DATE")){
+			classes.add(new Classes(classes.size() + 1, "?date", property, endPosition, resource));
+			filters.addRegex("?date", "'" + word + "'", false);
+		}
+		else {					
 			entities.add(
 					new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
 		}

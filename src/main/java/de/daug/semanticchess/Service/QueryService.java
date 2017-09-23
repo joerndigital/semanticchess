@@ -24,25 +24,7 @@ public class QueryService{
 		alloc.allocateSequence();
 		strQuery = alloc.getSparqlQuery();
 		
-		JSONObject jsonArray = null;
-		try {
-			jsonArray = new JSONObject(virtuosoQuery.getCustomResult(strQuery));
-			int MAX = 5;
-			while(jsonArray.getJSONObject("results").getJSONArray("bindings").length() == 0 && MAX < 100){
-				alloc.allocateSequence();
-				strQuery = alloc.getSparqlQuery();
-				MAX += 1;
-			}
-		} catch (JSONException e) {
-
-		} 
-//		try {
-//			System.out.println(jsonArray.toString());
-//			System.out.println(jsonArray.getJSONObject("results").getJSONArray("bindings").length());
-//		} catch (JSONException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		
 		
 		return virtuosoQuery.getCustomResult(strQuery);
 	}

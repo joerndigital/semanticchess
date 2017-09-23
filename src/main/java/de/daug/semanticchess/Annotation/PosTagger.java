@@ -18,6 +18,7 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations.TreeAnnotation;
 import edu.stanford.nlp.util.CoreMap;
 
+
 import org.apache.log4j.BasicConfigurator;
 
 
@@ -222,7 +223,7 @@ public class PosTagger{
 		
 		//1. Question
 		
-		tagger.setQuery("Show me tournaments with Wesley So, Carlsen and Naiditsch from March 2016");
+		tagger.setQuery("Show me tournaments with Wesley So, Carlsen and Naiditsch from last year.");
 		tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
 		tagger.initAnnotations();
 		
