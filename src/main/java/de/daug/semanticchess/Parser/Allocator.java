@@ -94,31 +94,31 @@ public class Allocator {
 	}
 
 	public String subStringEntities(String sparql) {
-		
-		Values values = new Values();		
+
+		Values values = new Values();
 
 		sparql = sparql.replaceFirst("\\{", "\\{VALUE_PLACEHOLDER ");
 		int counter = 1;
-		
+
 		for (Entity e : entities) {
 
 			similar.setQuery(e.getPropertyName());
-			
+
 			ArrayList<String> subStrEntities = new ArrayList<String>();
-			
-			try {	
+
+			try {
 				subStrEntities = similar.subStringMatch(e.getEntityName().replaceAll("'", ""));
-			} catch (QueryParseException err){
-				
+			} catch (QueryParseException err) {
+
 			}
-			
+
 			if (subStrEntities.size() > 0) {
 				values.setValueVars("?value" + counter);
 				sparql = sparql.replaceAll(e.getEntityId(), "?value" + counter);
 				values.addResult(subStrEntities);
 				counter++;
 			}
-			
+
 			else {
 				sparql = sparql.replaceAll(e.getEntityId(), e.getEntityName());
 			}
@@ -126,23 +126,50 @@ public class Allocator {
 			sparql = sparql.replaceAll(e.getPropertyId(), e.getPropertyName());
 			sparql = sparql.replaceAll(e.getResourceId(), e.getResourceName());
 		}
-		
+
 		String tempStr = "";
 		values.generatePermutations(values.getResults(), Values.getPermutation(), 0, tempStr);
-		sparql=sparql.replace("VALUE_PLACEHOLDER",values.toString());
+		sparql = sparql.replace("VALUE_PLACEHOLDER", values.toString());
 
-	for(
+		for (
 
-	Classes c:classes)
-	{
-		sparql = sparql.replaceAll(c.getClassesId(), c.getClassesName());
-		sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
-		sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
+		Classes c : classes) {
+			sparql = sparql.replaceAll(c.getClassesId(), c.getClassesName());
+			sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
+			sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
+		}
+
+		sparql = sparql.replace("FILTER", this.filters.getFilterStr());
+
+		return sparql;
 	}
 
-	sparql=sparql.replace("FILTER",this.filters.getFilterStr());
+	public String distanceEntities(String sparql) {
 
-	return sparql;
+		for (Entity e : entities) {
+			similar.setQuery(e.getPropertyName());
+
+			try {
+				String subStrEntity = similar.distanceMatch(e.getEntityName().replaceAll("'", ""));
+
+				sparql = sparql.replaceAll(e.getEntityId(), subStrEntity);
+			} catch (QueryParseException err) {
+				sparql = sparql.replaceAll(e.getEntityId(), e.getEntityName());
+			}
+
+			sparql = sparql.replaceAll(e.getPropertyId(), e.getPropertyName());
+			sparql = sparql.replaceAll(e.getResourceId(), e.getResourceName());
+		}
+
+		for (Classes c : classes) {
+			sparql = sparql.replaceAll(c.getClassesId(), c.getClassesName());
+			sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
+			sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
+		}
+		
+		sparql = sparql.replace("FILTER", this.filters.getFilterStr());
+
+		return sparql;
 	}
 
 	/**
@@ -257,10 +284,10 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Show me games between Wilhelm Steinitz and Emanuel Lasker with elo of 2016.");
+		Allocator alloc = new Allocator("Show me games between Wiliam Steinitz and Johannes Zukertort with elo of 2016.");
 
 		alloc.allocateSequence();
-		System.out.println(alloc.subStringEntities(alloc.getSparqlQuery()));
+		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));
 
 	}
 
