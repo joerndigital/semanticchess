@@ -12,11 +12,14 @@ local.properties
 .recommenders
 *.out
 *.log
+*.ttl
+*.gz
 
 src/main/database/virtuoso/*
 src/test
 resources/ontologyClasses
 resources/ontologyProperties
+src/main/resources/static
 
 
 # External tool builders

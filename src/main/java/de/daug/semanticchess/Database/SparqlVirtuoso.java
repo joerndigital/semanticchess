@@ -40,7 +40,7 @@ public class SparqlVirtuoso {
 
 		//database connection
 		ConnectVirtuoso conn = new ConnectVirtuoso();
-		VirtModel vModel = conn.connect();
+		VirtModel vModel = conn.connectDefault();
 
 		System.out.println("=====================");
 		System.out.println("Exec: " + query);
@@ -87,7 +87,7 @@ public class SparqlVirtuoso {
 		String query = PREFIX + " " + strQuery;
 
 		ConnectVirtuoso conn = new ConnectVirtuoso();
-		VirtModel vModel = conn.connect();
+		VirtModel vModel = conn.connectDefault();
 		Query jquery = QueryFactory.create(query);
 		
 		QueryExecution qexec = QueryExecutionFactory.create(jquery, vModel);

@@ -40,7 +40,7 @@ public class QueryVirtuoso {
 		
 		//database connection
 		ConnectVirtuoso conn = new ConnectVirtuoso();
-		VirtModel vModel = conn.connect();
+		VirtModel vModel = conn.connectDefault();
 
 		System.out.println("=====================");
 		System.out.println("Exec: " + query);
