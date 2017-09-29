@@ -24,25 +24,17 @@ public class EcoToRdf {
 	
 	public static void main(String[] args){
 
-		String[] inputEco = new String[1];
-		inputEco[0] = "src/main/resources/static/openings/eco.txt";
-		
-		ECOToRDFConverter.main(inputEco);
-		
-		String[] inputLinker = new String[4];
-		inputLinker[0] = Configurations.DB_GRAPH; //falscher Graph?
-		inputLinker[1] = "localhost:1111";
-		inputLinker[2] = Configurations.DB_USER;
-		inputLinker[3] = Configurations.DB_PASSWORD;
-		
-		ECOLinker.main(inputLinker);
-		
+//		String[] inputEco = new String[1];
+//		inputEco[0] = "src/main/resources/static/openings/chessopenings.txt";
+//		
+//		ECOToRDFConverter.main(inputEco);
+//		
 //		byte[] buffer = new byte[1024];
 //
 //	    try{
 //
-//	        GZIPInputStream gzis = new GZIPInputStream(new FileInputStream("src/main/resources/static/openings/eco.txt.ttl.gz"));
-//	        FileOutputStream out = new FileOutputStream("src/main/resources/static/openings/eco.txt.ttl");
+//	        GZIPInputStream gzis = new GZIPInputStream(new FileInputStream("src/main/resources/static/openings/chessopenings.txt.ttl.gz"));
+//	        FileOutputStream out = new FileOutputStream("src/main/resources/static/openings/chessopenings.txt.ttl");
 //
 //	        int len;
 //	        while ((len = gzis.read(buffer)) > 0) {
@@ -57,6 +49,18 @@ public class EcoToRdf {
 //	    } catch(IOException ex){
 //	        ex.printStackTrace();
 //	    }
+		
+		String[] inputLinker = new String[4];
+		inputLinker[0] = Configurations.DB_GRAPH; //falscher Graph?
+		inputLinker[1] = "localhost:1111";
+		inputLinker[2] = Configurations.DB_USER;
+		inputLinker[3] = Configurations.DB_PASSWORD;
+		
+
+		
+
+		
+		ECOLinker.main(inputLinker);
 	}
 	
 }
