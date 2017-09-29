@@ -21,22 +21,22 @@ public class PgnToRdf {
 		
 		PGNToRDFConverterRanged pg = new PGNToRDFConverterRanged();
 		
-		String fileName = "Nimzowitsch";
-
-		File f = new File("src/test/resources/"+fileName+".pgn");
+		String fileName = "1610-1899";
+		pg.setSplitRate(150);
+		File f = new File("src/main/resources/static/games/pgn/"+fileName+".pgn");
 
 		pg.setOutputFormat("TURTLE");
-		pg.processToStream(f.getAbsolutePath(), new File("src/test/resources/"+fileName+".ttl").getAbsolutePath(), true);
-		pg.setOutputFormat("RDF/XML");
-		pg.processToStream(f.getAbsolutePath(), new File("src/test/resources/"+fileName+".rdf").getAbsolutePath(), true);
+		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+".ttl").getAbsolutePath(), true);
+//		pg.setOutputFormat("RDF/XML");
+//		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+".rdf").getAbsolutePath(), true);
 
-		rdfv.init("http://example.com", "#", "http://example.com/prop/", "http://example.com/res/", "prop", "res",
+		rdfv.init("http://example.com", "#", "http://example.com/prop/", "http://example.com/rdf/", "prop", "res",
 				false);
 
 		pg.setOutputFormat("TURTLE");
-		pg.processToStream(f.getAbsolutePath(), new File("src/test/resources/"+fileName+"_meta.ttl").getAbsolutePath(), true);
-		pg.setOutputFormat("RDF/XML");
-		pg.processToStream(f.getAbsolutePath(), new File("src/test/resources/"+fileName+"_meta.rdf").getAbsolutePath(), true);
+		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+"_meta.ttl").getAbsolutePath(), true);
+//		pg.setOutputFormat("RDF/XML");
+//		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+"_meta.ttl").getAbsolutePath(), true);
 		
 	}
 }
