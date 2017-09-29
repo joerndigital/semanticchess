@@ -93,7 +93,7 @@ public class ECOLinker
     /**
      * Output file for mappings.
      */
-    public final static String FILE_MAPPING = "Mapping_ECO_GAME.ttl";
+    public final static String FILE_MAPPING = "src/main/resources/static/games/rdf/Mapping_ECO_GAME.ttl";
     
     // ------------------------------------------------------------------------
     
@@ -361,8 +361,17 @@ public class ECOLinker
                 .append(":")
                 .append("moveNr")
                 .append(" ")
-                .append(nr)
+                .append("?moveNr")
                 .append(" .\n  ")
+                
+              .append(SPARQL_GAME_VAR)
+              .append(" ")
+              .append("prop")
+              .append(":")
+              .append("eco")
+              .append(" ")
+              .append("?eco")
+              .append(" .\n  ")
                 
                 .append(moveVar)
                 .append(" ")
@@ -372,12 +381,14 @@ public class ECOLinker
                 .append(" ")
                 .append(moveVarAbbr )
                 .append(" .\n")
-            	.append("FILTER regex(")
+            	.append("FILTER (regex(")
             	.append(moveVarAbbr )
             	.append(",")
             	.append("'")
-            	.append(co.getMoves().get(nr - 1).getMove())
-            	.append("')");
+            	.append(co.getMoves().get(nr - 1).getMove().substring(0,1) + ".*" + co.getMoves().get(nr - 1).getMove().substring(1) + "$")
+            	.append("') && ")
+            	.append("regex(?eco,'" + co.getCode() +"') && ")
+            	.append("?moveNr <= " + co.getMoves().size() + ")");
             
             if (nr <= this.subqueryDepth)
             {
