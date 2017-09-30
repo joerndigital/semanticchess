@@ -1,7 +1,9 @@
 package de.daug.semanticchess.Database;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
@@ -28,9 +30,9 @@ public class StringSimilarity {
 		case "prop:event":
 			this.variable = "event";
 			return this.query = "SELECT DISTINCT ?event WHERE {?game prop:event ?event. ?game prop:date ?date.} ORDER BY ASC(?date)";
-		case "prop:opening":
-			this.variable = "opening";
-			return this.query = "SELECT DISTINCT ?opening WHERE {?game prop:opening ?opening.}";
+		case "cont:openingName":
+			this.variable = "openingName";
+			return this.query = "SELECT DISTINCT ?openingName WHERE {?res cont:openingName ?openingName. ?res cont:openingCode ?eco} ORDER BY ?eco";
 		case "prop:site":
 			this.variable = "site";
 			return this.query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site.} ORDER BY ?site";
@@ -52,7 +54,7 @@ public class StringSimilarity {
 			QuerySolution soln = this.resultSet.next();
 			if (soln.getLiteral(this.variable).getString().equals(entity)) {
 
-				foundEntities.add(entity);
+				foundEntities.add(entity.replaceAll("\'", "\\\\'"));
 			}
 
 		}
@@ -71,7 +73,7 @@ public class StringSimilarity {
 			QuerySolution soln = this.resultSet.next();
 			if (soln.getLiteral(this.variable).getString().indexOf(entity) > -1) {
 
-				foundEntities.add("'" + soln.getLiteral(this.variable).getString() + "'");
+				foundEntities.add("'" + soln.getLiteral(this.variable).getString().replaceAll("\'", "\\\\'") + "'");
 			}
 
 		}
@@ -81,42 +83,74 @@ public class StringSimilarity {
 
 	public String distanceMatch(String entity) {
 		String foundEntity = "";
-
+		
 		SparqlVirtuoso sQuery = new SparqlVirtuoso();
 
 		this.resultSet = sQuery.getResultSet(this.query);
 		double distance = 999;
-//		LongestCommonSubsequenceDistance lcsd = new LongestCommonSubsequenceDistance();
+		// LongestCommonSubsequenceDistance lcsd = new
+		// LongestCommonSubsequenceDistance();
 		JaccardDistance jd = new JaccardDistance();
+		HashMap<String,Double> candidatesList = new HashMap<String,Double>();
 		
 		for (; this.resultSet.hasNext();) {
 			QuerySolution soln = this.resultSet.next();
 			String candidateEntity = soln.getLiteral(this.variable).getString();
-
-//			if(distance > lcsd.apply(entity, candidateEntity)){
-//				
-//				distance = lcsd.apply(entity, candidateEntity);
-//				System.out.println(distance);
-//				foundEntity = candidateEntity;
-//
-//				
-//				System.out.println("LCSD " +candidateEntity);
+			double candidateDistance = jd.apply(entity, candidateEntity);
+			
+			
+//			if(candidateEntity.indexOf(entity) > -1){
+//				System.out.println(candidateEntity);
+//				System.out.println(candidateDistance);
+//				System.out.println(candidateEntity.indexOf(entity));
 //			}
+			
+			
+			// if(distance > lcsd.apply(entity, candidateEntity)){
+			//
+			// distance = lcsd.apply(entity, candidateEntity);
+			// System.out.println(distance);
+			// foundEntity = candidateEntity;
+			//
+			//
+			// System.out.println("LCSD " +candidateEntity);
+			// }
+			
+			
+			
+			if (candidateEntity.indexOf(entity) > -1) {
+				candidatesList.put(candidateEntity, candidateDistance);
+				//System.out.println(candidatesList.toString());
+			}
+			
 
-			if(distance > jd.apply(entity, candidateEntity)){
-				
-				distance = jd.apply(entity, candidateEntity);
-				//System.out.println(distance);
+			if (distance > candidateDistance) {
+
+				distance = candidateDistance;
+				// System.out.println(distance);
 				foundEntity = candidateEntity;
-				//System.out.println("JD " + candidateEntity);
+				// System.out.println("JD " + candidateEntity);
 			}
 
-			if(foundEntity.indexOf(entity) > -1){
-				break;
-			}
-		    
+			
+
+			
+
+
 		}
-		return "'" + foundEntity + "'";
+		
+		if(!candidatesList.isEmpty()){
+			Entry<String, Double> min = null;
+			for (Entry<String, Double> entry : candidatesList.entrySet()) {
+			    if (min == null || min.getValue() > entry.getValue()) {
+			        min = entry;
+			    }
+			}
+			
+			return "'" + min.getKey().replaceAll("\'", "\\\\\\\\'") + "'"; 
+		}
+		
+		return "'" + foundEntity.replaceAll("\'", "\\\\\\'") + "'";
 	}
 
 	public String getQuery() {
@@ -125,8 +159,8 @@ public class StringSimilarity {
 
 	public static void main(String[] args) {
 		StringSimilarity similar = new StringSimilarity();
-		similar.setQuery("prop:black");
-		System.out.println(similar.distanceMatch("JohannesZuckertort"));
+		similar.setQuery("cont:openingName");
+		System.out.println(similar.distanceMatch("Kings Pawn"));
 
 	}
 
