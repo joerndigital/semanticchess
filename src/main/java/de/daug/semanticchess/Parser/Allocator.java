@@ -147,13 +147,14 @@ public class Allocator {
 	public String distanceEntities(String sparql) {
 
 		for (Entity e : entities) {
+			
 			similar.setQuery(e.getPropertyName());
 
 			try {
-				String subStrEntity = similar.distanceMatch(e.getEntityName().replaceAll("'", ""));
-
+				String subStrEntity = similar.distanceMatch(e.getEntityName().substring(1,e.getEntityName().length()-1));
 				sparql = sparql.replaceAll(e.getEntityId(), subStrEntity);
 			} catch (QueryParseException err) {
+				
 				sparql = sparql.replaceAll(e.getEntityId(), e.getEntityName());
 			}
 
@@ -284,8 +285,8 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Show me games between Wiliam Steinitz and Johannes Zukertort with elo of 2016.");
-
+		Allocator alloc = new Allocator("Wilhelm Steinitz wins against Anthony with black in the King's Pawn Game from 1880.");
+		
 		alloc.allocateSequence();
 		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));
 
