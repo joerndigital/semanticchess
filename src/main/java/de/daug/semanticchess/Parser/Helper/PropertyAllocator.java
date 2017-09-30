@@ -21,6 +21,7 @@ public class PropertyAllocator {
 	public PropertyAllocator(List<Token> tokens) {
 		this.tokens = tokens;
 		this.personPositions = getPersonPositions();
+		this.colorPosition = getFirstColorPosition();
 	}
 
 	/**
@@ -88,6 +89,7 @@ public class PropertyAllocator {
 	public int[] allocateColor() {
 		int[] personHasColor = new int[2];
 		int bestPosition = personPositions.get(0);
+		
 		personHasColor[0] = bestPosition;
 		personHasColor[1] = colorPosition;
 
