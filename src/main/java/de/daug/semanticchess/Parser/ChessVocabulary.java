@@ -128,12 +128,14 @@ public class ChessVocabulary {
 		openingProperty.add("wall");
 		openingProperty.add("gambit");
 		openingProperty.add("attack");
+		openingProperty.add("counterattack");
+		openingProperty.add("countergambit");
 		openingProperty.add("opening");
 		openingProperty.add("symmetrical");
 		openingProperty.add("line");
 		openingProperty.add("indian");
 		// ==============================
-		PROPERTIES.put("opening", openingProperty);
+		PROPERTIES.put("OPENING", openingProperty);
 		
 		ArrayList<String> ordinalProperty = new ArrayList<String>();
 		ordinalProperty.add("last");
