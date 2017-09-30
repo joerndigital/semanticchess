@@ -22,11 +22,10 @@ public class QueryService{
 	public String getCustomResult(String strQuery){
 		Allocator alloc = new Allocator(strQuery);
 		alloc.allocateSequence();
-		strQuery = alloc.getSparqlQuery();
+		strQuery = alloc.distanceEntities(alloc.getSparqlQuery());
 		
 		
 		
 		return virtuosoQuery.getCustomResult(strQuery);
 	}
-	
 }
