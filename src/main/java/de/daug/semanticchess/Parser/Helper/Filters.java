@@ -69,7 +69,13 @@ public class Filters{
 	 * @return filter
 	 */
 	public String getFilterStr() {
-		return filter + ")";
+		if(filter.equals("")){
+			return "";
+		}
+		else {
+			return filter + ")";
+		}
+		
 	}
 
 	/**
