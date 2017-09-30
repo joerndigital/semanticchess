@@ -20,8 +20,11 @@ import virtuoso.jena.driver.VirtModel;
 @Repository
 public class QueryVirtuoso {
 
-	private static String PREFIX = "PREFIX ex:<http://example.com>" + " PREFIX res:<http://example.com/res/>"
-			+ " PREFIX prop:<http://example.com/prop/>";
+	private static String PREFIX = 	"PREFIX ex:<http://example.com> " + 
+									"PREFIX res:<http://example.com/res/> " + 
+									"PREFIX prop:<http://example.com/prop/> " +
+									"PREFIX cres:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology/Resources/> " + 
+									"PREFIX cont:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#> ";
 	
 	/**
 	 * constructor
