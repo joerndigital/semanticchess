@@ -71,6 +71,7 @@ public class Parser {
 		tokens = cNer.stemming(tokens);
 		tokens = cNer.checkChessVocabulary(tokens);
 		tokens = cNer.checkElo(tokens);
+		tokens = cNer.checkOpening(tokens);
 
 		this.tokens = tokens;
 		
@@ -116,16 +117,7 @@ public class Parser {
 
 	}
 
-	public static void main(String[] args) {
-		String query = "Give me the games with rook and pawn against rook from June 2016.";
 
-		Parser p = new Parser(query);
-
-		System.out.println(p.getTokens().toString());
-		System.out.println(p.getEntities().toString());
-		System.out.println(p.getClasses().toString());
-		System.out.println(p.getResources().toString());
-	}
 
 	public void collectEntities(List<Token> tokens) {
 		boolean isBlackPieces = false;
@@ -169,31 +161,31 @@ public class Parser {
 
 			switch (ne) {
 			case "PERSON":
-				addEntityOrClass(word, ne, "white|prop:black", "?game");
+				addEntityOrClass(word, ne, "prop:", "white|prop:black", "?game");
 				break;
 			case "MISC":
-				addEntityOrClass(word, ne, "", "?game");
+				addEntityOrClass(word, ne, "prop:", "", "?game");
 				break;
 			case "LOCATION":
-				addEntityOrClass(word, ne, "site", "?game");
+				addEntityOrClass(word, ne, "prop:", "site", "?game");
 				break;
 			case "ORGANIZATION":
-				addEntityOrClass(word, ne, "event", "?game");
+				addEntityOrClass(word, ne, "prop:", "event", "?game");
 				break;
 			case "DATE":
-				addEntityOrClass(word, ne, "date", "?game");
+				addEntityOrClass(word, ne, "prop:", "date", "?game");
 				break;
 			case "ORDINAL":
 				if (nextNe.equals("round")) {
 
 					index += 1;
 					if (word.equals("last")) {
-						addEntityOrClass("round", ne, "round", "?game");
+						addEntityOrClass("round", ne, "prop:", "round", "?game");
 						options.setLimitStr(1);
 						options.setOffsetStr(0);
 						options.setOrderStr("DESC", "?round");
 					} else {
-						addEntityOrClass(word.replaceAll("\\D+", ""), ne, "round", "?game");
+						addEntityOrClass(word.replaceAll("\\D+", ""), ne, "prop:", "round", "?game");
 					}
 
 				} else {
@@ -207,7 +199,7 @@ public class Parser {
 						options.setOrderStr("ASC", "?date");
 					}
 
-					classes.add(new Classes(classes.size() + 1, "?date", "date", 999, "?game"));
+					classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
 
 				}
 
@@ -217,7 +209,7 @@ public class Parser {
 				if (preNe.equals("round")) {
 
 					index += 1;
-					addEntityOrClass(word.replaceAll("\\D+", ""), ne, "round", "?game");
+					addEntityOrClass(word.replaceAll("\\D+", ""), ne, "prop:", "round", "?game");
 				} else if (nextNe.equals("piece")) {
 					// will be used in case piece
 					break;
@@ -234,11 +226,11 @@ public class Parser {
 				// "ChessGame", index));
 				break;
 			case "eco":
-				addEntityOrClass(word.substring(0,1).toUpperCase() + word.substring(1), ne, "eco", "?game");
+				addEntityOrClass(word.substring(0,1).toUpperCase() + word.substring(1), ne, "prop:", "eco", "?game");
 				break;
 			case "elo":
 				isElo = true;
-				addEntityOrClass(word, ne, "whiteelo|prop:blackelo", "?game");
+				addEntityOrClass(word, ne, "prop:", "whiteelo|prop:blackelo", "?game");
 				break;
 			case "black":
 				isBlack = true;
@@ -248,29 +240,30 @@ public class Parser {
 				break;
 			case "1-0":
 				isDecisive = true;
-				addEntityOrClass(ne, ne, "result", "?game");
+				addEntityOrClass(ne, ne, "prop:", "result", "?game");
 				break;
 			case "0-1":
 				isDecisive = true;
-				addEntityOrClass(ne, ne, "result", "?game");
+				addEntityOrClass(ne, ne, "prop:", "result", "?game");
 				break;
 			case "1/2-1/2":
-				addEntityOrClass(ne, ne, "result", "?game");
+				addEntityOrClass(ne, ne, "prop:", "result", "?game");
 				break;
 			case "event":
-				addEntityOrClass(word, ne, "event", "?game");
+				addEntityOrClass(word, ne, "prop:", "event", "?game");
 				if(!this.tokens.get(index).getWord().equals("tournament") && !this.tokens.get(index).getWord().equals("event")){
 					filters.addRegex("?" + ne, word, false);
 				}
 				
 				break;
-			case "opening":
-				addEntityOrClass(word, ne, "eco", "?game");
+			case "OPENING":
+				addEntityOrClass(word, ne, "cont:", "openingName", "?contEco");
+				//classes.add(new Classes(classes.size() + 1, "?openingName", "cont:", "openingName", 999, "?contEco"));
 				break;
 			case "moves":
-				addEntityOrClass(word, ne, "moves", "?game");
+				addEntityOrClass(word, ne, "prop:", "moves", "?game");
 			case "move":
-				addEntityOrClass(word, ne, "move", "?moves");
+				addEntityOrClass(word, ne, "prop:", "move", "?moves");
 			case "piece":
 				isFen = true;
 				isFilter = true;
@@ -299,8 +292,8 @@ public class Parser {
 				}
 
 				if (fenReg.getPiecesWhite().size() == 1 && fenReg.getPiecesBlack().size() == 0) {
-					classes.add(new Classes(classes.size() + 1, "?moves", "moves", 999, "?game"));
-					classes.add(new Classes(classes.size() + 1, "?fen", "fen", 999, "?moves"));
+					classes.add(new Classes(classes.size() + 1, "?moves", "prop:", "moves", 999, "?game"));
+					classes.add(new Classes(classes.size() + 1, "?fen", "prop:", "fen", 999, "?moves"));
 				}
 
 				break;
@@ -331,6 +324,7 @@ public class Parser {
 	public void injectColor() {
 		PropertyAllocator ca = new PropertyAllocator(tokens);
 		int[] personHasColor = ca.allocateColor();
+		
 
 		if (isWhite) {
 			for (Entity e : entities) {
@@ -559,12 +553,13 @@ public class Parser {
 		}
 	}
 
-	public void addEntityOrClass(String word, String ne, String property, String resource) {
+	public void addEntityOrClass(String word, String ne, String propertyPrefix, String property, String resource) {
 		int startPosition = index;
 
 		if (Character.isUpperCase(ne.charAt(0))) {
 			while ((index + 1) < tokens.size() && tokens.get(index + 1).getNe().equals(ne)) {
 				word += " " + tokens.get(index + 1).getWord();
+				word = word.replace(" '", "'");
 				index += 1;
 			}
 		}
@@ -587,14 +582,14 @@ public class Parser {
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
 
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
-			classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), property, endPosition, resource));
+			classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), propertyPrefix, property, endPosition, resource));
 		} else if(ne.equals("DATE")){
-			classes.add(new Classes(classes.size() + 1, "?date", property, endPosition, resource));
+			classes.add(new Classes(classes.size() + 1, "?date", propertyPrefix, property, endPosition, resource));
 			filters.addRegex("?date", "'" + word + "'", false);
 		}
 		else {					
 			entities.add(
-					new Entity(entities.size() + 1, "'" + word + "'", property, startPosition, endPosition, resource));
+					new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition, endPosition, resource));
 		}
 	}
 
@@ -610,12 +605,12 @@ public class Parser {
 			newPropertyName = flipper.toFlip(e.getPropertyName());
 			newEntityName = flipper.toFlip(e.getEntityName());
 
-			tempEntities.add(new Entity(tempEntities.size() + 1, newEntityName, newPropertyName.replace("prop:", ""),
+			tempEntities.add(new Entity(tempEntities.size() + 1, newEntityName, e.getPropertyPrefix(), newPropertyName.replace(e.getPropertyPrefix(), ""),
 					e.getStartPosition(), e.getEndPosition(), e.getResourceName()));
 		}
 
 		for (Entity t : tempEntities) {
-			entities.add(new Entity(entities.size() + 1, t.getEntityName(), t.getPropertyName().replace("prop:", ""),
+			entities.add(new Entity(entities.size() + 1, t.getEntityName(), t.getPropertyPrefix(), t.getPropertyName().replace(t.getPropertyPrefix(), ""),
 					t.getStartPosition(), t.getEndPosition(), t.getResourceName()));
 		}
 
@@ -627,12 +622,12 @@ public class Parser {
 			newPropertyName = flipper.toFlip(c.getPropertyName());
 			newEntityName = flipper.toFlip(c.getClassesName());
 
-			tempClasses.add(new Classes(tempClasses.size() + 1, newEntityName, newPropertyName.replace("prop:", ""),
+			tempClasses.add(new Classes(tempClasses.size() + 1, newEntityName, c.getPropertyPrefix(), newPropertyName.replace(c.getPropertyPrefix(), ""),
 					c.getPosition(), c.getResourceName()));
 		}
 
 		for (Classes t : tempClasses) {
-			classes.add(new Classes(classes.size() + 1, t.getClassesName(), t.getPropertyName().replace("prop:", ""),
+			classes.add(new Classes(classes.size() + 1, t.getClassesName(), t.getPropertyPrefix(), t.getPropertyName().replace(t.getPropertyPrefix(), ""),
 					t.getPosition(), t.getResourceName()));
 		}
 	}
@@ -730,6 +725,17 @@ public class Parser {
 			}
 		}
 		return null;
+	}
+	
+	public static void main(String[] args) {
+		String query = "Wilhelm Steinitz against Anthony in the King's Pawn Game.";
+
+		Parser p = new Parser(query);
+
+		System.out.println(p.getTokens().toString());
+		System.out.println(p.getEntities().toString());
+		System.out.println(p.getClasses().toString());
+		System.out.println(p.getResources().toString());
 	}
 
 }
