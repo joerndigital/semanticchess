@@ -34,6 +34,7 @@ public class ChessVocabulary {
 				
 		ArrayList<String> dateProperty = new ArrayList<String>();
 		dateProperty.add("when");
+		dateProperty.add("date");
 		// ==============================
 		PROPERTIES.put("DATE", dateProperty);
 				
