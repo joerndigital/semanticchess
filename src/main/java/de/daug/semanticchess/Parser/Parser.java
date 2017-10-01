@@ -24,6 +24,7 @@ import de.daug.semanticchess.Parser.Helper.Filters;
 import de.daug.semanticchess.Parser.Helper.Flipper;
 import de.daug.semanticchess.Parser.Helper.Options;
 import de.daug.semanticchess.Parser.Helper.Resource;
+import de.daug.semanticchess.Parser.Helper.TopicFinder;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 /**
@@ -39,6 +40,7 @@ public class Parser {
 	private Options options = new Options();
 	private FenRegex fenReg = new FenRegex();
 	private Filters filters = new Filters();
+	private TopicFinder topics = new TopicFinder();
 
 	private ChessVocabulary vocabulary = new ChessVocabulary();
 
@@ -50,6 +52,7 @@ public class Parser {
 	private boolean isUnion = false;
 	private boolean isElo = false;
 	private boolean isFen = false;
+	private boolean isCount = false;
 	private boolean isFilter = false;
 
 	private String sequence;
@@ -114,6 +117,32 @@ public class Parser {
 				filters.addRegex("?fen", fenReg.getFen(), false);
 			}
 		}
+		
+		topics.collectTopics(this.entities, this.classes);
+		if(isCount){
+			
+			int firstEntityPosition = 999;
+			int firstClassesPosition = 999; 
+			try {
+				firstEntityPosition = entities.get(0).getStartPosition();
+			} catch(Exception err){
+				
+			}
+			try {
+				firstClassesPosition = classes.get(0).getPosition();
+			} catch(Exception err){
+				
+			}
+			
+			if(firstEntityPosition < firstClassesPosition){
+				topics.addCount(entities.get(0).getResourceName());
+				this.options.setOrderStr("DESC", "?nr");
+			} else {
+				topics.addCount(classes.get(0).getClassesName());
+				this.options.setOrderStr("DESC", "?nr");
+			}
+		}
+		
 
 	}
 
@@ -156,6 +185,20 @@ public class Parser {
 				nextFoundNe = "O";
 				nextFoundWord = "";
 			}
+			
+//			String preFoundNe = "O";
+//			String preFoundWord = "";
+//			try {
+//				int i = index;
+//				while (preFoundNe.equals("O")) {
+//					preFoundNe = tokens.get(i - 1).getNe();
+//					preFoundWord = tokens.get(i - 1).getWord();
+//					i--;
+//				}
+//			} catch (Exception err) {
+//				preFoundNe = "O";
+//				preFoundWord = "";
+//			}
 
 			String pos = tokens.get(index).getPos();
 
@@ -253,7 +296,7 @@ public class Parser {
 			case "event":
 				addEntityOrClass(word, ne, "prop:", "event", "?game");
 				if(!this.tokens.get(index).getWord().equals("tournament") && !this.tokens.get(index).getWord().equals("event")){
-					filters.addRegex("?" + ne, word, false);
+					filters.addRegex("?" + ne, word, true);
 				}
 				
 				break;
@@ -309,6 +352,16 @@ public class Parser {
 				isFilter = true;
 				filters.addGreaterThan("?" + nextFoundNe, nextFoundWord);
 				index = nextFoundIndex + 1;
+				break;
+			case "lower":
+				isFilter = true;
+				filters.addLowerThan("?" + nextFoundNe, nextFoundWord);
+				index = nextFoundIndex + 1;
+				break;
+			case "count":
+				isCount = true;
+				break;
+				
 			default:
 				if (word.equals("versus") || word.equals("vs") || word.equals("against")) {
 					if (preNe.equals("piece")) {
@@ -551,6 +604,15 @@ public class Parser {
 						e.setPropertyName("prop:black");
 					}
 				}
+				
+				for (Classes c : classes) {
+					if (c.getPropertyName().equals("prop:white|prop:black") && isFirst) {
+						c.setPropertyName("prop:white");
+						isFirst = false;
+					} else if (c.getPropertyName().equals("prop:white|prop:black") && !isFirst) {
+						c.setPropertyName("prop:black");
+					}
+				}
 			}
 		}
 	}
@@ -587,7 +649,7 @@ public class Parser {
 			classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), propertyPrefix, property, endPosition, resource));
 		} else if(ne.equals("DATE")){
 			classes.add(new Classes(classes.size() + 1, "?date", propertyPrefix, property, endPosition, resource));
-			filters.addRegex("?date", "'" + word + "'", false);
+			filters.addRegex("?date", word, false);
 		}
 		else {	
 			if(!word.isEmpty()){
@@ -708,6 +770,12 @@ public class Parser {
 	public void setFilters(Filters filters) {
 		this.filters = filters;
 	}
+	
+	
+
+	public String getTopicStr() {
+		return topics.getString();
+	}
 
 	public Entity getEntityByEndPosition(int position) {
 		for (Entity e : entities) {
@@ -737,10 +805,12 @@ public class Parser {
 	}
 	
 	public static void main(String[] args) {
-		String query = "Which player with an ELO above 2500 has won the most in 1899?";
+		String query = "In which event did Wilhelm Steinitz won most games?";
 
 		Parser p = new Parser(query);
-
+		
+		
+		
 		System.out.println(p.getTokens().toString());
 		System.out.println(p.getEntities().toString());
 		System.out.println(p.getClasses().toString());
