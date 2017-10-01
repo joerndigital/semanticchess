@@ -48,17 +48,17 @@ public class Filters{
 	public void addRegex(String classesName, String regex, boolean caseSensitiv){
 		if(isFirstFilter){
 			if(!caseSensitiv){
-				this.filter = "FILTER ( regex( " + classesName + ", " + regex + ")";
+				this.filter = "FILTER ( regex( " + classesName + ", '" + regex + "')";
 				this.isFirstFilter = false;
 			} else {
-				this.filter = "FILTER ( regex( " + classesName + ", " + regex + " "+ ",'i' " + ")";
+				this.filter = "FILTER ( regex( " + classesName + ", '" + regex + "' "+ ",'i' " + ")";
 				this.isFirstFilter = false;
 			}
 		}else {
 			if(!caseSensitiv){
-				this.filter += " && regex( " + classesName + ", " + regex + ")";
+				this.filter += " && regex( " + classesName + ", '" + regex + "')";
 			} else {
-				this.filter += " && regex( " + classesName + ", " + regex + " "+ ",'i' " + ")";
+				this.filter += " && regex( " + classesName + ", '" + regex + "' "+ ",'i' " + ")";
 			}
 		}
 		
