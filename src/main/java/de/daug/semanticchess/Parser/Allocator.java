@@ -48,8 +48,8 @@ public class Allocator {
 		this.classes = parser.getClasses();
 		
 		
-		TopicFinder topicFinder = new TopicFinder(this.entities, this.classes);
-		this.topics = topicFinder.getString();
+		//TopicFinder topicFinder = new TopicFinder();
+		this.topics = parser.getTopicStr();
 		
 		//System.out.println(this.topics.toString());
 		
@@ -416,7 +416,10 @@ public class Allocator {
 		}
 		
 		//System.out.println(sparqlQuery.indexOf("*"));
-		sparqlQuery = sparqlQuery.replace("*", this.topics);
+		if(!this.topics.isEmpty()){
+			sparqlQuery = sparqlQuery.replace("*", this.topics);
+		} 
+		
 		this.sparqlQuery = sparqlQuery + " " + options;
 
 	}
@@ -444,7 +447,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Games by Emanuel Lasker with the King's Pawn.");
+		Allocator alloc = new Allocator("Who was first in the Match");
 
 		alloc.allocateSequence();
 		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));
