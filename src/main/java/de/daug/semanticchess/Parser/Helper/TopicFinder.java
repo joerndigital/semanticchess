@@ -7,20 +7,17 @@ import java.util.Set;
 public class TopicFinder {
 
 	Set<String> topics = new HashSet<String>();
-	List<Entity> entities;
-	List<Classes> classes;
+	String countThis = "";
 
-	public TopicFinder(List<Entity> entities, List<Classes> classes) {
-		this.entities = entities;
-		this.classes = classes;
-		this.topics = getTopics();
+	public TopicFinder() {
+
 	}
 
-	public Set<String> getTopics() {
+	public Set<String> collectTopics(List<Entity> entities, List<Classes> classes) {
 		int firstEntityPosition = 999;
 		int secondEntityPosition = 999;
 		int firstClassesPosition = 999;
-		
+
 		try {
 			firstEntityPosition = entities.get(0).getStartPosition();
 
@@ -33,58 +30,76 @@ public class TopicFinder {
 		} catch (Exception err) {
 
 		}
-		
+
 		try {
 			firstClassesPosition = classes.get(0).getPosition();
 		} catch (Exception err) {
 
 		}
-		
+
 		boolean entityIsEmpty = false;
-		if(entities.get(0).getEntityName().isEmpty()){
-			topics.add(entities.get(0).getResourceName());
-			entityIsEmpty = true;
+		try{
+			if (entities.get(0).getEntityName().isEmpty()) {
+				topics.add(entities.get(0).getResourceName());
+				entityIsEmpty = true;
+			}
+
+			for (Classes c : classes) {
+
+				if (!entityIsEmpty) {
+					if (c.getPosition() < firstEntityPosition) {
+						topics.add(c.getClassesName());
+					}
+				} else {
+
+					if (c.getPosition() < secondEntityPosition) {
+
+						topics.add(c.getClassesName());
+					}
+				}
+
+			}
+
+			if (topics.isEmpty()) {
+				for (Entity e : entities) {
+					if (e.getStartPosition() < firstClassesPosition && e.getEntityName().isEmpty()) {
+						topics.add(e.getResourceName());
+					}
+				}
+
+			}
+
+		} catch (Exception err){
+			
 		}
 		
-		for (Classes c : classes) {
-			
-			if(!entityIsEmpty){
-				if (c.getPosition() < firstEntityPosition) {
-					topics.add(c.getClassesName());
-				}
-			} else {
-				
-				if (c.getPosition() < secondEntityPosition) {
-					
-					topics.add(c.getClassesName());
-				}
-			}
-
-		}
-
-		if (topics.isEmpty()) {
-			for (Entity e : entities) {
-				if (e.getStartPosition() < firstClassesPosition && e.getEntityName().isEmpty()) {
-					topics.add(e.getResourceName());
-				} 
-			}
-
-		}
-
 		return this.topics;
 	}
+
+	public void addCount(String countThis) {
+		this.topics.add("(COUNT("+countThis+") AS ?nr)");
+		
+	}
 	
+	
+
+	public Set<String> getTopics() {
+		return topics;
+	}
+
+	public void setTopics(Set<String> topics) {
+		this.topics = topics;
+	}
 
 	public String getString(){
 		String topicStr = "";
-		
-		for(String t : topics){
-			topicStr += t + " ";
+		String[] topicArray = topics.toArray(new String[topics.size()]);
+		for(int i = topicArray.length - 1; i >= 0; i-- ){
+			topicStr += topicArray[i] + " ";
 		}
+		
 		
 		return topicStr;
 	}
-	
-	
 
 }
