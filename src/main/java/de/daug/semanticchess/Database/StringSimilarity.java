@@ -147,10 +147,10 @@ public class StringSimilarity {
 			    }
 			}
 			
-			return "'" + min.getKey().replaceAll("\'", "\\\\\\\\'") + "'"; 
+			return "'" + min.getKey().replaceAll("\'", "\\\\\\\\\\\\'") + "'"; 
 		}
 		
-		return "'" + foundEntity.replaceAll("\'", "\\\\\\'") + "'";
+		return "'" + foundEntity.replaceAll("\'", "\\\\\\\\\\'") + "'";
 	}
 
 	public String getQuery() {
