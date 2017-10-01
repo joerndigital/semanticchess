@@ -31,6 +31,15 @@ public class ChessVocabulary {
 		blackProperty.add("black");
 		// ==============================
 		PROPERTIES.put("black", blackProperty);
+		
+		ArrayList<String> countProperty = new ArrayList<String>();
+		countProperty.add("often");
+		countProperty.add("much");
+		countProperty.add("many");
+		countProperty.add("most");
+		countProperty.add("main");
+		// ==============================
+		PROPERTIES.put("count", countProperty);
 				
 		ArrayList<String> dateProperty = new ArrayList<String>();
 		dateProperty.add("when");
@@ -90,7 +99,11 @@ public class ChessVocabulary {
 		
 		ArrayList<String> greaterThanProperty = new ArrayList<String>();
 		greaterThanProperty.add("above");
-		greaterThanProperty.add("highest");
+		greaterThanProperty.add("higher");
+		greaterThanProperty.add("more");
+		greaterThanProperty.add("larger");
+		greaterThanProperty.add("over");
+		greaterThanProperty.add("beyond");
 		//===============================
 		PROPERTIES.put("greater", greaterThanProperty);
 		
@@ -106,8 +119,18 @@ public class ChessVocabulary {
 		gameProperty.add("pairings");
 		gameProperty.add("encounter");
 		gameProperty.add("encounters");
+		gameProperty.add("endgames");
 		// ==============================
 		PROPERTIES.put("game", gameProperty);
+		
+		ArrayList<String> lowerProperty = new ArrayList<String>();
+		lowerProperty.add("less");
+		lowerProperty.add("lower");
+		lowerProperty.add("smaller");
+		lowerProperty.add("below");
+		lowerProperty.add("under");
+		// ==============================
+		PROPERTIES.put("lower", lowerProperty);
 
 		ArrayList<String> loseProperty = new ArrayList<String>();
 		loseProperty.add("lose");
@@ -152,6 +175,8 @@ public class ChessVocabulary {
 		personProperty.add("player");
 		personProperty.add("opponent");
 		personProperty.add("who");
+		personProperty.add("whom");
+		personProperty.add("person");
 		// ==============================
 		PROPERTIES.put("PERSON", personProperty);
 
@@ -172,6 +197,10 @@ public class ChessVocabulary {
 
 		ArrayList<String> siteProperty = new ArrayList<String>();
 		siteProperty.add("where");
+		siteProperty.add("city");
+		siteProperty.add("town");
+		siteProperty.add("country");
+		siteProperty.add("place");
 		PROPERTIES.put("site", siteProperty);
 
 		ArrayList<String> whiteProperty = new ArrayList<String>();
