@@ -81,6 +81,10 @@ public class CustomNer {
 						tokens.get(i).setNe("elo");
 					}
 				} catch (Exception e) {}
+			} else if(tokens.get(i).getNe().equals("ORGANIZATION")){
+				if(word.equals("elo")){
+					tokens.get(i).setNe("elo");
+				}
 			}
 		}
 		
@@ -92,8 +96,11 @@ public class CustomNer {
 		for(int i = 0; i < tokens.size(); i++){
 			String word = tokens.get(i).getWord().toLowerCase();
 			String value = vocabulary.INVERSED_PROPERTIES.get(word);
-			if(word.equals("game") && tokens.get(i).getPos().equals("NNP")){
+			//System.out.println(value);
+			if(value != null && value.equals("OPENING") && tokens.get(i).getPos().equals("NNP")){
 				value = "OPENING";
+			} else if (value != null && value.equals("piece") && tokens.get(i).getPos().equals("NNP")){
+				value = "OPENING";		
 			}
 			if (value != null && value.equals("OPENING")) {
 				tokens.get(i).setNe(value);
