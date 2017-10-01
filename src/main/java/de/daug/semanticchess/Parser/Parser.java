@@ -220,6 +220,7 @@ public class Parser {
 				}
 				break;
 			case "game":
+				addEntityOrClass("", ne, "a prop:ChessGame", "", "?game");
 				// TODO als Spezialfall, konkurrierend mit anderen res
 				// TODO bei eco, opening, event,... flag für game ressource
 				// resources.add(new Resource((resources.size() + 1), "?game",
@@ -258,10 +259,11 @@ public class Parser {
 				break;
 			case "OPENING":
 				addEntityOrClass(word, ne, "cont:", "openingName", "?contEco");
-				//classes.add(new Classes(classes.size() + 1, "?openingName", "cont:", "openingName", 999, "?contEco"));
+				classes.add(new Classes(classes.size() + 1, "?contEco", "cont:", "eco", 999, "?game"));
 				break;
 			case "moves":
 				addEntityOrClass(word, ne, "prop:", "moves", "?game");
+				//TODO: moveNr zählen -> und als Filter einbauen
 			case "move":
 				addEntityOrClass(word, ne, "prop:", "move", "?moves");
 			case "piece":
@@ -396,7 +398,7 @@ public class Parser {
 					try {
 
 						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
-						System.out.println("3. " + getEntityByEndPosition(pair.getValue()).getPropertyName());
+						//System.out.println("3. " + getEntityByEndPosition(pair.getValue()).getPropertyName());
 						try {
 							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
 						} catch (Exception err) {
@@ -406,7 +408,7 @@ public class Parser {
 						isWhite = true;
 
 					} catch (NullPointerException err) {
-						System.out.println(pair.getKey() + "-> " + pair.getValue());
+						//System.out.println(pair.getKey() + "-> " + pair.getValue());
 						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
 						try {
 							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
@@ -587,9 +589,16 @@ public class Parser {
 			classes.add(new Classes(classes.size() + 1, "?date", propertyPrefix, property, endPosition, resource));
 			filters.addRegex("?date", "'" + word + "'", false);
 		}
-		else {					
-			entities.add(
-					new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition, endPosition, resource));
+		else {	
+			if(!word.isEmpty()){
+				entities.add(
+						new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition, endPosition, resource));
+			}
+			else {
+				entities.add(
+						new Entity(entities.size() + 1, word, propertyPrefix, property, startPosition, endPosition, resource));
+			}
+			
 		}
 	}
 
@@ -728,7 +737,7 @@ public class Parser {
 	}
 	
 	public static void main(String[] args) {
-		String query = "Wilhelm Steinitz against Anthony in the King's Pawn Game.";
+		String query = "Which player with an ELO above 2500 has won the most in 1899?";
 
 		Parser p = new Parser(query);
 
