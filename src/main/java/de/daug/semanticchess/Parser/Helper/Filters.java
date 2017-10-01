@@ -20,7 +20,7 @@ public class Filters{
 	 */
 	public void addGreaterThan(String classesName, String filterValue){
 		if(isFirstFilter){
-			this.filter = "FILTER "+ classesName +" > " + filterValue;
+			this.filter = "FILTER ("+ classesName +" > " + filterValue;
 			this.isFirstFilter = false;
 		} else {
 			this.filter += " && "+ classesName +" > " + filterValue;
@@ -32,7 +32,7 @@ public class Filters{
 	 */
 	public void addLowerThan(String classesName, String filterValue){
 		if(isFirstFilter){
-			this.filter = "FILTER "+ classesName +" < " + filterValue;
+			this.filter = "FILTER ("+ classesName +" < " + filterValue;
 			this.isFirstFilter = false;
 		} else {
 			this.filter += " && "+ classesName +" < " + filterValue;
