@@ -135,7 +135,7 @@ public class FenRegex{
 	 * @return fen
 	 */
 	public String getFen() {
-		return "'" + fen + "'";
+		return fen;
 	}
 
 	/**
