@@ -8,6 +8,7 @@ public class TopicFinder {
 
 	Set<String> topics = new HashSet<String>();
 	String countThis = "";
+	Set<String> blacklist = new HashSet<String>();
 
 	public TopicFinder() {
 
@@ -38,25 +39,38 @@ public class TopicFinder {
 		}
 
 		boolean entityIsEmpty = false;
-		try{
-			if (entities.get(0).getEntityName().isEmpty()) {
-				topics.add(entities.get(0).getResourceName());
+		try {
+
+			try {
+				if (entities.get(0).getEntityName().isEmpty()) {
+					topics.add(entities.get(0).getResourceName());
+					entityIsEmpty = true;
+				}
+			} catch (Exception err) {
 				entityIsEmpty = true;
 			}
-
+			System.out.println(classes.toString());
 			for (Classes c : classes) {
-
+				
 				if (!entityIsEmpty) {
 					if (c.getPosition() < firstEntityPosition) {
-						topics.add(c.getClassesName());
+						if(!blacklist.contains(c.getClassesName())){
+							topics.add(c.getClassesName());
+							
+						}
+						
 					}
 				} else {
 
 					if (c.getPosition() < secondEntityPosition) {
-
-						topics.add(c.getClassesName());
+						if(!blacklist.contains(c.getClassesName())){
+							topics.add(c.getClassesName());
+							
+						}
 					}
 				}
+				
+				
 
 			}
 
@@ -69,19 +83,27 @@ public class TopicFinder {
 
 			}
 
-		} catch (Exception err){
-			
+		} catch (Exception err) {
+
 		}
-		
+
 		return this.topics;
 	}
 
 	public void addCount(String countThis) {
-		this.topics.add("(COUNT("+countThis+") AS ?nr)");
-		
+		this.topics.add("(COUNT(" + countThis + ") AS ?nr)");
+
 	}
 	
+	public void addMax(String maxThis) {
+		this.topics.add("(MAX(" + maxThis + ") AS ?nr)");
+
+	}
 	
+	public void addAvg(String avgThis) {
+		this.topics.add("(MAX(" + avgThis + ") AS ?nr)");
+
+	}
 
 	public Set<String> getTopics() {
 		return topics;
@@ -90,15 +112,19 @@ public class TopicFinder {
 	public void setTopics(Set<String> topics) {
 		this.topics = topics;
 	}
+	
+	public void addToBlacklist(String topic){
+		this.blacklist.add(topic);
+	}
 
-	public String getString(){
+	public String getString() {
 		String topicStr = "";
 		String[] topicArray = topics.toArray(new String[topics.size()]);
-		for(int i = topicArray.length - 1; i >= 0; i-- ){
+		for (int i = topicArray.length - 1; i >= 0; i--) {
+			
 			topicStr += topicArray[i] + " ";
 		}
-		
-		
+
 		return topicStr;
 	}
 
