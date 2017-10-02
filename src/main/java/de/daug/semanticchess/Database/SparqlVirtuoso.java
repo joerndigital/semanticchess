@@ -23,7 +23,9 @@ public class SparqlVirtuoso {
 									"PREFIX res:<http://example.com/res/> " + 
 									"PREFIX prop:<http://example.com/prop/> " +
 									"PREFIX cres:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology/Resources/> " + 
-									"PREFIX cont:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#> ";
+									"PREFIX cont:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#> " +
+									"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>";
+									
 	/**
 	 * constructor
 	 */
