@@ -60,7 +60,7 @@ public class Allocator {
 		}
 		this.options = parser.getOptions().toString();
 		this.filters = parser.getFilters();
-		this.similar = new StringSimilarity();
+		this.similar = parser.getSimilar();
 		// allocateSequence();
 	}
 
@@ -165,6 +165,7 @@ public class Allocator {
 
 		String tempStr = "";
 		values.generatePermutations(values.getResults(), Values.getPermutation(), 0, tempStr);
+		//System.out.println(values.toString());
 		sparql = sparql.replace("VALUE_PLACEHOLDER", values.toString());
 
 		for (
@@ -447,10 +448,11 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("How many times has Adolf Anderssen played draw?");
+		Allocator alloc = new Allocator("Players elo.");
 
 		alloc.allocateSequence();
-		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));
+		
+		System.out.println(alloc.subStringEntities(alloc.getSparqlQuery()));
 
 	}
 
