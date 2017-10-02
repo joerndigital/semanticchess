@@ -54,7 +54,7 @@ public class Allocator {
 		//System.out.println(this.topics.toString());
 		
 		//System.out.println(parser.getOptions().getLimitStr());
-		if(parser.getOptions().getLimitStr() == null){
+		if(parser.getOptions().getLimitStr().isEmpty()){
 			parser.getOptions().setLimitStr(2000);
 			parser.getOptions().setOffsetStr(0);
 		}
@@ -447,7 +447,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Who was first in the Match");
+		Allocator alloc = new Allocator("How many times has Adolf Anderssen played draw?");
 
 		alloc.allocateSequence();
 		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));
