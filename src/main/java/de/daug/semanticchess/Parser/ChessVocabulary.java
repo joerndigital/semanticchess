@@ -97,15 +97,25 @@ public class ChessVocabulary {
 		// ==============================
 		PROPERTIES.put("fen", fenProperty);
 		
-		ArrayList<String> greaterThanProperty = new ArrayList<String>();
-		greaterThanProperty.add("above");
-		greaterThanProperty.add("higher");
-		greaterThanProperty.add("more");
-		greaterThanProperty.add("larger");
-		greaterThanProperty.add("over");
-		greaterThanProperty.add("beyond");
+		ArrayList<String> comparativePosProperty = new ArrayList<String>();
+		comparativePosProperty.add("above");
+		comparativePosProperty.add("higher");
+		comparativePosProperty.add("more");
+		comparativePosProperty.add("larger");
+		comparativePosProperty.add("over");
+		comparativePosProperty.add("beyond");
+		comparativePosProperty.add("longer");
+		comparativePosProperty.add("greater");
 		//===============================
-		PROPERTIES.put("greater", greaterThanProperty);
+		PROPERTIES.put("jjr_pos", comparativePosProperty);
+		
+		ArrayList<String> superlativePosProperty = new ArrayList<String>();
+		superlativePosProperty.add("longest");
+		superlativePosProperty.add("strongest");
+		superlativePosProperty.add("toughest");
+		superlativePosProperty.add("hardest");
+		//===============================
+		PROPERTIES.put("jjs_pos", superlativePosProperty);
 		
 		ArrayList<String> gameProperty = new ArrayList<String>();
 		gameProperty.add("game");
@@ -123,14 +133,20 @@ public class ChessVocabulary {
 		// ==============================
 		PROPERTIES.put("game", gameProperty);
 		
-		ArrayList<String> lowerProperty = new ArrayList<String>();
-		lowerProperty.add("less");
-		lowerProperty.add("lower");
-		lowerProperty.add("smaller");
-		lowerProperty.add("below");
-		lowerProperty.add("under");
+		ArrayList<String> comparativeNegProperty = new ArrayList<String>();
+		comparativeNegProperty.add("less");
+		comparativeNegProperty.add("lower");
+		comparativeNegProperty.add("smaller");
+		comparativeNegProperty.add("below");
+		comparativeNegProperty.add("under");		
+		comparativeNegProperty.add("shorter");
 		// ==============================
-		PROPERTIES.put("lower", lowerProperty);
+		PROPERTIES.put("jjr_neg", comparativePosProperty);
+		
+		ArrayList<String> superlativeNegProperty = new ArrayList<String>();
+		superlativeNegProperty.add("shortest");
+		superlativeNegProperty.add("weakest");
+		PROPERTIES.put("jjs_neg", superlativeNegProperty);
 
 		ArrayList<String> loseProperty = new ArrayList<String>();
 		loseProperty.add("lose");
