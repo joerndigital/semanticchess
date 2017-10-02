@@ -41,6 +41,7 @@ public class Parser {
 	private FenRegex fenReg = new FenRegex();
 	private Filters filters = new Filters();
 	private TopicFinder topics = new TopicFinder();
+	private StringSimilarity similar = new StringSimilarity();
 
 	private ChessVocabulary vocabulary = new ChessVocabulary();
 
@@ -171,9 +172,14 @@ public class Parser {
 			String nextFoundNe = "O";
 			String nextFoundWord = "";
 			int nextFoundIndex = 0;
+			String tempNumber = "";
 			try {
 				int i = index;
-				while (nextFoundNe.equals("O")) {
+				while (nextFoundNe.equals("O") || nextFoundNe.equals("NUMBER")) {
+					if (nextFoundNe.equals("NUMBER")) {
+						tempNumber = nextFoundWord;
+					}
+
 					nextFoundNe = tokens.get(i + 1).getNe();
 					nextFoundWord = tokens.get(i + 1).getWord();
 					nextFoundIndex = i + 1;
@@ -229,6 +235,14 @@ public class Parser {
 						addEntityOrClass(word.replaceAll("\\D+", ""), ne, "prop:", "round", "?game");
 					}
 
+				} else if (nextNe.equals("event")) {
+
+					similar.setOffset(Integer.parseInt(word.replaceAll("\\D+", "")));
+				} else if (nextNe.equals("MISC")) {
+					similar.setOffset(Integer.parseInt(word.replaceAll("\\D+", "")));
+
+				} else if (nextNe.equals("site")) {
+					similar.setOffset(Integer.parseInt(word.replaceAll("\\D+", "")));
 				} else {
 					if (word.equals("last")) {
 						options.setLimitStr(1);
@@ -237,7 +251,10 @@ public class Parser {
 					} else {
 						options.setLimitStr(1);
 						options.setOffsetStr((Integer.valueOf(word.replaceAll("\\D+", ""))) - 1);
-						options.setOrderStr("ASC", "?date");
+						if (!nextFoundNe.equals("jjs_pos") && !nextFoundNe.equals("jjs_neg")) {
+							options.setOrderStr("ASC", "?date");
+						}
+
 					}
 					if (getClassByName("?date") == null) {
 						classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
@@ -255,6 +272,8 @@ public class Parser {
 				} else if (nextNe.equals("piece")) {
 					// will be used in case piece
 					break;
+				} else if (nextNe.equals("moves")) {
+					break;
 				} else {
 					options.setLimitStr(Integer.valueOf(word));
 					options.setOffsetStr(0);
@@ -262,6 +281,7 @@ public class Parser {
 				}
 				break;
 			case "game":
+
 				addEntityOrClass("", ne, "a prop:ChessGame", "", "?game");
 				// TODO als Spezialfall, konkurrierend mit anderen res
 				// TODO bei eco, opening, event,... flag für game ressource
@@ -269,14 +289,25 @@ public class Parser {
 				// "ChessGame", index));
 				break;
 			case "eco":
-				addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "cont:", "openingCode", "?contEco");
+				addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "cont:", "openingCode",
+						"?contEco");
 				if (getClassByName("?contEco") == null) {
 					classes.add(new Classes(classes.size() + 1, "?contEco", "cont:", "eco", 999, "?game"));
 				}
 				break;
 			case "elo":
 				isElo = true;
-				addEntityOrClass(word, ne, "prop:", "whiteelo|prop:blackelo", "?game");
+				System.out.print(word);
+				System.out.println(preNe);
+				if (word.equals(ne)) {
+					addEntityOrClass(word, ne, "prop:", "whiteelo|prop:blackelo", "?game");
+				}
+
+				else if (!preNe.equals("jjr_pos") && !preNe.equals("jjr_neg") && !nextNe.equals("O")) {
+					System.out.print(word);
+					addEntityOrClass(word, ne, "prop:", "whiteelo|prop:blackelo", "?game");
+				}
+
 				break;
 			case "black":
 				isBlack = true;
@@ -303,6 +334,9 @@ public class Parser {
 				}
 
 				break;
+			case "round":
+				addEntityOrClass(word, ne, "prop:", "round", "?game");
+				break;
 			case "OPENING":
 				addEntityOrClass(word, ne, "cont:", "openingName", "?contEco");
 				if (getClassByName("?contEco") == null) {
@@ -319,16 +353,15 @@ public class Parser {
 				if (getClassByName("?moves") == null) {
 					classes.add(new Classes(classes.size() + 1, "?move" + moveCounter, "prop:", "moves", 999, "?game"));
 				}
-				if(word.matches("[kqrbn]+[a-h][1-8]{1}[\\-x][a-h][1-8]{1}")){
-					addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "prop:", "move", "?move" + moveCounter);
+				if (word.matches("[kqrbn]+[a-h][1-8]{1}[\\-x][a-h][1-8]{1}")) {
+					addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "prop:", "move",
+							"?move" + moveCounter);
 				} else {
 					addEntityOrClass(word, ne, "prop:", "move", "?move" + moveCounter);
 				}
-				
 
-				entities.add(new Entity(entities.size() + 1, "'" + moveCounter + "' " + "^^xsd:nonNegativeInteger", "prop:", "moveNr", 999,
-						999, "?move" + moveCounter));
-				
+				entities.add(new Entity(entities.size() + 1, "'" + moveCounter + "' " + "^^xsd:nonNegativeInteger",
+						"prop:", "moveNr", 999, 999, "?move" + moveCounter));
 
 				break;
 			case "piece":
@@ -374,15 +407,75 @@ public class Parser {
 				}
 
 				break;
-			case "greater":
+			case "jjr_pos":
 				isFilter = true;
-				filters.addGreaterThan("?" + nextFoundNe, nextFoundWord);
-				index = nextFoundIndex + 1;
+				if (tempNumber.isEmpty()) {
+					filters.addGreaterThan("?" + nextFoundNe, nextFoundWord);
+				} else {
+					if (nextFoundNe.equals("moves")) {
+						if (getClassByName("?moveNr") == null) {
+							classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", nextFoundIndex,
+									"?moves"));
+						}
+						filters.addGreaterThan("?moveNr", tempNumber);
+					} else if (nextFoundNe.equals("round")) {
+						if (getClassByName("?round") == null) {
+							classes.add(new Classes(classes.size() + 1, "?round", "prop:", "round", nextFoundIndex,
+									"?game"));
+						}
+						filters.addGreaterThan("?round", tempNumber);
+					}
+
+				}
+
+				// index = nextFoundIndex + 1;
 				break;
-			case "lower":
+			case "jjr_neg":
+				// TODO
 				isFilter = true;
 				filters.addLowerThan("?" + nextFoundNe, nextFoundWord);
-				index = nextFoundIndex + 1;
+				// index = nextFoundIndex + 1;
+				break;
+			case "jjs_pos":
+				if (word.equals("longest") && nextFoundNe.equals("game")) {
+					if (getClassByName("?moveNr") == null) {
+						classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", nextFoundIndex,
+								"?moves"));
+					}
+					if (getClassByName("?moves") == null) {
+						classes.add(
+								new Classes(classes.size() + 1, "?moves", "prop:", "moves", nextFoundIndex, "?game"));
+					}
+					this.topics.addMax("?moveNr");
+					this.options.setOrderStr("DESC", "?nr");
+					if (this.options.getLimitStr().isEmpty()) {
+						this.options.setLimitStr(1);
+						this.options.setOffsetStr(0);
+					}
+
+				} else if (!word.equals("longest")) {
+					isElo = true;
+					if (getClassByName("?elo") == null) {
+						classes.add(new Classes(classes.size() + 1, "?elo", "prop:", "whiteelo|prop:blackelo", index,
+								"?game"));
+					}
+					if (nextFoundNe.equals("PERSON")) {
+						this.topics.addMax("?elo");
+					} else {
+						this.topics.addAvg("?elo");
+					}
+
+					this.topics.addToBlacklist("?elo");
+					this.options.setOrderStr("DESC", "?nr");
+					if (this.options.getLimitStr().isEmpty()) {
+						this.options.setLimitStr(1);
+						this.options.setOffsetStr(0);
+					}
+				}
+
+				break;
+			case "jjs_neg":
+
 				break;
 			case "count":
 				isCount = true;
@@ -446,12 +539,15 @@ public class Parser {
 
 	public void injectElo() {
 		PropertyAllocator pa = new PropertyAllocator(tokens);
+		System.out.println(pa.getEloPositions().toString());
+		System.out.println(pa.getPersonPositions());
 		HashMap<Integer, Integer> propertyToPerson = pa.allocateProperty(pa.getEloPositions());
 		int tempPerson = 9999;
-
+		System.out.println(propertyToPerson);
 		for (Entry<Integer, Integer> pair : propertyToPerson.entrySet()) {
 			if (pair.getValue() < tempPerson) {
 				tempPerson = pair.getValue();
+				// System.out.println(tempPerson);
 			}
 
 			try {
@@ -502,7 +598,7 @@ public class Parser {
 					isUnion = true;
 
 				}
-			} catch (NullPointerException err) {
+			} catch (Exception err) {
 
 			}
 			try {
@@ -523,7 +619,7 @@ public class Parser {
 						getClassByPosition(pair.getKey()).setPropertyName("prop:blackelo");
 					}
 				} else {
-
+					System.out.println("Ahllo" + pair.getKey());
 					try {
 
 						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
@@ -537,8 +633,11 @@ public class Parser {
 						isBlack = true;
 
 					} catch (NullPointerException err) {
+
 						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
+
 						try {
+
 							getClassByPosition(pair.getValue()).setPropertyName("prop:white");
 						} catch (Exception error) {
 							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
@@ -548,8 +647,8 @@ public class Parser {
 					}
 					isUnion = true;
 				}
-			} catch (NullPointerException err) {
-
+			} catch (Exception err) {
+				System.out.println(err);
 			}
 
 		}
@@ -684,6 +783,7 @@ public class Parser {
 			}
 			filters.addRegex("?date", word, false);
 		} else {
+
 			if (!word.isEmpty()) {
 				entities.add(new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition,
 						endPosition, resource));
@@ -808,6 +908,14 @@ public class Parser {
 		return topics.getString();
 	}
 
+	public StringSimilarity getSimilar() {
+		return similar;
+	}
+
+	public void setSimilar(StringSimilarity similar) {
+		this.similar = similar;
+	}
+
 	public Entity getEntityByEndPosition(int position) {
 		for (Entity e : entities) {
 			if (e.getEndPosition() == position) {
@@ -845,7 +953,7 @@ public class Parser {
 	}
 
 	public static void main(String[] args) {
-		String query = "In which event did Wilhelm Steinitz won most games?";
+		String query = "Games that have an elo more than 2700.";
 
 		Parser p = new Parser(query);
 
