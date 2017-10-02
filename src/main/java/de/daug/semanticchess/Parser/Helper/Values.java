@@ -89,33 +89,27 @@ public class Values {
 
 	public static void main (String[] args){
 		Values v = new Values();
-
 		ArrayList<String> a = new ArrayList<String>();
 		ArrayList<String> b = new ArrayList<String>();
 		ArrayList<String> c = new ArrayList<String>();
 		ArrayList<String> d = new ArrayList<String>();
 		
 		a.add("'Wilhelm Steinitz'");
-		a.add("'V Steinitz'");
+		a.add("'Tolkin'");
+		b.add("'Emanuel Lasker'");
 		
-		b.add("'London Eng'");
+
 		
-		c.add("'Wilhelm Steinitz'");
-		c.add("'V Steinitz'");
-		c.add("'Emanuel Lasker'");
-		
-		d.add("'London Eng'");
-		
+
 		v.addResult(a);
 		v.addResult(b);
-		v.addResult(c);
-		v.addResult(d);
+
 		//v.setResultStr();
 		
 		String tempStr = "";
 		v.generatePermutations(v.results, permutation, 0, tempStr);
 		System.out.println(v.toString());
-		//System.out.println(v.getResultsStr());
+		
 	}
 	
 }
