@@ -22,51 +22,51 @@ public class LoadData {
 			Statement st;
 
 			st = conn.createStatement();
-			// st.execute("sparql clear graph <http://www.example.com/>");
+			//st.execute("sparql clear graph <http://www.example.com/>");
 
 			conn.setAutoCommit(false);
 			String fileName = "Mapping_ECO_GAME";
 
-			File folder = new File("src/main/resources/static/openings");
+			File folder = new File("src/main/resources/static/openings/");
 			File[] listOfFiles = folder.listFiles();
 			
-			String data = load_ttl("src/main/resources/static/games/rdf/"+fileName+".ttl");
-			if (data != null) {
-				insert_data(data, "http://www.example.com/", conn);
-				conn.rollback();
-				System.out.println("Rollback insert");
-			}
-			
-//			for (File f : listOfFiles) {
-//
-//				
-//				if (FilenameUtils.getExtension(f.getAbsolutePath()).equals("ttl")) {
-//
-//					System.out.println("Upload: " + f.getAbsolutePath());
-//					String data = load_ttl(f.getAbsolutePath());
-//					// String data =
-//					// load_ttl("src/test/resources/"+fileName+".ttl");
-//					// String meta_data =
-//					// load_ttl("src/test/resources/"+fileName+"_meta.ttl");
-//					if (data != null) {
-//						insert_data(data, "http://www.example.com/", conn);
-//						// insert_data(meta_data, "http://www.example.com/",
-//						// conn);
-//						// Commit or Rollback the transaction
-//
-//						// conn.commit();
-//						// System.out.println("Commit insert");
-//						conn.rollback();
-//						System.out.println("Rollback insert");
-//
-//						// String query = "sparql SELECT * from
-//						// <http://www.example.com/> WHERE {?s ?p ?o}";
-//						// ResultSet rs = st.executeQuery(query);
-//						// prnRs(rs);
-//						// rs.close();
-//					}
-//				}
+//			String data = load_ttl("src/main/resources/static/games/rdf/"+fileName+".ttl");
+//			if (data != null) {
+//				insert_data(data, "http://www.example.com/", conn);
+//				conn.rollback();
+//				System.out.println("Rollback insert");
 //			}
+			
+			for (File f : listOfFiles) {
+
+				
+				if (FilenameUtils.getExtension(f.getAbsolutePath()).equals("ttl")) {
+
+					System.out.println("Upload: " + f.getAbsolutePath());
+					String data = load_ttl(f.getAbsolutePath());
+					// String data =
+					// load_ttl("src/test/resources/"+fileName+".ttl");
+					// String meta_data =
+					// load_ttl("src/test/resources/"+fileName+"_meta.ttl");
+					if (data != null) {
+						insert_data(data, "http://www.example.com/", conn);
+						// insert_data(meta_data, "http://www.example.com/",
+						// conn);
+						// Commit or Rollback the transaction
+
+						// conn.commit();
+						// System.out.println("Commit insert");
+						conn.rollback();
+						System.out.println("Rollback insert");
+
+						// String query = "sparql SELECT * from
+						// <http://www.example.com/> WHERE {?s ?p ?o}";
+						// ResultSet rs = st.executeQuery(query);
+						// prnRs(rs);
+						// rs.close();
+					}
+				}
+			}
 
 			st.close();
 			conn.close();
