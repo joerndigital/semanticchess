@@ -38,7 +38,7 @@ public class StringSimilarity {
 			return this.query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site.} ORDER BY ?site";
 		case "prop:eco":
 			this.variable = "eco";
-			return this.query = "SELECT DISTINCT ?site WHERE {?game prop:eco ?eco.} ORDER BY ?eco";
+			return this.query = "SELECT DISTINCT ?eco WHERE {?game cont:openingCode ?eco.} ORDER BY ?eco";
 		}
 
 		return this.query = "";
