@@ -22,7 +22,7 @@ public class QueryService{
 	public String getCustomResult(String strQuery){
 		Allocator alloc = new Allocator(strQuery);
 		alloc.allocateSequence();
-		strQuery = alloc.distanceEntities(alloc.getSparqlQuery());
+		strQuery = alloc.subStringEntities(alloc.getSparqlQuery());
 		
 		
 		
