@@ -30,7 +30,7 @@ public class PgnToRdf {
 //		pg.setOutputFormat("RDF/XML");
 //		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+".rdf").getAbsolutePath(), true);
 
-		rdfv.init("http://example.com", "#", "http://example.com/prop/", "http://example.com/rdf/", "prop", "res",
+		rdfv.init("http://example.com", "#", "http://example.com/prop/", "http://example.com/res/", "prop", "res",
 				false);
 
 		pg.setOutputFormat("TURTLE");
