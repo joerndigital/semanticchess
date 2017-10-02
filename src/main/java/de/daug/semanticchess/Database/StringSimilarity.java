@@ -2,6 +2,7 @@ package de.daug.semanticchess.Database;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -15,33 +16,43 @@ public class StringSimilarity {
 	private String variable;
 	public String query;
 	private ResultSet resultSet;
+	private int offset = 0;
 
 	public StringSimilarity() {
 
 	}
 
 	public String setQuery(String property) {
+		String query = "";
+
 		switch (property) {
 		case "prop:white":
 		case "prop:black":
 		case "prop:white|prop:black":
 			this.variable = "player";
-			return this.query = "SELECT DISTINCT ?player WHERE {?game prop:white|prop:black ?player. ?game prop:whiteelo|prop:blackelo ?elo.} ORDER BY DESC(?elo)";
+			query = "SELECT DISTINCT ?player WHERE {?game prop:white|prop:black ?player. ?game prop:whiteelo|prop:blackelo ?elo.} ORDER BY DESC(?elo)";
+			break;
 		case "prop:event":
 			this.variable = "event";
-			return this.query = "SELECT DISTINCT ?event WHERE {?game prop:event ?event. ?game prop:date ?date.} ORDER BY ASC(?date)";
+			query = "SELECT DISTINCT ?event WHERE {?game prop:event ?event. ?game prop:date ?date.} ORDER BY ASC(?date)";
+			break;
 		case "cont:openingName":
 			this.variable = "openingName";
-			return this.query = "SELECT DISTINCT ?openingName WHERE {?res cont:openingName ?openingName. ?res cont:openingCode ?eco} ORDER BY ?eco";
+			query = "SELECT DISTINCT ?openingName WHERE {?res cont:openingName ?openingName. ?res cont:openingCode ?eco} ORDER BY ?eco";
+			break;
 		case "prop:site":
 			this.variable = "site";
-			return this.query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site.} ORDER BY ?site";
+			query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site. game prop:date ?date.} ORDER BY ASC(?date)";
+			break;
 		case "prop:eco":
 			this.variable = "eco";
-			return this.query = "SELECT DISTINCT ?eco WHERE {?game cont:openingCode ?eco.} ORDER BY ?eco";
+			query = "SELECT DISTINCT ?eco WHERE {?game cont:openingCode ?eco. game prop:date ?date.} ORDER BY ASC(?date)";
+			break;
 		}
 
-		return this.query = "";
+		this.query = query;
+		//System.out.println(this.query);
+		return this.query;
 	}
 
 	public List<String> exactMatch(String entity) {
@@ -68,22 +79,40 @@ public class StringSimilarity {
 		SparqlVirtuoso sQuery = new SparqlVirtuoso();
 
 		this.resultSet = sQuery.getResultSet(this.query);
-
+		int i = 0;
 		for (; this.resultSet.hasNext();) {
 			QuerySolution soln = this.resultSet.next();
-			if (soln.getLiteral(this.variable).getString().indexOf(entity) > -1) {
+			if (offset > 0) {
 
-				foundEntities.add("'" + soln.getLiteral(this.variable).getString().replaceAll("\'", "\\\\'") + "'");
+
+				if (soln.getLiteral(this.variable).getString().toLowerCase().indexOf(entity.toLowerCase()) > -1) {
+					
+
+					
+					if (i == offset - 1) {
+						foundEntities
+								.add("'" + soln.getLiteral(this.variable).getString().replaceAll("\'", "\\\\'") + "'");
+
+					}
+					i++;
+				}
+
+			} else {
+				if (soln.getLiteral(this.variable).getString().toLowerCase().indexOf(entity.toLowerCase()) > -1) {
+
+					foundEntities.add("'" + soln.getLiteral(this.variable).getString().replaceAll("\'", "\\\\'") + "'");
+
+				}
 			}
 
+			
 		}
-
+		
 		return foundEntities;
 	}
 
 	public String distanceMatch(String entity) {
 		String foundEntity = "";
-		
 		SparqlVirtuoso sQuery = new SparqlVirtuoso();
 
 		this.resultSet = sQuery.getResultSet(this.query);
@@ -91,21 +120,21 @@ public class StringSimilarity {
 		// LongestCommonSubsequenceDistance lcsd = new
 		// LongestCommonSubsequenceDistance();
 		JaccardDistance jd = new JaccardDistance();
-		HashMap<String,Double> candidatesList = new HashMap<String,Double>();
-		
+		LinkedHashMap<String, Double> candidatesList = new LinkedHashMap<String, Double>();
+
 		for (; this.resultSet.hasNext();) {
+
 			QuerySolution soln = this.resultSet.next();
 			String candidateEntity = soln.getLiteral(this.variable).getString();
+
 			double candidateDistance = jd.apply(entity, candidateEntity);
-			
-			
-//			if(candidateEntity.indexOf(entity) > -1){
-//				System.out.println(candidateEntity);
-//				System.out.println(candidateDistance);
-//				System.out.println(candidateEntity.indexOf(entity));
-//			}
-			
-			
+
+			// if(candidateEntity.indexOf(entity) > -1){
+			// System.out.println(candidateEntity);
+			// System.out.println(candidateDistance);
+			// System.out.println(candidateEntity.indexOf(entity));
+			// }
+
 			// if(distance > lcsd.apply(entity, candidateEntity)){
 			//
 			// distance = lcsd.apply(entity, candidateEntity);
@@ -115,14 +144,11 @@ public class StringSimilarity {
 			//
 			// System.out.println("LCSD " +candidateEntity);
 			// }
-			
-			
-			
-			if (candidateEntity.indexOf(entity) > -1) {
+
+			if (candidateEntity.toLowerCase().indexOf(entity.toLowerCase()) > -1) {
 				candidatesList.put(candidateEntity, candidateDistance);
-				//System.out.println(candidatesList.toString());
+
 			}
-			
 
 			if (distance > candidateDistance) {
 
@@ -132,24 +158,31 @@ public class StringSimilarity {
 				// System.out.println("JD " + candidateEntity);
 			}
 
-			
+		}
 
-			
-
+		if (offset > 0 && !candidatesList.isEmpty()) {
+			int i = 0;
+			for (String key : candidatesList.keySet()) {
+				if (i == offset - 1) {
+					return "'" + key + "'";
+				}
+				i++;
+			}
 
 		}
-		
-		if(!candidatesList.isEmpty()){
+
+		else if (offset == 0 && !candidatesList.isEmpty()) {
 			Entry<String, Double> min = null;
 			for (Entry<String, Double> entry : candidatesList.entrySet()) {
-			    if (min == null || min.getValue() > entry.getValue()) {
-			        min = entry;
-			    }
+				if (min == null || min.getValue() > entry.getValue()) {
+					min = entry;
+
+				}
 			}
-			
-			return "'" + min.getKey().replaceAll("\'", "\\\\\\\\\\\\'") + "'"; 
+
+			return "'" + min.getKey().replaceAll("\'", "\\\\\\\\\\\\'") + "'";
 		}
-		
+
 		return "'" + foundEntity.replaceAll("\'", "\\\\\\\\\\'") + "'";
 	}
 
@@ -157,10 +190,19 @@ public class StringSimilarity {
 		return this.query;
 	}
 
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
 	public static void main(String[] args) {
 		StringSimilarity similar = new StringSimilarity();
-		similar.setQuery("cont:openingName");
-		System.out.println(similar.distanceMatch("Kings Pawn"));
+		similar.setQuery("prop:event");
+		similar.setOffset(3);
+		System.out.println(similar.subStringMatch("New York"));
 
 	}
 
