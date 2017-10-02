@@ -44,7 +44,8 @@ public class Parser {
 
 	private ChessVocabulary vocabulary = new ChessVocabulary();
 
-	int index;
+	private int index;
+	private int moveCounter = 0;
 
 	private boolean isBlack = false;
 	private boolean isWhite = false;
@@ -68,8 +69,6 @@ public class Parser {
 
 		List<Token> tokens = tagger.getTokens();
 
-		
-		
 		CustomNer cNer = new CustomNer();
 		tokens = cNer.stemming(tokens);
 		tokens = cNer.checkChessVocabulary(tokens);
@@ -77,9 +76,9 @@ public class Parser {
 		tokens = cNer.checkOpening(tokens);
 
 		this.tokens = tokens;
-		
+
 		System.out.println(this.tokens.toString());
-		
+
 		collectEntities(tokens);
 		if (isBlack || isWhite) {
 			try {
@@ -117,36 +116,35 @@ public class Parser {
 				filters.addRegex("?fen", fenReg.getFen(), false);
 			}
 		}
-		
+
 		topics.collectTopics(this.entities, this.classes);
-		if(isCount){
-			
+		if (isCount) {
+
 			int firstEntityPosition = 999;
-			int firstClassesPosition = 999; 
+			int firstClassesPosition = 999;
 			try {
 				firstEntityPosition = entities.get(0).getStartPosition();
-			} catch(Exception err){
-				
+			} catch (Exception err) {
+
 			}
 			try {
 				firstClassesPosition = classes.get(0).getPosition();
-			} catch(Exception err){
-				
+			} catch (Exception err) {
+
 			}
-			
-			if(firstEntityPosition < firstClassesPosition){
+
+			if (firstEntityPosition < firstClassesPosition) {
 				topics.addCount(entities.get(0).getResourceName());
 				this.options.setOrderStr("DESC", "?nr");
+
 			} else {
 				topics.addCount(classes.get(0).getClassesName());
 				this.options.setOrderStr("DESC", "?nr");
+				this.options.setGroupStr(classes.get(0).getClassesName());
 			}
 		}
-		
 
 	}
-
-
 
 	public void collectEntities(List<Token> tokens) {
 		boolean isBlackPieces = false;
@@ -185,20 +183,20 @@ public class Parser {
 				nextFoundNe = "O";
 				nextFoundWord = "";
 			}
-			
-//			String preFoundNe = "O";
-//			String preFoundWord = "";
-//			try {
-//				int i = index;
-//				while (preFoundNe.equals("O")) {
-//					preFoundNe = tokens.get(i - 1).getNe();
-//					preFoundWord = tokens.get(i - 1).getWord();
-//					i--;
-//				}
-//			} catch (Exception err) {
-//				preFoundNe = "O";
-//				preFoundWord = "";
-//			}
+
+			// String preFoundNe = "O";
+			// String preFoundWord = "";
+			// try {
+			// int i = index;
+			// while (preFoundNe.equals("O")) {
+			// preFoundNe = tokens.get(i - 1).getNe();
+			// preFoundWord = tokens.get(i - 1).getWord();
+			// i--;
+			// }
+			// } catch (Exception err) {
+			// preFoundNe = "O";
+			// preFoundWord = "";
+			// }
 
 			String pos = tokens.get(index).getPos();
 
@@ -241,8 +239,9 @@ public class Parser {
 						options.setOffsetStr((Integer.valueOf(word.replaceAll("\\D+", ""))) - 1);
 						options.setOrderStr("ASC", "?date");
 					}
-
-					classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
+					if (getClassByName("?date") == null) {
+						classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
+					}
 
 				}
 
@@ -270,7 +269,10 @@ public class Parser {
 				// "ChessGame", index));
 				break;
 			case "eco":
-				addEntityOrClass(word.substring(0,1).toUpperCase() + word.substring(1), ne, "prop:", "eco", "?game");
+				addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "cont:", "openingCode", "?contEco");
+				if (getClassByName("?contEco") == null) {
+					classes.add(new Classes(classes.size() + 1, "?contEco", "cont:", "eco", 999, "?game"));
+				}
 				break;
 			case "elo":
 				isElo = true;
@@ -295,20 +297,40 @@ public class Parser {
 				break;
 			case "event":
 				addEntityOrClass(word, ne, "prop:", "event", "?game");
-				if(!this.tokens.get(index).getWord().equals("tournament") && !this.tokens.get(index).getWord().equals("event")){
+				if (!this.tokens.get(index).getWord().equals("tournament")
+						&& !this.tokens.get(index).getWord().equals("event")) {
 					filters.addRegex("?" + ne, word, true);
 				}
-				
+
 				break;
 			case "OPENING":
 				addEntityOrClass(word, ne, "cont:", "openingName", "?contEco");
-				classes.add(new Classes(classes.size() + 1, "?contEco", "cont:", "eco", 999, "?game"));
+				if (getClassByName("?contEco") == null) {
+					classes.add(new Classes(classes.size() + 1, "?contEco", "cont:", "eco", 999, "?game"));
+				}
 				break;
 			case "moves":
+
 				addEntityOrClass(word, ne, "prop:", "moves", "?game");
-				//TODO: moveNr zählen -> und als Filter einbauen
+				// TODO: moveNr zählen -> und als Filter einbauen
+				break;
 			case "move":
-				addEntityOrClass(word, ne, "prop:", "move", "?moves");
+				moveCounter++;
+				if (getClassByName("?moves") == null) {
+					classes.add(new Classes(classes.size() + 1, "?move" + moveCounter, "prop:", "moves", 999, "?game"));
+				}
+				if(word.matches("[kqrbn]+[a-h][1-8]{1}[\\-x][a-h][1-8]{1}")){
+					addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "prop:", "move", "?move" + moveCounter);
+				} else {
+					addEntityOrClass(word, ne, "prop:", "move", "?move" + moveCounter);
+				}
+				
+
+				entities.add(new Entity(entities.size() + 1, "'" + moveCounter + "' " + "^^xsd:nonNegativeInteger", "prop:", "moveNr", 999,
+						999, "?move" + moveCounter));
+				
+
+				break;
 			case "piece":
 				isFen = true;
 				isFilter = true;
@@ -337,8 +359,12 @@ public class Parser {
 				}
 
 				if (fenReg.getPiecesWhite().size() == 1 && fenReg.getPiecesBlack().size() == 0) {
-					classes.add(new Classes(classes.size() + 1, "?moves", "prop:", "moves", 999, "?game"));
-					classes.add(new Classes(classes.size() + 1, "?fen", "prop:", "fen", 999, "?moves"));
+					if (getClassByName("?moves") == null) {
+						classes.add(new Classes(classes.size() + 1, "?moves", "prop:", "moves", 999, "?game"));
+					}
+					if (getClassByName("?fen") == null) {
+						classes.add(new Classes(classes.size() + 1, "?fen", "prop:", "fen", 999, "?moves"));
+					}
 				}
 
 				break;
@@ -361,7 +387,7 @@ public class Parser {
 			case "count":
 				isCount = true;
 				break;
-				
+
 			default:
 				if (word.equals("versus") || word.equals("vs") || word.equals("against")) {
 					if (preNe.equals("piece")) {
@@ -379,7 +405,6 @@ public class Parser {
 	public void injectColor() {
 		PropertyAllocator ca = new PropertyAllocator(tokens);
 		int[] personHasColor = ca.allocateColor();
-		
 
 		if (isWhite) {
 			for (Entity e : entities) {
@@ -451,7 +476,8 @@ public class Parser {
 					try {
 
 						getEntityByEndPosition(pair.getKey()).setPropertyName("prop:whiteelo");
-						//System.out.println("3. " + getEntityByEndPosition(pair.getValue()).getPropertyName());
+						// System.out.println("3. " +
+						// getEntityByEndPosition(pair.getValue()).getPropertyName());
 						try {
 							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
 						} catch (Exception err) {
@@ -461,7 +487,8 @@ public class Parser {
 						isWhite = true;
 
 					} catch (NullPointerException err) {
-						//System.out.println(pair.getKey() + "-> " + pair.getValue());
+						// System.out.println(pair.getKey() + "-> " +
+						// pair.getValue());
 						getClassByPosition(pair.getKey()).setPropertyName("prop:whiteelo");
 						try {
 							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
@@ -604,7 +631,7 @@ public class Parser {
 						e.setPropertyName("prop:black");
 					}
 				}
-				
+
 				for (Classes c : classes) {
 					if (c.getPropertyName().equals("prop:white|prop:black") && isFirst) {
 						c.setPropertyName("prop:white");
@@ -646,21 +673,25 @@ public class Parser {
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
 
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
-			classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), propertyPrefix, property, endPosition, resource));
-		} else if(ne.equals("DATE")){
-			classes.add(new Classes(classes.size() + 1, "?date", propertyPrefix, property, endPosition, resource));
+			if (getClassByName("?" + ne.toLowerCase()) == null) {
+				classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), propertyPrefix, property,
+						endPosition, resource));
+			}
+
+		} else if (ne.equals("DATE")) {
+			if (getClassByName("?date") == null) {
+				classes.add(new Classes(classes.size() + 1, "?date", propertyPrefix, property, endPosition, resource));
+			}
 			filters.addRegex("?date", word, false);
-		}
-		else {	
-			if(!word.isEmpty()){
-				entities.add(
-						new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition, endPosition, resource));
+		} else {
+			if (!word.isEmpty()) {
+				entities.add(new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition,
+						endPosition, resource));
+			} else {
+				entities.add(new Entity(entities.size() + 1, word, propertyPrefix, property, startPosition, endPosition,
+						resource));
 			}
-			else {
-				entities.add(
-						new Entity(entities.size() + 1, word, propertyPrefix, property, startPosition, endPosition, resource));
-			}
-			
+
 		}
 	}
 
@@ -676,13 +707,15 @@ public class Parser {
 			newPropertyName = flipper.toFlip(e.getPropertyName());
 			newEntityName = flipper.toFlip(e.getEntityName());
 
-			tempEntities.add(new Entity(tempEntities.size() + 1, newEntityName, e.getPropertyPrefix(), newPropertyName.replace(e.getPropertyPrefix(), ""),
-					e.getStartPosition(), e.getEndPosition(), e.getResourceName()));
+			tempEntities.add(new Entity(tempEntities.size() + 1, newEntityName, e.getPropertyPrefix(),
+					newPropertyName.replace(e.getPropertyPrefix(), ""), e.getStartPosition(), e.getEndPosition(),
+					e.getResourceName()));
 		}
 
 		for (Entity t : tempEntities) {
-			entities.add(new Entity(entities.size() + 1, t.getEntityName(), t.getPropertyPrefix(), t.getPropertyName().replace(t.getPropertyPrefix(), ""),
-					t.getStartPosition(), t.getEndPosition(), t.getResourceName()));
+			entities.add(new Entity(entities.size() + 1, t.getEntityName(), t.getPropertyPrefix(),
+					t.getPropertyName().replace(t.getPropertyPrefix(), ""), t.getStartPosition(), t.getEndPosition(),
+					t.getResourceName()));
 		}
 
 		// classes
@@ -693,13 +726,13 @@ public class Parser {
 			newPropertyName = flipper.toFlip(c.getPropertyName());
 			newEntityName = flipper.toFlip(c.getClassesName());
 
-			tempClasses.add(new Classes(tempClasses.size() + 1, newEntityName, c.getPropertyPrefix(), newPropertyName.replace(c.getPropertyPrefix(), ""),
-					c.getPosition(), c.getResourceName()));
+			tempClasses.add(new Classes(tempClasses.size() + 1, newEntityName, c.getPropertyPrefix(),
+					newPropertyName.replace(c.getPropertyPrefix(), ""), c.getPosition(), c.getResourceName()));
 		}
 
 		for (Classes t : tempClasses) {
-			classes.add(new Classes(classes.size() + 1, t.getClassesName(), t.getPropertyPrefix(), t.getPropertyName().replace(t.getPropertyPrefix(), ""),
-					t.getPosition(), t.getResourceName()));
+			classes.add(new Classes(classes.size() + 1, t.getClassesName(), t.getPropertyPrefix(),
+					t.getPropertyName().replace(t.getPropertyPrefix(), ""), t.getPosition(), t.getResourceName()));
 		}
 	}
 
@@ -770,8 +803,6 @@ public class Parser {
 	public void setFilters(Filters filters) {
 		this.filters = filters;
 	}
-	
-	
 
 	public String getTopicStr() {
 		return topics.getString();
@@ -803,14 +834,21 @@ public class Parser {
 		}
 		return null;
 	}
-	
+
+	public Classes getClassByName(String name) {
+		for (Classes c : classes) {
+			if (c.getClassesName() == name) {
+				return c;
+			}
+		}
+		return null;
+	}
+
 	public static void main(String[] args) {
 		String query = "In which event did Wilhelm Steinitz won most games?";
 
 		Parser p = new Parser(query);
-		
-		
-		
+
 		System.out.println(p.getTokens().toString());
 		System.out.println(p.getEntities().toString());
 		System.out.println(p.getClasses().toString());
