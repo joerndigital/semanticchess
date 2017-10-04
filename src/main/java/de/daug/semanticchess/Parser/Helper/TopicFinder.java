@@ -6,9 +6,14 @@ import java.util.Set;
 
 public class TopicFinder {
 
-	Set<String> topics = new HashSet<String>();
-	String countThis = "";
-	Set<String> blacklist = new HashSet<String>();
+	private Set<String> topics = new HashSet<String>();
+
+	private Set<String> blacklist = new HashSet<String>();
+	boolean isAlgebra = true;
+	private String max = "";
+	private String min = "";
+	private String avg = "";
+	private String count = "";
 
 	public TopicFinder() {
 
@@ -51,26 +56,24 @@ public class TopicFinder {
 			}
 			System.out.println(classes.toString());
 			for (Classes c : classes) {
-				
+
 				if (!entityIsEmpty) {
 					if (c.getPosition() < firstEntityPosition) {
-						if(!blacklist.contains(c.getClassesName())){
+						if (!blacklist.contains(c.getClassesName())) {
 							topics.add(c.getClassesName());
-							
+
 						}
-						
+						break;
 					}
 				} else {
 
 					if (c.getPosition() < secondEntityPosition) {
-						if(!blacklist.contains(c.getClassesName())){
+						if (!blacklist.contains(c.getClassesName())) {
 							topics.add(c.getClassesName());
-							
+
 						}
 					}
 				}
-				
-				
 
 			}
 
@@ -82,6 +85,21 @@ public class TopicFinder {
 				}
 
 			}
+			
+//			if(topics.isEmpty()){
+//				for (Entity e : entities) {
+//					topics.add(e.getResourceName());
+//					break;
+//				}
+//				
+//			}
+//			if(topics.isEmpty()){
+//				for (Classes c : classes) {
+//					topics.add(c.getResourceName());
+//					break;
+//				}
+//				
+//			} 
 
 		} catch (Exception err) {
 
@@ -91,17 +109,26 @@ public class TopicFinder {
 	}
 
 	public void addCount(String countThis) {
-		this.topics.add("(COUNT(" + countThis + ") AS ?nr)");
+		this.isAlgebra = true;
+		this.count = countThis;
 
 	}
-	
+
 	public void addMax(String maxThis) {
-		this.topics.add("(MAX(" + maxThis + ") AS ?nr)");
+		this.isAlgebra = true;
+		this.max = maxThis;
 
 	}
-	
+
+	public void addMin(String minThis) {
+		this.isAlgebra = true;
+		this.min = minThis;
+
+	}
+
 	public void addAvg(String avgThis) {
-		this.topics.add("(MAX(" + avgThis + ") AS ?nr)");
+		this.isAlgebra = true;
+		this.avg = avgThis;
 
 	}
 
@@ -112,8 +139,16 @@ public class TopicFinder {
 	public void setTopics(Set<String> topics) {
 		this.topics = topics;
 	}
-	
-	public void addToBlacklist(String topic){
+
+	public boolean isAlgebra() {
+		return isAlgebra;
+	}
+
+	public void setAlgebra(boolean isAlgebra) {
+		this.isAlgebra = isAlgebra;
+	}
+
+	public void addToBlacklist(String topic) {
 		this.blacklist.add(topic);
 	}
 
@@ -121,8 +156,22 @@ public class TopicFinder {
 		String topicStr = "";
 		String[] topicArray = topics.toArray(new String[topics.size()]);
 		for (int i = topicArray.length - 1; i >= 0; i--) {
-			
+
 			topicStr += topicArray[i] + " ";
+		}
+
+		if (!avg.isEmpty() && !max.isEmpty() && min.isEmpty()) {
+			topicStr += "(AVG(" + avg + ") AS ?nr) ";
+		} else if (!avg.isEmpty() && max.isEmpty() && !min.isEmpty()) {
+			topicStr += "(AVG(" + avg + ") AS ?nr) ";
+		} else if (!avg.isEmpty() && max.isEmpty() && min.isEmpty()) {
+			topicStr += "(AVG(" + avg + ") AS ?nr) ";
+		} else if (!max.isEmpty()) {
+			topicStr += "(MAX(" + max + ") AS ?nr) ";
+		} else if (!min.isEmpty()) {
+			topicStr += "(MIN(" + min + ") AS ?nr) ";
+		} else if (!count.isEmpty()) {
+			topicStr += "(COUNT(" + count + ") AS ?nr) ";
 		}
 
 		return topicStr;
