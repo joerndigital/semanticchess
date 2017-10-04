@@ -42,7 +42,7 @@ public class StringSimilarity {
 			break;
 		case "prop:site":
 			this.variable = "site";
-			query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site. game prop:date ?date.} ORDER BY ASC(?date)";
+			query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site. ?game prop:date ?date.} ORDER BY ASC(?date)";
 			break;
 		case "prop:eco":
 			this.variable = "eco";
@@ -200,9 +200,9 @@ public class StringSimilarity {
 
 	public static void main(String[] args) {
 		StringSimilarity similar = new StringSimilarity();
-		similar.setQuery("prop:event");
-		similar.setOffset(3);
-		System.out.println(similar.subStringMatch("New York"));
+		similar.setQuery("prop:site");
+		//similar.setOffset(3);
+		System.out.println(similar.subStringMatch("London"));
 
 	}
 
