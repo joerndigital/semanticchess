@@ -11,6 +11,8 @@ import de.daug.semanticchess.Configurations;
 public class LoadData {
 
 	public static void main(String[] args) {
+		System.out.println("UPLOAD STARTED");
+		System.out.println("==================================");
 		try {
 			Class.forName("virtuoso.jdbc4.Driver");
 
@@ -27,13 +29,13 @@ public class LoadData {
 			conn.setAutoCommit(false);
 			
 
-			File folder = new File("src/main/resources/static/games/");
+			File folder = new File("src/main/resources/static/games/rdf/");
 			File[] listOfFiles = folder.listFiles();
 			
 			String fileName = "chessopenings.txt.ttl";
-			String data = load_ttl("src/main/resources/static/openings/"+fileName+".ttl");
-			if (data != null) {
-				insert_data(data, "http://www.example.com/", conn);
+			String dataOpening = load_ttl("src/main/resources/static/openings/"+fileName+".ttl");
+			if (dataOpening != null) {
+				insert_data(dataOpening, "http://www.example.com/", conn);
 				conn.rollback();
 				System.out.println("Rollback insert");
 			}
@@ -44,7 +46,7 @@ public class LoadData {
 				if (FilenameUtils.getExtension(f.getAbsolutePath()).equals("ttl")) {
 
 					System.out.println("Upload: " + f.getAbsolutePath());
-					data = load_ttl(f.getAbsolutePath());
+					String data = load_ttl(f.getAbsolutePath());
 					// String data =
 					// load_ttl("src/test/resources/"+fileName+".ttl");
 					// String meta_data =
