@@ -32,13 +32,13 @@ public class LoadData {
 			File folder = new File("src/main/resources/static/games/rdf/");
 			File[] listOfFiles = folder.listFiles();
 			
-			String fileName = "chessopenings.txt.ttl";
-			String dataOpening = load_ttl("src/main/resources/static/openings/"+fileName+".ttl");
-			if (dataOpening != null) {
-				insert_data(dataOpening, "http://www.example.com/", conn);
-				conn.rollback();
-				System.out.println("Rollback insert");
-			}
+//			String fileName = "chessopenings.txt.ttl";
+//			String dataOpening = load_ttl("src/main/resources/static/openings/"+fileName+".ttl");
+//			if (dataOpening != null) {
+//				insert_data(dataOpening, "http://www.example.com/", conn);
+//				conn.rollback();
+//				System.out.println("Rollback insert");
+//			}
 			
 			for (File f : listOfFiles) {
 

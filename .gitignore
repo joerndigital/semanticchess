@@ -15,6 +15,7 @@ local.properties
 *.gz
 
 src/main/database/virtuoso/*
+!src/main/database/virtuoso/virtuoso.ini
 src/test
 resources/ontologyClasses
 resources/ontologyProperties
