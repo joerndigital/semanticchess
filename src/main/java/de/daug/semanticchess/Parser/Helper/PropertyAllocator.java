@@ -71,19 +71,22 @@ public class PropertyAllocator {
 			if(tokens.get(i).getNe().equals("elo")){
 				eloPosition.add(i);				
 			}
-		}
-		
-		if(eloPosition.isEmpty()){
-			for(int i = 0; i < tokens.size(); i++){
-				if(tokens.get(i).getNe().equals("jjs_pos") || tokens.get(i).equals("jjs_neg")){
-					if(!tokens.get(i).getWord().equals("longest") && !tokens.get(i).getWord().equals("shortest")){
-						eloPosition.add(i);
-					}
-									
+			if(tokens.get(i).getNe().equals("jjs_pos") || tokens.get(i).getNe().equals("jjs_neg") || tokens.get(i).getNe().equals("jjr_pos") || tokens.get(i).getNe().equals("jjr_neg") ){
+				System.out.println(tokens.get(i).getNe() + tokens.get(i).getWord());
+				if(!tokens.get(i).getWord().equals("longest") && !tokens.get(i).getWord().equals("shortest")){
+					eloPosition.add(i);
 				}
+								
 			}
 		}
 		
+//		if(eloPosition.isEmpty()){
+//			for(int i = 0; i < tokens.size(); i++){
+//				
+//				
+//			}
+//		}
+//		
 		return eloPosition;
 	}
 

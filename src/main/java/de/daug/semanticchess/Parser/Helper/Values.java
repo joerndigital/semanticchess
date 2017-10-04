@@ -9,7 +9,7 @@ public class Values {
 
 
 	private ArrayList<ArrayList<String>> results = new ArrayList<ArrayList<String>>();
-	private static ArrayList<String> permutation = new ArrayList<String>();
+	private ArrayList<String> permutation = new ArrayList<String>();
 	
 	public Values(){
 //		int i = 0;
@@ -31,10 +31,13 @@ public class Values {
 	//https://stackoverflow.com/a/17193002
 	public void generatePermutations(ArrayList<ArrayList<String>> Lists, ArrayList<String> result, int depth, String current)
 	{
+		//System.out.println(result.toString());
 	    if(depth == Lists.size())
 	    {
+	       
 	       result.add(current);
-	       Values.permutation = result;
+	       this.permutation = result;
+	       
 	       return;
 	     }
 
@@ -79,12 +82,12 @@ public class Values {
 	}
 	
 
-	public static ArrayList<String> getPermutation() {
-		return permutation;
+	public ArrayList<String> getPermutation() {
+		return this.permutation;
 	}
 
-	public static void setPermutation(ArrayList<String> result) {
-		Values.permutation = result;
+	public void setPermutation(ArrayList<String> result) {
+		this.permutation = result;
 	}
 
 	public static void main (String[] args){
@@ -95,7 +98,6 @@ public class Values {
 		ArrayList<String> d = new ArrayList<String>();
 		
 		a.add("'Wilhelm Steinitz'");
-		a.add("'Tolkin'");
 		b.add("'Emanuel Lasker'");
 		
 
@@ -107,7 +109,7 @@ public class Values {
 		//v.setResultStr();
 		
 		String tempStr = "";
-		v.generatePermutations(v.results, permutation, 0, tempStr);
+		v.generatePermutations(v.results, v.getPermutation(), 0, tempStr);
 		System.out.println(v.toString());
 		
 	}

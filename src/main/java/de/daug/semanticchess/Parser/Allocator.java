@@ -1,9 +1,7 @@
 package de.daug.semanticchess.Parser;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.jena.query.QueryParseException;
 
@@ -11,7 +9,6 @@ import de.daug.semanticchess.Database.StringSimilarity;
 import de.daug.semanticchess.Parser.Helper.Classes;
 import de.daug.semanticchess.Parser.Helper.Entity;
 import de.daug.semanticchess.Parser.Helper.Filters;
-import de.daug.semanticchess.Parser.Helper.TopicFinder;
 import de.daug.semanticchess.Parser.Helper.Values;
 
 /**
@@ -102,7 +99,7 @@ public class Allocator {
 			
 			String value = "?value" + counter;
 			sparql = sparql.replaceAll(e.getEntityId(), value);
-			filters.addRegex(value, e.getEntityName(), true);
+			filters.addRegex(value, e.getEntityName().replaceAll("'", ""), true);
 			counter += 1;
 			} else {
 				sparql = sparql.replaceAll(e.getEntityId(), "");
@@ -164,10 +161,13 @@ public class Allocator {
 		}
 
 		String tempStr = "";
-		values.generatePermutations(values.getResults(), Values.getPermutation(), 0, tempStr);
+		
+		values.generatePermutations(values.getResults(), values.getPermutation(), 0, tempStr);
+		
 		//System.out.println(values.toString());
-		sparql = sparql.replace("VALUE_PLACEHOLDER", values.toString());
 
+		sparql = sparql.replace("VALUE_PLACEHOLDER", values.toString());
+		
 		for (
 
 		Classes c : classes) {
@@ -448,11 +448,11 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Players elo.");
+		Allocator alloc = new Allocator("Show me games by Wilhelm Steinitz.");
 
 		alloc.allocateSequence();
 		
-		System.out.println(alloc.subStringEntities(alloc.getSparqlQuery()));
+		System.out.println(alloc.regexEntities(alloc.getSparqlQuery()));
 
 	}
 

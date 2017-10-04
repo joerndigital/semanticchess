@@ -92,9 +92,9 @@ public class Options {
 
 	public void setGroupStr(String group) {
 		if (groupStr.equals("")) {
-			this.groupStr = GROUPBY + group;
+			this.groupStr = GROUPBY + group + " ";
 		} else {
-			this.orderStr += group;
+			this.groupStr += group + " ";
 		}
 	}
 
