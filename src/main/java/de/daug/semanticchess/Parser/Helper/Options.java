@@ -39,7 +39,10 @@ public class Options {
 	 *            integer
 	 */
 	public void setLimitStr(int limit) {
-		this.limitStr = LIMIT + limit;
+		if(limitStr.isEmpty()){
+			this.limitStr = LIMIT + limit;
+		}
+		
 	}
 
 	/**
