@@ -43,7 +43,7 @@ public class Allocator {
 		
 		
 		this.classes = parser.getClasses();
-		
+		System.out.println(classes.toString());
 		
 		//TopicFinder topicFinder = new TopicFinder();
 		this.topics = parser.getTopicStr();
@@ -342,6 +342,30 @@ public class Allocator {
 		case "_470":
 			sparqlQuery = Sequences._470;
 			break;
+		case "_500":
+			sparqlQuery = Sequences._500;
+			break;
+		case "_510":
+			sparqlQuery = Sequences._510;
+			break;
+		case "_520":
+			sparqlQuery = Sequences._520;
+			break;
+		case "_530":
+			sparqlQuery = Sequences._530;
+			break;
+		case "_540":
+			sparqlQuery = Sequences._540;
+			break;
+		case "_550":
+			sparqlQuery = Sequences._550;
+			break;
+		case "_560":
+			sparqlQuery = Sequences._560;
+			break;
+		case "_570":
+			sparqlQuery = Sequences._570;
+			break;
 		case "_021":
 			sparqlQuery = Sequences._021;
 			break;
@@ -356,6 +380,21 @@ public class Allocator {
 			break;
 		case "_0101":
 			sparqlQuery = Sequences._0101;
+			break;
+		case "_121":
+			sparqlQuery = Sequences._121;
+			break;
+		case "_141":
+			sparqlQuery = Sequences._141;
+			break;
+		case "_161":
+			sparqlQuery = Sequences._161;
+			break;
+		case "_181":
+			sparqlQuery = Sequences._181;
+			break;
+		case "_1101":
+			sparqlQuery = Sequences._1101;
 			break;
 		case "_201":
 			sparqlQuery = Sequences._201;
@@ -374,6 +413,21 @@ public class Allocator {
 			break;
 		case "_2101":
 			sparqlQuery = Sequences._2101;
+			break;
+		case "_321":
+			sparqlQuery = Sequences._321;
+			break;
+		case "_341":
+			sparqlQuery = Sequences._341;
+			break;
+		case "_361":
+			sparqlQuery = Sequences._361;
+			break;
+		case "_381":
+			sparqlQuery = Sequences._381;
+			break;
+		case "_3101":
+			sparqlQuery = Sequences._3101;
 			break;
 		case "_401":
 			sparqlQuery = Sequences._401;
@@ -448,11 +502,10 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Show me games by Wilhelm Steinitz.");
-
+		Allocator alloc = new Allocator("Show me the games where draw.");
 		alloc.allocateSequence();
 		
-		System.out.println(alloc.regexEntities(alloc.getSparqlQuery()));
+		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));
 
 	}
 
