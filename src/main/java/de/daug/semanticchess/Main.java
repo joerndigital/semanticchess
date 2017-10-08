@@ -14,8 +14,8 @@ public class Main
 	
     public static void main( String[] args )
     {
-    	PgnToRdf.main(null);
-    	LoadData.main(null);
+    	//PgnToRdf.main(null);
+    	//LoadData.main(null);
     	
 		SpringApplication.run(Main.class, args);
     }
