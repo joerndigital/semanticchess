@@ -38,7 +38,7 @@ public class StringSimilarity {
 			break;
 		case "cont:openingName":
 			this.variable = "openingName";
-			query = "SELECT DISTINCT ?openingName WHERE {?res cont:openingName ?openingName. ?res cont:openingCode ?eco} ORDER BY ?eco";
+			query = "SELECT DISTINCT ?openingName WHERE {?game cont:eco ?eco. ?eco cont:openingName ?openingName} ORDER BY DESC((COUNT(?game) AS ?nr))";
 			break;
 		case "prop:site":
 			this.variable = "site";
