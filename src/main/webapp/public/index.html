@@ -44,15 +44,24 @@
 			style="width: 50%; margin: 0 auto; margin-top: 30px; text-align: left;">
 			<table
 				class="table table-striped table-sm table-bordered table-responsive"
-				style="">
+				style="white-space:nowrap;">
 				<thead class="table-dark">
 					<tr>
-						<th ng-repeat="var in result.data.head.vars">{{var}}</th>
+						<th ng-repeat="var in result.data.head.vars track by $index" style="text-align:center;">
+							<span ng-if="var !== 'black' && var !== 'white'">{{var}}</span>
+							<span ng-if="var === 'white'">&#x2654;</span>
+							<span ng-if="var === 'black'">&#x265a;</span>
+						</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="row in result.data.results.bindings">
-						<td ng-repeat="cell in row">{{cell.value}}</td>
+					<tr ng-repeat="row in result.data.results.bindings track by $index">
+					    
+						<td ng-repeat="(key,value) in row">
+							<span ng-if="key === 'game'"><a href="{{value.value}}">To the {{$parent.$parent.$index + 1}}. game</a></span>
+							<span ng-if="key !== 'game'">{{value.value}}</span>
+						</td>
+						
 					<tr>
 				</tbody>
 			</table>
