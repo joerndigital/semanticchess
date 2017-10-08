@@ -49,7 +49,7 @@ appChess.controller('appCtrl', function($scope, $http){
 	        'headers': {'Content-Type' : 'application/json'},
 	        'data' : $scope.query
 	    }).then(function(data){
-	    	
+	    	console.log(data);    
 	    	if(!(typeof data == undefined)){
 		    	$scope.errorFound = false;
 		    	$scope.result = data;
@@ -63,14 +63,14 @@ appChess.controller('appCtrl', function($scope, $http){
 	        
 	        
 	    }).catch(function (err) {
-
+	    	console.log(data);   
 		    	$scope.resultCounter = 0;
 		    	$scope.result = "";
 		    	$scope.errorFound = true;    	
 	    	
 	    });
 	 
-	    
+	     
 	};
 });
 
