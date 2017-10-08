@@ -29,11 +29,88 @@ public class FenRegex{
 	private int blackKnightCounter = 0;
 	private int blackPawnCounter = 0;
 	
+	
+	private String castlingShort = "O-O";
+	private String castlingLong = "O-O-O";
+	
+	private String promote = "[a-h]8[QqRrBbNn]";
+	private String underpromote = "[a-h]8[RrBbNn]";
+	private String promoteQueen = "[a-h]8[Qq]";
+	private String promoteRook = "[a-h]8[Rr]";
+	private String promoteBishop = "[a-h]8[Bb]";
+	private String promoteKnight = "[a-h]8[Nn]";	
+	
 	/**
 	 * constructor
 	 */
 	public FenRegex(){
 	}
+	
+	/**
+	 * 
+	 * @param move
+	 * @param piece
+	 * @return
+	 */
+	public String createMove(String move, String piece){
+		switch(move){
+			case "castle":
+			case "castling":
+				if(piece.equals("long")){
+					return castlingLong;
+				}else {
+					return castlingShort;
+				}
+			case "underpromotion":	
+			case "underpromote":
+				return underpromote;
+			case "promotion":
+			case "promote":
+				switch(piece){
+					case "queen":
+						return promoteQueen;
+					case "rook":
+						return promoteRook;
+					case "bishop":
+						return promoteBishop;
+					case "knight":
+						return promoteKnight;
+					default:
+						return promote;
+				}
+			case "exchange":
+			case "capture":
+				return "x";	
+			default:
+				return "";
+		}
+	}
+	
+//	public String createExchangeFen(){
+//		String RRrBbbNNnn = "(?=(.*R){2})(?!(.*R){3})(?=(.*r){1})(?!(.*r){2})(?=(.*B){1})(?!(.*B){2})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){2})(?!(.*N){3})(?=(.*n){2})(?!(.*n){3})";
+//		String RRrBBbbNnn = "(?=(.*R){2})(?!(.*R){3})(?=(.*r){1})(?!(.*r){2})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){1})(?!(.*N){2})(?=(.*n){2})(?!(.*n){3})";
+//		String RrrBBbNNnn = "(?=(.*R){1})(?!(.*R){2})(?=(.*r){2})(?!(.*r){3})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){1})(?!([^ ]*b){2})(?=(.*N){2})(?!(.*N){3})(?=(.*n){2})(?!(.*n){3})";
+//		String RrrBBbbNNn = "(?=(.*R){1})(?!(.*R){2})(?=(.*r){2})(?!(.*r){3})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){2})(?!(.*N){3})(?=(.*n){1})(?!(.*n){2})";
+//		
+//		String RBbbNNnn = "(?=(.*R){1})(?!(.*R){2})(?=(.*r){0})(?!(.*r){1})(?=(.*B){1})(?!(.*B){2})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){2})(?!(.*N){3})(?=(.*n){2})(?!(.*n){3})";
+//		String RBBbbNnn = "(?=(.*R){1})(?!(.*R){2})(?=(.*r){0})(?!(.*r){1})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){1})(?!(.*N){2})(?=(.*n){2})(?!(.*n){3})";
+//		String rBBbNNnn = "(?=(.*R){0})(?!(.*R){1})(?=(.*r){1})(?!(.*r){2})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){1})(?!([^ ]*b){2})(?=(.*N){2})(?!(.*N){3})(?=(.*n){2})(?!(.*n){3})";
+//		String rBBbbNNn = "(?=(.*R){0})(?!(.*R){1})(?=(.*r){1})(?!(.*r){2})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){2})(?!(.*N){3})(?=(.*n){1})(?!(.*n){2})";
+//		
+//		String exchangeFen = "^"
+//				+ "(" + RRrBbbNNnn
+//				+ "|" + RRrBBbbNnn
+//				+ "|" + RrrBBbNNnn
+//				+ "|" + RrrBBbbNNn
+//				+ "|" + RBbbNNnn
+//				+ "|" + RBBbbNnn
+//				+ "|" + rBBbNNnn
+//				+ "|" + rBBbbNNn
+//				+ ")";
+//		
+//		
+//		return exchangeFen;
+//	}
 	
 	/**
 	 * add white pieces to the list
