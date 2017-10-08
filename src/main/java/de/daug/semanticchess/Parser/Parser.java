@@ -102,11 +102,7 @@ public class Parser {
 			makeUnion();
 		}
 
-		if (!isUnion) {
-			this.sequence = "_" + classes.size() + "" + entities.size() + "0";
-		} else {
-			this.sequence = "_" + classes.size() + "" + entities.size() + "1";
-		}
+
 
 		if (isFilter) {
 			if (isFen) {
@@ -151,7 +147,28 @@ public class Parser {
 				}
 			}
 		}
-
+		
+		if(topics.onlyGames()){
+			if (getClassByName("?white") == null) {
+				classes.add(new Classes(classes.size() + 1, "?white", "prop:", "white", 999, "?game"));
+				topics.add("?white");
+			}
+			if (getClassByName("?black") == null) {
+				classes.add(new Classes(classes.size() + 1, "?black", "prop:", "black", 999, "?game"));
+				topics.add("?black");
+			}
+			if (getClassByName("?date") == null) {
+				classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
+				topics.add("?date");
+			}
+		}
+		
+		if (!isUnion) {
+			this.sequence = "_" + classes.size() + "" + entities.size() + "0";
+		} else {
+			this.sequence = "_" + classes.size() + "" + entities.size() + "1";
+		}
+		
 	}
 
 	public void collectEntities(List<Token> tokens) {
@@ -198,7 +215,6 @@ public class Parser {
 			}
 
 			String preFoundNe = "O";
-			@SuppressWarnings("unused")
 			String preFoundWord = "";
 			try {
 				int i = index;
@@ -381,6 +397,10 @@ public class Parser {
 
 				break;
 			case "piece":
+				if (preFoundNe.equals("fen") || nextFoundNe.equals("fen")) {
+					break;
+				}
+				// TODO falls fen in der Nähe
 				isFen = true;
 				isFilter = true;
 				int number = 1;
@@ -415,6 +435,41 @@ public class Parser {
 					classes.add(new Classes(classes.size() + 1, "?fen", "prop:", "fen", 999, "?moves"));
 				}
 
+				break;
+			case "fen":
+				if (getClassByName("?moves") == null) {
+					classes.add(new Classes(classes.size() + 1, "?moves", "prop:", "moves", 999, "?game"));
+				}
+				if (getClassByName("?move") == null) {
+					classes.add(new Classes(classes.size() + 1, "?move", "prop:", "move", 999, "?moves"));
+				}
+				if (word.equals("castle") || word.equals("castling")) {
+
+					if (preWord.equals("long") || nextWord.equals("long") || preWord.equals("queenside") ||nextWord.equals("queenside")) {
+						filters.addRegex("?move", fenReg.createMove("castling", "long"), true);
+					} else {
+						filters.addRegex("?move", fenReg.createMove("castling", "short"), true);
+					}
+				} else if (word.indexOf("promot") > -1) {
+					if (word.indexOf("underpromot") > -1) {
+						String piece = "";
+						if (nextFoundNe.equals("piece")) {
+							piece = nextFoundWord;
+						} else if (preFoundNe.equals("piece")) {
+							piece = preFoundWord;
+						}
+
+						if (piece.isEmpty()) {
+							filters.addRegex("?move", fenReg.createMove("underpromotion", ""), true);
+						} else {
+							filters.addRegex("?move", fenReg.createMove("promotion", piece), true);
+						}
+
+					}
+				} else if (word.indexOf("captur") > -1 || word.indexOf("exchange") > -1) {
+					// exception: the exchange -> not implemented
+					filters.addRegex("?move", fenReg.createMove("capture", ""), true);
+				}
 				break;
 			case "average":
 				if (!nextFoundNe.isEmpty()) {
@@ -554,6 +609,38 @@ public class Parser {
 						this.options.setLimitStr(1);
 						this.options.setOffsetStr(0);
 					}
+				}
+				break;
+			case "temporal":
+
+				if (nextFoundNe.equals("fen") || nextFoundNe.equals("move")) {
+					if (getClassByName("?moves") == null) {
+						classes.add(new Classes(classes.size() + 1, "?moves", "prop:", "moves", 999, "?game"));
+					}
+					if (getClassByName("?move") == null) {
+						classes.add(new Classes(classes.size() + 1, "?move", "prop:", "move", 999, "?moves"));
+					}
+					if (getClassByName("?moveNr") == null) {
+						classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", 999, "?moves"));
+					}
+					if (word.equals("earliest")) {
+						this.options.setOrderStr("ASC", "?moveNr");
+					} else if(word.equals("latest")){
+						this.options.setOrderStr("DESC", "?moveNr");
+					}
+					this.options.setLimitStr(1);
+					this.options.setOffsetStr(0);
+				} else {
+					if (getClassByName("?date") == null) {
+						classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
+					}
+					if (word.equals("earliest")) {
+						this.options.setOrderStr("ASC", "?date");
+					} else if(word.equals("latest")){
+						this.options.setOrderStr("DESC", "?date");
+					}
+					this.options.setLimitStr(1);
+					this.options.setOffsetStr(0);
 				}
 				break;
 			case "count":
@@ -733,13 +820,13 @@ public class Parser {
 						} catch (Exception error) {
 							getEntityByEndPosition(pair.getValue()).setPropertyName("prop:white");
 						}
-						
-						if(getEntityByName("'1-0'") != null){
+
+						if (getEntityByName("'1-0'") != null) {
 							isWhite = true;
-						} else if (getEntityByName("'0-1'") != null){
+						} else if (getEntityByName("'0-1'") != null) {
 							isBlack = true;
 						}
-						
+
 					}
 					isUnion = true;
 				}
