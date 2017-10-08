@@ -43,7 +43,7 @@ At first the program converts the file 1610-1899.pgn to ttl-files. After that it
 
 
 ## Prefixes
-If you want to use the sparql editor on http://localhost/8080: There are already in use.
+If you want to use the sparql editor on http://localhost/8080: These prefixes are already in use.
 
 ```sh
 PREFIX ex:    <http://example.com> 
