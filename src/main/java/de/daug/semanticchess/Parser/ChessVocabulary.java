@@ -104,10 +104,23 @@ public class ChessVocabulary {
 		PROPERTIES.put("eventEntity", eventEntityProperty);
 		
 		ArrayList<String> fenProperty = new ArrayList<String>();
-		fenProperty.add("fen");
-		fenProperty.add("position");
-		fenProperty.add("rank");
-		fenProperty.add("file");
+		fenProperty.add("capture");
+		//fenProperty.add("check");
+		//fenProperty.add("doubled");
+		//fenProperty.add("enpassant");
+		fenProperty.add("exchange");
+		//fenProperty.add("fianchetto");
+		//fenProperty.add("fen");
+		//fenProperty.add("isolate");
+		//fenProperty.add("position");
+		//fenProperty.add("rank");
+		//fenProperty.add("file");
+		fenProperty.add("castling");
+		fenProperty.add("castle");
+		//fenProperty.add("passant");
+		fenProperty.add("promote");
+		fenProperty.add("promotion");
+		fenProperty.add("underpromotion");
 		// ==============================
 		PROPERTIES.put("fen", fenProperty);
 		
@@ -235,7 +248,14 @@ public class ChessVocabulary {
 		siteProperty.add("town");
 		siteProperty.add("country");
 		siteProperty.add("place");
+		// ==============================
 		PROPERTIES.put("site", siteProperty);
+		
+		ArrayList<String> temporalProperty = new ArrayList<String>();
+		temporalProperty.add("earliest");
+		temporalProperty.add("latest");
+		// ==============================
+		PROPERTIES.put("temporal", temporalProperty);
 
 		ArrayList<String> whiteProperty = new ArrayList<String>();
 		whiteProperty.add("white");
