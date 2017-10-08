@@ -1,6 +1,7 @@
 package de.daug.semanticchess.Parser.Helper;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ public class TopicFinder {
 	private Set<String> topics = new HashSet<String>();
 
 	private Set<String> blacklist = new HashSet<String>();
-	boolean isAlgebra = true;
+	boolean isAlgebra = false;
 	private String max = "";
 	private String min = "";
 	private String avg = "";
@@ -54,7 +55,7 @@ public class TopicFinder {
 			} catch (Exception err) {
 				entityIsEmpty = true;
 			}
-			System.out.println(classes.toString());
+			//System.out.println(classes.toString());
 			for (Classes c : classes) {
 
 				if (!entityIsEmpty) {
@@ -85,21 +86,21 @@ public class TopicFinder {
 				}
 
 			}
-			
-//			if(topics.isEmpty()){
-//				for (Entity e : entities) {
-//					topics.add(e.getResourceName());
-//					break;
-//				}
-//				
-//			}
-//			if(topics.isEmpty()){
-//				for (Classes c : classes) {
-//					topics.add(c.getResourceName());
-//					break;
-//				}
-//				
-//			} 
+
+			// if(topics.isEmpty()){
+			// for (Entity e : entities) {
+			// topics.add(e.getResourceName());
+			// break;
+			// }
+			//
+			// }
+			// if(topics.isEmpty()){
+			// for (Classes c : classes) {
+			// topics.add(c.getResourceName());
+			// break;
+			// }
+			//
+			// }
 
 		} catch (Exception err) {
 
@@ -150,6 +151,23 @@ public class TopicFinder {
 
 	public void addToBlacklist(String topic) {
 		this.blacklist.add(topic);
+	}
+	
+	public void add(String topic){
+		this.topics.add(topic);
+	}
+
+	public boolean onlyGames() {
+		if (topics.size() == 1) {
+			Iterator<String> iter = topics.iterator();
+
+			if (iter.next().equals("?game")) {
+				return true;
+			}
+
+		}
+
+		return false;
 	}
 
 	public String getString() {
