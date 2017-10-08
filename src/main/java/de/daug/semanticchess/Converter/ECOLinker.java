@@ -75,7 +75,7 @@ public class ECOLinker
     /**
      * Default timeout for a SPARQL query. (for efficiency) 
      */
-    public final static int QUERY_TIMEOUT = 10;
+    public final static int QUERY_TIMEOUT = 30;
     /**
      * Says that it will only query for games where no chess opening resource
      * is set. So it 'can' reduce the amount of games to search and process.
@@ -84,7 +84,7 @@ public class ECOLinker
     /**
      * maximum depth to create subqueries
      */
-    public final static int MAX_SUBQUERY_DEPTH = 15;
+    public final static int MAX_SUBQUERY_DEPTH = 25;
     /**
      * Name of file with error openings.
      */
@@ -385,7 +385,7 @@ public class ECOLinker
             	.append(moveVarAbbr )
             	.append(",")
             	.append("'")
-            	.append(co.getMoves().get(nr - 1).getMove().substring(0,1) + ".*" + co.getMoves().get(nr - 1).getMove().substring(1) + "$")
+            	.append("^"+co.getMoves().get(nr - 1).getMove().substring(0,1) + ".*" + co.getMoves().get(nr - 1).getMove().substring(1) + "$")
             	.append("') && ")
             	.append("regex(?eco,'" + co.getCode() +"') && ")
             	.append("?moveNr <= " + co.getMoves().size() + ")");
