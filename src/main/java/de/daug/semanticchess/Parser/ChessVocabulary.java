@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * simple chess vocabulary assign a term to a topic
+ * Simple chess vocabulary: assign a term to a topic
  */
 public class ChessVocabulary {
 
