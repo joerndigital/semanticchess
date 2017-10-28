@@ -54,3 +54,14 @@ PREFIX cont:  <http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#
 PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 ```
 
+## Credits
+#Frontend:
+- PgnViewerJS by [mliebelt](https://github.com/mliebelt/PgnViewerJS)
+- Font Awesome by Dave Gandy - http://fontawesome.io
+- [Bootstrap](http://getbootstrap.com/)
+- [AngularJS](https://angularjs.org/) 
+- [jQuery](https://jquery.com/)
+
+#Backend:
+- [Stanford coreNLP](https://stanfordnlp.github.io/CoreNLP/)
+- [spring.io](https://spring.io/)
