@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import virtuoso.jena.driver.VirtGraph;
 import virtuoso.jena.driver.VirtuosoQueryExecution;
 import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
@@ -75,7 +76,7 @@ public class ECOLinker
     /**
      * Default timeout for a SPARQL query. (for efficiency) 
      */
-    public final static int QUERY_TIMEOUT = 30;
+    public final static int QUERY_TIMEOUT = 10;
     /**
      * Says that it will only query for games where no chess opening resource
      * is set. So it 'can' reduce the amount of games to search and process.
@@ -84,7 +85,7 @@ public class ECOLinker
     /**
      * maximum depth to create subqueries
      */
-    public final static int MAX_SUBQUERY_DEPTH = 25;
+    public final static int MAX_SUBQUERY_DEPTH = 22;
     /**
      * Name of file with error openings.
      */
@@ -93,7 +94,10 @@ public class ECOLinker
     /**
      * Output file for mappings.
      */
-    public final static String FILE_MAPPING = "src/main/resources/static/games/rdf/Mapping_ECO_GAME.ttl";
+    
+    public String ecoLetter;
+    
+    public final static String FILE_MAPPING = "src/main/resources/static/games/rdf/Mapping_ECO_GAME";
     
     // ------------------------------------------------------------------------
     
@@ -115,6 +119,8 @@ public class ECOLinker
     protected final static String SPARQL_ECOS = "PREFIX cont:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#>  SELECT DISTINCT "
             + SPARQL_ECOS_VAR + "\n" + SPARQL_ECOS_FROM + "WHERE\n{\n  "
             + SPARQL_ECOS_VAR + " a cont:ChessOpening .\n}\nORDER BY " + SPARQL_ECOS_VAR;
+    
+    private String SPARQL_ECOS2;
     
     // ------------------------------------------------------------------------
     
@@ -151,6 +157,8 @@ public class ECOLinker
      */
     public ECOLinker(VirtGraph virtuosoGraph, int timeout, boolean onlyWOECORes)
     {
+    	
+    	
         this.virtuosoGraph = virtuosoGraph;
         this.virtuosoGraph.setQueryTimeout(timeout); // sec.
         
@@ -170,6 +178,23 @@ public class ECOLinker
     }
     
     // ------------------------------------------------------------------------
+    
+    public void setEcoLetter(String letter){
+    	this.ecoLetter = letter;
+    }
+    
+    
+    public void setSparqlEcos(){
+        this.SPARQL_ECOS2 = "PREFIX cont:<http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#>  SELECT DISTINCT "
+                + SPARQL_ECOS_VAR + "\n" + SPARQL_ECOS_FROM + "WHERE\n{\n  "
+                + SPARQL_ECOS_VAR + " a cont:ChessOpening . \n"
+                + SPARQL_ECOS_VAR + " cont:openingCode ?code . \n"
+                +"FILTER regex(?code, "+this.ecoLetter+") } \nORDER BY " + SPARQL_ECOS_VAR;
+    }
+    
+    public void setFileName(){
+    	 //this.FILE_MAPPING = "src/main/resources/static/games/rdf/Mapping_ECO_GAME_"+this.ecoLetter+".ttl";
+    }
     
     /**
      * Set to true if you want to only query chess games which do not contain a
@@ -193,9 +218,9 @@ public class ECOLinker
     {
         List<String> list = new ArrayList<String>();
 
-        System.out.println("Get Openings: " + SPARQL_ECOS);
+        System.out.println("Get Openings: " + SPARQL_ECOS2);
         VirtuosoQueryExecution vqeS = VirtuosoQueryExecutionFactory.create(
-                SPARQL_ECOS, this.virtuosoGraph);
+                SPARQL_ECOS2, this.virtuosoGraph);
 
         try
         {
@@ -241,8 +266,9 @@ public class ECOLinker
         
         // more efficient to move later moves to the front and common to the
         // back, reduce the result set early (?)
-        for (int nr = 1; nr <= co.getMoves().size(); nr ++)
-        //for (int nr = co.getMoves().size(); nr > 0; nr --)
+        //for (int nr = 1; nr <= co.getMoves().size(); nr ++)
+ 
+        for (int nr = co.getMoves().size(); nr > 0; nr --)
         {
             if (nr <= this.subqueryDepth)
             {
@@ -250,7 +276,7 @@ public class ECOLinker
                 String temp = sb.toString();
                 
                 sb = new StringBuilder()
-                    .append("SELECT ")
+                    .append("SELECT DISTINCT ")
                     .append(SPARQL_GAME_VAR)
                     .append(" WHERE\n{\n  ");
                 if (temp.length() > 0)
@@ -348,12 +374,12 @@ public class ECOLinker
                 .append(moveVar)
                 .append(" .\n  ")
                 
-                .append(moveVar)
-                .append(" a ")
-                .append("prop")
-                .append(":")
-                .append("move")
-                .append(" .\n  ")
+//                .append(moveVar)
+//                .append(" a ")
+//                .append("prop")
+//                .append(":")
+//                .append("move")
+//                .append(" .\n  ")
                 
                 .append(moveVar)
                 .append(" ")
@@ -379,14 +405,15 @@ public class ECOLinker
                 .append(":")
                 .append("move")
                 .append(" ")
-                .append(moveVarAbbr )
+                .append("'"+co.getMoves().get(nr - 1).getMove()+"'")
                 .append(" .\n")
-            	.append("FILTER (regex(")
-            	.append(moveVarAbbr )
-            	.append(",")
-            	.append("'")
-            	.append("^"+co.getMoves().get(nr - 1).getMove().substring(0,1) + ".*" + co.getMoves().get(nr - 1).getMove().substring(1) + "$")
-            	.append("') && ")
+//            	.append("FILTER (regex(")
+//            	.append(moveVarAbbr )
+//            	.append(",")
+//            	.append("'")
+//            	.append("^"+co.getMoves().get(nr - 1).getMove().substring(0,1) + ".*" + co.getMoves().get(nr - 1).getMove().substring(1) + "$")
+//            	.append("') && ")
+                .append("FILTER (")
             	.append("regex(?eco,'" + co.getCode() +"') && ")
             	.append("?moveNr <= " + co.getMoves().size() + ")");
             
@@ -408,7 +435,7 @@ public class ECOLinker
         List<String> list = new ArrayList<String>();
         
         VirtuosoQueryExecution vqeS = VirtuosoQueryExecutionFactory.create("PREFIX prop:<http://example.com/prop/> " + sb.toString(), this.virtuosoGraph);
-        
+
         try
         {
             org.apache.jena.query.ResultSet results = vqeS.execSelect();
@@ -689,6 +716,8 @@ public class ECOLinker
      */
     public boolean writeMappingModel(String file)
     {
+
+    	
         Model m = this.createMappingModel(this.getMappings());
         
         try
@@ -735,7 +764,7 @@ public class ECOLinker
         {
             System.out.println("Usage: java -jar Programm.jar <graph> <link to db>"
                     + " <username> <password> [<Only games w/o eco::=yes|no> [<outputfilename::="
-                    + FILE_MAPPING + ">]]");
+                    +  "file name>]]");
             System.exit(1);
         }
         
@@ -744,12 +773,12 @@ public class ECOLinker
         String user = args[2];
         String pass = args[3];
         boolean ecoless = (args.length >= 5) ? "yes".equalsIgnoreCase(args[4]) : false;
-        String file = (args.length == 6) ? args[5] : FILE_MAPPING;
+        String file = (args.length == 6) ? args[5] : FILE_MAPPING + "_" + args[4] + ".ttl";
         
         ECOLinker ecol = new ECOLinker(new VirtGraph(graph, "jdbc:virtuoso://"
                 + link, user, pass));
         ecol.setOnlyGamesWithOutECOResources(ecoless);
-        
+        //String file = (args.length == 6) ? args[5] : ecol.FILE_MAPPING;
 //        try
 //        {
 //            BufferedReader br = FileUtils.openReader(FileUtils.openInputStream(FILE_ERROR_ECO_URI));
@@ -771,8 +800,12 @@ public class ECOLinker
 //        catch (Exception e)
 //        {
 //        }
-        
+        ecol.setEcoLetter("'" + args[4] + "'");
+        ecol.setSparqlEcos();
         ecol.writeMappingModel(file);
+//        ecol.setEcoLetter("'B'");
+//        ecol.setSparqlEcos();
+//        ecol.writeMappingModel(file);
         
 //        try
 //        {
