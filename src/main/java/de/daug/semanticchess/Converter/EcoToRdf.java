@@ -50,17 +50,29 @@ public class EcoToRdf {
 //	        ex.printStackTrace();
 //	    }
 		
-		String[] inputLinker = new String[4];
+		String[] inputLinker = new String[5];
 		inputLinker[0] = Configurations.DB_GRAPH; //falscher Graph?
 		inputLinker[1] = "localhost:1111";
 		inputLinker[2] = Configurations.DB_USER;
 		inputLinker[3] = Configurations.DB_PASSWORD;
 		
-
 		
-
 		
+		inputLinker[4] = "A";
 		ECOLinker.main(inputLinker);
+		
+		inputLinker[4] = "B";
+		ECOLinker.main(inputLinker);
+		
+		inputLinker[4] = "C";
+		ECOLinker.main(inputLinker);
+		
+		inputLinker[4] = "D";
+		ECOLinker.main(inputLinker);
+		
+		inputLinker[4] = "E";
+		ECOLinker.main(inputLinker);
+		
 	}
 	
 }
