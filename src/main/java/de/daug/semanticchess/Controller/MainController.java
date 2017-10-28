@@ -18,4 +18,25 @@ public class MainController {
 		return "index";
 
 	}
+	
+	
+	/**
+	 * maps "/game" to game.html
+	 * @return index.html
+	 */
+	@GetMapping("/game")
+	public String game() {
+		return "game";
+
+	}
+	
+	/**
+	 * maps "/search" to search.html
+	 * @return index.html
+	 */
+	@GetMapping("/search")
+	public String search() {
+		return "search";
+
+	}
 }
