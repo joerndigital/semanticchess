@@ -8,15 +8,18 @@ import edu.stanford.nlp.ling.WordTag;
 import edu.stanford.nlp.process.Morphology;
 
 /**
- * 
- * 
+ * This class adds or rewrites a NER tag to a word.
+ * At first the Stanford coreNLP tags the words with NER.
+ * After that this class completes the process.
  */
 public class CustomNer {
 	
 	private ChessVocabulary  vocabulary = new ChessVocabulary();
 	
-	public CustomNer (){
-		
+	/**
+	 * empty constructor
+	 */
+	public CustomNer (){		
 	}
 	
 	/**
@@ -57,8 +60,8 @@ public class CustomNer {
 	}
 	
 	/**
-	 * check all dates, especially years if they are elo numbers or not
-	 * @param tokens: List of words, ner and pos
+	 * check all dates, especially years whether they are ELO numbers or not
+	 * @param tokens: List of words, NER and POS
 	 * @return list of Token
 	 */
 	public List<Token> checkElo(List<Token> tokens){
@@ -91,7 +94,11 @@ public class CustomNer {
 		return tokens;
 	}
 	
-	
+	/**
+	 * checks if found entities are openings
+	 * @param tokens
+	 * @return token with maybe an opening NER
+	 */
 	public List<Token> checkOpening(List<Token> tokens){
 		for(int i = 0; i < tokens.size(); i++){
 			String word = tokens.get(i).getWord().toLowerCase();
@@ -113,13 +120,9 @@ public class CustomNer {
 				while(tokens.get(k) != null && (!tokens.get(k).getNe().equals("O") || tokens.get(k).getPos().equals("POS") || tokens.get(k).getPos().equals("NNP"))){
 					tokens.get(k).setNe(value);
 					k++;
-				}
-				
-			}
-			
-		}
-		
-		
+				}				
+			}			
+		}		
 		return tokens;
 	}
 }

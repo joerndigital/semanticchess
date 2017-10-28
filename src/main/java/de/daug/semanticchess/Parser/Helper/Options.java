@@ -1,7 +1,7 @@
 package de.daug.semanticchess.Parser.Helper;
 
 /**
- * options for the sparql query
+ * This class adds modifiers to the SPARQL query.
  */
 public class Options {
 
@@ -9,23 +9,26 @@ public class Options {
 	private static final String OFFSET = "OFFSET ";
 	private static final String ORDERBY = "ORDER BY ";
 	private static final String GROUPBY = "GROUP BY ";
+	
+	@SuppressWarnings("unused")
 	private static final String HAVING = "HAVING ";
 
 	private String limitStr ="";
 	private String offsetStr = "";
 	private String orderStr = "";
 	private String groupStr = "";
+	
+	@SuppressWarnings("unused")
 	private String havingStr ="";
 
 	/**
-	 * constructor
+	 * empty constructor
 	 */
 	public Options() {
 	}
 
 	/**
-	 * get limit
-	 * 
+	 * get the LIMIT modifier
 	 * @return limitStr
 	 */
 	public String getLimitStr() {
@@ -34,20 +37,16 @@ public class Options {
 
 	/**
 	 * set limit string
-	 * 
-	 * @param limit:
-	 *            integer
+	 * @param limit: integer
 	 */
 	public void setLimitStr(int limit) {
 		if(limitStr.isEmpty()){
 			this.limitStr = LIMIT + limit;
 		}
-		
 	}
 
 	/**
-	 * get offset
-	 * 
+	 * get the OFFSET modifier
 	 * @return offsetStr
 	 */
 	public String getOffsetStr() {
@@ -56,18 +55,15 @@ public class Options {
 
 	/**
 	 * set offset string
-	 * 
-	 * @param offset:
-	 *            integer
+	 * @param offset: integer
 	 */
 	public void setOffsetStr(int offset) {
 		this.offsetStr = OFFSET + offset;
 	}
 
 	/**
-	 * get order string
-	 * 
-	 * @return
+	 * get the ORDER BY modifier
+	 * @return orderStr
 	 */
 	public String getOrderStr() {
 		return orderStr;
@@ -75,11 +71,8 @@ public class Options {
 
 	/**
 	 * set order String
-	 * 
-	 * @param orderDirection:
-	 *            ASC or DESC
-	 * @param order:
-	 *            class that should be ordered
+	 * @param orderDirection: ASC or DESC
+	 * @param order: class that should be ordered
 	 */
 	public void setOrderStr(String orderDirection, String order) {
 		if (orderStr.equals("")) {
@@ -88,11 +81,19 @@ public class Options {
 			this.orderStr += orderDirection + "(" + order + ") ";
 		}
 	}
-
+	
+	/**
+	 * get the GROUB BY modifier
+	 * @return groupStr
+	 */
 	public String getGroupStr() {
 		return groupStr;
 	}
 
+	/**
+	 * set group String
+	 * @param group
+	 */
 	public void setGroupStr(String group) {
 		if (groupStr.equals("")) {
 			this.groupStr = GROUPBY + group + " ";
@@ -102,7 +103,7 @@ public class Options {
 	}
 
 	/**
-	 * toString method
+	 * returns a String with modifiers
 	 */
 	@Override
 	public String toString() {

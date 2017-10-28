@@ -25,7 +25,7 @@ public class Classes {
 	
 	/**
 	 * constructor
-	 * @param counter: counts how often a class was find in the query
+	 * @param counter: counts how often a class was found in the query
 	 * @param classesName: name of the class
 	 * @param propertyName: property of the class
 	 * @param position: postion in the query
@@ -156,16 +156,24 @@ public class Classes {
 		this.position = position;
 	}
 
+	/**
+	 * get property prefix
+	 * @return property prefix
+	 */
 	public String getPropertyPrefix() {
 		return propertyPrefix;
 	}
 
+	/**
+	 * set property prefix
+	 * @param propertyPrefix
+	 */
 	public void setPropertyPrefix(String propertyPrefix) {
 		this.propertyPrefix = propertyPrefix;
 	}
 
 	/**
-	 * toString method
+	 * toString
 	 */
 	@Override
 	public String toString() {

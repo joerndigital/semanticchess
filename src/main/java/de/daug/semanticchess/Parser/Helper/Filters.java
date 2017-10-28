@@ -1,7 +1,7 @@
 package de.daug.semanticchess.Parser.Helper;
 
 /**
- * filter for the sparql query
+ * This class adds filters to the SPARQL query
  */
 public class Filters{
 	
@@ -9,14 +9,14 @@ public class Filters{
 	private boolean isFirstFilter = true;
 	
 	/**
-	 * constructor
+	 * empty constructor
 	 */
 	public Filters(){
 		
 	}
 	
 	/**
-	 * filter for phrases with 'greater than'
+	 * filter for phrases like 'greater than'
 	 */
 	public void addGreaterThan(String classesName, String filterValue){
 		if(isFirstFilter){
@@ -28,7 +28,7 @@ public class Filters{
 	}
 	
 	/**
-	 * filter for phrases with 'lower than'
+	 * filter for phrases like 'lower than'
 	 */
 	public void addLowerThan(String classesName, String filterValue){
 		if(isFirstFilter){
@@ -60,8 +60,7 @@ public class Filters{
 			} else {
 				this.filter += " && regex( " + classesName + ", '" + regex + "' "+ ",'i' " + ")";
 			}
-		}
-		
+		}		
 	}
 
 	/**
@@ -74,26 +73,30 @@ public class Filters{
 		}
 		else {
 			return filter + ")";
-		}
-		
+		}	
 	}
 
 	/**
-	 * set filter
+	 * set filter String
 	 * @param filter
 	 */
 	public void setFilterStr(String filter) {
 		this.filter = filter;
 	}
 
+	/**
+	 * checks if the incoming filter is the first filter
+	 * @return boolean
+	 */
 	public boolean isFirstFilter() {
 		return isFirstFilter;
 	}
-
+	
+	/**
+	 * set the boolean for isFirst
+	 * @param isFirstFilter
+	 */
 	public void setFirstFilter(boolean isFirstFilter) {
 		this.isFirstFilter = isFirstFilter;
-	}
-	
-	
-	
+	}	
 }

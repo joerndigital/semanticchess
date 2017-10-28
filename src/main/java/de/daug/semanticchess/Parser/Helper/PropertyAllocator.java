@@ -7,16 +7,16 @@ import java.util.List;
 import de.daug.semanticchess.Annotation.Token;
 
 /**
- * allocates
- * @author Jörn-Henning
- *
+ * This class allocates a property to a entity.
+ * For example:
+ *  - a color to a player
+ *  - a ELO rating to a player
  */
 public class PropertyAllocator {
 
 	private List<Token> tokens = new ArrayList<Token>();
 	private List<Integer> personPositions = new ArrayList<Integer>();
 	private int colorPosition;
-	private List<Integer> eloPosition = new ArrayList<Integer>();
 
 	public PropertyAllocator(List<Token> tokens) {
 		this.tokens = tokens;
@@ -25,7 +25,7 @@ public class PropertyAllocator {
 	}
 
 	/**
-	 * finds all persons and save their positions in the query it is assumed
+	 * Finds all persons and save their positions in the query. It is assumed
 	 * that for the color allocation only two person exists in the query
 	 * @param tokens: List of words, ner and pos
 	 * @return List<Integer>: list of person positions
@@ -46,7 +46,7 @@ public class PropertyAllocator {
 
 	/**
 	 * saves the first position of one color
-	 * @return int: color position
+	 * @return integer: color position
 	 */
 	public int getFirstColorPosition() {
 		int colorPosition = 0;
@@ -61,8 +61,8 @@ public class PropertyAllocator {
 	}
 	
 	/**
-	 * saves the first position of an elo rating
-	 * @return int: elo position
+	 * saves the first position of an ELO rating
+	 * @return integer: ELO position
 	 */
 	public List<Integer> getEloPositions(){
 		List<Integer> eloPosition = new ArrayList<Integer>();
@@ -75,30 +75,20 @@ public class PropertyAllocator {
 				System.out.println(tokens.get(i).getNe() + tokens.get(i).getWord());
 				if(!tokens.get(i).getWord().equals("longest") && !tokens.get(i).getWord().equals("shortest")){
 					eloPosition.add(i);
-				}
-								
+				}							
 			}
 		}
-		
-//		if(eloPosition.isEmpty()){
-//			for(int i = 0; i < tokens.size(); i++){
-//				
-//				
-//			}
-//		}
-//		
+
 		return eloPosition;
 	}
 
 	/**
-	 * simple distance function the color is allocated to the person who has a
+	 * simple distance function: the color is allocated to the person who has the
 	 * smallest distance to the color
 	 * 
-	 * @param personPositions:
-	 *            list of person positions
-	 * @param colorPosition:
-	 *            color position
-	 * @return int[]: personPosition,colorPosition
+	 * @param personPositions: list of person positions
+	 * @param colorPosition: color position
+	 * @return integer[]: personPosition,colorPosition
 	 */
 	public int[] allocateColor() {
 		int[] personHasColor = new int[2];
@@ -107,9 +97,7 @@ public class PropertyAllocator {
 		personHasColor[0] = bestPosition;
 		personHasColor[1] = colorPosition;
 
-
 		for (int i = 1; i < personPositions.size(); i++) {
-
 
 			if (Math.abs(personPositions.get(i) - colorPosition) < 
 					Math.abs(personPositions.get(personPositions.indexOf(bestPosition)) - colorPosition)) {
@@ -117,11 +105,16 @@ public class PropertyAllocator {
 				personHasColor[0] = bestPosition;
 				personHasColor[1] = colorPosition;
 			}
-
 		}
 		return personHasColor;
 	}
 	
+	/**
+	 * simple distance function: the property is allocated to the person who has the
+	 * smallest distance to the property
+	 * @param properties to check 
+	 * @return array propertyToPerson: property that is closest to a person 
+	 */
 	public HashMap<Integer,Integer> allocateProperty(List<Integer> properties) {
 		HashMap<Integer,Integer> propertyToPerson = new HashMap<Integer,Integer>();
 		

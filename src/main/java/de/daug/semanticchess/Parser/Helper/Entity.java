@@ -1,8 +1,7 @@
 package de.daug.semanticchess.Parser.Helper;
 
 /**
- * found entity in the user query
- *
+ * Class for a found entity in the user query.
  */
 public class Entity {
 
@@ -24,14 +23,16 @@ public class Entity {
 	
 	/**
 	 * constructor
-	 * @param counter: counts how often a class was find in the query
+	 * @param counter: counts how often a entity was found in the query
 	 * @param entityName: name of the entity
 	 * @param propertyName: property of the entity
 	 * @param startPosition: start position in the query
 	 * @param endPosition: end position in the query
 	 * @param resourceName: name of the resource (e.g. game, moves,...)
 	 */
-	public Entity(int counter, String entityName, String propertyPrefix, String propertyName, int startPosition, int endPosition,
+	public Entity(int counter, String entityName, 
+			String propertyPrefix, String propertyName, 
+			int startPosition, int endPosition,
 			String resourceName) {
 		this.entityId = entityLabel + counter;
 		this.propertyId = propertyLabel + counter;
@@ -174,18 +175,24 @@ public class Entity {
 		this.endPosition = endPosition;
 	}
 	
-	
-
+	/**
+	 * get property prefix
+	 * @return property prefix
+	 */
 	public String getPropertyPrefix() {
 		return propertyPrefix;
 	}
-
+	
+	/**
+	 * set property prefix
+	 * @param propertyPrefix
+	 */
 	public void setPropertyPrefix(String propertyPrefix) {
 		this.propertyPrefix = propertyPrefix;
 	}
 
 	/**
-	 * toString method
+	 * toString
 	 */
 	@Override
 	public String toString() {

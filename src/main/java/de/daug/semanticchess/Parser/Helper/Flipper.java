@@ -1,13 +1,12 @@
 package de.daug.semanticchess.Parser.Helper;
 
 /**
- * 
- * finds the opposite to some properties
+ * This class finds the opposite to some properties
  */
 public class Flipper {
 
 	/**
-	 * constructor
+	 * empty constructor
 	 */
 	public Flipper() {
 	}
@@ -15,7 +14,7 @@ public class Flipper {
 	/**
 	 * returns the opposite to a property s
 	 * @param s
-	 * @return
+	 * @return the opposite
 	 */
 	public String toFlip(String s) {
 
@@ -41,6 +40,4 @@ public class Flipper {
 
 		return result;
 	}
-
-
 }

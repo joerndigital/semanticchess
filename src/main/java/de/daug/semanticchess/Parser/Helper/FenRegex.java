@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * creates a regex to find positions from fen
+ * This class a returns regular expressions for some positions.
+ * It can build expressions for positions with certain material combinations.
+ * For example: knight versus rook
+ * Or for certain moves, for example underpromotion, exchange, castling etc.
  */
 public class FenRegex{
 	
@@ -41,16 +44,16 @@ public class FenRegex{
 	private String promoteKnight = "[a-h]8[Nn]";	
 	
 	/**
-	 * constructor
+	 * empty constructor
 	 */
 	public FenRegex(){
 	}
 	
 	/**
-	 * 
+	 * creates a regex for a certain move
 	 * @param move
-	 * @param piece
-	 * @return
+	 * @param piece: is called near the move. E.g. Underpromotion to a knigt
+	 * @return regex
 	 */
 	public String createMove(String move, String piece){
 		switch(move){
@@ -85,7 +88,8 @@ public class FenRegex{
 				return "";
 		}
 	}
-	
+
+// 	not complete, it is massive 
 //	public String createExchangeFen(){
 //		String RRrBbbNNnn = "(?=(.*R){2})(?!(.*R){3})(?=(.*r){1})(?!(.*r){2})(?=(.*B){1})(?!(.*B){2})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){2})(?!(.*N){3})(?=(.*n){2})(?!(.*n){3})";
 //		String RRrBBbbNnn = "(?=(.*R){2})(?!(.*R){3})(?=(.*r){1})(?!(.*r){2})(?=(.*B){2})(?!(.*B){3})(?=([^ ]*b){2})(?!([^ ]*b){3})(?=(.*N){1})(?!(.*N){2})(?=(.*n){2})(?!(.*n){3})";
@@ -113,7 +117,7 @@ public class FenRegex{
 //	}
 	
 	/**
-	 * add white pieces to the list
+	 * add white pieces to a list
 	 * @param counter: number of this piece
 	 * @param piece: name of the piece
 	 */
@@ -137,14 +141,11 @@ public class FenRegex{
 			break;
 		default:
 			break;
-	}
-		
-//		Piece p = new Piece(counter, piece);
-//		piecesWhite.add(p);
+		}	
 	}
 	
 	/**
-	 * add black pieces to the list
+	 * add black pieces to a list
 	 * @param counter: number of this piece
 	 * @param piece: name of the piece
 	 */
@@ -168,14 +169,11 @@ public class FenRegex{
 			break;
 		default:
 			break;
-	}
-		
-//		Piece p = new Piece(counter, piece);
-//		piecesBlack.add(p);
+		}
 	}
 	
 	/**
-	 * create fen from the list of white and black pieces
+	 * creates fen from the list of white and black pieces
 	 */
 	public void createFen(){
 		boolean whitePawnIsCalled = false;
@@ -221,9 +219,7 @@ public class FenRegex{
 			Piece p = new Piece(this.blackPawnCounter, "pawn");
 			piecesBlack.add(p);
 		}
-		
-		
-		
+				
 		//white pieces
 		for(Piece piece : piecesWhite){	
 			switch(piece.getName()){
@@ -272,7 +268,7 @@ public class FenRegex{
 			}
 		}
 		
-		// if there are specified numbers of pawns then remove pawns frome the list
+		// if there are specified numbers of pawns then remove pawns from the list
 		// of pieces that are not on the board
 		if(!whitePawnIsCalled && !blackPawnIsCalled){
 			FenRegex.notOnBoard = FenRegex.notOnBoard.replace("P", "");
@@ -281,9 +277,7 @@ public class FenRegex{
 		
 		if(piecesWhite.size() > 0){
 			fen += FenRegex.notOnBoard;
-		}
-		
-		
+		}		
 	}
 	
 	/**
@@ -393,6 +387,5 @@ public class FenRegex{
 		public void setName(String name) {
 			this.name = name;
 		}		
-	}
-	
+	}	
 }

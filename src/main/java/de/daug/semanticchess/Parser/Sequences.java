@@ -1,7 +1,7 @@
 package de.daug.semanticchess.Parser;
 
 /**
- * sparql templates
+ * This class contains SPARQL templates.
  */
 public class Sequences {
 
@@ -244,6 +244,5 @@ public class Sequences {
 	
 	// 6 classes, 10 entities, 1 union
 	static String _6101 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. R_2 P_2 E_2. R_3 P_3 E_3. R_4 P_4 E_4. R_5 P_5 E_5. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_6 P_6 E_6. R_7 P_7 E_7. R_8 P_8 E_8. R_9 P_9 E_9. R_10 P_10 E_10. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6.}  FILTER }";
-
 
 }
