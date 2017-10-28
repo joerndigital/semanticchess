@@ -24,8 +24,10 @@ public class LoadData {
 			Statement st;
 
 			st = conn.createStatement();
-			//st.execute("sparql clear graph <http://www.example.com/>");
-
+//			st.execute("sparql clear graph <http://www.example.com/>");
+//			st.execute("sparql clear graph <http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#ChessOpening");
+//			st.execute("http://pcai042.informatik.uni-leipzig.de/~swp13-sc/ChessOntology#ChessMove");
+			
 			conn.setAutoCommit(false);
 			
 
