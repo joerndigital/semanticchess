@@ -23,9 +23,12 @@ appChess.controller('appCtrl', function($scope, $location, $http){
 	$scope.resultCounter = 0;
 	$scope.errorFound = false;
 	$scope.error = '';
+	$scope.loading = false;
 	
 	//sparql queries
 	$scope.getSparqlResults = function(){
+		$scope.loading = true;
+		
 	    $http({
 	        'url' : '/sparql/',
 	        'method' : 'POST',
@@ -40,15 +43,18 @@ appChess.controller('appCtrl', function($scope, $location, $http){
 	    	}else {
 	    		$scope.error = data; 
 	    	}      
+	    	$scope.loading = false;
 	    }).catch(function (err) {
 		    	$scope.resultCounter = 0;
 		    	$scope.result = "";
-		    	$scope.errorFound = true;    	    	
+		    	$scope.errorFound = true;
+		    	$scope.loading = false;
 	    });    
 	};
 	
 	//user queries
 	$scope.getQueryResults = function(){
+		$scope.loading = true;
 	    $http({
 	        'url' : '/query/',
 	        'method' : 'POST',
@@ -62,19 +68,21 @@ appChess.controller('appCtrl', function($scope, $location, $http){
 		        $scope.resultCounter = $scope.result.data.results.bindings.length;	
 	    	}else {
 	    		$scope.error = data; 
-	    	}       
+	    	}  
+	    	$scope.loading = false;
 	    }).catch(function (err) {
 		    	$scope.resultCounter = 0;
 		    	$scope.result = "";
 		    	$scope.error = err.status;
 		    	console.log($scope.error);
-		    	$scope.errorFound = true;    	    	
+		    	$scope.errorFound = true;   
+		    	$scope.loading = false;
 	    });     
 	};
 	
 	//game uri queries
 	$scope.getGame = function(uri){
-		console.log(uri);
+		$scope.loading = true;
 	    $http({
 	        'url' : '/uri/',
 	        'method' : 'POST',
@@ -88,12 +96,14 @@ appChess.controller('appCtrl', function($scope, $location, $http){
 		        
 	    	}else {
 	    		$scope.error = data; 
-	    	}    
+	    	} 
+	    	$scope.loading = false;
 	    }).catch(function (err) {
 	    	console.log(err);   
 		    	$scope.resultCounter = 0;
 		    	$scope.result = "";
-		    	$scope.errorFound = true;    	   	
+		    	$scope.errorFound = true; 
+		    	$scope.loading = false;
 	    });     
 	};
 });
@@ -102,6 +112,7 @@ appChess.controller('appCtrl', function($scope, $location, $http){
 appChess.controller('gameCtrl', function($scope, $location, $http, $routeParams){
 	$scope.uri = $routeParams.uri;
 	$scope.game = "";
+	$scope.loading = true;
 	
 	//get pgn from game
     $http({
@@ -115,9 +126,12 @@ appChess.controller('gameCtrl', function($scope, $location, $http, $routeParams)
 	    	$scope.result = data;
 	    	$scope.game = $scope.result.data.results.bindings[0].answer.value.replace(/\'/g,"\"");
 	        $scope.error = '';
+	        
 	        var pgn = $scope.game;
 	        var cfg = { position: '', pgn: pgn, locale: 'en', pieceStyle: 'merida' };
 	        var board = pgnView('board', cfg);
+	        
+	        $scope.loading = false;
     	}else {
     		$scope.error = data; 
     	}    
@@ -125,7 +139,8 @@ appChess.controller('gameCtrl', function($scope, $location, $http, $routeParams)
     	console.log(err);   
 	    	$scope.resultCounter = 0;
 	    	$scope.result = "";
-	    	$scope.errorFound = true;    	   	
+	    	$scope.errorFound = true;   
+	    	$scope.loading = false;
     });	
 });
 

@@ -30,6 +30,8 @@
 	<div style="margin: 30px; color: #bdc3c7;" ng-show="resultCounter > 0">
 		The engine found {{resultCounter | number}} <span ng-if="resultCounter === '1'">results</span><span ng-if="resultCounter !== '1'">result</span>.
 	</div>
+	<!-- Loading spinner -->
+	<div class="spinner" ng-show="loading" style="margin-top:50px;"></div>
 	<!-- results -->
 	<div class="tableContainer">
 		<table class="table table-sm table-bordered table-responsive" style="white-space:nowrap;">

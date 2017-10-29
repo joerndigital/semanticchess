@@ -114,3 +114,44 @@ textarea {
 #boardMoves {
 	text-align: left;
 }
+
+.spinner {
+	margin: 0 auto;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 10px solid #28a745;
+	animation: rotation 2s infinite linear;
+	-webkit-animation: rotation 2s infinite linear;
+    -moz-animation: rotation 2s infinite linear;
+    -o-animation: rotation 2s infinite linear;
+}
+
+.spinner:before {
+   content:'';
+   display:block;
+   margin-top: -10px;
+   border-top:10px solid #000000;
+   border-left:10px solid transparent;
+   border-bottom:10px solid transparent;
+   border-right:10px solid transparent;
+   border-radius:50%;
+	
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+   from {-o-transform: rotate(0deg);}
+   to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
+  }
