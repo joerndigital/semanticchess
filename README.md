@@ -63,8 +63,9 @@ The PGN viewer is embedded by links from cdn.rawgit.com:
 
 If you want to include the files directly into the Semantic Chess project, go to [http://mliebelt.github.io/PgnViewerJS/docu/index.html](mliebelt.github.io)
 and download the current version. After that insert the unzipped the directory to 
-> /semanticchess/src/main/webapp/static .
-
+```
+/semanticchess/src/main/webapp/static
+```
 ## Credits
 #Frontend:
 - PgnViewerJS by [mliebelt](https://github.com/mliebelt/PgnViewerJS)
