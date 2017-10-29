@@ -411,6 +411,9 @@ public class Parser {
 			case "round":
 				addEntityOrClass(word, ne, "prop:", "round", "?game");
 				break;
+			case "site":
+				addEntityOrClass(word, ne, "prop:", "site", "?game");
+				break;
 			case "OPENING":
 				if (word.equals("opening") && !pos.equals("NNP")) {
 					addEntityOrClass(word, ne, "cont:", "openingName", "?contEco");
