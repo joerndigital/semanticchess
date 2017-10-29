@@ -82,3 +82,4 @@ and uncomment line 13 and 35 in
 ### Backend:
 - [Stanford coreNLP](https://stanfordnlp.github.io/CoreNLP/)
 - [spring.io](https://spring.io/)
+- [Chess Opening JSON by hayatbiralem](https://github.com/hayatbiralem/eco.json/blob/master/eco.json)
