@@ -57,12 +57,13 @@ PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 ## PGN Viewer
 PgnViewerJS by [mliebelt](https://github.com/mliebelt/PgnViewerJS)
 
-The PGN viewer is embedded by links to cdn.rawgit.com
+The PGN viewer is embedded by links from cdn.rawgit.com:
 - https://raw.githubusercontent.com/mliebelt/PgnViewerJS/gh-pages/dist/css/pgnvjs.css
 - https://cdn.rawgit.com/mliebelt/PgnViewerJS/gh-pages/dist/js/pgnvjs.js
 
-If you want to include the files directly into the Semantic Chess project, go to http://mliebelt.github.io/PgnViewerJS/docu/index.html
-and download the current version. After that insert the unzipped the directory to /semanticchess/src/main/webapp/static .
+If you want to include the files directly into the Semantic Chess project, go to [http://mliebelt.github.io/PgnViewerJS/docu/index.html](mliebelt.github.io)
+and download the current version. After that insert the unzipped the directory to 
+> /semanticchess/src/main/webapp/static .
 
 ## Credits
 #Frontend:
