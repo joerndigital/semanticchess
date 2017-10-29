@@ -1,6 +1,6 @@
 package de.daug.semanticchess.Converter;
 
-import de.uni_leipzig.informatik.swp13_sc.converter.ECOToRDFConverter;
+
 
 import de.daug.semanticchess.Configurations;
 
@@ -20,6 +20,10 @@ import virtuoso.jena.driver.VirtGraph;
 import virtuoso.jena.driver.VirtuosoQueryExecution;
 import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
 
+/**
+ * This class converts the chessopenings.txt to RDF data.
+ * It seperates the classes of the ECO system (A,B,C,D,E) in different files.
+ */
 public class EcoToRdf {
 	
 	public static void main(String[] args){

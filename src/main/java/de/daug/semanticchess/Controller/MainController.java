@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * main controller that maps the index.html to the homepage 
+ * Main controller that maps pages to the HTML files.
  */
 @Controller
 public class MainController {

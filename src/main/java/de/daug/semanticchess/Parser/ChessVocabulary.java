@@ -24,7 +24,7 @@ public class ChessVocabulary {
 	}
 
 	/**
-	 * a list the terms assigned to a topic
+	 * a list: the terms assigned to a topic
 	 */
 	public void fillProperties() {
 		ArrayList<String> blackProperty = new ArrayList<String>();

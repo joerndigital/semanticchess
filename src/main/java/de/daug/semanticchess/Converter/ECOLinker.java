@@ -1,12 +1,10 @@
 /**
  * ECOLinker.java
+ * SOURCE: http://pcai042.informatik.uni-leipzig.de/swp/SWP-13/swp13-sc/
  */
 
 package de.daug.semanticchess.Converter;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,14 +17,11 @@ import virtuoso.jena.driver.VirtuosoQueryExecution;
 import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
 
 import org.apache.jena.query.QuerySolution;
-import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
-
-import com.jayway.jsonpath.internal.function.json.Append;
 
 import de.uni_leipzig.informatik.swp13_sc.converter.ChessDataModelToRDFConverter.OutputFormats;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.ChessOpening;
@@ -38,6 +33,10 @@ import de.uni_leipzig.informatik.swp13_sc.util.FileUtils;
  * Links ECO resources to ChessGame resources.
  * 
  * @author Erik
+ * 
+ * modified by @author Joern
+ * - mainly: getGamesForOpenings(ChessOpening co, String coURI)
+ * - SPARQL query considers transpositions (sequence of moves)
  */
 public class ECOLinker
 {
@@ -301,7 +300,6 @@ public class ECOLinker
             }
             
             String moveVar = SPARQL_GAME_MOVE_VAR_PREFIX + nr;
-            String moveVarAbbr = moveVar.replace("ove", "");
             
             if (nr == 1)
             {

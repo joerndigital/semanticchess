@@ -22,9 +22,8 @@ import edu.stanford.nlp.util.CoreMap;
 import org.apache.log4j.BasicConfigurator;
 
 /**
- * @desc User queries will tagged by this class with the help of the Stanford
- *       POS tagger (coreNLP)
- * @author Joern-Henning Daug
+ * User queries will tagged by this class 
+ * with the help of the Stanford POS tagger (coreNLP)
  */
 public class PosTagger {
 

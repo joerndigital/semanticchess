@@ -7,7 +7,11 @@ import org.apache.commons.io.FilenameUtils;
 
 import de.daug.semanticchess.Configurations;
 
-//https://www.openlinksw.com/vos/main/Main/VirtTipsAndTricksLoadDataInTransactionMode
+//
+/**
+ * This class is based on https://www.openlinksw.com/vos/main/Main/VirtTipsAndTricksLoadDataInTransactionMode
+ * It manages the upload to Virtuoso.
+ */
 public class LoadData {
 
 	public static void main(String[] args) {

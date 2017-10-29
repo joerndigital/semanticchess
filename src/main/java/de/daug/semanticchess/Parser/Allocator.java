@@ -12,7 +12,7 @@ import de.daug.semanticchess.Parser.Helper.Filters;
 import de.daug.semanticchess.Parser.Helper.Values;
 
 /**
- * assigns a sequence code to a sparql query
+ * Assigns a sequence code to a SPARQL query.
  */
 public class Allocator {
 
@@ -29,28 +29,20 @@ public class Allocator {
 
 	/**
 	 * constructor allocates the given sequence code to a sparql query
-	 * 
-	 * @param query:
-	 *            user question
+	 * @param query: user question
 	 */
 	public Allocator(String query) {
 		Parser parser = new Parser(query);
-
-		
 		
 		this.sequenceCode = parser.getSequence();
 		this.entities = parser.getEntities();
 		
 		
 		this.classes = parser.getClasses();
-		System.out.println(classes.toString());
+		//System.out.println(classes.toString());
 		
-		//TopicFinder topicFinder = new TopicFinder();
 		this.topics = parser.getTopicStr();
 		
-		//System.out.println(this.topics.toString());
-		
-		//System.out.println(parser.getOptions().getLimitStr());
 		if(parser.getOptions().getLimitStr().isEmpty()){
 			parser.getOptions().setLimitStr(2000);
 			parser.getOptions().setOffsetStr(0);
@@ -58,15 +50,14 @@ public class Allocator {
 		this.options = parser.getOptions().toString();
 		this.filters = parser.getFilters();
 		this.similar = parser.getSimilar();
-		// allocateSequence();
 	}
 
 	/**
-	 * replace all placeholders in the sparql query with found entities and
+	 * replace all placeholders in the SPARQL query with found entities and
 	 * properties
 	 * 
-	 * @param query
-	 * @return
+	 * @param sparql
+	 * @return configured sparql
 	 */
 	public String replaceOnly(String sparql) {
 
@@ -90,7 +81,13 @@ public class Allocator {
 
 		return sparql;
 	}
-
+	
+	/**
+	 * replaces all placeholders in the SPARQL query with regex filerts
+	 * 
+	 * @param sparql
+	 * @return configured sparql
+	 */
 	public String regexEntities(String sparql) {
 		int counter = 1;
 
@@ -107,7 +104,6 @@ public class Allocator {
 			
 			sparql = sparql.replaceAll(e.getPropertyId(), e.getPropertyName());
 			sparql = sparql.replaceAll(e.getResourceId(), e.getResourceName());
-			//System.out.println(sparql);
 		}
 
 		for (Classes c : classes) {
@@ -120,7 +116,13 @@ public class Allocator {
 
 		return sparql;
 	}
-
+	
+	/**
+	 * replaces all placeholders in the SPARQL query with a VALUES clause
+	 * 
+	 * @param sparql
+	 * @return configured sparql
+	 */
 	public String subStringEntities(String sparql) {
 
 		Values values = new Values();
@@ -163,14 +165,10 @@ public class Allocator {
 		String tempStr = "";
 		
 		values.generatePermutations(values.getResults(), values.getPermutation(), 0, tempStr);
-		
-		//System.out.println(values.toString());
 
 		sparql = sparql.replace("VALUE_PLACEHOLDER", values.toString());
 		
-		for (
-
-		Classes c : classes) {
+		for (Classes c : classes) {
 			sparql = sparql.replaceAll(c.getClassesId(), c.getClassesName());
 			sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
 			sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
@@ -180,11 +178,17 @@ public class Allocator {
 
 		return sparql;
 	}
-
+	
+	/**
+	 * replaces all placeholders in the SPARQL query in each case with the best matching
+	 * entity from the database
+	 * 
+	 * @param sparql
+	 * @return configured sparql
+	 */
 	public String distanceEntities(String sparql) {
 
 		for (Entity e : entities) {
-
 			similar.setQuery(e.getPropertyName());
 
 			if (!e.getEntityName().isEmpty()) {
@@ -204,7 +208,6 @@ public class Allocator {
 				sparql = sparql.replaceAll(e.getPropertyId(), e.getPropertyName());
 				sparql = sparql.replaceAll(e.getResourceId(), e.getResourceName());
 			}
-
 		}
 
 		for (Classes c : classes) {
@@ -223,7 +226,7 @@ public class Allocator {
 	 */
 	public void allocateSequence() {
 		String sparqlQuery = "";
-		System.out.println(this.sequenceCode);
+		System.out.println("Current sequence code: " + this.sequenceCode);
 		switch (this.sequenceCode) {
 		case "_010":
 			sparqlQuery = Sequences._010;
@@ -480,14 +483,14 @@ public class Allocator {
 	}
 
 	/**
-	 * @return sparql query
+	 * @return SPARQL query
 	 */
 	public String getSparqlQuery() {
 		return sparqlQuery;
 	}
 
 	/**
-	 * set the sparql query
+	 * set the SPARQL query
 	 * 
 	 * @param sparqlQuery
 	 */
@@ -497,7 +500,7 @@ public class Allocator {
 	}
 
 	/**
-	 * for testing
+	 * main method for testing
 	 * 
 	 * @param args
 	 */

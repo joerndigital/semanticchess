@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import de.daug.semanticchess.Service.UriService;
 
 /**
- * sets up a REST API
- * the page /sparql delivers a result json for sparql queries
+ * Sets up a REST API.
+ * The page /uri delivers a result JSON for queries with a game URI.
  */
 @RestController
 @RequestMapping("/uri")
@@ -25,14 +25,13 @@ public class UriController{
 	private UriService uriService;
 	
 	/**
-	 * connects to SparqlService.java 
-	 * @param strQuery: sparql query
-	 * @return a json with the results from the database
+	 * connects to UriService
+	 * @param gameUri: chess game URI
+	 * @return a JSON with the results from the database
 	 */
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String getGame(@RequestBody String gameUri){
 		System.out.println("Controller: " + gameUri);
-		//System.out.println(uriService.getGame(gameUri));
 		return uriService.getGame(gameUri);
 	}
 	

@@ -8,12 +8,13 @@ import de.uni_leipzig.informatik.swp13_sc.datamodel.rdf.ChessRDFVocabulary;
 
 
 /**
- * converts pgn files to rdf data
+ * This class converts PGN files to RDF data.
+ * This code is provided by https://github.com/TortugaAttack/CACADUS
  */
 public class PgnToRdf {
 
 	/**
-	 * This code is provided by https://github.com/TortugaAttack/CACADUS
+	 * converts PGN to RDF
 	 */
 	public static void main(String[] args) {
 		ChessRDFVocabulary rdfv = new ChessRDFVocabulary();
