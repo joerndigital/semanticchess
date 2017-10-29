@@ -67,13 +67,13 @@ and download the current version. After that insert the unzipped the directory t
 /semanticchess/src/main/webapp/static
 ```
 ## Credits
-# Frontend:
+### Frontend:
 - PgnViewerJS by [mliebelt](https://github.com/mliebelt/PgnViewerJS)
 - Font Awesome by Dave Gandy - http://fontawesome.io
 - [Bootstrap](http://getbootstrap.com/)
 - [AngularJS](https://angularjs.org/) 
 - [jQuery](https://jquery.com/)
 
-# Backend:
+### Backend:
 - [Stanford coreNLP](https://stanfordnlp.github.io/CoreNLP/)
 - [spring.io](https://spring.io/)
