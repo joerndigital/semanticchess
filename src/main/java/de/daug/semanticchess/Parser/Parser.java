@@ -57,7 +57,7 @@ public class Parser {
 	private Filters filters = new Filters();
 	private TopicFinder topics = new TopicFinder();
 	private StringSimilarity similar = new StringSimilarity();
-
+	
 	//dictionary
 	private ChessVocabulary vocabulary = new ChessVocabulary();
 	
@@ -93,7 +93,7 @@ public class Parser {
 		tagger.setQuery(query);
 		tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
 		tagger.initAnnotations();
-
+		System.out.println("Stanford coreNLP complete.");		
 		List<Token> tokens = tagger.getTokens();
 		
 		//Custom NER
@@ -101,14 +101,14 @@ public class Parser {
 		tokens = cNer.stemming(tokens);
 		tokens = cNer.checkChessVocabulary(tokens);
 		tokens = cNer.checkElo(tokens);
-		tokens = cNer.checkOpening(tokens);
-
+		tokens = cNer.checkOpening(tokens);		
 		this.tokens = tokens;
-
-		System.out.println("Analyze: " + this.tokens.toString());
+		System.out.println("Stanford coreNLP complete.");
+		System.out.println("Result: " + this.tokens.toString());	
 
 		//run through every token and analyze its meaning
 		collectEntities(tokens);
+		System.out.println("Entities and classes collected.");
 		
 		//if flags isBlack or isWhite are set change properties that are color specific 
 		if (isBlack || isWhite) {
@@ -117,6 +117,7 @@ public class Parser {
 			} catch (Exception err) {
 			}
 		}
+		System.out.println("Color checker complete.");
 
 		//if flag isElo is set change properties that are elo specific
 		if (isElo) {
@@ -125,25 +126,31 @@ public class Parser {
 			} catch (Exception err) {
 			}
 		}
-
+		System.out.println("ELO checker complete.");
+		
 		//check the result and if necessary change properties that are result specific
 		resultChecker();
+		System.out.println("Result checker complete.");
 		
 		//if flag isUnion is set add an UNION clause
 		if (isUnion()) {
 			makeUnion();
+			System.out.println("UNION is added.");
 		}
+
 
 		//if flag isFilter and ifFen is set create regex with a FEN
 		if (isFilter) {
 			if (isFen) {
 				fenReg.createFen();
 				filters.addRegex("?fen", fenReg.getFen(), false);
+				System.out.println("FEN regex is added.");
 			}
 		}
 
 		//collect topics for the SELECT clause
 		topics.collectTopics(this.entities, this.classes);
+		System.out.println("Topics collected.");
 		
 		/* if the query implies there should be something count, e.g. most often or how often
 		 * add an aggregate to the SELECT clause
@@ -172,6 +179,7 @@ public class Parser {
 				this.options.setOrderStr("DESC", "?nr");
 				this.options.setGroupStr(classes.get(0).getClassesName());
 			}
+			System.out.println("COUNT added");
 		}
 
 		//check if an aggregate is used in the SELECT clause
@@ -179,14 +187,14 @@ public class Parser {
 			for (String topic : topics.getTopics()) {
 
 				if (this.options.getGroupStr().indexOf(topic) == -1 && topic.indexOf("(") == -1) {
-
 					this.options.setGroupStr(topic);
 				}
 			}
+			System.out.println("Topics grouped.");
 		}
 		
 		//add some information to the result if only games should be returned
-		if(topics.onlyGames()){
+		if(topics.onlyGames() && !topics.isAlgebra()){
 			if (getClassByName("?white") == null) {
 				classes.add(new Classes(classes.size() + 1, "?white", "prop:", "white", 999, "?game"));
 				topics.add("?white");
@@ -199,6 +207,7 @@ public class Parser {
 				classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
 				topics.add("?date");
 			}
+			System.out.println("Information added to the SELECT clause.");
 		}
 		
 		//get the sequence code
@@ -207,7 +216,7 @@ public class Parser {
 		} else {
 			this.sequence = "_" + classes.size() + "" + entities.size() + "1";
 		}
-		
+		System.out.println("SEQUENCE CODE: " + this.sequence);		
 	}
 	
 	/**
@@ -435,11 +444,12 @@ public class Parser {
 				if (getClassByName("?moves") == null) {
 					classes.add(new Classes(classes.size() + 1, "?move" + moveCounter, "prop:", "moves", 999, "?game"));
 				}
-				if (word.matches("[kqrbn]+[a-h][1-8]{1}[\\-x][a-h][1-8]{1}")) {
-					addEntityOrClass(word.substring(0, 1).toUpperCase() + word.substring(1), ne, "prop:", "move",
+				if (word.matches("[kqrbn]*.*[a-h][1-8]{1}")) {
+					if(word.startsWith("k") || word.startsWith("q") || word.startsWith("r") || word.startsWith("b") || word.startsWith("n")){
+						word = word.substring(0,1).toUpperCase() + word.substring(1);
+					}
+					addEntityOrClass(word, ne, "prop:", "move",
 							"?move" + moveCounter);
-				} else {
-					addEntityOrClass(word, ne, "prop:", "move", "?move" + moveCounter);
 				}
 
 				entities.add(new Entity(entities.size() + 1, "'" + moveCounter + "' " + "^^xsd:nonNegativeInteger",
@@ -932,7 +942,6 @@ public class Parser {
 	 */
 	public void addEntityOrClass(String word, String ne, String propertyPrefix, String property, String resource) {
 		int startPosition = index;
-
 		if (Character.isUpperCase(ne.charAt(0))) {
 			while ((index + 1) < tokens.size() && tokens.get(index + 1).getNe().equals(ne)) {
 				word += " " + tokens.get(index + 1).getWord();
@@ -956,7 +965,7 @@ public class Parser {
 
 		int endPosition = index;
 		String entity = vocabulary.INVERSED_PROPERTIES.get(word);
-
+		
 		if (entity != null && entity != "1-0" && entity != "0-1" && entity != "1/2-1/2") {
 			if (getClassByName("?" + ne.toLowerCase()) == null) {
 				classes.add(new Classes(classes.size() + 1, "?" + ne.toLowerCase(), propertyPrefix, property,
@@ -968,11 +977,10 @@ public class Parser {
 			}
 			filters.addRegex("?date", word, false);
 		} else {
-
 			if (!word.isEmpty()) {
 				entities.add(new Entity(entities.size() + 1, "'" + word + "'", propertyPrefix, property, startPosition,
 						endPosition, resource));
-			} else {
+			} else {				
 				entities.add(new Entity(entities.size() + 1, word, propertyPrefix, property, startPosition, endPosition,
 						resource));
 			}

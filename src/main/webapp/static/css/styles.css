@@ -102,13 +102,13 @@ textarea {
 }
 
 .whiteHeader:before {
-	content: 		'\2654';
-	padding-right: 	20px;
+	content: 		'\2654\00A0';
+
 }
 
 .blackHeader:before {
 	content: 		'\265A';
-	padding-right: 	20px;
+
 }
 
 #boardMoves {
