@@ -42,6 +42,9 @@ public class TopicFinder {
 	 * @return Set of topics
 	 */
 	public Set<String> collectTopics(List<Entity> entities, List<Classes> classes) {
+		this.blacklist.add("?moveNr");
+		this.blacklist.add("?moves");
+		
 		int firstEntityPosition = 999;
 		int secondEntityPosition = 999;
 		int firstClassesPosition = 999;
