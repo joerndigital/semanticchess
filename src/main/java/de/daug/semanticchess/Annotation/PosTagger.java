@@ -60,7 +60,7 @@ public class PosTagger {
 		// NER, parsing, and coreference resolution"
 		Properties props = new Properties();
 		// props.setProperty("ner.applyNumericClassifiers", "true");
-		props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
+		props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 		// ===================================
 
