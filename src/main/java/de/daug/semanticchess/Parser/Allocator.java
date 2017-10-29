@@ -226,7 +226,7 @@ public class Allocator {
 	 */
 	public void allocateSequence() {
 		String sparqlQuery = "";
-		System.out.println("Current sequence code: " + this.sequenceCode);
+		//System.out.println("Current sequence code: " + this.sequenceCode);
 		switch (this.sequenceCode) {
 		case "_010":
 			sparqlQuery = Sequences._010;
@@ -368,6 +368,63 @@ public class Allocator {
 			break;
 		case "_570":
 			sparqlQuery = Sequences._570;
+			break;
+		case "_600":
+			sparqlQuery = Sequences._600;
+			break;
+		case "_610":
+			sparqlQuery = Sequences._610;
+			break;
+		case "_620":
+			sparqlQuery = Sequences._620;
+			break;
+		case "_630":
+			sparqlQuery = Sequences._630;
+			break;
+		case "_640":
+			sparqlQuery = Sequences._640;
+			break;
+		case "_650":
+			sparqlQuery = Sequences._650;
+			break;
+		case "_660":
+			sparqlQuery = Sequences._660;
+			break;
+		case "_670":
+			sparqlQuery = Sequences._670;
+			break;
+		case "_680":
+			sparqlQuery = Sequences._680;
+			break;
+		case "_700":
+			sparqlQuery = Sequences._700;
+			break;
+		case "_710":
+			sparqlQuery = Sequences._710;
+			break;
+		case "_720":
+			sparqlQuery = Sequences._720;
+			break;
+		case "_730":
+			sparqlQuery = Sequences._730;
+			break;
+		case "_740":
+			sparqlQuery = Sequences._740;
+			break;
+		case "_750":
+			sparqlQuery = Sequences._750;
+			break;
+		case "_760":
+			sparqlQuery = Sequences._760;
+			break;
+		case "_770":
+			sparqlQuery = Sequences._770;
+			break;
+		case "_780":
+			sparqlQuery = Sequences._780;
+			break;
+		case "_790":
+			sparqlQuery = Sequences._790;
 			break;
 		case "_021":
 			sparqlQuery = Sequences._021;
