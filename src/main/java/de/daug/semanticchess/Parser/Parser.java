@@ -95,8 +95,6 @@ public class Parser {
 		tagger.initAnnotations();
 
 		List<Token> tokens = tagger.getTokens();
-
-		this.timeTagger = new TimeTagger();
 		
 		//Custom NER
 		CustomNer cNer = new CustomNer();
@@ -952,6 +950,7 @@ public class Parser {
 				}
 			}
 		} else if (ne.equals("DATE")) {
+			this.timeTagger = new TimeTagger();
 			word = timeTagger.getDate(word);
 		}
 
