@@ -35,7 +35,7 @@ public class LoadData {
 			conn.setAutoCommit(false);
 			
 
-			File folder = new File("src/main/resources/static/games/rdf/");
+			File folder = new File(Configurations.RDF);
 			File[] listOfFiles = folder.listFiles();
 			
 //			String fileName = "chessopenings.txt.ttl";
@@ -94,9 +94,8 @@ public class LoadData {
 			while ((s = r.readLine()) != null) {
 				sb.append(s);
 				sb.append(" ");
-
 			}
-
+			r.close();
 			return sb.toString();
 		} catch (Exception e) {
 		}
@@ -157,8 +156,11 @@ public class LoadData {
 			while ((s = r.readLine()) != null)
 				sb.append(s);
 
-			if (sb.length() > 0)
-				return "sparql insert into graph <testyear> { " + sb.toString() + " } ";
+			if (sb.length() > 0){
+				r.close();
+				return "sparql insert into graph <test> { " + sb.toString() + " } ";
+			}
+				
 		} catch (Exception e) {
 		}
 		return null;
