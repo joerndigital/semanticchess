@@ -1,4 +1,4 @@
-package de.daug.semanticchess.Parser.Helper;
+package de.daug.semanticchess.Parser.Utils;
 
 /**
  * This class finds the opposite to some properties

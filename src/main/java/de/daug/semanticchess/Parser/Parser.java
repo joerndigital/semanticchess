@@ -12,18 +12,19 @@ import java.util.Stack;
 import de.daug.semanticchess.Annotation.PosTagger;
 import de.daug.semanticchess.Annotation.TimeTagger;
 import de.daug.semanticchess.Annotation.Token;
+import de.daug.semanticchess.Annotation.WebPosTagger;
 import de.daug.semanticchess.Database.StringSimilarity;
-import de.daug.semanticchess.Parser.Helper.Classes;
-import de.daug.semanticchess.Parser.Helper.PropertyAllocator;
-import de.daug.semanticchess.Parser.Helper.CustomNer;
-import de.daug.semanticchess.Parser.Helper.Entity;
-import de.daug.semanticchess.Parser.Helper.FenRegex;
-import de.daug.semanticchess.Parser.Helper.Filters;
-import de.daug.semanticchess.Parser.Helper.Flipper;
-import de.daug.semanticchess.Parser.Helper.Options;
-
-import de.daug.semanticchess.Parser.Helper.TopicFinder;
+import de.daug.semanticchess.Parser.Utils.Classes;
+import de.daug.semanticchess.Parser.Utils.CustomNer;
+import de.daug.semanticchess.Parser.Utils.Entity;
+import de.daug.semanticchess.Parser.Utils.FenRegex;
+import de.daug.semanticchess.Parser.Utils.Filters;
+import de.daug.semanticchess.Parser.Utils.Flipper;
+import de.daug.semanticchess.Parser.Utils.Options;
+import de.daug.semanticchess.Parser.Utils.PropertyAllocator;
+import de.daug.semanticchess.Parser.Utils.TopicFinder;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.pipeline.StanfordCoreNLPClient;
 
 /**
  * This class parses the user query to a sequence to find a suitable SPARQL query.
@@ -47,6 +48,7 @@ public class Parser {
 
 	//Tagger
 	PosTagger tagger = null;
+	WebPosTagger webTagger = null;
 	TimeTagger timeTagger = null;
 	
 	//parts of the SPARQL query
@@ -88,13 +90,29 @@ public class Parser {
 		this.query = query;
 		
 		//Stanford coreNLP
-		this.tagger = new PosTagger();
-		StanfordCoreNLP pipeline = tagger.getPipeline();
-		tagger.setQuery(query);
-		tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
-		tagger.initAnnotations();
-		System.out.println("Stanford coreNLP complete.");		
-		List<Token> tokens = tagger.getTokens();
+		List<Token> tokens = null;
+		
+		try {
+			this.webTagger = new WebPosTagger();
+			StanfordCoreNLPClient pipeline = webTagger.getPipeline();
+			webTagger.setQuery(query);
+			webTagger.setDocument(webTagger.setAnnotator(pipeline, webTagger.getQuery()));
+			webTagger.initAnnotations();
+			System.out.println("Webclient Stanford coreNLP complete.");		
+			tokens = webTagger.getTokens();
+			
+		} catch (Exception e){
+			this.tagger = new PosTagger();
+			StanfordCoreNLP pipeline = tagger.getPipeline();
+			tagger.setQuery(query);
+			tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
+			tagger.initAnnotations();
+			System.out.println("Stanford coreNLP complete.");		
+			tokens = tagger.getTokens();
+		}
+		
+		
+
 		
 		//Custom NER
 		CustomNer cNer = new CustomNer();
@@ -1237,7 +1255,7 @@ public class Parser {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String query = "Show me positions with bishop and bishop against rook.";
+		String query = "Show me games between Wilhelm Steinitz and Emanuel Lasker in 1899.";
 
 		Parser p = new Parser(query);
 

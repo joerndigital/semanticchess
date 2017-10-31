@@ -1,4 +1,4 @@
-package de.daug.semanticchess.Parser.Helper;
+package de.daug.semanticchess.Parser.Utils;
 
 /**
  * This class adds modifiers to the SPARQL query.

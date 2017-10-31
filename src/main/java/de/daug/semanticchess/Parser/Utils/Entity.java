@@ -1,4 +1,4 @@
-package de.daug.semanticchess.Parser.Helper;
+package de.daug.semanticchess.Parser.Utils;
 
 /**
  * Class for a found entity in the user query.

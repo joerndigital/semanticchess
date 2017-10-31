@@ -1,4 +1,4 @@
-package de.daug.semanticchess.Parser.Helper;
+package de.daug.semanticchess.Parser.Utils;
 
 /**
  * Object for classes: unnamed entities

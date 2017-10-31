@@ -6,10 +6,10 @@ import java.util.List;
 import org.apache.jena.query.QueryParseException;
 
 import de.daug.semanticchess.Database.StringSimilarity;
-import de.daug.semanticchess.Parser.Helper.Classes;
-import de.daug.semanticchess.Parser.Helper.Entity;
-import de.daug.semanticchess.Parser.Helper.Filters;
-import de.daug.semanticchess.Parser.Helper.Values;
+import de.daug.semanticchess.Parser.Utils.Classes;
+import de.daug.semanticchess.Parser.Utils.Entity;
+import de.daug.semanticchess.Parser.Utils.Filters;
+import de.daug.semanticchess.Parser.Utils.Values;
 
 /**
  * Assigns a sequence code to a SPARQL query.
@@ -562,7 +562,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Show me the games where draw.");
+		Allocator alloc = new Allocator("Show me the games where draw from June 1st 1864.");
 		alloc.allocateSequence();
 		
 		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));

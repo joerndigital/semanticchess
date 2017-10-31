@@ -1,4 +1,4 @@
-package de.daug.semanticchess.Parser.Helper;
+package de.daug.semanticchess.Parser.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -136,8 +136,7 @@ public class FenRegex{
 			this.whiteKnightCounter += counter;
 			break;
 		case "pawn":
-			this.whitePawnCounter += counter;
-			
+			this.whitePawnCounter += counter;			
 			break;
 		default:
 			break;
@@ -295,7 +294,7 @@ public class FenRegex{
 			this.fen += MIN.replace("X", piece).replace("Y", Integer.toString(min));
 			this.fen += MAX.replace("X", piece).replace("Z", Integer.toString(max));
 		}
-		FenRegex.notOnBoard = FenRegex.notOnBoard.replace(piece, "");		
+		FenRegex.notOnBoard = FenRegex.notOnBoard.replace(piece, "");	
 	}
 	
 	/**
@@ -358,8 +357,6 @@ public class FenRegex{
 		reg.addPieceWhite(2, "bishop");
 		
 		reg.createFen();
-		
-		System.out.println(reg.getFen());
 	}
 	
 	/**
