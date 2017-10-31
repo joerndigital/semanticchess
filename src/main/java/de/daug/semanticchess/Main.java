@@ -3,24 +3,41 @@ package de.daug.semanticchess;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//import de.daug.semanticchess.Converter.EcoToRdf;
-//import de.daug.semanticchess.Converter.PgnToRdf;
-//import de.daug.semanticchess.Database.LoadData;
+import de.daug.semanticchess.Converter.EcoToRdf;
+import de.daug.semanticchess.Converter.PgnToRdf;
+import de.daug.semanticchess.Database.LoadData;
 
 
 @SpringBootApplication
 public class Main 
 {
 	
-	//TODO: add args from to console to start PgnToRdf, LoadData, EcoToRdf
+	/**
+	 * This class starts the applications. Consider using the params.
+	 * @param args
+	 * pgn -> start pgn to rdf converter
+     * eco -> start mapping openings to games and eco to rdf converter
+     * load -> load .ttl files to database
+	 */
     public static void main( String[] args )
     {
-    	//PgnToRdf.main(null);
-    	//LoadData.main(null);
+    	if(args.length == 1){
+        	if(args[0].equals("pgn")){
+        		PgnToRdf.main(null);
+        	} else if(args[0].equals("eco")){
+        		EcoToRdf.main(null);
+        	} else if(args[0].equals("load")){
+        		LoadData.main(null);
+        	}
+    	} else {
+        	//Application starts
+    		SpringApplication.run(Main.class, args);
+    	}
+
     	
-    	//EcoToRdf.main(null);
+
     	
-    	
-		SpringApplication.run(Main.class, args);
+ 
+
     }
 }
