@@ -21,17 +21,17 @@ public class TimeTagger {
 
   private String date;
   private DateFormat dateFormat;
-  private AnnotationPipeline pipeline = null;
+  private StanfordCoreNLP pipeline = null;
   
   /**
    * constructor: sets up pipelines
    */
   public TimeTagger(){
 	  	Properties props = new Properties();
-	    pipeline = new AnnotationPipeline();
-	    pipeline.addAnnotator(new TokenizerAnnotator(false));
-	    pipeline.addAnnotator(new WordsToSentencesAnnotator(false));
-	    pipeline.addAnnotator(new POSTaggerAnnotator(false));
+		// props.setProperty("ner.applyNumericClassifiers", "true");
+		props.setProperty("annotators", "tokenize, ssplit");	  	
+	  	
+	    pipeline = new StanfordCoreNLP(props);
 	    pipeline.addAnnotator(new TimeAnnotator("sutime", props));
 
 	    this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -61,7 +61,7 @@ public class TimeTagger {
    */
   public static void main(String[] args) {
     TimeTagger tt = new TimeTagger();
-    System.out.println(tt.getDate("from the 18th century"));
+    System.out.println(tt.getDate("games from June 28th 2017"));
     
   }
 
