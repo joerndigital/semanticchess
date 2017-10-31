@@ -2,7 +2,8 @@ package de.daug.semanticchess.Converter;
 
 import java.io.File;
 
-
+import de.daug.semanticchess.Configurations;
+import de.daug.semanticchess.Converter.Utils.PGNToRDFConverterRanged;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.rdf.ChessRDFVocabulary;
 
 
@@ -23,22 +24,23 @@ public class PgnToRdf {
 		
 		PGNToRDFConverterRanged pg = new PGNToRDFConverterRanged();
 		
-		String fileName = "1610-1899";
+		String fileName = Configurations.GAMES_TEST_FILE;
 		pg.setSplitRate(150);
-		File f = new File("src/main/resources/static/games/pgn/"+fileName+".pgn");
+		File f = new File(Configurations.PGN+fileName+".pgn");
 
 		pg.setOutputFormat("TURTLE");
-		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+".ttl").getAbsolutePath());
+		pg.processToStream(f.getAbsolutePath(), new File(Configurations.RDF+fileName+".ttl").getAbsolutePath());
 //		pg.setOutputFormat("RDF/XML");
 //		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+".rdf").getAbsolutePath(), true);
-
-		rdfv.init("http://example.com", "#", "http://example.com/prop/", "http://example.com/res/", "prop", "res",
-				false);
-
-		pg.setOutputFormat("TURTLE");
-		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+"_meta.ttl").getAbsolutePath());
+//
+//		rdfv.init("http://example.com", "#", "http://example.com/prop/", "http://example.com/res/", "prop", "res",
+//				false);
+//
+//		pg.setOutputFormat("TURTLE");
+//		pg.processToStream(f.getAbsolutePath(), new File(Configurations.RDF+fileName+"_meta.ttl").getAbsolutePath());
 //		pg.setOutputFormat("RDF/XML");
 //		pg.processToStream(f.getAbsolutePath(), new File("src/main/resources/static/games/rdf/"+fileName+"_meta.ttl").getAbsolutePath(), true);
+		
 		
 	}
 }

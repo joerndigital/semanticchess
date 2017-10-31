@@ -1,4 +1,4 @@
-package de.daug.semanticchess.Converter;
+package de.daug.semanticchess.Converter.Utils;
 
 import java.io.BufferedWriter;
 import java.io.File;

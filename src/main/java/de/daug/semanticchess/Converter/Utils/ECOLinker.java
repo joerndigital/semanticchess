@@ -3,7 +3,7 @@
  * SOURCE: http://pcai042.informatik.uni-leipzig.de/swp/SWP-13/swp13-sc/
  */
 
-package de.daug.semanticchess.Converter;
+package de.daug.semanticchess.Converter.Utils;
 
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -23,10 +23,10 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 
+import de.daug.semanticchess.Configurations;
 import de.uni_leipzig.informatik.swp13_sc.converter.ChessDataModelToRDFConverter.OutputFormats;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.ChessOpening;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.rdf.ChessRDFVocabulary;
-import de.daug.semanticchess.Converter.ChessOpeningDataRetriever;
 import de.uni_leipzig.informatik.swp13_sc.util.FileUtils;
 
 /**
@@ -96,7 +96,7 @@ public class ECOLinker
     
     public String ecoLetter;
     
-    public final static String FILE_MAPPING = "src/main/resources/static/games/rdf/Mapping_ECO_GAME";
+    public final static String FILE_MAPPING = Configurations.FILE_MAPPING;
     
     // ------------------------------------------------------------------------
     
@@ -772,6 +772,8 @@ public class ECOLinker
         String pass = args[3];
         boolean ecoless = (args.length >= 5) ? "yes".equalsIgnoreCase(args[4]) : false;
         String file = (args.length == 6) ? args[5] : FILE_MAPPING + "_" + args[4] + ".ttl";
+        
+        
         
         ECOLinker ecol = new ECOLinker(new VirtGraph(graph, "jdbc:virtuoso://"
                 + link, user, pass));

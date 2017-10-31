@@ -2,7 +2,7 @@
  * PGNToRDFConverter.java
  * SOURCE: http://pcai042.informatik.uni-leipzig.de/swp/SWP-13/swp13-sc/
  */
-package de.daug.semanticchess.Converter;
+package de.daug.semanticchess.Converter.Utils;
 
 /**
  * The command line interface (CLI) of the PGN Parser.

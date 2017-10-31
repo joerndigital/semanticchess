@@ -2,7 +2,7 @@
  * ChessMoveListDataRetriever.java
  * SOURCE: http://pcai042.informatik.uni-leipzig.de/swp/SWP-13/swp13-sc/
  */
-package de.daug.semanticchess.Converter;
+package de.daug.semanticchess.Converter.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

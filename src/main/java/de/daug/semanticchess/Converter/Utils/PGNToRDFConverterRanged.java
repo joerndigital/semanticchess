@@ -2,7 +2,7 @@
  * PGNToRDFConverterRanged.java
  * SOURCE: http://pcai042.informatik.uni-leipzig.de/swp/SWP-13/swp13-sc/
  */
-package de.daug.semanticchess.Converter;
+package de.daug.semanticchess.Converter.Utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -15,7 +15,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipOutputStream;
 
-import de.daug.semanticchess.Converter.ChessDataModelToRDFConverter.OutputFormats;
+import de.daug.semanticchess.Converter.Utils.ChessDataModelToRDFConverter.OutputFormats;
 import de.uni_leipzig.informatik.swp13_sc.util.FileUtils;
 
 /**

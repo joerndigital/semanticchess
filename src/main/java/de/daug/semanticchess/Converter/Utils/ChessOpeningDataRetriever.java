@@ -2,7 +2,7 @@
  * ChessOpeningDataRetriever.java
  * SOURCE: http://pcai042.informatik.uni-leipzig.de/swp/SWP-13/swp13-sc/
  */
-package de.daug.semanticchess.Converter;
+package de.daug.semanticchess.Converter.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,10 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Literal;
 
-
+import de.daug.semanticchess.Converter.Utils.ChessMoveListDataRetriever;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.ChessGame;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.ChessOpening;
 import de.uni_leipzig.informatik.swp13_sc.datamodel.rdf.ChessRDFVocabulary;
-import de.daug.semanticchess.Converter.ChessMoveListDataRetriever;
 
 /**
  * A retriever class for querying a triplestore over a VirtGraph (only
