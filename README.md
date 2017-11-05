@@ -1,36 +1,37 @@
-# Semantic Chess
+<h1>Semantic Chess</h1>
 
-A questions answering system for chess games.
+<p>A question answering system for chess games.</p>
+<div>
+  <img src="https://github.com/semanticchess/semanticchess/blob/master/img/example.gif" alt="alt text" width="450px">
+</div>
 
+<h2>Prerequisite</h2>
+<p>You need:</p>
+<ul>
+  <li>Java 8</li>
+  <li>Docker (for the database)</li>
+  <li>Maven</li>
+</ul>
 
-## Prerequisite
-
-You need:
-
-- Docker (for the database)
-- Maven
-
-
-## Installing
-
-1. Download the project
-
-2. run Docker
-
-3. start the database
+<h2>Installing</h2>
+<ul>
+  <li>download the project</li>
+  <li>run Docker</li>
+  <li>start the database</li>
+</ul>
 
 ```sh
 $ cd src/main/database
 $ docker-compose up
 ```
-
-4. start the engine
-
+<ul>
+  <li>start the engine</li>
+</ul>
 ```sh
 $ mvn spring-boot:run
 ```
 
-## Note
+<h2>Note</h2>
 
 At first the program converts the file 1610-1899.pgn to .ttl-files. After that it uploads these files plus a mapping file and a chess opening file to the database. That will take some time.
 
