@@ -303,4 +303,23 @@ public class Sequences {
 	// 6 classes, 10 entities, 1 union
 	static String _6101 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. R_2 P_2 E_2. R_3 P_3 E_3. R_4 P_4 E_4. R_5 P_5 E_5. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_6 P_6 E_6. R_7 P_7 E_7. R_8 P_8 E_8. R_9 P_9 E_9. R_10 P_10 E_10. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6.}  FILTER }";
 
+	// 7 classes, 0 entities, 1 union
+	static String _701 = "SELECT DISTINCT * WHERE { {S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6. S_7 D_7 C_7.} FILTER }";
+
+	// 7 classes, 2 entities, 1 union
+	static String _721 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_2 P_2 E_2. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6. S_7 D_7 C_7.} FILTER }";
+
+	// 7 classes, 4 entities, 1 union
+	static String _741 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. R_2 P_2 E_2. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_3 P_3 E_3. R_4 P_4 E_4. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6. S_7 D_7 C_7.}  FILTER }";
+	
+	// 7 classes, 6 entities, 1 union
+	static String _761 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. R_2 P_2 E_2. R_3 P_3 E_3. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_4 P_4 E_4. R_5 P_5 E_5. R_6 P_6 E_6. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6. S_7 D_7 C_7.}  FILTER }";
+	
+	// 7 classes, 8 entities, 1 union
+	static String _781 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. R_2 P_2 E_2. R_3 P_3 E_3. R_4 P_4 E_4. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_5 P_5 E_5. R_6 P_6 E_6. R_7 P_7 E_7. R_8 P_8 E_8. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6. S_7 D_7 C_7.}  FILTER }";
+	
+	// 6 classes, 10 entities, 1 union
+	static String _7101 = "SELECT DISTINCT * WHERE { {R_1 P_1 E_1. R_2 P_2 E_2. R_3 P_3 E_3. R_4 P_4 E_4. R_5 P_5 E_5. S_1 D_1 C_1. S_2 D_2 C_2. S_3 D_3 C_3.} UNION {R_6 P_6 E_6. R_7 P_7 E_7. R_8 P_8 E_8. R_9 P_9 E_9. R_10 P_10 E_10. S_4 D_4 C_4. S_5 D_5 C_5. S_6 D_6 C_6. S_7 D_7 C_7.}  FILTER }";
+
+	
 }

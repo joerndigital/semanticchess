@@ -54,13 +54,13 @@ public class StringSimilarity {
 			break;
 		case "cont:openingName":
 			this.variable = "openingName";
-			query = "SELECT DISTINCT ?openingName WHERE {?game cont:eco ?eco. ?eco cont:openingName ?openingName} ORDER BY DESC((COUNT(?game) AS ?nr))";
+			query = "SELECT DISTINCT ?openingName (COUNT(?game) AS ?nr) WHERE {?game cont:eco ?eco. ?eco cont:openingName ?openingName} GROUP BY ?openingName ORDER BY DESC(?nr)";
 			break;
 		case "prop:site":
 			this.variable = "site";
 			query = "SELECT DISTINCT ?site WHERE {?game prop:site ?site. ?game prop:date ?date.} ORDER BY ASC(?date)";
 			break;
-		case "prop:eco":
+		case "cont:eco":
 			this.variable = "eco";
 			query = "SELECT DISTINCT ?eco WHERE {?game cont:openingCode ?eco. game prop:date ?date.} ORDER BY ASC(?date)";
 			break;
@@ -208,8 +208,8 @@ public class StringSimilarity {
 	 */
 	public static void main(String[] args) {
 		StringSimilarity similar = new StringSimilarity();
-		similar.setQuery("prop:site");
+		similar.setQuery("cont:openingName");
 		//similar.setOffset(3);
-		System.out.println(similar.subStringMatch("London"));
+		System.out.println(similar.subStringMatch("Queen's Gambit"));
 	}
 }

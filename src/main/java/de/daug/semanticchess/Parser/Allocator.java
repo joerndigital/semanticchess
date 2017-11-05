@@ -139,7 +139,7 @@ public class Allocator {
 			if (!e.getEntityName().isEmpty()) {
 
 				try {
-					subStrEntities = similar.subStringMatch(e.getEntityName().replaceAll("'", ""));
+					subStrEntities = similar.subStringMatch(e.getEntityName().substring(1, e.getEntityName().length() -1 ));
 				} catch (QueryParseException err) {
 
 				}
@@ -220,6 +220,73 @@ public class Allocator {
 
 		return sparql;
 	}
+	
+	/**
+	 * combination of distanceMatch and substringMatch
+	 * first of all the method looks for substrings in the result from the database
+	 * if it does not find an entity, it restarts with a distance match
+	 * @param sparql
+	 * @return configured sparql
+	 */
+	public String substringWithDistanceFallback(String sparql){
+		Values values = new Values();
+
+		sparql = sparql.replaceFirst("\\{", "\\{VALUE_PLACEHOLDER ");
+		int counter = 1;
+
+		for (Entity e : entities) {
+
+			similar.setQuery(e.getPropertyName());
+
+			ArrayList<String> subStrEntities = new ArrayList<String>();
+
+			if (!e.getEntityName().isEmpty()) {
+
+				try {
+					subStrEntities = similar.subStringMatch(e.getEntityName().substring(1, e.getEntityName().length() -1 ));
+					if(subStrEntities.isEmpty()){
+						subStrEntities.add(similar.distanceMatch(e.getEntityName().substring(1, e.getEntityName().length() -1 )).replaceFirst("\\\\",""));
+					}
+				} catch (QueryParseException err) {
+
+				}
+
+				if (subStrEntities.size() > 0) {
+					values.setValueVars("?value" + counter);
+					sparql = sparql.replaceAll(e.getEntityId(), "?value" + counter);
+					values.addResult(subStrEntities);
+					counter++;
+				}
+
+				else {
+					sparql = sparql.replaceAll(e.getEntityId(), e.getEntityName());
+				}
+			} else {
+				sparql = sparql.replaceAll(e.getEntityId(), "");
+			}
+
+			sparql = sparql.replaceAll(e.getPropertyId(), e.getPropertyName());
+			sparql = sparql.replaceAll(e.getResourceId(), e.getResourceName());
+		}
+
+		String tempStr = "";
+		
+		values.generatePermutations(values.getResults(), values.getPermutation(), 0, tempStr);
+
+		sparql = sparql.replace("VALUE_PLACEHOLDER", values.toString());
+		
+		for (Classes c : classes) {
+			sparql = sparql.replaceAll(c.getClassesId(), c.getClassesName());
+			sparql = sparql.replaceAll(c.getPropertyId(), c.getPropertyName());
+			sparql = sparql.replaceAll(c.getResourceId(), c.getResourceName());
+		}
+
+		sparql = sparql.replace("FILTER", this.filters.getFilterStr());
+
+		return sparql;
+		
+	}
+	
 	
 	/**
 	 * allocate sequence code
@@ -525,6 +592,21 @@ public class Allocator {
 		case "_6101":
 			sparqlQuery = Sequences._6101;
 			break;
+		case "_721":
+			sparqlQuery = Sequences._721;
+			break;
+		case "_741":
+			sparqlQuery = Sequences._741;
+			break;
+		case "_761":
+			sparqlQuery = Sequences._761;
+			break;
+		case "_781":
+			sparqlQuery = Sequences._781;
+			break;
+		case "_7101":
+			sparqlQuery = Sequences._7101;
+			break;
 		default:
 			
 			break;
@@ -562,7 +644,7 @@ public class Allocator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Allocator alloc = new Allocator("Show me the games where draw from June 1st 1864.");
+		Allocator alloc = new Allocator("Which player with an ELO above 2500 has won most often in 1899?");
 		alloc.allocateSequence();
 		
 		System.out.println(alloc.distanceEntities(alloc.getSparqlQuery()));

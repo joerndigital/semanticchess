@@ -14,6 +14,18 @@ public class Filters{
 	public Filters(){
 		
 	}
+
+	/**
+	 * filter for phrases like 'greater than'
+	 */
+	public void addEqual(String classesName, String filterValue){
+		if(isFirstFilter){
+			this.filter = "FILTER ("+ classesName +" = " + filterValue;
+			this.isFirstFilter = false;
+		} else {
+			this.filter += " && "+ classesName +" = " + filterValue;
+		}
+	}
 	
 	/**
 	 * filter for phrases like 'greater than'

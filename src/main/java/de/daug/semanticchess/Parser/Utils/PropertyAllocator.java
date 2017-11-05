@@ -72,7 +72,6 @@ public class PropertyAllocator {
 				eloPosition.add(i);				
 			}
 			if(tokens.get(i).getNe().equals("jjs_pos") || tokens.get(i).getNe().equals("jjs_neg") || tokens.get(i).getNe().equals("jjr_pos") || tokens.get(i).getNe().equals("jjr_neg") ){
-				System.out.println(tokens.get(i).getNe() + tokens.get(i).getWord());
 				if(!tokens.get(i).getWord().equals("longest") && !tokens.get(i).getWord().equals("shortest")){
 					eloPosition.add(i);
 				}							

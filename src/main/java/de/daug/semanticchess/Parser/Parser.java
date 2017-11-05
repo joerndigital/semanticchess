@@ -98,7 +98,7 @@ public class Parser {
 			webTagger.setQuery(query);
 			webTagger.setDocument(webTagger.setAnnotator(pipeline, webTagger.getQuery()));
 			webTagger.initAnnotations();
-			System.out.println("Webclient Stanford coreNLP complete.");		
+			System.out.printf("%-16s %s\n", "Parser: ", "Webclient Stanford coreNLP complete.");		
 			tokens = webTagger.getTokens();
 			
 		} catch (Exception e){
@@ -107,7 +107,7 @@ public class Parser {
 			tagger.setQuery(query);
 			tagger.setDocument(tagger.setAnnotator(pipeline, tagger.getQuery()));
 			tagger.initAnnotations();
-			System.out.println("Stanford coreNLP complete.");		
+			System.out.printf("%-16s %s\n", "Parser: ","Stanford coreNLP complete.");		
 			tokens = tagger.getTokens();
 		}
 		
@@ -121,12 +121,14 @@ public class Parser {
 		tokens = cNer.checkElo(tokens);
 		tokens = cNer.checkOpening(tokens);		
 		this.tokens = tokens;
-		System.out.println("Stanford coreNLP complete.");
-		System.out.println("Result: " + this.tokens.toString());	
+		System.out.printf("%-16s %s\n", "Parser: ","Custom NER complete.");
+		System.out.printf("%-16s %s\n", "Result: ", this.tokens.toString());	
 
 		//run through every token and analyze its meaning
 		collectEntities(tokens);
-		System.out.println("Entities and classes collected.");
+		System.out.printf("%-16s %s\n", "Parser: ","Entities and classes collected.");
+		System.out.printf("%-16s %s\n", "Entities: ", entities.toString());
+		System.out.printf("%-16s %s\n", "Classes: ", classes.toString());
 		
 		//if flags isBlack or isWhite are set change properties that are color specific 
 		if (isBlack || isWhite) {
@@ -135,7 +137,7 @@ public class Parser {
 			} catch (Exception err) {
 			}
 		}
-		System.out.println("Color checker complete.");
+		System.out.printf("%-16s %s\n", "Parser: ","Color checker complete.");
 
 		//if flag isElo is set change properties that are elo specific
 		if (isElo) {
@@ -144,33 +146,35 @@ public class Parser {
 			} catch (Exception err) {
 			}
 		}
-		System.out.println("ELO checker complete.");
+		System.out.printf("%-16s %s\n", "Parser: ","ELO checker complete.");
 		
 		//check the result and if necessary change properties that are result specific
 		resultChecker();
-		System.out.println("Result checker complete.");
+		System.out.printf("%-16s %s\n", "Parser: ","Result checker complete.");
 		
 		//if flag isUnion is set add an UNION clause
 		if (isUnion()) {
 			makeUnion();
-			System.out.println("UNION is added.");
+			System.out.printf("%-16s %s\n", "Parser: ","UNION is added.");
 		}
 
 
-		//if flag isFilter and ifFen is set create regex with a FEN
+		//if flag isFilter and if Fen is set create regex with a FEN
 		if (isFilter) {
 			if (isFen) {
 				fenReg.createFen();
 				filters.addRegex("?fen", fenReg.getFen(), false);
-				System.out.println("FEN regex is added.");
+				System.out.printf("%-16s %s\n", "Parser: ","FEN regex is added.");
 			}
 		}
 
 		//collect topics for the SELECT clause
 		topics.collectTopics(this.entities, this.classes);
-		System.out.println("Topics collected.");
+
 		
-		/* if the query implies there should be something count, e.g. most often or how often
+		System.out.printf("%-16s %s\n", "Parser: ","Topics collected.");
+		
+		/* if the query implies there should be something to count, e.g. 'most often' or 'how often'
 		 * add an aggregate to the SELECT clause
 		 */ 
 		if (isCount) {
@@ -197,22 +201,23 @@ public class Parser {
 				this.options.setOrderStr("DESC", "?nr");
 				this.options.setGroupStr(classes.get(0).getClassesName());
 			}
-			System.out.println("COUNT added");
+			System.out.printf("%-16s %s\n", "Parser: ","COUNT added");
 		}
-
+		
 		//check if an aggregate is used in the SELECT clause
 		if (topics.isAlgebra()) {
 			for (String topic : topics.getTopics()) {
-
+				
 				if (this.options.getGroupStr().indexOf(topic) == -1 && topic.indexOf("(") == -1) {
 					this.options.setGroupStr(topic);
 				}
 			}
-			System.out.println("Topics grouped.");
+			System.out.printf("%-16s %s\n", "Parser: ","Topics grouped.");
 		}
 		
+		
 		//add some information to the result if only games should be returned
-		if(topics.onlyGames() && !topics.isAlgebra()){
+		if(topics.onlyGames() && !topics.isAlgebra() && !isUnion){
 			if (getClassByName("?white") == null) {
 				classes.add(new Classes(classes.size() + 1, "?white", "prop:", "white", 999, "?game"));
 				topics.add("?white");
@@ -225,7 +230,7 @@ public class Parser {
 				classes.add(new Classes(classes.size() + 1, "?date", "prop:", "date", 999, "?game"));
 				topics.add("?date");
 			}
-			System.out.println("Information added to the SELECT clause.");
+			System.out.printf("%-16s %s\n", "Parser: ","Information added to the SELECT clause.");
 		}
 		
 		//get the sequence code
@@ -234,7 +239,7 @@ public class Parser {
 		} else {
 			this.sequence = "_" + classes.size() + "" + entities.size() + "1";
 		}
-		System.out.println("SEQUENCE CODE: " + this.sequence);		
+		System.out.printf("%-16s %s\n", "SEQUENCE CODE: ", this.sequence);		
 	}
 	
 	/**
@@ -248,6 +253,7 @@ public class Parser {
 			//save properties of the token
 			String word = tokens.get(index).getWord();
 			String ne = tokens.get(index).getNe();
+			String pos = tokens.get(index).getPos();
 			
 			//get the properties of the previous token
 			String preNe = "O";
@@ -305,8 +311,6 @@ public class Parser {
 				preFoundNe = "O";
 				preFoundWord = "";
 			}
-
-			String pos = tokens.get(index).getPos();
 
 			//Switch through NER of a token
 			switch (ne) {
@@ -378,9 +382,14 @@ public class Parser {
 				} else if (nextNe.equals("piece")) {
 					// will be used in case piece
 					break;
-				} else if (nextNe.equals("moves")) {
-					break;
-				} else {
+				} else if (nextNe.equals("moves") && !preWord.equals("than")) {
+					if (getClassByName("?moveNr") == null) {
+						classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", 999, "?moves"));
+					}
+					filters.addEqual("?moveNr","'"+String.valueOf(Integer.valueOf(word)*2)+"'^^xsd:nonNegativeInteger");
+				} else if (nextNe.equals("round") && !preWord.equals("than")){
+					filters.addEqual("?round","'"+word+"'^^xsd:nonNegativeInteger");
+				} else if(!preWord.equals("than")) {
 					options.setLimitStr(Integer.valueOf(word));
 					options.setOffsetStr(0);
 
@@ -437,7 +446,9 @@ public class Parser {
 				addEntityOrClass(word, ne, "prop:", "round", "?game");
 				break;
 			case "site":
-				addEntityOrClass(word, ne, "prop:", "site", "?game");
+				if(!pos.equals("WRB")){
+					addEntityOrClass(word, ne, "prop:", "site", "?game");
+				}
 				break;
 			case "OPENING":
 				if (word.equals("opening") && !pos.equals("NNP")) {
@@ -455,8 +466,6 @@ public class Parser {
 			case "moves":
 				addEntityOrClass(word, ne, "prop:", "moves", "?game");
 				break;
-				
-			//TODO: new regex needed
 			case "move":
 				moveCounter++;
 				if (getClassByName("?moves") == null) {
@@ -570,13 +579,13 @@ public class Parser {
 							classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", nextFoundIndex,
 									"?moves"));
 						}
-						filters.addGreaterThan("?moveNr", tempNumber);
+						filters.addGreaterThan("?moveNr",String.valueOf(Integer.valueOf(tempNumber)*2));
 					} else if (nextFoundNe.equals("round")) {
 						if (getClassByName("?round") == null) {
 							classes.add(new Classes(classes.size() + 1, "?round", "prop:", "round", nextFoundIndex,
 									"?game"));
 						}
-						filters.addGreaterThan("?round", tempNumber);
+						filters.addGreaterThan("?round", String.valueOf(Integer.valueOf(tempNumber)*2));
 					}
 				}
 				break;
@@ -592,24 +601,27 @@ public class Parser {
 					this.options.setOrderStr("ASC", "?elo");
 				} else {
 					if (nextFoundNe.equals("moves")) {
-						if (getClassByName("?moveNr") == null) {
-							classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", nextFoundIndex,
+						if (getClassByName("?move") == null) {
+							classes.add(new Classes(classes.size() + 1, "?move", "prop:", "move", nextFoundIndex,
 									"?moves"));
 						}
-						filters.addLowerThan("?moveNr", tempNumber);
+						
+						topics.addCount("distinct ?move");
+						options.setHavingStr("(COUNT(distinct ?move) < '" + String.valueOf(Integer.valueOf(tempNumber)*2) + "'^^xsd:nonNegativeInteger)");
+						//filters.addLowerThan("?nr", String.valueOf(Integer.valueOf(tempNumber)*2));
 					} else if (nextFoundNe.equals("round")) {
 						if (getClassByName("?round") == null) {
 							classes.add(new Classes(classes.size() + 1, "?round", "prop:", "round", nextFoundIndex,
 									"?game"));
 						}
-						filters.addLowerThan("?round", tempNumber);
+						filters.addLowerThan("?round", "'" + String.valueOf(Integer.valueOf(tempNumber)*2)  + "'^^xsd:nonNegativeInteger)");
 					}
 				}
 				break;
 			case "jjs_pos":
 				if (word.equals("longest") && nextFoundNe.equals("game")) {
 					if (getClassByName("?moveNr") == null) {
-						classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", nextFoundIndex,
+						classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", 999,
 								"?moves"));
 					}
 					if (getClassByName("?moves") == null) {
@@ -623,13 +635,15 @@ public class Parser {
 						this.options.setOffsetStr(0);
 					}
 
-				} else if (!word.equals("longest")) {
+				} else if (!word.equals("longest") && !word.equals("main")) {
 					isElo = true;
 					if (getClassByName("?elo") == null) {
 						classes.add(new Classes(classes.size() + 1, "?elo", "prop:", "whiteelo|prop:blackelo", index,
 								"?game"));
 					}
 					if (nextFoundNe.equals("PERSON")) {
+						this.topics.addMax("?elo");
+					} else if(nextFoundNe.equals("elo")){
 						this.topics.addMax("?elo");
 					} else {
 						this.topics.addAvg("?elo");
@@ -641,19 +655,24 @@ public class Parser {
 						this.options.setLimitStr(1);
 						this.options.setOffsetStr(0);
 					}
+				} else if(word.equals("main")) {
+					this.topics.addCount("?game");
+					this.options.setOrderStr("DESC", "?nr");
+					this.options.setLimitStr(1);
+					
 				}
 				break;
 			case "jjs_neg":
 				if (word.equals("shortest") && nextFoundNe.equals("game")) {
-					if (getClassByName("?moveNr") == null) {
-						classes.add(new Classes(classes.size() + 1, "?moveNr", "prop:", "moveNr", nextFoundIndex,
+					if (getClassByName("?move") == null) {
+						classes.add(new Classes(classes.size() + 1, "?move", "prop:", "move", nextFoundIndex,
 								"?moves"));
 					}
 					if (getClassByName("?moves") == null) {
 						classes.add(
 								new Classes(classes.size() + 1, "?moves", "prop:", "moves", nextFoundIndex, "?game"));
 					}
-					this.topics.addMin("?moveNr");
+					this.topics.addCount("?move");
 					this.options.setOrderStr("ASC", "?nr");
 					if (this.options.getLimitStr().isEmpty()) {
 						this.options.setLimitStr(1);
@@ -666,6 +685,8 @@ public class Parser {
 								"?game"));
 					}
 					if (nextFoundNe.equals("PERSON")) {
+						this.topics.addMin("?elo");
+					} else if(nextFoundNe.equals("elo")){
 						this.topics.addMin("?elo");
 					} else {
 						this.topics.addAvg("?elo");
@@ -967,7 +988,6 @@ public class Parser {
 				index += 1;
 			}
 		}
-
 		if (ne.equals("MISC")) {
 			String[] words = word.split(" ");
 
@@ -1251,11 +1271,39 @@ public class Parser {
 	}
 	
 	/**
+	 * get a class by property
+	 * @param name of the property
+	 * @return class
+	 */
+	public Classes getClassByProperty(String property) {
+		for (Classes c : classes) {
+			if (c.getPropertyName().equals(property)) {
+				return c;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * get an entity by property
+	 * @param name of the property
+	 * @return entity
+	 */
+	public Entity getEntityByProperty(String property) {
+		for (Entity e : entities) {
+			if (e.getPropertyName().equals(property)) {
+				return e;
+			}
+		}
+		return null;
+	}
+	
+	/**
 	 * main method for testing
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String query = "Show me games between Wilhelm Steinitz and Emanuel Lasker in 1899.";
+		String query = "Show me games with less than 34 moves.";
 
 		Parser p = new Parser(query);
 

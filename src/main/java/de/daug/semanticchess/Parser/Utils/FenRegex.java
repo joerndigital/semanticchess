@@ -16,9 +16,9 @@ public class FenRegex{
 	
 	private String fen = "^";
 	
-	private static String MIN = "(?=(.*X){Y})";
-	private static String MAX = "(?!(.*X){Z})";
-	private static String notOnBoard = "((?![QqRrBbNnPp]).)*$";
+	private String MIN = "(?=(.*X){Y})";
+	private String MAX = "(?!(.*X){Z})";
+	private String notOnBoard = "((?![QqRrBbNnPp]).)*$";
 	
 	private int whiteQueenCounter = 0;
 	private int whiteRookCounter = 0;
@@ -36,12 +36,12 @@ public class FenRegex{
 	private String castlingShort = "O-O";
 	private String castlingLong = "O-O-O";
 	
-	private String promote = "[a-h]8[QqRrBbNn]";
-	private String underpromote = "[a-h]8[RrBbNn]";
-	private String promoteQueen = "[a-h]8[Qq]";
-	private String promoteRook = "[a-h]8[Rr]";
-	private String promoteBishop = "[a-h]8[Bb]";
-	private String promoteKnight = "[a-h]8[Nn]";	
+	private String promote = "=[QqRrBbNn]$";
+	private String underpromote = "=[RrBbNn]$";
+	private String promoteQueen = "=[Qq]$";
+	private String promoteRook = "=[Rr]$";
+	private String promoteBishop = "=[Bb]$";
+	private String promoteKnight = "=[Nn]$";	
 	
 	/**
 	 * empty constructor
@@ -270,12 +270,12 @@ public class FenRegex{
 		// if there are specified numbers of pawns then remove pawns from the list
 		// of pieces that are not on the board
 		if(!whitePawnIsCalled && !blackPawnIsCalled){
-			FenRegex.notOnBoard = FenRegex.notOnBoard.replace("P", "");
-			FenRegex.notOnBoard = FenRegex.notOnBoard.replace("p", "");	
+			this.notOnBoard = this.notOnBoard.replace("P", "");
+			this.notOnBoard = this.notOnBoard.replace("p", "");	
 		}
 		
 		if(piecesWhite.size() > 0){
-			fen += FenRegex.notOnBoard;
+			fen += this.notOnBoard;
 		}		
 	}
 	
@@ -294,7 +294,7 @@ public class FenRegex{
 			this.fen += MIN.replace("X", piece).replace("Y", Integer.toString(min));
 			this.fen += MAX.replace("X", piece).replace("Z", Integer.toString(max));
 		}
-		FenRegex.notOnBoard = FenRegex.notOnBoard.replace(piece, "");	
+		this.notOnBoard = this.notOnBoard.replace(piece, "");	
 	}
 	
 	/**

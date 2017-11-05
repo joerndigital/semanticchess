@@ -1,5 +1,8 @@
 package de.daug.semanticchess.Service;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +33,7 @@ public class QueryService{
 	 * 		- in the SPARQL query they will be stored in a VALUES clause
 	 * 3.	Regex (regexEntities):
 	 * 		- just creates regex filters for all entities
+	 * 4.  combination of 1. and 2. 
 	 * @param strQuery: user query from the interface
 	 * @return JSON: with result data
 	 */
@@ -41,11 +45,14 @@ public class QueryService{
 		
 		//methods for choosing entities from the database
 		//===============================================
-		strQuery = alloc.distanceEntities(alloc.getSparqlQuery());
+		//strQuery = alloc.distanceEntities(alloc.getSparqlQuery());
 		//strQuery = alloc.subStringEntities(alloc.getSparqlQuery());
 		//strQuery = alloc.regexEntities(alloc.getSparqlQuery());
+		
+		strQuery = alloc.substringWithDistanceFallback(alloc.getSparqlQuery());
 		//===============================================
-				
+		
 		return virtuosoQuery.getCustomResult(strQuery);
+		
 	}
 }

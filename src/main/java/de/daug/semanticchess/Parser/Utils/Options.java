@@ -9,16 +9,12 @@ public class Options {
 	private static final String OFFSET = "OFFSET ";
 	private static final String ORDERBY = "ORDER BY ";
 	private static final String GROUPBY = "GROUP BY ";
-	
-	@SuppressWarnings("unused")
 	private static final String HAVING = "HAVING ";
 
 	private String limitStr ="";
 	private String offsetStr = "";
 	private String orderStr = "";
 	private String groupStr = "";
-	
-	@SuppressWarnings("unused")
 	private String havingStr ="";
 
 	/**
@@ -91,7 +87,7 @@ public class Options {
 	}
 
 	/**
-	 * set group String
+	 * set GROUP BY String
 	 * @param group
 	 */
 	public void setGroupStr(String group) {
@@ -99,6 +95,26 @@ public class Options {
 			this.groupStr = GROUPBY + group + " ";
 		} else {
 			this.groupStr += group + " ";
+		}
+	}
+	
+	/**
+	 * get the HAVING modifier
+	 * @return havingStr
+	 */
+	public String getHavingStr() {
+		return havingStr;
+	}
+
+	/**
+	 * set HAVING String
+	 * @param havingStr
+	 */
+	public void setHavingStr(String having) {
+		if (havingStr.equals("")) {
+			this.havingStr = HAVING + having + " ";
+		} else {
+			this.havingStr += having + " ";
 		}
 	}
 
@@ -114,15 +130,20 @@ public class Options {
 			return limitStr + " " + offsetStr;
 		} else if (limitStr != null && offsetStr != null && orderStr != null && groupStr == null) {
 			return orderStr + " " + limitStr + " " + offsetStr;
-		} else if (limitStr != null && offsetStr != null && orderStr != null && groupStr != null) {
+		} else if (limitStr != null && offsetStr != null && orderStr != null && groupStr != null && havingStr == null) {
 			return groupStr+ " " +orderStr + " " + limitStr + " " + offsetStr;
+		} else if (limitStr != null && offsetStr != null && orderStr != null && groupStr != null && havingStr != null) {
+			return groupStr+ " " + havingStr + " " +orderStr + " " + limitStr + " " + offsetStr;
 		} else if (limitStr == null && offsetStr == null && orderStr != null && groupStr == null) {
 			return orderStr;
-		} else if (limitStr == null && offsetStr == null && orderStr != null && groupStr != null) {
+		} else if (limitStr == null && offsetStr == null && orderStr != null && groupStr != null && havingStr == null) {
 			return groupStr + " " + orderStr;
-		}
-		else if (limitStr == null && offsetStr == null && orderStr == null && groupStr != null) {
+		} else if (limitStr == null && offsetStr == null && orderStr != null && groupStr != null && havingStr != null) {
+			return groupStr + " " + havingStr + " " + orderStr;
+		} else if (limitStr == null && offsetStr == null && orderStr == null && groupStr != null && havingStr == null) {
 			return groupStr;
+		} else if (limitStr == null && offsetStr == null && orderStr == null && groupStr != null && havingStr != null) {
+			return groupStr + " " + havingStr;
 		}
 
 		return limitStr + " " + offsetStr;

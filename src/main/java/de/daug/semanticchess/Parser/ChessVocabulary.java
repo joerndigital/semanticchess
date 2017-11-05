@@ -143,6 +143,7 @@ public class ChessVocabulary {
 		superlativePosProperty.add("toughest");
 		superlativePosProperty.add("hardest");
 		superlativePosProperty.add("highest");
+		superlativePosProperty.add("main");
 		//===============================
 		PROPERTIES.put("jjs_pos", superlativePosProperty);
 		
@@ -158,7 +159,8 @@ public class ChessVocabulary {
 		gameProperty.add("pairings");
 		gameProperty.add("encounter");
 		gameProperty.add("encounters");
-		gameProperty.add("endgames");
+		gameProperty.add("endgame");
+		gameProperty.add("position");
 		// ==============================
 		PROPERTIES.put("game", gameProperty);
 		

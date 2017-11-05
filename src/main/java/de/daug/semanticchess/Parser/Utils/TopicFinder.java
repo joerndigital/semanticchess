@@ -44,8 +44,10 @@ public class TopicFinder {
 	public Set<String> collectTopics(List<Entity> entities, List<Classes> classes) {
 		this.blacklist.add("?moveNr");
 		this.blacklist.add("?moves");
+		this.blacklist.add("?contEco");
 		
 		int firstEntityPosition = 999;
+		@SuppressWarnings("unused")
 		int secondEntityPosition = 999;
 		int firstClassesPosition = 999;
 		
@@ -65,9 +67,8 @@ public class TopicFinder {
 		try {
 			firstClassesPosition = classes.get(0).getPosition();
 		} catch (Exception err) {
-
 		}
-
+		
 		boolean entityIsEmpty = false;
 		try {
 			try {
@@ -76,6 +77,7 @@ public class TopicFinder {
 					entityIsEmpty = true;
 				}
 			} catch (Exception err) {
+				//System.out.println(err);
 				entityIsEmpty = true;
 			}
 			for (Classes c : classes) {
@@ -88,14 +90,14 @@ public class TopicFinder {
 						break;
 					}
 				} 
-				//collect all classes in front of the second entity position
-				else {
-					if (c.getPosition() < secondEntityPosition) {
-						if (!blacklist.contains(c.getClassesName())) {
-							topics.add(c.getClassesName());
-						}
-					}
-				}
+//				//collect all classes in front of the second entity position
+//				else {
+//					if (c.getPosition() < secondEntityPosition) {
+//						if (!blacklist.contains(c.getClassesName())) {
+//							topics.add(c.getClassesName());
+//						}
+//					}
+//				}
 			}
 
 			if (topics.isEmpty()) {
@@ -106,7 +108,19 @@ public class TopicFinder {
 				}
 
 			}
+
+			
+			if (this.isAlgebra && topics.isEmpty()) {
+				try {
+					topics.add(entities.get(0).getResourceName());
+				}catch (Exception err){
+					//System.out.println(err);
+				}
+
+			}
+			
 		} catch (Exception err) {
+			//System.out.println(err);
 		}
 
 		return this.topics;
@@ -223,15 +237,15 @@ public class TopicFinder {
 		}
 
 		if (!avg.isEmpty() && !max.isEmpty() && min.isEmpty()) {
-			topicStr += "(AVG(" + avg + ") AS ?nr) ";
+			topicStr += "(AVG(xsd:integer(" + avg + ")) AS ?nr) ";
 		} else if (!avg.isEmpty() && max.isEmpty() && !min.isEmpty()) {
-			topicStr += "(AVG(" + avg + ") AS ?nr) ";
+			topicStr += "(AVG(xsd:integer(" + avg + ")) AS ?nr) ";
 		} else if (!avg.isEmpty() && max.isEmpty() && min.isEmpty()) {
-			topicStr += "(AVG(" + avg + ") AS ?nr) ";
+			topicStr += "(AVG(xsd:integer(" + avg + ")) AS ?nr) ";
 		} else if (!max.isEmpty()) {
-			topicStr += "(MAX(" + max + ") AS ?nr) ";
+			topicStr += "(MAX(xsd:integer(" + max + ")) AS ?nr) ";
 		} else if (!min.isEmpty()) {
-			topicStr += "(MIN(" + min + ") AS ?nr) ";
+			topicStr += "(MIN(xsd:integer(" + min + ")) AS ?nr) ";
 		} else if (!count.isEmpty()) {
 			topicStr += "(COUNT(" + count + ") AS ?nr) ";
 		}
