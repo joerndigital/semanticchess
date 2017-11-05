@@ -45,7 +45,7 @@ public class GameVirtuoso {
 				+ "prop:moves ?moves. ?moves prop:move ?move. ?moves prop:moveNr ?moveNr" + "} ORDER BY ?moveNr";
 
 		// database connection
-		System.out.println("=====================");
+		System.out.println("============================");
 		System.out.println("Exec: " + query);
 		// create the sparql query from the String
 		Query jquery = QueryFactory.create(query);
@@ -83,7 +83,7 @@ public class GameVirtuoso {
 		String query = PREFIX + "SELECT DISTINCT ?" + property + " WHERE {<" + uri + "> prop:" + property + " ?"
 				+ property + "}";
 
-		System.out.println("=====================");
+		System.out.println("============================");
 		System.out.println("Exec: " + query);
 		// create the sparql query from the String
 		Query jquery = QueryFactory.create(query);
@@ -121,7 +121,7 @@ public class GameVirtuoso {
 		String query = PREFIX + "SELECT DISTINCT ?" + property + " WHERE {<" + uri + "> prop:" + property + " ?"
 				+ property + "}";
 
-		System.out.println("=====================");
+		System.out.println("============================");
 		System.out.println("Exec: " + query);
 		// create the sparql query from the String
 		Query jquery = QueryFactory.create(query);

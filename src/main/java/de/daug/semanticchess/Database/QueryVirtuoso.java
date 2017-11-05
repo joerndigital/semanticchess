@@ -43,7 +43,7 @@ public class QueryVirtuoso {
 		ConnectVirtuoso conn = new ConnectVirtuoso();
 		VirtModel vModel = conn.connectDefault();
 
-		System.out.println("=====================");
+		System.out.println("============================");
 		System.out.println("Exec: " + query);
 		//create the sparql query from the String
 		Query jquery = QueryFactory.create(query);

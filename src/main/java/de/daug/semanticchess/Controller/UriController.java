@@ -31,7 +31,7 @@ public class UriController{
 	 */
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String getGame(@RequestBody String gameUri){
-		System.out.println("Controller: " + gameUri);
+		System.out.printf("%-16s %s\n", "Controller: ",  gameUri);
 		return uriService.getGame(gameUri);
 	}
 	

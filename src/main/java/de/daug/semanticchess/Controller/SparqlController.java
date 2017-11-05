@@ -30,7 +30,7 @@ public class SparqlController{
 	 */
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String getCustomResult(@RequestBody String strQuery){
-		System.out.println("Controller: " + strQuery);
+		System.out.printf("%-16s %s\n", "Controller: ",  strQuery);
 		return sparqlService.getCustomResult(strQuery);
 	}
 	
