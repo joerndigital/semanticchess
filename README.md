@@ -1,8 +1,10 @@
 <h1>Semantic Chess</h1>
 
-<p>A question answering system for chess games.</p>
+<p>A question answering system for chess games. The engine will try to answer all chess questions, if the information can be found in a PGN file. Therfore, the questions must include players, events, locations, (annual) dates, ECO, openings, ELO ratings, results and/or moves. In the <a href="https://github.com/semanticchess/semanticchess/blob/master/benchmark/auswertung-20171105.pdf">benchmark</a> you  find some sample questions.</p>
 <div>
-  <img src="https://github.com/semanticchess/semanticchess/blob/master/img/example.gif" alt="alt text" width="450px">
+  <p align="center">
+  <img src="https://github.com/semanticchess/semanticchess/blob/master/img/example.gif" alt="Example gif" width="450px" >
+  </p>
 </div>
 
 <h2>Prerequisite</h2>
@@ -26,34 +28,31 @@ $ docker-compose up
 ```
 <p>The next commands must be executed in the folder with the pom.xml. If you already loaded data to the database just start the engine with the the 4th command. At the first launch perform the following steps. </p>
 
-<h4>Convert the PGN file to RDF data (in this project you can find 1610-1899.pgn as an example):</h4>
+<h4>1. Convert the PGN file to RDF data (in this project you can find 1610-1899.pgn as an example):</h4>
 
 ```sh
 $ mvn spring-boot:run -Drun.arguments="pgn"
 ```
-<h4>Map the chess openings to the games (optional! the mapping files already exist for 1610-1899.pgn):</h4>
+<h4>2. Map the chess openings to the games (optional! the mapping files already exist for 1610-1899.pgn):</h4>
 
 ```sh
 $ mvn spring-boot:run -Drun.arguments="eco"
 ```
-<h4>Load the RDF files to the Virtuoso database:</h4>
+<h4>3. Load the RDF files to the Virtuoso database:</h4>
   
 ```sh
 $ mvn spring-boot:run -Drun.arguments="load"
 ```
 
-<h4>Start the engine:</h4>
+<h4>4. Start the engine:</h4>
   
 ```sh
 $ mvn spring-boot:run
 ```
 
-
-
-
 <h2>Note</h2>
 
-<p>The conversion from PGN to RDF and the mapping of the chess openings to the chess games take some while.</p>
+<p>The conversion from PGN to RDF and the mapping of the chess openings to the chess games take some time.</p>
 
 
 <h2>Use</h2>
