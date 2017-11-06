@@ -24,32 +24,31 @@
 $ cd src/main/database
 $ docker-compose up
 ```
-<p>The next commands must be executed in the folder with the pom.xml.</p>
-<p>At the first launch: </p>
+<p>The next commands must be executed in the folder with the pom.xml. If you already loaded data to the database just start the engine with the the 4th command. At the first launch perform the following steps. </p>
 
-  - convert the PGN file to RDF data (in this project you can find 1610-1899.pgn as an example):
+<h4>Convert the PGN file to RDF data (in this project you can find 1610-1899.pgn as an example):</h4>
 
 ```sh
 $ mvn spring-boot:run -Drun.arguments="pgn"
 ```
-  - map the chess openings to the games (optional! the mapping files already exist for 1610-1899.pgn):
+<h4>Map the chess openings to the games (optional! the mapping files already exist for 1610-1899.pgn):</h4>
 
 ```sh
 $ mvn spring-boot:run -Drun.arguments="eco"
 ```
-  - load the RDF files to the Virtuoso database:
+<h4>Load the RDF files to the Virtuoso database:</h4>
   
 ```sh
 $ mvn spring-boot:run -Drun.arguments="load"
 ```
 
-  - start the engine
+<h4>Start the engine:</h4>
   
 ```sh
 $ mvn spring-boot:run
 ```
 
-<p>If you already loaded data to the database just start the engine.</p>
+
 
 
 <h2>Note</h2>
