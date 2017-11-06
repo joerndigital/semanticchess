@@ -94,7 +94,9 @@ and uncomment line 13 and 35 in
 ```
 
 <h2>Credits</h2>
+
 <h3>Frontend:</h3>
+
 - PgnViewerJS by [mliebelt](https://github.com/mliebelt/PgnViewerJS)
 - Font Awesome by Dave Gandy - http://fontawesome.io
 - [Bootstrap](http://getbootstrap.com/)
@@ -102,6 +104,7 @@ and uncomment line 13 and 35 in
 - [jQuery](https://jquery.com/)
 
 <h3>Backend:</h3>
+
 - [Stanford coreNLP](https://stanfordnlp.github.io/CoreNLP/)
 - [spring.io](https://spring.io/)
 - [Chess Opening JSON by hayatbiralem](https://github.com/hayatbiralem/eco.json/blob/master/eco.json)
