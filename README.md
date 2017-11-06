@@ -1,6 +1,6 @@
 <h1>Semantic Chess</h1>
 
-<p>A question answering system for chess games. The engine will try to answer all chess questions, if the information can be found in a PGN file. Therfore, the questions must include players, events, locations, (annual) dates, ECO, openings, ELO ratings, results and/or moves. In the <a href="https://github.com/semanticchess/semanticchess/blob/master/benchmark/auswertung-20171105.pdf">benchmark</a> you  find some sample questions.</p>
+<p>A question answering system for chess games. The engine will try to answer all chess questions, if the information can be found in a PGN file. Therefore, the questions must include players, events, locations, (annual) dates, ECO, openings, ELO ratings, results and/or moves. In the <a href="https://github.com/semanticchess/semanticchess/blob/master/benchmark/auswertung-20171105.pdf">benchmark</a> you  find some sample questions.</p>
 <div>
   <p align="center">
   <img src="https://github.com/semanticchess/semanticchess/blob/master/img/example.gif" alt="Example gif" width="450px" >
@@ -26,7 +26,7 @@
 $ cd src/main/database
 $ docker-compose up
 ```
-<p>The next commands must be executed in the folder with the pom.xml. If you already loaded data to the database just start the engine with the the 4th command. At the first launch perform the following steps. </p>
+<p>The next commands must be executed in the folder with the pom.xml. If you already loaded data to the database just start the engine with the 4th command. At the first launch perform the following steps. </p>
 
 <h4>1. Convert the PGN file to RDF data (in this project you can find 1610-1899.pgn as an example):</h4>
 
@@ -63,7 +63,7 @@ $ mvn spring-boot:run
 
 
 <h2>Prefixes</h2>
-If you want to use the SPARQL editor on http://localhost/8080: The following prefixes are already in use:
+If you want to use the SPARQL editor on http://localhost/8080, note that the following prefixes are already in use:
 
 ```sh
 PREFIX ex:    <http://example.com> 
@@ -75,6 +75,7 @@ PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 ```
 
 <h2>PGN Viewer</h2>
+
 PgnViewerJS by [mliebelt](https://github.com/mliebelt/PgnViewerJS)
 
 The PGN viewer is embedded by links from cdn.rawgit.com:
